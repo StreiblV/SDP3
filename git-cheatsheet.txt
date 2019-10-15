@@ -1,0 +1,74 @@
+master
+ |
+ |
+ |
+ |
+ |
+ |
+  \
+	\
+	 develop
+	 |
+	 |
+	 |
+	  \
+		\
+		 exercise 1
+		 |
+		 |-------------------------
+		  \ 					   \
+			\						 \
+			 daniel					   viki
+			 |							|
+			 | ..do work..				| ..do work..
+			 |							|
+			/						  /
+		  /							/
+		 |--------------------------
+		 |
+		 | 
+		/
+	  /
+	 |
+	 | 
+	  \
+		\
+		 exercise 2
+		 |
+		 |-------------------------
+		  \ 					   \
+			\						 \
+			 daniel					   viki
+			 |							|
+			 | ..do work..				| ..do work..
+			 |							|
+			/						  /
+		  /							/
+		 |--------------------------
+		 |
+		 | 
+		/
+	  /
+	 |
+	 | 
+	 |
+	 |
+	 |
+	 |
+	 
+	 
+########################################
+			Nützliches
+########################################
+Branch erstellen -> Create Branch
+Commit 	-> Änderungen lokal
+Push   	-> Änderungen global
+Pull	-> neue globale Änderungen holen
+Merge	-> Branch mit der Basis zusammenführen
+
+########################################
+		Richtlinien
+########################################
+Immer zuerst Pull vor Push.
+Vorher Basis in aktuellen Branch bevor merge.
+Nie auf master oder develop arbeiten!

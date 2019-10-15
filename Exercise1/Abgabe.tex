@@ -1,0 +1,104 @@
+
+\include{Definition} %beinhaltet alle benötigten Packages etc.
+\begin{document}
+
+\title{SDP - Uebung 01} % Übungsname und Nummer angeben
+\subtitle{Wintersemester 2019/20} % Semester angeben oder auskommentieren, falls nicht erwünscht
+\author{
+Viktoria Streibl - S1810306013\\
+  Daniel Weyrer - S1820306047
+} % Autorenname
+%\date{\today}
+\date{\today} % Das heutige Datum automatisch einfügen
+
+\maketitle % Titelseite erstellen
+
+\newpage
+\tableofcontents % Inhaltsverzeichnis erstellen
+\newpage
+
+% Kure Befehlsreferenz
+%\section{} erstellt eine Überschrift
+%während
+%\subsection{} eine Unterüberschrift erstellt
+% Eine neue Seite wird mit \newpage erstellt
+
+\section{Organisatorisches}
+
+Hier werden organisatorische Dinge angeführt, etwa:
+\begin{itemize}
+	\item das Team und seine Mitarbeiter,
+	\item die Aufteilung und die Verantwortungsbereiche der Mitarbeiter,
+	\item der geschätzte Aufwand in Mh,
+\end{itemize}
+
+% Für eine numerierte Aufzählung verwendet man 
+
+%\begin{enumerate}
+%	\item 
+%\end{enumerate}
+
+
+\section{Anforderungsdefinition (Systemspezifikation)}
+
+Hier wird die Aufgabenstellung beschrieben. Sie ist gegebenfalls aus der Systemspezifikation abzuleiten und in kompakter Form zu halten. Man sollte hier in kurzen und
+prägnanten Worten lesen können, worum es überhaupt geht. Neben den Anforderungen und Zielen steht hier alles, was von fundamentaler Bedeutung für das Verständnis
+eines nicht versierten Lesers (der aber sehr wohl über einschlägige Kenntnisse verfügt) nötig ist. Alles andere entfällt hier.
+
+\section{Systementwurf}
+
+Hier erfolgt die Beschreibung des Systementwurfes. Der Leser muss diesem Kapitel
+die Grundstruktur des Softwaresystems entnehmen können. Soweit notwendig, sind
+auch komplexere Teilsysteme funktional zu zerlegen.
+Der Leser entnimmt hier....
+
+
+\section{Komponentenentwurf}
+
+...
+
+Wichtig ist hier, ein einheitliches Schema zu verwenden, damit die Beschreibung konsistent ist – gerade wenn mehrere Software-Entwickler daran arbeiten.
+Da diese Dokumentation sehr änderungsanfällig ist, empfiehlt es sich ab einer gewissen Projektgröße die nötigen Informationen in den Programmcode als formatierten
+Kommentar aufzunehmen. Mit speziellen Werkzeugen (z.B. Doxygen) ist es möglich,
+die Kommentare zu extrahieren und somit ohne Mehraufwand immer eine aktuelle
+Dokumentation zu haben.
+
+
+\section{Dateibeschreibung}
+
+Hier werden die verwendeten Dateien beschrieben, sofern Informationen aus externen
+Dateien gelesen bzw. in diese geschrieben werden. Eine solche Beschreibung umfasst...
+
+\section{Testprotokollierung}
+
+Im Testprotokoll werden die Testdaten und die Testergebnisse für alle Testfälle beschrieben. Weiters muss die Testumgebung angeführt sein (welches Testframework
+wurde verwendet, mit welchen Komponentenversionen wurde gestestet, welche Stubs
+wurden verwendet, etc). Wenn die Komponenten und Subsysteme getrennt getestet
+wurden, ist die Testprotokollierung für die Komponenten getrennt anzugeben. Weiters sind identifizierte Schwachstellen und Probleme festzuhalten.
+
+\section{Tabellen und Diagramme}
+
+Ergänzende und unterstützende Tabellen und Diagramme können am Ende der Systemdokumentation angefügt werden.
+
+% Zur Info: Tabellen am besten in Excel erstellen und dann als Bild hier einfügen - Tabellen können in Latex sehr unangenehm werden!!
+% Befehl um Bilder einzufügen:
+%\includegraphics{Relativer/Pfad/zum/Bild.Endung}
+
+\section{Software-Qualitätsmetriken}
+
+Metriken dienen dazu, die Qualität von Software zu messen. Für C++ gibt es hier
+etwa das frei verfügbare Programm CCCC, welches für Linux und Windows unter
+der Adresse http://sourceforge.net/projects/cccc verfügbar ist. Für einen gegebenen
+Souce Code werden die Metriken ermittelt und ausgegeben. Eine (kompakte und auf
+das Wesentliche gekürzte) Ausgabe kann hier auf freiwilliger Basis aufgenommen
+werden und dient als Referenz bei Wartungsarbeiten (Degeneration des Codes und
+Designs).
+
+\section{Quellcode}
+
+\subsection{Erster Header}
+
+% Um Quellcode einzufügen einfach diesen Befehl verwenden:
+%\sourceCode{Relativer/Pfad/zum/SourceCode.Endung}
+
+\end{document}

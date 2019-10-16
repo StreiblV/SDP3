@@ -1,3 +1,6 @@
-#pragma once
+#ifndef CARPOOL
+
 class Carpool{
 };
+
+#endif // !CARPOOL

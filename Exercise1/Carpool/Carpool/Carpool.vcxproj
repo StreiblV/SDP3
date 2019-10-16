@@ -25,7 +25,7 @@
     <ClCompile Include="Motorcycle.cpp" />
     <ClCompile Include="TestDriver.cpp" />
     <ClCompile Include="Truck.cpp" />
-    <ClCompile Include="Vehicles.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h" />
@@ -34,7 +34,7 @@
     <ClInclude Include="Motorcycle.h" />
     <ClInclude Include="TestDriver.h" />
     <ClInclude Include="Truck.h" />
-    <ClInclude Include="Vehicles.h" />
+    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

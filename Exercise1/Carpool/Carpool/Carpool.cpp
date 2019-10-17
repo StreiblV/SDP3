@@ -36,13 +36,15 @@ void Carpool::Remove(std::string const& numberplate) {
 	}
 }
 
-void Carpool::SearchVehicle(std::string const& numberplate) {
+void Carpool::SearchByNumberplate(std::string const& numberplate) {
 	auto foundVehicle = FindVehicle(numberplate);
 	if (foundVehicle != mVehicles.end()) {
 		cout << "The vehicle with the numberplate :" << numberplate << "is not registered in this carpool! " << endl;
 	}
 	*foundVehicle.Print();
 }
+
+
 
 VehicleCItor Carpool::FindVehicle(std::string const& numberplate) const {
 	auto PredNumberP = [numberplate](Vehicle const& vehicle) { //can be deleted after == operator is overloaded!

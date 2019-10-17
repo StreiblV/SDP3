@@ -16,7 +16,7 @@ class Carpool{
 public:
 	void Add(Vehicle const& vehicle);
 	void Remove(std::string const& numberplate);
-	void SearchVehicle(std::string const& numberplate);
+	void SearchByNumberplate(std::string const& numberplate);
 	unsigned long TotalMileage() const;
 
 private:

@@ -25,3 +25,5 @@ Exercise1/Carpool/Carpool/Debug/Vehicles.obj
 Exercise1/Carpool/Debug/Carpool.pdb
 Exercise1/Carpool/Debug/Carpool.ilk
 Exercise1/Carpool/Debug/Carpool.exe
+*.ipch
+Exercise1/Carpool/Carpool/ClassDiagram_CarPool.cd

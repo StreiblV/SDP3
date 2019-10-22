@@ -4,7 +4,7 @@ class Motorcycle : public Vehicle
 {
 public:
 	virtual ~Motorcycle();
-	virtual void Print();
+	virtual void Print() override;
 };
 
 #endif //MOTORCYCLE

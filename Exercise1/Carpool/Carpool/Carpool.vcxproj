@@ -32,7 +32,6 @@
     <ClInclude Include="Carpool.h" />
     <ClInclude Include="Logbook.h" />
     <ClInclude Include="Motorcycle.h" />
-    <ClInclude Include="TestDriver.h" />
     <ClInclude Include="Truck.h" />
     <ClInclude Include="Vehicle.h" />
   </ItemGroup>

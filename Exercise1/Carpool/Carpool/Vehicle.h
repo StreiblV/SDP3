@@ -9,7 +9,7 @@ class Vehicle
 public:
 	enum class Fuel { Petrol, Diesel, Gas, Electricity };
 
-	virtual void Print() = 0;
+	virtual void Print(){};
 
 	Vehicle();
 	Vehicle(std::string brand, std::string numberplate, Fuel fuel);
@@ -20,6 +20,8 @@ public:
 	void SetBrand(std::string brand);
 	void SetNumberplate(std::string numberplate);
 	void SetFuel(Fuel fuel);
+
+	bool operator == (Vehicle const& x) const;
 
 protected:
 	std::string m_brand;

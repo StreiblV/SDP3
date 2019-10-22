@@ -53,9 +53,6 @@
     <ClInclude Include="Logbook.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="TestDriver.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Vehicle.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>

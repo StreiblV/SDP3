@@ -15,6 +15,10 @@ Vehicle::Vehicle(string brand, string numberplate, Fuel fuel) {
 
 Vehicle::~Vehicle() {};
 
+bool Vehicle::operator == (Vehicle const& vehicle) const {
+	return (this->m_numberplate == vehicle.m_numberplate);
+}
+
 string Vehicle::GetNumberplate() {
 	return m_numberplate;
 }

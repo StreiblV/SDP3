@@ -6,7 +6,7 @@ class Car : public Vehicle
 {
 public:
 	virtual ~Car();
-	virtual void Print();
+	virtual void Print() override;
 };
 #endif // CAR
 

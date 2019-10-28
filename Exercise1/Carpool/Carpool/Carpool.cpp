@@ -4,7 +4,7 @@ using namespace std;
 
 void Carpool::Add(Vehicle vehicle) {
 	try {
-		if (FindVehicle(vehicle.GetNumberplate()) == mVehicles.cend()) {
+		if (FindVehicle(vehicle.GetNumberplate()) != mVehicles.cend()) {
 			throw exception("Add failed: Number already in the Database!");
 		}
 
@@ -50,12 +50,12 @@ void Carpool::SearchByNumberplate(std::string const& numberplate) {
 	currentVehicle.Print();
 }
 
-VehicleCItor Carpool::FindVehicle(std::string const& numberplate) const {
+VehicleItor Carpool::FindVehicle(std::string const& numberplate)  {
 	auto PredNumberP = [numberplate](Vehicle vehicle) { //can be deleted after == operator is overloaded!
 		return (numberplate == vehicle.GetNumberplate());
 	};
 
-	return find_if(mVehicles.cbegin(), --mVehicles.cend(), PredNumberP);
+	return find_if(mVehicles.begin(), mVehicles.end(), PredNumberP);
 }
 
 unsigned long Carpool::TotalMileage() const {

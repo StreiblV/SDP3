@@ -9,7 +9,7 @@
 #include <string>
 #include <vector>
 
-typedef std::vector<Vehicle>::const_iterator VehicleCItor;
+typedef std::vector<Vehicle>::iterator VehicleItor;
 
 class Carpool{
 public:
@@ -22,7 +22,7 @@ public:
 private:
 	std::vector<Vehicle> mVehicles;
 
-	VehicleCItor FindVehicle(std::string const& numberplate) const;
+	VehicleItor FindVehicle(std::string const& numberplate);
 
 };
 

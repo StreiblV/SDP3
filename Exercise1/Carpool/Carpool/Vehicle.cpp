@@ -7,20 +7,26 @@
 |Revision:		0
 |_______________________________________________________________________*/
 
-
-
 #include "Vehicle.h"
 using namespace std;
 
-Vehicle::Vehicle(string brand = "", string numberplate = "", Fuel fuel = Fuel::Petrol) {
-	m_brand = brand;
-	m_numberplate = numberplate;
-	m_fuel = fuel;
+Vehicle::Vehicle() {
+	m_brand = "";
+	m_numberplate = "";
+	m_fuel = Fuel::Petrol;
 
 	setCurrentDate();
 }
 
 Vehicle::~Vehicle() {};
+
+
+Vehicle& Vehicle::operator=(Vehicle const& toCopy) {
+	if (&toCopy != this)  {
+		m_logbook = toCopy.m_logbook;
+	}
+	return *this;
+}
 
 string Vehicle::GetNumberplate() {
 	return m_numberplate;

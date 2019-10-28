@@ -1,4 +1,14 @@
-#ifndef CARPOOL
+/*______________________________________________________________________
+|Workfile:		Logbook.h
+|Description:	[HEADER] Class for collection driver data
+|Name:			Viktoria Streibl						PKZ: S1810306013
+|Date:			28.10.2019
+|Remarks:		-
+|Revision:		0
+|_______________________________________________________________________*/
+
+#ifndef LOGBOOK
+#define LOGBOOK
 
 #include <string>
 #include <stdio.h>
@@ -24,4 +34,4 @@ private:
 	std::list<Entry> m_entries;
 };
 
-#endif //CARPOOL
+#endif //LOGBOOK

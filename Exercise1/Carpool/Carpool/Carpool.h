@@ -1,15 +1,18 @@
 /*______________________________________________________________________
-|Workfile:		Carpool.cpp
-|Description:	Manages main functionality of the Carpool
-|Name:			Weyrer Daniel							PKZ: S1820306044
+|Workfile:		Carpool.h
+|Description:	[HEADER] Main Class managing Carpool-program
+|Name:			Daniel Weyrer							PKZ: S1820306044
 |Date:			28.10.2019
 |Remarks:		-
 |Revision:		0
 |_______________________________________________________________________*/
 
-
 #ifndef CARPOOL_H
-#include "Vehicle.h"
+#define CARPOOL_H
+
+#include "Car.h"
+#include "Motorcycle.h"
+#include "Truck.h"
 
 #include <iostream>
 #include <iostream>
@@ -27,7 +30,11 @@ public:
 	~Carpool();
 	Carpool(Carpool const& toCopy);
 	void Add(Vehicle vehicle);
-	void Add(std::string const& brand, std::string const& numberplate, Fuel fuel);
+
+	void AddCar(std::string const& brand, std::string const& numberplate, Fuel fuel);
+	void AddTruck(std::string const& brand, std::string const& numberplate, Fuel fuel);
+	void AddMotorcycle(std::string const& brand, std::string const& numberplate, Fuel fuel);
+
 	void Remove(std::string const& numberplate);
 	void AddLogbookEntry(std::string const& numberplate, int const& day, int const& month, int const& year, int const distance);
 	void ChangeLastLogbookEntry(std::string const& numberplate, int const& day, int const& month, int const& year, int const distance);
@@ -40,6 +47,7 @@ public:
 	Carpool& operator =(Carpool const& toCopy);
 
 private:
+	//std::vector<std::unique_ptr<Vehicle>> mVehicles;
 	std::vector<Vehicle> mVehicles;
 
 	VehicleItor FindVehicle(std::string const& numberplate);

@@ -1,13 +1,11 @@
 /*______________________________________________________________________
-|Workfile:		Carpool.h
-|Description:	[HEADER] Main Class managing Carpool-program
-|Name:			Daniel Weyrer							PKZ: S1820306044
+|Workfile:		Carpool.cpp
+|Description:	Manages main functionality of the Carpool
+|Name:			Weyrer Daniel							PKZ: S1820306044
 |Date:			28.10.2019
 |Remarks:		-
 |Revision:		0
 |_______________________________________________________________________*/
-
-
 #include "Carpool.h"
 
 using namespace std; 
@@ -38,8 +36,18 @@ void Carpool::Add(Vehicle vehicle) {
 	}
 }
 
-void Carpool::Add(std::string const& brand, std::string const& numberplate, Fuel fuel) {
-	Vehicle tmp{ brand, numberplate, fuel };
+void Carpool::AddCar(std::string const& brand, std::string const& numberplate, Fuel fuel) {
+	Car tmp{ brand, numberplate, fuel };
+	Add(tmp);
+}
+
+void Carpool::AddTruck(std::string const& brand, std::string const& numberplate, Fuel fuel) {
+	Truck tmp{ brand, numberplate, fuel };
+	Add(tmp);
+}
+
+void Carpool::AddMotorcycle(std::string const& brand, std::string const& numberplate, Fuel fuel) {
+	Motorcycle tmp{ brand, numberplate, fuel };
 	Add(tmp);
 }
 
@@ -112,4 +120,3 @@ Carpool& Carpool::operator=(Carpool const& toCopy) {
 	}
 	return *this;
 }
-

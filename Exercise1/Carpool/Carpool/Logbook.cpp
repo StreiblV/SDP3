@@ -1,3 +1,11 @@
+/*______________________________________________________________________
+|Workfile:		Logbook.cpp
+|Description:	Class for collection driver data
+|Name:			Viktoria Streibl						PKZ: S1810306013
+|Date:			28.10.2019
+|Remarks:		-
+|Revision:		0
+|_______________________________________________________________________*/
 #include "Logbook.h"
 using namespace std;
 

@@ -8,6 +8,7 @@
 |_______________________________________________________________________*/
 
 #ifndef VEHICLES
+#define VEHICLES
 
 #include "Logbook.h"
 #include <string>
@@ -21,7 +22,7 @@ class Vehicle
 public:
 	virtual void Print(){};
 
-	Vehicle(std::string brand, std::string numberplate, Fuel fuel);
+	Vehicle();
 	virtual ~Vehicle();
 
 	std::string GetNumberplate();
@@ -33,6 +34,8 @@ public:
 
 	void AddNewLogbookEntry(size_t const& day, size_t const& month, size_t const& year, int const& distance);
 	void ChangeLastLogbookEntry(size_t const& day, size_t const& month, size_t const& year, int const& distance);
+
+	Vehicle& operator=(Vehicle const& toCopy);
 
 protected:
 	std::string m_brand;

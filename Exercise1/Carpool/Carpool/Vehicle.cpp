@@ -42,3 +42,11 @@ void Vehicle::PrintList() {
 unsigned long Vehicle::GetMileage() const{
 	return m_logbook.GetTotalDistance();
 }
+
+void Vehicle::AddNewLogbookEntry(string const& date, int const& distance) {
+	m_logbook.AddNewEntry(date, distance);
+}
+
+void Vehicle::ChangeLastLogbookEntry(string const& date, int const& distance) {
+	m_logbook.ChangeLastEntry(date, distance);
+}

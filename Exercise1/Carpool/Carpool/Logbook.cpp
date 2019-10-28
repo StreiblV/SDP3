@@ -1,8 +1,16 @@
 #include "Logbook.h"
 using namespace std;
 
-void Logbook::AddNewEntry(string date, int distance) {
-	m_entries.push_back(make_pair(date, distance));
+void Logbook::AddNewEntry(string const& date, int const& distance) {
+	Entry lastEntry = *m_entries.end();
+
+	if (lastEntry.first == date) {
+		m_entries.pop_back();
+		m_entries.push_back(make_pair(date, distance + lastEntry.second));
+	}
+	else {
+		m_entries.push_back(make_pair(date, distance));
+	}
 }
 
 void Logbook::PrintLogEntries() {
@@ -21,7 +29,7 @@ unsigned long Logbook::GetTotalDistance() const {
 	return sum;
 }
 
-void Logbook::ChangeLastEntry(std::string date, int distance) {
+void Logbook::ChangeLastEntry(std::string const& date, int const& distance) {
 	m_entries.pop_back();
 	m_entries.push_back(make_pair(date, distance));
 }

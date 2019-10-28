@@ -16,11 +16,14 @@ public:
 	virtual ~Vehicle();
 
 	std::string GetNumberplate();
+	unsigned long GetMileage() const;
 
 	void SetBrand(std::string brand);
 	void SetNumberplate(std::string numberplate);
 	void SetFuel(Fuel fuel);
-	unsigned long GetMileage() const;
+
+	void AddNewLogbookEntry(std::string const& date, int const& distance);
+	void ChangeLastLogbookEntry(std::string const& date, int const& distance);
 
 	bool operator == (Vehicle const& x) const;
 

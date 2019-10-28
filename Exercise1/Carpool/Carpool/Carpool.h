@@ -14,6 +14,7 @@ typedef std::vector<Vehicle>::const_iterator VehicleCItor;
 class Carpool{
 public:
 	void Add(Vehicle vehicle);
+	void Add(std::string const& numberplate, std::string const& brand, Vehicle::Fuel fuel);
 	//TODO:	Add ohne Vehicle anlegen sondern (evlt zusätzlich?) mit nur namen, nummertafel etc.
 	// Add(std::string brand, std::string numberplate, Fuel fuel)
 	void Remove(std::string const& numberplate);

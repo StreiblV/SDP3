@@ -19,6 +19,11 @@ void Carpool::Add(Vehicle vehicle) {
 	}
 }
 
+void Carpool::Add(std::string const& numberplate, std::string const& brand, Vehicle::Fuel fuel) {
+	Vehicle tmp{ brand, numberplate, fuel };
+	Add(tmp);
+}
+
 void Carpool::Remove(std::string const& numberplate) {
 	try {
 		auto vehicleToDel = FindVehicle(numberplate);
@@ -54,6 +59,10 @@ VehicleCItor Carpool::FindVehicle(std::string const& numberplate) const {
 }
 
 unsigned long Carpool::TotalMileage() const {
-	return 0;
+	unsigned long tmpMileage = 0;
+	for (Vehicle const elem : mVehicles) {
+		tmpMileage += elem.GetMileage();
+	}
+	return tmpMileage;
 }
 

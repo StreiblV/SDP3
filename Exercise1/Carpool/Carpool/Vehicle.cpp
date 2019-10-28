@@ -1,16 +1,12 @@
 #include "Vehicle.h"
 using namespace std;
 
-Vehicle::Vehicle(){
-	m_brand = "";
-	m_numberplate = "";
-	m_fuel = Fuel::Petrol;
-}
-
-Vehicle::Vehicle(string brand, string numberplate, Fuel fuel) {
+Vehicle::Vehicle(string brand = "", string numberplate = "", Fuel fuel = Fuel::Petrol) {
 	m_brand = brand;
 	m_numberplate = numberplate;
 	m_fuel = fuel;
+
+	setCurrentDate();
 }
 
 Vehicle::~Vehicle() {};
@@ -83,9 +79,10 @@ Logbook::Date Vehicle::CreateDate(size_t const& day, size_t const& month, size_t
 
 void Vehicle::setCurrentDate() {
 	time_t now = time(0);
-	tm* ltm = localtime(&now);
+	tm ltm;
+	localtime_s(&ltm, &now);
 
-	m_currentYear = 1900 + ltm->tm_year;
-	m_currentMonth = 1 + ltm->tm_mon;
-	m_currentDay = ltm->tm_mday;
+	m_currentYear = ltm.tm_year + 1900;
+	m_currentMonth = 1 + ltm.tm_mon;
+	m_currentDay = ltm.tm_mday;
 }

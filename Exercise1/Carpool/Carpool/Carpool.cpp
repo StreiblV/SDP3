@@ -9,7 +9,7 @@ Carpool::~Carpool() {
 }
 
 Carpool::Carpool(Carpool const& toCopy) {
-	*this = toCopy;
+	mVehicles = toCopy.mVehicles;
 }
 
 void Carpool::Add(Vehicle vehicle) {
@@ -38,9 +38,11 @@ void Carpool::Remove(std::string const& numberplate) {
 	try {
 		auto vehicleToDel = FindVehicle(numberplate);
 		if (vehicleToDel == mVehicles.cend()) {
-			throw exception("Delete failed: the entered numberplate is not existing!");
+			throw exception("Delete failed: The entered numberplate is not registered in this carpool!");
 		}
-		remove(mVehicles.begin(), mVehicles.end(), *vehicleToDel);
+		else {
+			mVehicles.erase(vehicleToDel);
+		}
 	}
 	catch (exception const& ex) {
 		cerr << ex.what() << endl;
@@ -55,7 +57,6 @@ void Carpool::AddLogbookEntry(std::string const& numberplate, int const& day,
 							  int const& month, int const& year, int const distance) {
 	VehicleItor tmp = FindVehicle(numberplate);
 	(*tmp).AddNewLogbookEntry(day, month, year, distance);
-
 }
 
 void Carpool::ChangeLastLogbookEntry(std::string const& numberplate, int const& day,
@@ -67,10 +68,12 @@ void Carpool::ChangeLastLogbookEntry(std::string const& numberplate, int const& 
 void Carpool::SearchByNumberplate(std::string const& numberplate) {
 	auto foundVehicle = FindVehicle(numberplate);
 	if (foundVehicle == mVehicles.end()) {
-		cout << "The vehicle with the numberplate :" << numberplate << "is not registered in this carpool! " << endl;
+		cout << "The vehicle with the numberplate :" << numberplate << " is not registered in this carpool! " << endl;
 	}
-	Vehicle currentVehicle = *foundVehicle;
-	currentVehicle.Print();
+	else {
+		Vehicle currentVehicle = *foundVehicle;
+		currentVehicle.Print();
+	}
 }
 
 VehicleItor Carpool::FindVehicle(std::string const& numberplate)  {
@@ -95,9 +98,9 @@ unsigned long Carpool::TotalMileage() const {
 	return tmpMileage;
 }
 
-Carpool Carpool::operator=(Carpool const& toCopy) {
-	if (this != &toCopy) {
-		this->mVehicles = toCopy.mVehicles;
+Carpool& Carpool::operator=(Carpool const& toCopy) {
+	if (&toCopy != this)  {
+		mVehicles = toCopy.mVehicles;
 	}
 	return *this;
 }

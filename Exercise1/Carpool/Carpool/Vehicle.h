@@ -1,9 +1,10 @@
 #ifndef VEHICLES
 
+#define __STDC_WANT_LIB_EXT1__ 1
 #include "Logbook.h"
 #include <string>
 #include <list>
-#include <ctime>
+#include <time.h>
 
 enum class Fuel { Petrol, Diesel, Gas, Electricity };
 
@@ -12,7 +13,6 @@ class Vehicle
 public:
 	virtual void Print(){};
 
-	Vehicle();
 	Vehicle(std::string brand, std::string numberplate, Fuel fuel);
 	virtual ~Vehicle();
 

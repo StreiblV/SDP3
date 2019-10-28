@@ -14,10 +14,10 @@ int main() {
 
 	//1. Add Vehicles
 	Carpool carpool;
-	carpool.Add("PE-21HR", "Audi A6", Fuel::Diesel);
-	carpool.Add("LL-Caro1", "Daniels Sweetheart", Fuel::Gas);
-	carpool.Add("RO-666H", "Fiat Multipla", Fuel::Petrol);
-	carpool.Add("PE-35CK", "VW Golf", Fuel::Electricity);
+	carpool.Add("Audi", "PE-21HR", Fuel::Diesel);
+	carpool.Add("Daniels Sweetheart", "LL-Caro1", Fuel::Gas);
+	carpool.Add("Fiat Multipla", "RO-666H", Fuel::Petrol);
+	carpool.Add("VW Golf", "PE-35CK", Fuel::Electricity);
 
 	//2. Remove Vehicle
 	carpool.Remove("PE-35CK");	//should delete
@@ -28,11 +28,15 @@ int main() {
 	carpool.SearchByNumberplate("RO-677H");	//no car should be found
 
 	//4. Print vehicles
-	//carpool.
+	carpool.PrintVehicles();
+
 
 	//5. Logbook
 
 	//6. Carpool copy & zuweisbar
+	Carpool copied{ carpool };
+	Carpool copied2;
+	copied2 = copied;
 
 	return 0;
 }

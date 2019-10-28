@@ -27,7 +27,7 @@ public:
 	void PrintVehicles();
 	unsigned long TotalMileage() const;
 
-	Carpool operator =(Carpool const& toCopy);
+	Carpool& operator =(Carpool const& toCopy);
 
 private:
 	std::vector<Vehicle> mVehicles;

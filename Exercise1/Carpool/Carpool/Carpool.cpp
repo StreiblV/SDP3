@@ -22,7 +22,6 @@ void Carpool::Add(Vehicle vehicle) {
 	}
 	catch (exception const& ex) {
 		cerr << ex.what() << endl;
-		return;
 	}
 	catch (bad_alloc const& ex) {
 		cerr << "memory allocation: " << endl;
@@ -46,7 +45,6 @@ void Carpool::Remove(std::string const& numberplate) {
 	}
 	catch (exception const& ex) {
 		cerr << ex.what() << endl;
-		return;
 	}
 	catch (bad_alloc const& ex) {
 		cerr << "memory allocation: " << endl;
@@ -76,7 +74,7 @@ void Carpool::SearchByNumberplate(std::string const& numberplate) {
 }
 
 VehicleItor Carpool::FindVehicle(std::string const& numberplate)  {
-	auto PredNumberP = [numberplate](Vehicle vehicle) { //can be deleted after == operator is overloaded!
+	auto PredNumberP = [numberplate](Vehicle vehicle) {
 		return (numberplate == vehicle.GetNumberplate());
 	};
 

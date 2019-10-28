@@ -64,7 +64,7 @@ void Carpool::ChangeLastLogbookEntry(std::string const& numberplate, std::string
 
 void Carpool::SearchByNumberplate(std::string const& numberplate) {
 	auto foundVehicle = FindVehicle(numberplate);
-	if (foundVehicle != mVehicles.end()) {
+	if (foundVehicle == mVehicles.end()) {
 		cout << "The vehicle with the numberplate :" << numberplate << "is not registered in this carpool! " << endl;
 	}
 	Vehicle currentVehicle = *foundVehicle;

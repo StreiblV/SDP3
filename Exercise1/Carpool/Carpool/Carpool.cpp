@@ -17,7 +17,7 @@ Carpool::~Carpool() {
 }
 
 Carpool::Carpool(Carpool const& toCopy) {
-	mVehicles = toCopy.mVehicles;
+	*this = toCopy;
 }
 
 void Carpool::Add(Vehicle vehicle) {
@@ -26,13 +26,13 @@ void Carpool::Add(Vehicle vehicle) {
 			throw exception("Add failed: Number already in the Database!");
 		}
 
-		mVehicles.emplace_back(vehicle);
+		mVehicles.emplace_back(make_unique<Vehicle>(vehicle));
 	}
 	catch (exception const& ex) {
 		cerr << ex.what() << endl;
 	}
 	catch (bad_alloc const& ex) {
-		cerr << "memory allocation: " << endl;
+		cerr << "memory allocation: " << ex.what() << endl;
 	}
 }
 
@@ -53,7 +53,7 @@ void Carpool::AddMotorcycle(std::string const& brand, std::string const& numberp
 
 void Carpool::Remove(std::string const& numberplate) {
 	try {
-		auto vehicleToDel = FindVehicle(numberplate);
+		VehicleCItor vehicleToDel = FindVehicle(numberplate);
 		if (vehicleToDel == mVehicles.cend()) {
 			throw exception("Delete failed: The entered numberplate is not registered in this carpool!");
 		}
@@ -65,58 +65,63 @@ void Carpool::Remove(std::string const& numberplate) {
 		cerr << ex.what() << endl;
 	}
 	catch (bad_alloc const& ex) {
-		cerr << "memory allocation: " << endl;
+		cerr << "memory allocation: " << ex.what() << endl;
 	}
 }
 
 void Carpool::AddLogbookEntry(std::string const& numberplate, int const& day, 
-							  int const& month, int const& year, int const distance) {
+						  int const& month, int const& year, int const distance) {
 	VehicleItor tmp = FindVehicle(numberplate);
-	(*tmp).AddNewLogbookEntry(day, month, year, distance);
+	(**tmp).AddNewLogbookEntry(day, month, year, distance);
 }
 
 void Carpool::ChangeLastLogbookEntry(std::string const& numberplate, int const& day,
 									int const& month, int const& year, int const distance) {
 	VehicleItor tmp = FindVehicle(numberplate);
-	(*tmp).ChangeLastLogbookEntry(day, month, year, distance);
+	(**tmp).ChangeLastLogbookEntry(day, month, year, distance);
 }
 
 void Carpool::SearchByNumberplate(std::string const& numberplate) {
-	auto foundVehicle = FindVehicle(numberplate);
+	VehicleCItor foundVehicle = FindVehicle(numberplate);
 	if (foundVehicle == mVehicles.end()) {
 		cout << "The vehicle with the numberplate :" << numberplate << " is not registered in this carpool! " << endl;
 	}
 	else {
-		Vehicle currentVehicle = *foundVehicle;
-		currentVehicle.Print();
+		//Vehicle currentVehicle = **foundVehicle;
+		(**foundVehicle).Print();
 	}
 }
 
 VehicleItor Carpool::FindVehicle(std::string const& numberplate)  {
-	auto PredNumberP = [numberplate](Vehicle vehicle) {
-		return (numberplate == vehicle.GetNumberplate());
+	auto PredNumberP = [numberplate](unique_ptr<Vehicle> const&  v) {
+		return (numberplate == (*v).GetNumberplate());
 	};
 
 	return find_if(mVehicles.begin(), mVehicles.end(), PredNumberP);
 }
 
 void Carpool::PrintVehicles() {
-	for (Vehicle elem : mVehicles) {
-		elem.Print();
+	auto LPrint = [](TUptr const& x) { (*x).Print(); };
+	//for_each(mVehicles.cbegin(), mVehicles.cend(), LPrint);
+	for (VehicleCItor i = mVehicles.cbegin(); i != mVehicles.cend(); i++) {
+		(**i).Print();
 	}
 }
 
 unsigned long Carpool::TotalMileage() const {
 	unsigned long tmpMileage = 0;
-	for (Vehicle const elem : mVehicles) {
-		tmpMileage += elem.GetMileage();
+	for (VehicleCItor i = mVehicles.cbegin(); i != mVehicles.cend(); i++ ) {
+		tmpMileage += (**i).GetMileage();
 	}
 	return tmpMileage;
 }
 
 Carpool& Carpool::operator=(Carpool const& toCopy) {
 	if (&toCopy != this)  {
-		mVehicles = toCopy.mVehicles;
+		for (VehicleCItor i = toCopy.mVehicles.cbegin(); i < toCopy.mVehicles.cend(); i++) {
+			Vehicle tmp = (**i);
+			Add(tmp);
+		}
 	}
 	return *this;
 }

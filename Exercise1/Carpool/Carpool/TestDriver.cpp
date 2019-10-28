@@ -50,7 +50,7 @@ int main() {
 	carpool.Remove("LE-Bau2");	//should be able to delete
 	std::cout << "Truck removed successfully..." << std::endl;
 	carpool.Remove("PE-VS13");	//should be able to delete
-	std::cout << "Motorcycles removed successfully..." << std::endl;
+	std::cout << "Motorcycle removed successfully..." << std::endl;
 
 	carpool.Remove("PE-35CK");	//no car should be found
 	std::cout << std::endl;

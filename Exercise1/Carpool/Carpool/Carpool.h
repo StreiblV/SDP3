@@ -21,15 +21,19 @@
 #include <exception>
 #include <string>
 #include <vector>
+#include <memory>
 
-typedef std::vector<Vehicle>::iterator VehicleItor;
+typedef std::unique_ptr<Vehicle> TUptr;
+typedef std::vector<TUptr> TVehicles;
+typedef TVehicles::iterator VehicleItor;
+typedef TVehicles::const_iterator VehicleCItor;
+
 
 class Carpool{
 public:
 	Carpool();
 	~Carpool();
 	Carpool(Carpool const& toCopy);
-	void Add(Vehicle vehicle);
 
 	void AddCar(std::string const& brand, std::string const& numberplate, Fuel fuel);
 	void AddTruck(std::string const& brand, std::string const& numberplate, Fuel fuel);
@@ -47,9 +51,9 @@ public:
 	Carpool& operator =(Carpool const& toCopy);
 
 private:
-	//std::vector<std::unique_ptr<Vehicle>> mVehicles;
-	std::vector<Vehicle> mVehicles;
+	TVehicles mVehicles;
 
+	void Add(Vehicle vehicle);
 	VehicleItor FindVehicle(std::string const& numberplate);
 
 };

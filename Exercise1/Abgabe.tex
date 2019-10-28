@@ -16,12 +16,6 @@ Viktoria Streibl - S1810306013\\
 \tableofcontents % Inhaltsverzeichnis erstellen
 \newpage
 
-% Kure Befehlsreferenz
-%\section{} erstellt eine Überschrift
-%während
-%\subsection{} eine Unterüberschrift erstellt
-% Eine neue Seite wird mit \newpage erstellt
-
 \section{Organizational}
 \subsection{Team}
 \begin{itemize}
@@ -35,6 +29,8 @@ Viktoria Streibl - S1810306013\\
 \begin{itemize}
 	\item planning
 	\item testing (Testdriver)
+	\item Documentation
+	\item Systemdocumentation
 \end{itemize}
 
 \subsubsection{Viktoria Streibl - 10 ph}
@@ -48,19 +44,10 @@ Viktoria Streibl - S1810306013\\
 		\subitem plausibility test of input data (current Mileage and Date)
 \end{itemize}
 
-
 \subsubsection{Daniel Weyrer - 8 ph}
 \begin{itemize}
 	\item Main Class Carpool
-	\item Systemdocumentation
-\end{itemize}
-
-
-Hier werden organisatorische Dinge angeführt, etwa:
-\begin{itemize}
-	\item das Team und seine Mitarbeiter,
-	\item die Aufteilung und die Verantwortungsbereiche der Mitarbeiter,
-	\item der geschätzte Aufwand in Mh,
+	\item Class Diagram
 \end{itemize}
 
 % Für eine numerierte Aufzählung verwendet man 
@@ -69,36 +56,40 @@ Hier werden organisatorische Dinge angeführt, etwa:
 %	\item 
 %\end{enumerate}
 
-
 \section{Requirenment Definition(System Specification)}
 
-Hier wird die Aufgabenstellung beschrieben. Sie ist gegebenfalls aus der Systemspezifikation abzuleiten und in kompakter Form zu halten. Man sollte hier in kurzen und
-prägnanten Worten lesen können, worum es überhaupt geht. Neben den Anforderungen und Zielen steht hier alles, was von fundamentaler Bedeutung für das Verständnis
-eines nicht versierten Lesers (der aber sehr wohl über einschlägige Kenntnisse verfügt) nötig ist. Alles andere entfällt hier.
+%Hier wird die Aufgabenstellung beschrieben. Sie ist gegebenfalls aus der Systemspezifikation abzuleiten und in kompakter Form zu halten. Man sollte hier in kurzen und
+%prägnanten Worten lesen können, worum es überhaupt geht. Neben den Anforderungen und Zielen steht hier alles, was von fundamentaler Bedeutung für das Verständnis
+%eines nicht versierten Lesers (der aber sehr wohl über einschlägige Kenntnisse verfügt) nötig ist. Alles andere entfällt hier.
+
+It was a carpool desired the various types of vehicles includes, such as cars, trucks and motorcycles. Each vehicle type should also include and output some key data such as car make, license plate and fuel type. In addition, each vehicle must keep a logbook and enter the kilometers driven in one day.
+Any number of vehicles can be added and deleted in the program. You can search for the license plate and output all vehicles with the basic data.
 
 \section{System Design}
+%Hier erfolgt die Beschreibung des Systementwurfes. Der Leser muss diesem Kapitel
+%die Grundstruktur des Softwaresystems entnehmen können. Soweit notwendig, sind
+%auch komplexere Teilsysteme funktional zu zerlegen.
+%Der Leser entnimmt hier....
 
-Hier erfolgt die Beschreibung des Systementwurfes. Der Leser muss diesem Kapitel
-die Grundstruktur des Softwaresystems entnehmen können. Soweit notwendig, sind
-auch komplexere Teilsysteme funktional zu zerlegen.
-Der Leser entnimmt hier....
+\subsection{Classdiagram}
+%classdiagram
 
+\subsection{Design Decisions}
+
+\subsubsection{}
 
 \section{Component Design}
-
-...
-
-Wichtig ist hier, ein einheitliches Schema zu verwenden, damit die Beschreibung konsistent ist – gerade wenn mehrere Software-Entwickler daran arbeiten.
-Da diese Dokumentation sehr änderungsanfällig ist, empfiehlt es sich ab einer gewissen Projektgröße die nötigen Informationen in den Programmcode als formatierten
-Kommentar aufzunehmen. Mit speziellen Werkzeugen (z.B. Doxygen) ist es möglich,
-die Kommentare zu extrahieren und somit ohne Mehraufwand immer eine aktuelle
-Dokumentation zu haben.
+%Wichtig ist hier, ein einheitliches Schema zu verwenden, damit die Beschreibung konsistent ist – gerade wenn mehrere Software-Entwickler daran arbeiten.
+%Da diese Dokumentation sehr änderungsanfällig ist, empfiehlt es sich ab einer gewissen Projektgröße die nötigen Informationen in den Programmcode als formatierten
+%Kommentar aufzunehmen. Mit speziellen Werkzeugen (z.B. Doxygen) ist es möglich,
+%die Kommentare zu extrahieren und somit ohne Mehraufwand immer eine aktuelle
+%Dokumentation zu haben.
 
 
-\section{File Description}
 
-Hier werden die verwendeten Dateien beschrieben, sofern Informationen aus externen
-Dateien gelesen bzw. in diese geschrieben werden. Eine solche Beschreibung umfasst...
+%\section{File Description}
+%Hier werden die verwendeten Dateien beschrieben, sofern Informationen aus externen
+%Dateien gelesen bzw. in diese geschrieben werden. Eine solche Beschreibung umfasst...
 
 \section{Test Protocol}
 

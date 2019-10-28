@@ -1,3 +1,14 @@
+/*______________________________________________________________________
+|Workfile:		Vehicles.cpp
+|Description:	Base Class for different Vehicletypes
+|Name:			Viktoria Streibl						PKZ: S1810306013
+|Date:			28.10.2019
+|Remarks:		-
+|Revision:		0
+|_______________________________________________________________________*/
+
+
+
 #include "Vehicle.h"
 using namespace std;
 

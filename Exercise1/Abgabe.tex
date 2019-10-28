@@ -23,6 +23,38 @@ Viktoria Streibl - S1810306013\\
 % Eine neue Seite wird mit \newpage erstellt
 
 \section{Organizational}
+\subsection{Team}
+\begin{itemize}
+	\item Viktoria 	Streibl 		- 	S1810306013
+	\item Daniel 	Weyrer		-	S1820306044
+\end{itemize}
+
+\subsection{Roles and responsibilities}
+
+\subsubsection{Jointly}
+\begin{itemize}
+	\item planning
+	\item testing (Testdriver)
+\end{itemize}
+
+\subsubsection{Viktoria Streibl - xx ph}
+\begin{itemize}
+	\item Base Class for Vehicles
+	\item Derived Classes
+		\subitem Class Motorcycle
+		\subitem Class Car
+		\subitem Class Truck
+	\item Class Logbook
+		\subitem plausibility test of input data (current Mileage and Date)
+\end{itemize}
+
+
+\subsubsection{Daniel Weyrer - 8 ph}
+\begin{itemize}
+	\item Main Class Carpool
+	\item Systemdocumentation
+\end{itemize}
+
 
 Hier werden organisatorische Dinge angeführt, etwa:
 \begin{itemize}
@@ -92,39 +124,43 @@ Souce Code werden die Metriken ermittelt und ausgegeben. Eine (kompakte und auf
 das Wesentliche gekürzte) Ausgabe kann hier auf freiwilliger Basis aufgenommen
 werden und dient als Referenz bei Wartungsarbeiten (Degeneration des Codes und
 Designs).
-
 \section{Source Code}
 
-\subsection{Carpool.h}
-\sourceCode[../Carpool/Carpool/Carpool.h]
+\subsection{Class Carpool}
+\subsubsection{Carpool.h}
+\sourceCode{./Carpool/Carpool/Carpool.h}
+\subsubsection{Carpool.cpp}
+\sourceCode{./Carpool/Carpool/Carpool.cpp}
 
-\subsection{Carpool.cpp}
-\sourceCode[../Carpool/Carpool/Carpool.cpp]
+\subsection{Class Vehicle}
+\subsubsection{Vehicle.h}
+\sourceCode{./Carpool/Carpool/Vehicle.h}
+\subsubsection{Vehicle.cpp}
+\sourceCode{./Carpool/Carpool/Vehicle.cpp}
 
-\subsection{Vehicle.h}
-\sourceCode[../Carpool/Carpool/Vehicle.h]
-\subsection{Vehicle.cpp}
-\sourceCode[../Carpool/Carpool/Vehicle.cpp]
+\subsection{Class Logbook}
+\subsubsection{Logbook.h}
+\sourceCode{./Carpool/Carpool/Logbook.h}
+\subsubsection{Logbook.cpp}
+\sourceCode{./Carpool/Carpool/Logbook.cpp}
 
-\subsection{Logbook.h}
-\sourceCode[../Carpool/Carpool/Logbook.h]
-\subsection{Logbook.cpp}
-\sourceCode[../Carpool/Carpool/Logbook.cpp]
+\subsection{Class Motorcycle}
+\subsubsection{Motorcycle.h}
+\sourceCode{./Carpool/Carpool/Motorcycle.h}
+\subsubsection{Motorcycle.cpp}
+\sourceCode{./Carpool/Carpool/Motorcycle.cpp}
 
-\subsection{Motorcycle.h}
-\sourceCode[../Carpool/Carpool/Motorcycle.h]
-\subsection{Motorcycle.cpp}
-\sourceCode[../Carpool/Carpool/Motorcycle.cpp]
+\subsection{Class Car}
+\subsubsection{Car.h}
+\sourceCode{./Carpool/Carpool/Car.h}
+\subsubsection{Car.cpp}
+\sourceCode{./Carpool/Carpool/Car.cpp}
 
-\subsection{Car.h}
-\sourceCode[../Carpool/Carpool/Car.h]
-\subsection{Car.cpp}
-\sourceCode[../Carpool/Carpool/Car.cpp]
-
-\subsection{Truck.h}
-\sourceCode[../Carpool/Carpool/Truck.h]
-\subsection{Truck.cpp}
-\sourceCode[../Carpool/Carpool/Truck.cpp]
+\subsection{Class Truck}
+\subsubsection{Truck.h}
+\sourceCode{./Carpool/Carpool/Truck.h}
+\subsubsection{Truck.cpp}
+\sourceCode{./Carpool/Carpool/Truck.cpp}
 
 % Um Quellcode einzufügen einfach diesen Befehl verwenden:
 %\sourceCode{Relativer/Pfad/zum/SourceCode.Endung}

@@ -1,3 +1,13 @@
+/*______________________________________________________________________
+|Workfile:		Carpool.h
+|Description:	[HEADER] Main Class managing Carpool-program
+|Name:			Daniel Weyrer							PKZ: S1820306044
+|Date:			28.10.2019
+|Remarks:		-
+|Revision:		0
+|_______________________________________________________________________*/
+
+
 #include "Carpool.h"
 
 using namespace std; 
@@ -22,7 +32,6 @@ void Carpool::Add(Vehicle vehicle) {
 	}
 	catch (exception const& ex) {
 		cerr << ex.what() << endl;
-		return;
 	}
 	catch (bad_alloc const& ex) {
 		cerr << "memory allocation: " << endl;
@@ -46,7 +55,6 @@ void Carpool::Remove(std::string const& numberplate) {
 	}
 	catch (exception const& ex) {
 		cerr << ex.what() << endl;
-		return;
 	}
 	catch (bad_alloc const& ex) {
 		cerr << "memory allocation: " << endl;
@@ -77,7 +85,7 @@ void Carpool::SearchByNumberplate(std::string const& numberplate) {
 }
 
 VehicleItor Carpool::FindVehicle(std::string const& numberplate)  {
-	auto PredNumberP = [numberplate](Vehicle vehicle) { //can be deleted after == operator is overloaded!
+	auto PredNumberP = [numberplate](Vehicle vehicle) {
 		return (numberplate == vehicle.GetNumberplate());
 	};
 

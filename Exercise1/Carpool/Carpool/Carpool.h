@@ -1,3 +1,13 @@
+/*______________________________________________________________________
+|Workfile:		Carpool.cpp
+|Description:	Manages main functionality of the Carpool
+|Name:			Weyrer Daniel							PKZ: S1820306044
+|Date:			28.10.2019
+|Remarks:		-
+|Revision:		0
+|_______________________________________________________________________*/
+
+
 #ifndef CARPOOL_H
 #include "Vehicle.h"
 

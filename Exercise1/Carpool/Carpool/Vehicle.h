@@ -3,6 +3,7 @@
 #include "Logbook.h"
 #include <string>
 #include <list>
+#include <ctime>
 
 enum class Fuel { Petrol, Diesel, Gas, Electricity };
 
@@ -22,10 +23,8 @@ public:
 	void SetNumberplate(std::string numberplate);
 	void SetFuel(Fuel fuel);
 
-	void AddNewLogbookEntry(std::string const& date, int const& distance);
-	void ChangeLastLogbookEntry(std::string const& date, int const& distance);
-
-	bool operator == (Vehicle const& x) const;
+	void AddNewLogbookEntry(size_t const& day, size_t const& month, size_t const& year, int const& distance);
+	void ChangeLastLogbookEntry(size_t const& day, size_t const& month, size_t const& year, int const& distance);
 
 protected:
 	std::string m_brand;
@@ -36,6 +35,15 @@ protected:
 
 private:
 	Logbook m_logbook;
+	int const m_monthPerYear = 12;
+	int const m_daysPerMonth = 31;
+
+	int m_currentDay = 0;
+	int m_currentMonth = 0;
+	int m_currentYear = 0;
+
+	Logbook::Date CreateDate(size_t const& day, size_t const& month, size_t const& year);
+	void setCurrentDate();
 };
 
 #endif //VEHICLES

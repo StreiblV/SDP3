@@ -8,13 +8,19 @@
 class Logbook
 {
 public:
-	void AddNewEntry(std::string const& date, int const& distance);
+	struct Date {
+		size_t day;
+		size_t month;
+		size_t year;
+	};
+
+	void AddNewEntry(Date const& date, int const& distance);
 	void PrintLogEntries();
 	unsigned long GetTotalDistance() const;
-	void ChangeLastEntry(std::string const& date, int const& distance);
+	void ChangeLastEntry(Date const& date, int const& distance);
 
 private:
-	typedef std::pair<std::string, int> Entry;
+	typedef std::pair<Date, int> Entry;
 	std::list<Entry> m_entries;
 };
 

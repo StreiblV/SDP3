@@ -51,15 +51,17 @@ void Carpool::Remove(std::string const& numberplate) {
 	}
 }
 
-void Carpool::AddLogbookEntry(std::string const& numberplate, std::string const& date, int const distance) {
+void Carpool::AddLogbookEntry(std::string const& numberplate, int const& day, 
+							  int const& month, int const& year, int const distance) {
 	VehicleItor tmp = FindVehicle(numberplate);
-	(*tmp).AddLogbookEntry(date, distance);
+	(*tmp).AddNewLogbookEntry(day, month, year, distance);
 
 }
 
-void Carpool::ChangeLastLogbookEntry(std::string const& numberplate, std::string const& date, int const distance) {
+void Carpool::ChangeLastLogbookEntry(std::string const& numberplate, int const& day,
+									int const& month, int const& year, int const distance) {
 	VehicleItor tmp = FindVehicle(numberplate);
-	(*tmp).ChangeLastLogbookEntry(date, distance);
+	(*tmp).ChangeLastLogbookEntry(day, month, year, distance);
 }
 
 void Carpool::SearchByNumberplate(std::string const& numberplate) {

@@ -19,11 +19,10 @@ public:
 	void Add(Vehicle vehicle);
 	void Add(std::string const& brand, std::string const& numberplate, Fuel fuel);
 	void Remove(std::string const& numberplate);
-	void AddLogbookEntry(std::string const& numberplate, std::string const& date, int const distance);
-	void ChangeLastLogbookEntry(std::string const& numberplate, std::string const& date, int const distance);
+	void AddLogbookEntry(std::string const& numberplate, int const& day, int const& month, int const& year, int const distance);
+	void ChangeLastLogbookEntry(std::string const& numberplate, int const& day, int const& month, int const& year, int const distance);
 	
 	void SearchByNumberplate(std::string const& numberplate);
-	
 	
 	void PrintVehicles();
 	unsigned long TotalMileage() const;

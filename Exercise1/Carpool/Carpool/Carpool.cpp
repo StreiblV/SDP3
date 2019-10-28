@@ -2,6 +2,16 @@
 
 using namespace std; 
 
+Carpool::Carpool() {
+}
+
+Carpool::~Carpool() {
+}
+
+Carpool::Carpool(Carpool const& toCopy) {
+	*this = toCopy;
+}
+
 void Carpool::Add(Vehicle vehicle) {
 	try {
 		if (FindVehicle(vehicle.GetNumberplate()) != mVehicles.cend()) {
@@ -41,6 +51,17 @@ void Carpool::Remove(std::string const& numberplate) {
 	}
 }
 
+void Carpool::AddLogbookEntry(std::string const& numberplate, std::string const& date, int const distance) {
+	VehicleItor tmp = FindVehicle(numberplate);
+	(*tmp).AddLogbookEntry(date, distance);
+
+}
+
+void Carpool::ChangeLastLogbookEntry(std::string const& numberplate, std::string const& date, int const distance) {
+	VehicleItor tmp = FindVehicle(numberplate);
+	(*tmp).ChangeLastLogbookEntry(date, distance);
+}
+
 void Carpool::SearchByNumberplate(std::string const& numberplate) {
 	auto foundVehicle = FindVehicle(numberplate);
 	if (foundVehicle != mVehicles.end()) {
@@ -58,11 +79,24 @@ VehicleItor Carpool::FindVehicle(std::string const& numberplate)  {
 	return find_if(mVehicles.begin(), mVehicles.end(), PredNumberP);
 }
 
+void Carpool::PrintVehicles() {
+	for (Vehicle elem : mVehicles) {
+		elem.Print();
+	}
+}
+
 unsigned long Carpool::TotalMileage() const {
 	unsigned long tmpMileage = 0;
 	for (Vehicle const elem : mVehicles) {
 		tmpMileage += elem.GetMileage();
 	}
 	return tmpMileage;
+}
+
+Carpool Carpool::operator=(Carpool const& toCopy) {
+	if (this != &toCopy) {
+		this->mVehicles = toCopy.mVehicles;
+	}
+	return *this;
 }
 

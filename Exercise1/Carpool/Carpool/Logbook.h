@@ -10,7 +10,7 @@ class Logbook
 public:
 	void AddNewEntry(std::string date, int distance);
 	void PrintLogEntries();
-	int GetTotalDistance();
+	unsigned long GetTotalDistance() const;
 	void ChangeLastEntry(std::string date, int distance);
 
 private:

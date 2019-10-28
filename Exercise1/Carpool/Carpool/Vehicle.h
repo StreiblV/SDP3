@@ -4,11 +4,11 @@
 #include <string>
 #include <list>
 
+enum class Fuel { Petrol, Diesel, Gas, Electricity };
+
 class Vehicle
 {
 public:
-	enum class Fuel { Petrol, Diesel, Gas, Electricity };
-
 	virtual void Print(){};
 
 	Vehicle();
@@ -20,6 +20,7 @@ public:
 	void SetBrand(std::string brand);
 	void SetNumberplate(std::string numberplate);
 	void SetFuel(Fuel fuel);
+	unsigned long GetMileage() const;
 
 	bool operator == (Vehicle const& x) const;
 

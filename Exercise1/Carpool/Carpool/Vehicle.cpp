@@ -38,3 +38,7 @@ void Vehicle::SetFuel(Fuel fuel) {
 void Vehicle::PrintList() {
 	m_logbook.PrintLogEntries();
 }
+
+unsigned long Vehicle::GetMileage() const{
+	return m_logbook.GetTotalDistance();
+}

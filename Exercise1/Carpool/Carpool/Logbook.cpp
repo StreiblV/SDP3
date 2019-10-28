@@ -13,8 +13,8 @@ void Logbook::PrintLogEntries() {
 	}
 }
 
-int Logbook::GetTotalDistance() {
-	int sum = 0;
+unsigned long Logbook::GetTotalDistance() const {
+	unsigned long sum = 0;
 	for (auto e : m_entries) {
 		sum += e.second;
 	}

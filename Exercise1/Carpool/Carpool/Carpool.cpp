@@ -19,7 +19,7 @@ void Carpool::Add(Vehicle vehicle) {
 	}
 }
 
-void Carpool::Add(std::string const& numberplate, std::string const& brand, Vehicle::Fuel fuel) {
+void Carpool::Add(std::string const& brand, std::string const& numberplate, Fuel fuel) {
 	Vehicle tmp{ brand, numberplate, fuel };
 	Add(tmp);
 }

@@ -1,3 +1,13 @@
+/*______________________________________________________________________
+|Workfile:		Carpool.h
+|Description:	[HEADER] Main Class managing Carpool-program
+|Name:			Daniel Weyrer							PKZ: S1820306044
+|Date:			28.10.2019
+|Remarks:		-
+|Revision:		0
+|_______________________________________________________________________*/
+
+
 #include "Carpool.h"
 
 using namespace std; 

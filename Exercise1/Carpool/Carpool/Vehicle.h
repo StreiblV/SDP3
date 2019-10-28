@@ -1,3 +1,12 @@
+/*______________________________________________________________________
+|Workfile:		Vehicles.h
+|Description:	[HEADER] Base Class for different Vehicletypes
+|Name:			Viktoria Streibl				PKZ: S1810306013
+|Date:			28.10.2019
+|Remarks:		-
+|Revision:		0
+|_______________________________________________________________________*/
+
 #ifndef VEHICLES
 
 #include "Logbook.h"

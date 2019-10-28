@@ -9,20 +9,31 @@
 #include <string>
 #include <vector>
 
-typedef std::vector<Vehicle>::const_iterator VehicleCItor;
+typedef std::vector<Vehicle>::iterator VehicleItor;
 
 class Carpool{
 public:
+	Carpool();
+	~Carpool();
+	Carpool(Carpool const& toCopy);
 	void Add(Vehicle vehicle);
 	void Add(std::string const& brand, std::string const& numberplate, Fuel fuel);
 	void Remove(std::string const& numberplate);
+	void AddLogbookEntry(std::string const& numberplate, std::string const& date, int const distance);
+	void ChangeLastLogbookEntry(std::string const& numberplate, std::string const& date, int const distance);
+	
 	void SearchByNumberplate(std::string const& numberplate);
+	
+	
+	void PrintVehicles();
 	unsigned long TotalMileage() const;
+
+	Carpool operator =(Carpool const& toCopy);
 
 private:
 	std::vector<Vehicle> mVehicles;
 
-	VehicleCItor FindVehicle(std::string const& numberplate) const;
+	VehicleItor FindVehicle(std::string const& numberplate);
 
 };
 

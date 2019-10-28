@@ -2,9 +2,19 @@
 
 using namespace std; 
 
+Carpool::Carpool() {
+}
+
+Carpool::~Carpool() {
+}
+
+Carpool::Carpool(Carpool const& toCopy) {
+	*this = toCopy;
+}
+
 void Carpool::Add(Vehicle vehicle) {
 	try {
-		if (FindVehicle(vehicle.GetNumberplate()) == mVehicles.cend()) {
+		if (FindVehicle(vehicle.GetNumberplate()) != mVehicles.cend()) {
 			throw exception("Add failed: Number already in the Database!");
 		}
 
@@ -41,21 +51,38 @@ void Carpool::Remove(std::string const& numberplate) {
 	}
 }
 
+void Carpool::AddLogbookEntry(std::string const& numberplate, std::string const& date, int const distance) {
+	VehicleItor tmp = FindVehicle(numberplate);
+	(*tmp).AddLogbookEntry(date, distance);
+
+}
+
+void Carpool::ChangeLastLogbookEntry(std::string const& numberplate, std::string const& date, int const distance) {
+	VehicleItor tmp = FindVehicle(numberplate);
+	(*tmp).ChangeLastLogbookEntry(date, distance);
+}
+
 void Carpool::SearchByNumberplate(std::string const& numberplate) {
 	auto foundVehicle = FindVehicle(numberplate);
-	if (foundVehicle != mVehicles.end()) {
+	if (foundVehicle == mVehicles.end()) {
 		cout << "The vehicle with the numberplate :" << numberplate << "is not registered in this carpool! " << endl;
 	}
 	Vehicle currentVehicle = *foundVehicle;
 	currentVehicle.Print();
 }
 
-VehicleCItor Carpool::FindVehicle(std::string const& numberplate) const {
+VehicleItor Carpool::FindVehicle(std::string const& numberplate)  {
 	auto PredNumberP = [numberplate](Vehicle vehicle) { //can be deleted after == operator is overloaded!
 		return (numberplate == vehicle.GetNumberplate());
 	};
 
-	return find_if(mVehicles.cbegin(), --mVehicles.cend(), PredNumberP);
+	return find_if(mVehicles.begin(), mVehicles.end(), PredNumberP);
+}
+
+void Carpool::PrintVehicles() {
+	for (Vehicle elem : mVehicles) {
+		elem.Print();
+	}
 }
 
 unsigned long Carpool::TotalMileage() const {
@@ -64,5 +91,12 @@ unsigned long Carpool::TotalMileage() const {
 		tmpMileage += elem.GetMileage();
 	}
 	return tmpMileage;
+}
+
+Carpool Carpool::operator=(Carpool const& toCopy) {
+	if (this != &toCopy) {
+		this->mVehicles = toCopy.mVehicles;
+	}
+	return *this;
 }
 

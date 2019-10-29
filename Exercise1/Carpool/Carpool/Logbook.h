@@ -25,7 +25,7 @@ public:
 	};
 
 	void AddNewEntry(Date const& date, int const& distance);
-	void PrintLogEntries();
+	std::ostream& PrintLogEntries(std::ostream& ost);
 	unsigned long GetTotalDistance() const;
 	void ChangeLastEntry(Date const& date, int const& distance);
 

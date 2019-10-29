@@ -22,10 +22,16 @@ Motorcycle::Motorcycle(std::string const& brand, std::string const& numberplate,
 
 Motorcycle::~Motorcycle() {};
 
-void Motorcycle::Print() {
-	cout << "Fahrzeugart: Motorrad" << endl;
-	cout << "Marke: " << m_brand << endl;
-	cout << "Kennzeichen: " << m_numberplate << endl;
+ostream& Motorcycle::Print(ostream& ost) {
+	if (ost.good()) {
+		ost << "Fahrzeugart: Motorrad" << endl;
+		ost << "Marke: " << m_brand << endl;
+		ost << "Kennzeichen: " << m_numberplate << endl;
+	}
+	Vehicle::PrintList(ost);
+	return ost;
+}
 
-	Vehicle::PrintList();
+std::unique_ptr<Vehicle> Motorcycle::Clone() {
+	return make_unique<Motorcycle>(*this);
 }

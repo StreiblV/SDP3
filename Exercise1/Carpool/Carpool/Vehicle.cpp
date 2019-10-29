@@ -44,8 +44,9 @@ void Vehicle::SetFuel(Fuel fuel) {
 	m_fuel = fuel;
 }
 
-void Vehicle::PrintList() {
-	m_logbook.PrintLogEntries();
+ostream& Vehicle::PrintList(ostream& ost) {
+	m_logbook.PrintLogEntries(ost);
+	return ost;
 }
 
 unsigned long Vehicle::GetMileage() const{

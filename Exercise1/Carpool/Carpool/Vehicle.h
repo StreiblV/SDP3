@@ -20,7 +20,8 @@ enum class Fuel { Petrol, Diesel, Gas, Electricity };
 class Vehicle
 {
 public:
-	virtual void Print(){};
+	virtual std::ostream& Print(std::ostream& ost) = 0;
+	virtual std::unique_ptr<Vehicle> Clone() = 0;
 
 	Vehicle();
 	virtual ~Vehicle();
@@ -42,7 +43,7 @@ protected:
 	std::string m_numberplate;
 	Fuel m_fuel;
 
-	void PrintList();
+	std::ostream& PrintList(std::ostream& ost);
 
 private:
 	Logbook m_logbook;

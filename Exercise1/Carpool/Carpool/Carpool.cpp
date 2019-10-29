@@ -20,13 +20,13 @@ Carpool::Carpool(Carpool const& toCopy) {
 	*this = toCopy;
 }
 
-void Carpool::Add(Vehicle vehicle) {
+void Carpool::Add(TUptr v) {
 	try {
-		if (FindVehicle(vehicle.GetNumberplate()) != mVehicles.cend()) {
+		if (FindVehicle((*v).GetNumberplate()) != this->mVehicles.cend()) {
 			throw exception("Add failed: Number already in the Database!");
 		}
 
-		mVehicles.emplace_back(make_unique<Vehicle>(vehicle));
+		mVehicles.emplace_back(move(v));
 	}
 	catch (exception const& ex) {
 		cerr << ex.what() << endl;
@@ -38,17 +38,17 @@ void Carpool::Add(Vehicle vehicle) {
 
 void Carpool::AddCar(std::string const& brand, std::string const& numberplate, Fuel fuel) {
 	Car tmp{ brand, numberplate, fuel };
-	Add(tmp);
+	Add(make_unique<Car>(tmp));
 }
 
 void Carpool::AddTruck(std::string const& brand, std::string const& numberplate, Fuel fuel) {
 	Truck tmp{ brand, numberplate, fuel };
-	Add(tmp);
+	Add(make_unique<Truck>(tmp));
 }
 
 void Carpool::AddMotorcycle(std::string const& brand, std::string const& numberplate, Fuel fuel) {
 	Motorcycle tmp{ brand, numberplate, fuel };
-	Add(tmp);
+	Add(make_unique<Motorcycle>(tmp));
 }
 
 void Carpool::Remove(std::string const& numberplate) {
@@ -84,11 +84,10 @@ void Carpool::ChangeLastLogbookEntry(std::string const& numberplate, int const& 
 void Carpool::SearchByNumberplate(std::string const& numberplate) {
 	VehicleCItor foundVehicle = FindVehicle(numberplate);
 	if (foundVehicle == mVehicles.end()) {
-		cout << "The vehicle with the numberplate :" << numberplate << " is not registered in this carpool! " << endl;
+		cerr << "The vehicle with the numberplate :" << numberplate << " is not registered in this carpool! " << endl;
 	}
 	else {
-		//Vehicle currentVehicle = **foundVehicle;
-		(**foundVehicle).Print();
+		(**foundVehicle).Print(cout);
 	}
 }
 
@@ -98,14 +97,6 @@ VehicleItor Carpool::FindVehicle(std::string const& numberplate)  {
 	};
 
 	return find_if(mVehicles.begin(), mVehicles.end(), PredNumberP);
-}
-
-void Carpool::PrintVehicles() {
-	auto LPrint = [](TUptr const& x) { (*x).Print(); };
-	//for_each(mVehicles.cbegin(), mVehicles.cend(), LPrint);
-	for (VehicleCItor i = mVehicles.cbegin(); i != mVehicles.cend(); i++) {
-		(**i).Print();
-	}
 }
 
 unsigned long Carpool::TotalMileage() const {
@@ -119,9 +110,17 @@ unsigned long Carpool::TotalMileage() const {
 Carpool& Carpool::operator=(Carpool const& toCopy) {
 	if (&toCopy != this)  {
 		for (VehicleCItor i = toCopy.mVehicles.cbegin(); i < toCopy.mVehicles.cend(); i++) {
-			Vehicle tmp = (**i);
-			Add(tmp);
+			Add((**i).Clone());
 		}
 	}
 	return *this;
+}
+
+
+ostream& operator<<(ostream& ost, Carpool const& c) {
+	if (ost.good()) {
+		auto LPrint = [&ost](TUptr const& x) { (*x).Print(ost); ost << endl; };
+		for_each(c.mVehicles.cbegin(), c.mVehicles.cend(), LPrint);
+	}
+	return ost;
 }

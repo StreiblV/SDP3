@@ -38,7 +38,7 @@ int main() {
 	carpool.AddTruck("Volvo", "FR-Erde1", Fuel::Petrol);
 	std::cout << "Trucks added successfully..." << std::endl;
 	//Motorcycles
-	carpool.AddMotorcycle("BMW", "IL-DW44", Fuel::Petrol);
+	carpool.AddMotorcycle("BMW", "IL-24TW", Fuel::Petrol);
 	carpool.AddMotorcycle("Honda", "PE-VS13", Fuel::Petrol);
 	std::cout << "Motorcycles added successfully..." << std::endl;
 	std::cout << std::endl;
@@ -64,7 +64,7 @@ int main() {
 
 	//4. Print vehicles
 	SectionHeader("4. Print vehicles");
-	carpool.PrintVehicles();
+	std::cout << carpool << std::endl;
 	std::cout << std::endl;
 
 	//5. Logbook
@@ -76,6 +76,13 @@ int main() {
 	Carpool copied{ carpool };
 	Carpool copied2;
 	copied2 = copied;
+	
+	std::cout << "Original" << std::endl;
+	std::cout << carpool << std::endl << std::endl;
+	std::cout << "Copied via Copy-CTor" << std::endl;
+	std::cout << copied << std::endl << std::endl;
+	std::cout << "Copied via Assignment" << std::endl << std::endl;;
+	std::cout << copied2 << std::endl;
 	std::cout << std::endl;
 
 	return 0;

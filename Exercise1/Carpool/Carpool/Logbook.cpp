@@ -38,14 +38,17 @@ void Logbook::AddNewEntry(Date const& date, int const& distance) {
 	}	
 }
 
-void Logbook::PrintLogEntries() {
-	for (auto e : m_entries) {
-		cout << e.first.day << ".";
-		cout << e.first.month << ".";
-		cout << e.first.year << ".";
-		cout << e.second << " km";
-		cout << endl;
+ostream& Logbook::PrintLogEntries(ostream& ost) {
+	if (ost.good()) {
+		for (auto e : m_entries) {
+			ost << e.first.day << ".";
+			ost << e.first.month << ".";
+			ost << e.first.year << ".";
+			ost << e.second << " km";
+			ost << endl;
+		}
 	}
+	return ost;
 }
 
 unsigned long Logbook::GetTotalDistance() const {

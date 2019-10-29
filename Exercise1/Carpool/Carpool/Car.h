@@ -18,7 +18,8 @@ public:
 	Car();
 	Car(std::string const& brand, std::string const& numberplate, Fuel fuel);
 	virtual ~Car();
-	virtual void Print() override;
+	virtual std::ostream& Print(std::ostream& ost) override;
+	virtual std::unique_ptr<Vehicle> Clone() override;
 };
 #endif // CAR
 

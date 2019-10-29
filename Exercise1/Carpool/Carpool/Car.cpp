@@ -23,10 +23,17 @@ Car::Car(std::string const& brand, std::string const& numberplate, Fuel fuel) {
 
 Car::~Car() {};
 
-void Car::Print() {
-	cout << "Fahrzeugart: PKW" << endl;
-	cout << "Marke: " << m_brand << endl;
-	cout << "Kennzeichen: " << m_numberplate << endl;
+ostream& Car::Print(ostream& ost) {
+	if (ost.good()) {
+		ost << "Fahrzeugart: PKW" << endl;
+		ost << "Marke: " << m_brand << endl;
+		ost << "Kennzeichen: " << m_numberplate << endl;
+		Vehicle::PrintList(ost);
+	}
+	
+	return ost;
+}
 
-	Vehicle::PrintList();
+std::unique_ptr<Vehicle> Car::Clone() {
+	return make_unique<Car>(*this);
 }

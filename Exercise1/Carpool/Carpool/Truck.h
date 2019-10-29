@@ -17,7 +17,8 @@ public:
 	Truck();
 	Truck(std::string const& brand, std::string const& numberplate, Fuel fuel);
 	virtual ~Truck();
-	virtual void Print() override;
+	virtual std::ostream& Print(std::ostream& ost) override;
+	virtual std::unique_ptr<Vehicle> Clone() override;
 };
 
 #endif // TRUCK

@@ -22,6 +22,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <ostream>
 
 typedef std::unique_ptr<Vehicle> TUptr;
 typedef std::vector<TUptr> TVehicles;
@@ -44,16 +45,17 @@ public:
 	void ChangeLastLogbookEntry(std::string const& numberplate, int const& day, int const& month, int const& year, int const distance);
 	
 	void SearchByNumberplate(std::string const& numberplate);
-	
-	void PrintVehicles();
+
 	unsigned long TotalMileage() const;
 
 	Carpool& operator =(Carpool const& toCopy);
+	
+	friend std::ostream& operator<<(std::ostream& ost, Carpool const& c);
 
 private:
 	TVehicles mVehicles;
 
-	void Add(Vehicle vehicle);
+	void Add(TUptr v);
 	VehicleItor FindVehicle(std::string const& numberplate);
 
 };

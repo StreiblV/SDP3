@@ -23,10 +23,17 @@ Truck::Truck(std::string const& brand, std::string const& numberplate, Fuel fuel
 
 Truck::~Truck(){}
 
-void Truck::Print() {
-	cout << "Fahrzeugart: LKW" << endl;
-	cout << "Marke: " << m_brand << endl;
-	cout << "Kennzeichen: " << m_numberplate << endl;
+ostream& Truck::Print(ostream& ost) {
+	if (ost.good()) {
+		ost << "Fahrzeugart: LKW" << endl;
+		ost << "Marke: " << m_brand << endl;
+		ost << "Kennzeichen: " << m_numberplate << endl;
+		Vehicle::PrintList(ost);
 
-	Vehicle::PrintList();
+	}
+	return ost;
+}
+
+std::unique_ptr<Vehicle> Truck::Clone() {
+		return make_unique<Truck>(*this);
 }

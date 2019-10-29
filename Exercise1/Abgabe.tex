@@ -3,6 +3,8 @@
 \begin{document}
 \graphicspath{{./}}
 
+
+
 \includepdf[pages=-]{Angabe.pdf}
 
 \title{SDP - Exercise 01} % Übungsname und Nummer angeben
@@ -18,6 +20,10 @@ Viktoria Streibl - S1810306013\\
 \newpage
 \tableofcontents % Inhaltsverzeichnis erstellen
 \newpage
+
+\ihead{Viktoria Streibl}
+\ohead{Daniel Weyrer}
+\chead{SDP3-UE Uebung 01}
 
 \section{Organizational}
 \subsection{Team}
@@ -63,7 +69,7 @@ Viktoria Streibl - S1810306013\\
 
 \subsubsection {Daniel Weyrer}
 \begin{itemize}
-	\item estimated: 6ph 
+	\item estimated: 6 ph 
 	\item actually: 8 ph
 \end{itemize}
 
@@ -180,8 +186,16 @@ This class has a struct "Date" that includes the current date with "Tag", "Monat
 
 \subsection{TestDriver}
 The Testdriver test alle functions of the Carpool. It adds cars, trucks and motorcycles and deletes them.
-It searchs vehicles by numerplate and print all of them. It tests all logbook functions and the carpool.
+It searches vehicles by numberplate and print all of them. It tests all logbook functions and the carpool.
 
+<<<<<<< HEAD
+=======
+%\section{File Description}
+%Hier werden die verwendeten Dateien beschrieben, sofern Informationen aus externen
+%Dateien gelesen bzw. in diese geschrieben werden. Eine solche Beschreibung umfasst...
+
+\newpage
+>>>>>>> Daniel
 \section{Test Protocol}
 It has been tested in the file "TestDriver", the following points have been tested:
 \begin{itemize}
@@ -193,9 +207,21 @@ It has been tested in the file "TestDriver", the following points have been test
 	\item Test Carpool
 \end{itemize}
 
+<<<<<<< HEAD
 \subsection{Console Output}
 \sourceCode{./Carpool/output.txt}
 
+=======
+\sourceCode{./Carpool/output.txt}
+
+%\section{Tables and Graphs}
+%Ergänzende und unterstützende Tabellen und Diagramme können am Ende der Systemdokumentation angefügt werden.
+% Zur Info: Tabellen am besten in Excel erstellen und dann als Bild hier einfügen - Tabellen können in Latex sehr unangenehm werden!!
+% Befehl um Bilder einzufügen:
+%\includegraphics{Relativer/Pfad/zum/Bild.Endung}
+
+\newpage
+>>>>>>> Daniel
 \section{Source Code}
 
 \subsection{Class Carpool}
@@ -207,21 +233,28 @@ It has been tested in the file "TestDriver", the following points have been test
 \subsection{Class Vehicle}
 \subsubsection{Vehicle.h}
 \sourceCode{./Carpool/Carpool/Vehicle.h}
+
+\newpage
 \subsubsection{Vehicle.cpp}
 \sourceCode{./Carpool/Carpool/Vehicle.cpp}
 
+\newpage
 \subsection{Class Logbook}
 \subsubsection{Logbook.h}
 \sourceCode{./Carpool/Carpool/Logbook.h}
+
+\newpage
 \subsubsection{Logbook.cpp}
 \sourceCode{./Carpool/Carpool/Logbook.cpp}
 
 \subsection{Class Motorcycle}
 \subsubsection{Motorcycle.h}
 \sourceCode{./Carpool/Carpool/Motorcycle.h}
+\newpage
 \subsubsection{Motorcycle.cpp}
 \sourceCode{./Carpool/Carpool/Motorcycle.cpp}
 
+\newpage
 \subsection{Class Car}
 \subsubsection{Car.h}
 \sourceCode{./Carpool/Carpool/Car.h}
@@ -233,6 +266,9 @@ It has been tested in the file "TestDriver", the following points have been test
 \sourceCode{./Carpool/Carpool/Truck.h}
 \subsubsection{Truck.cpp}
 \sourceCode{./Carpool/Carpool/Truck.cpp}
+
+\subsubsection{TestDriver.cpp}
+\sourceCode{./Carpool/Carpool/TestDriver.cpp}
 
 % Um Quellcode einzufügen einfach diesen Befehl verwenden:
 %\sourceCode{Relativer/Pfad/zum/SourceCode.Endung}

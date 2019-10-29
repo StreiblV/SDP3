@@ -6,7 +6,7 @@
 \subtitle{winter semester 2019/20} % Semester angeben oder auskommentieren, falls nicht erwünscht
 \author{
 Viktoria Streibl - S1810306013\\
-  Daniel Weyrer - S1820306047
+  Daniel Weyrer - S1820306044
 } % Autorenname
 \date{\today} % Das heutige Datum automatisch einfügen
 
@@ -31,9 +31,10 @@ Viktoria Streibl - S1810306013\\
 	\item testing (Testdriver)
 	\item Documentation
 	\item Systemdocumentation
+	\item Class Diagram
 \end{itemize}
 
-\subsubsection{Viktoria Streibl - 10 ph}
+\subsubsection{Viktoria Streibl}
 \begin{itemize}
 	\item Base Class for Vehicles
 	\item Derived Classes
@@ -44,12 +45,24 @@ Viktoria Streibl - S1810306013\\
 		\subitem plausibility test of input data (current Mileage and Date)
 \end{itemize}
 
-\subsubsection{Daniel Weyrer - 8 ph}
+\subsubsection{Daniel Weyrer}
 \begin{itemize}
 	\item Main Class Carpool
-	\item Class Diagram
 \end{itemize}
 
+\subsection{Effort}
+
+\subsubsection {Viktoria Streibl}
+\begin{itemize}
+	\item estimated: 7ph 
+	\item actually: 10 ph
+\end{itemize}
+
+\subsubsection {Daniel Weyrer}
+\begin{itemize}
+	\item estimated: 6ph 
+	\item actually: 8 ph
+\end{itemize}
 % Für eine numerierte Aufzählung verwendet man 
 
 %\begin{enumerate}
@@ -70,13 +83,23 @@ Any number of vehicles can be added and deleted in the program. You can search f
 %die Grundstruktur des Softwaresystems entnehmen können. Soweit notwendig, sind
 %auch komplexere Teilsysteme funktional zu zerlegen.
 %Der Leser entnimmt hier....
-
 \subsection{Classdiagram}
 %classdiagram
 
 \subsection{Design Decisions}
+\subsubsection{Inheritance}
+The program should output the type of vehicle. To implement this as simple as possible, a base class has been implemented which contains all common functions and variables. A function "Print" is overloaded in the classes the heirs and there immediately the correct type is spent.
+Furthermore, this approach allows a quick expansion of other vehicle types.
 
-\subsubsection{}
+\subsubsection{Fuel}
+The Fuel was declared as enum. You can also expand this easily and it is uniform.
+
+\subsubsection{Search Vehicle}
+Vehicle is searched by vehicle number because it has to be unique. This is already regulated by the authority, which is why we do not check it it is unique.
+
+\subsubsection{Logbook}
+The logbook contains a date and a mileage of the respective day. This date is stored in a stuct to check if the day, month and year is available.
+If the date of a new entry is older than the date of the last entry, an error message will be displayed. Only current entries can be entered. If new entry is the same date as the old entry, then the mileage will be added up.
 
 \section{Component Design}
 %Wichtig ist hier, ein einheitliches Schema zu verwenden, damit die Beschreibung konsistent ist – gerade wenn mehrere Software-Entwickler daran arbeiten.
@@ -85,7 +108,97 @@ Any number of vehicles can be added and deleted in the program. You can search f
 %die Kommentare zu extrahieren und somit ohne Mehraufwand immer eine aktuelle
 %Dokumentation zu haben.
 
+\subsection{Class Carpool}
+Manages all vehicles in the carpool.
+It contains the following functions:
+\begin{itemize}
+	\item Add a new Vehicle
+	\item Remove a Vehicle
+	\item Add new logbook entry
+	\item Change last logbook entry
+	\item Search vehicle by numberplate
+	\item Print all vehicles
+	\item Get the sum of milages
+\end{itemize}
 
+The Carpool class manages all Verhicles. The pointers to the individual vehicles are stored in a vector.
+With the methods "AddCar", "AddTruck" and "AddMotorcycle" a new vehicle can be created. Should a car
+already exist with the same license plate. So this vehicle is not stored and an error message output.
+"Remove" deletes a vehicle with a specific flag. If none is stored with the license plate was, then again an error is issued.
+With "AddLogbookEntry" a day, month, year and the driven kilometers are given and saved as a new entry in the logbook.
+With "ChangeLastLogbookEntry" the last entry can be edited.
+With the method "SearchByNumberplate" it is possible to search for a vehicle with the specific flag and to output it.
+"PrintVehicles" outputs all stored vehicles, more exactly in the respective classes.
+"TotalMileage" provides the total number of kilometers driven, driven by all vehicles.
+
+\subsection{Class Vehicle}
+Is the base class of all vehicle types.
+It contains the following functions:
+\begin{itemize}
+	\item Add Brand
+	\item Add Numberplate
+	\item Add Fuel
+	\item Add new logbook entry
+	\item Change last logbook entry
+	\item Get numberplate
+	\item Get driven kilometers
+\end{itemize}
+
+Vehicle is the base class of all vehicle types. It contains the brand, numberplate and fuel of a vehicle.
+Furthermore, it also manages the logbook entries of a single vehicle.
+There is a setter for brand, numberplate and fuel. For numerplate and the kilometers driven is also a getter.
+With "AddLogbookEntry" a day, month, year and the driven kilometers are given and saved as a new entry in the logbook.
+With "ChangeLastLogbookEntry" the last entry can be edited.
+
+The private methode "CreateDate" converts the individual values of day, month and year to a struct named "Date".
+It also checks if the day is between 1 and 31. But not how many days in a month. That was
+not considered for this solution. Thus, a 30th February is possible as a date.
+The month also checks if it is between 1 and 12 and if the year is not negative.
+Another check is made if the date is not in the future. Which is why the private method "setCurrentDate" saves the current date, so it
+is able to compare later.
+
+\subsection{Class Car}
+This class represents a car.
+\begin{itemize}
+	\item Print all car data and the associated log entries
+\end{itemize}
+
+"Print" overrides the function of the base clase and outputs the vehicle type: "PKW", as well as brand and numberplate.
+Further, all logbook entries will be read out and printed out.
+
+\subsection{Class Truck}
+This class represents a truck.
+\begin{itemize}
+	\item Print all truck data and the associated log entries
+\end{itemize}
+
+"Print" overrides the function of the base clase and outputs the vehicle type: "LKW", as well as brand and numberplate.
+Further, all logbook entries will be read out and printed out.
+
+\subsection{Class Motorcycle}
+This class represents a motorcycle.
+\begin{itemize}
+	\item Print all motorcycle data and the associated log entries
+\end{itemize}
+
+"Print" overrides the function of the base clase and outputs the vehicle type: "Motorrad", as well as brand and numberplate.
+Further, all logbook entries will be read out and printed out.
+
+\subsection{Class Logbook}
+Class for collection driver data. It saves the driven kilometer per day of a vehicle.
+It contains the following functions:
+\begin{itemize}
+	\item Add new logbook entry
+	\item Change last logbook entry
+	\item Print all logbook entries
+	\item Adds up all the kilometers together
+\end{itemize}
+
+This class has a struct "Date" that includes the current date with "Tag", "Monat" and year "Jahr". It saves the entries in a list. An entry consists of two parts, a date and the kilometers driven on this day. AddNewEntry adds a new entry to the list. However, if the new date is older than the last entry, so an error is advertised. If a new entry has the same date as that of the last one, the two mileage become added and written to the list. With "ChangeLastEntry" you can change the last saved entry. "GetTotalDistance" counts the kilometers that have been saved in Logbook and returns them.
+
+\subsection{TestDriver}
+The Testdriver test alle functions of the Carpool. It adds cars, trucks and motorcycles and deletes them.
+It searchs vehicles by numerplate and print all of them. It tests all logbook functions and the carpool.
 
 %\section{File Description}
 %Hier werden die verwendeten Dateien beschrieben, sofern Informationen aus externen
@@ -98,23 +211,23 @@ wurde verwendet, mit welchen Komponentenversionen wurde gestestet, welche Stubs
 wurden verwendet, etc). Wenn die Komponenten und Subsysteme getrennt getestet
 wurden, ist die Testprotokollierung für die Komponenten getrennt anzugeben. Weiters sind identifizierte Schwachstellen und Probleme festzuhalten.
 
-\section{Tables and Graphs}
-
-Ergänzende und unterstützende Tabellen und Diagramme können am Ende der Systemdokumentation angefügt werden.
-
+%\section{Tables and Graphs}
+%Ergänzende und unterstützende Tabellen und Diagramme können am Ende der Systemdokumentation angefügt werden.
 % Zur Info: Tabellen am besten in Excel erstellen und dann als Bild hier einfügen - Tabellen können in Latex sehr unangenehm werden!!
 % Befehl um Bilder einzufügen:
 %\includegraphics{Relativer/Pfad/zum/Bild.Endung}
 
 \section{Software Quality Metrics}
 
-Metriken dienen dazu, die Qualität von Software zu messen. Für C++ gibt es hier
-etwa das frei verfügbare Programm CCCC, welches für Linux und Windows unter
-der Adresse http://sourceforge.net/projects/cccc verfügbar ist. Für einen gegebenen
-Souce Code werden die Metriken ermittelt und ausgegeben. Eine (kompakte und auf
-das Wesentliche gekürzte) Ausgabe kann hier auf freiwilliger Basis aufgenommen
-werden und dient als Referenz bei Wartungsarbeiten (Degeneration des Codes und
-Designs).
+%Metriken dienen dazu, die Qualität von Software zu messen. Für C++ gibt es hier
+%etwa das frei verfügbare Programm CCCC, welches für Linux und Windows unter
+%der Adresse http://sourceforge.net/projects/cccc verfügbar ist. Für einen gegebenen
+%Souce Code werden die Metriken ermittelt und ausgegeben. Eine (kompakte und auf
+%das Wesentliche gekürzte) Ausgabe kann hier auf freiwilliger Basis aufgenommen
+%werden und dient als Referenz bei Wartungsarbeiten (Degeneration des Codes und
+%Designs).
+
+
 \section{Source Code}
 
 \subsection{Class Carpool}

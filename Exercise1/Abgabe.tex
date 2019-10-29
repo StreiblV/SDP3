@@ -1,6 +1,9 @@
 
 \include{Definition} %beinhaltet alle benötigten Packages etc.
 \begin{document}
+\graphicspath{{./}}
+
+\includepdf[pages=-]{Angabe.pdf}
 
 \title{SDP - Exercise 01} % Übungsname und Nummer angeben
 \subtitle{winter semester 2019/20} % Semester angeben oder auskommentieren, falls nicht erwünscht
@@ -84,8 +87,7 @@ Any number of vehicles can be added and deleted in the program. You can search f
 %auch komplexere Teilsysteme funktional zu zerlegen.
 %Der Leser entnimmt hier....
 \subsection{Classdiagram}
-%classdiagram
-
+\includegraphics[scale=0.65]{ClassDiagram}
 \subsection{Design Decisions}
 \subsubsection{Inheritance}
 The program should output the type of vehicle. To implement this as simple as possible, a base class has been implemented which contains all common functions and variables. A function "Print" is overloaded in the classes the heirs and there immediately the correct type is spent.

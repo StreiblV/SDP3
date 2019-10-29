@@ -69,6 +69,20 @@ int main() {
 
 	//5. Logbook
 	SectionHeader("5. Logbook");
+	std::cout << "Add 3 Entries" << std::endl;
+	carpool.AddLogbookEntry("LL-Caro1", 14, 2, 2017, 45);		//works...
+	carpool.AddLogbookEntry("LL-Caro1", 25, 2, 2017, 46);		//works...
+	carpool.AddLogbookEntry("LL-Caro1", 14, 2, 2018, 5);		//works...
+
+	std::cout << "Add Entry with same date" << std::endl;
+	carpool.AddLogbookEntry("LL-Caro1", 14, 2, 2018, 45);		//should be combined with the last entry
+	carpool.AddLogbookEntry("LL-Caro1", 23, 12, 2018, 45);		//works...
+
+	std::cout << "Add old Entry" << std::endl;
+	carpool.AddLogbookEntry("LL-Caro1", 14, 12, 2017, 45);		//dont work - to old
+
+	std::cout << "Add Entry for the future" << std::endl;
+	carpool.AddLogbookEntry("LL-Caro1", 14, 12, 2019, 45);		//dont work - to old
 	std::cout << std::endl;
 
 	//6. Carpool copy & co
@@ -77,13 +91,12 @@ int main() {
 	Carpool copied2;
 	copied2 = copied;
 	
-	std::cout << "Original" << std::endl;
-	std::cout << carpool << std::endl << std::endl;
-	std::cout << "Copied via Copy-CTor" << std::endl;
-	std::cout << copied << std::endl << std::endl;
-	std::cout << "Copied via Assignment" << std::endl << std::endl;;
+	std::cout << "Original..." << std::endl;
+	std::cout << carpool << std::endl;
+	std::cout << "Copied via Copy-CTor..." << std::endl;
+	std::cout << copied << std::endl;
+	std::cout << "Copied via Assignment..." << std::endl;
 	std::cout << copied2 << std::endl;
-	std::cout << std::endl;
 
 	return 0;
 }

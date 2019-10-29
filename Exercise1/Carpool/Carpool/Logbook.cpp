@@ -10,32 +10,44 @@
 using namespace std;
 
 void Logbook::AddNewEntry(Date const& date, int const& distance) {
-	Entry lastEntry = *m_entries.end();
+	if (date.day == 0 || date.month == 0 || date.year == 0) {
+		return;
+	}
 
-	try {
-		if (lastEntry.first.day == date.day &&
-			lastEntry.first.month == date.month &&
-			lastEntry.first.year == date.year)
-		{
-			m_entries.pop_back();
-			m_entries.push_back(make_pair(date, distance + lastEntry.second));
+	if (m_entries.empty()) {
+		m_entries.push_back(make_pair(date, distance));
+	}else{
+		Entry lastEntry = m_entries.back();
+
+		try {
+			if (lastEntry.first.day == date.day &&
+				lastEntry.first.month == date.month &&
+				lastEntry.first.year == date.year)
+			{
+				m_entries.pop_back();
+				m_entries.push_back(make_pair(date, distance + lastEntry.second));
+			}
+			
+			if (date.year == lastEntry.first.year) {
+				if (date.month < lastEntry.first.month) {
+					throw exception("Wrong Date: Please input a date after the last entry");
+				}
+				else if (date.month == lastEntry.first.month) {
+					if (date.day < lastEntry.first.day) {
+						throw exception("Wrong Date: Please input a date after the last entry");
+					}
+				}
+			}else if (date.year < lastEntry.first.year) {
+				throw exception("Wrong Date: Please input a date after the last entry");
+			}
+			else {
+				m_entries.push_back(make_pair(date, distance));
+			}
 		}
-		else if (lastEntry.first.day == date.day &&
-			lastEntry.first.month == date.month &&
-			lastEntry.first.year == date.year)
-		{
-			throw exception("Wrong Date: Please input a date after "+
-							lastEntry.first.day + '.' + 
-							lastEntry.first.month + '.' +
-							lastEntry.first.year);
-		}
-		else {
-			m_entries.push_back(make_pair(date, distance));
+		catch (exception const& ex) {
+			cerr << ex.what() << endl;
 		}
 	}
-	catch (exception const& ex) {
-		cerr << ex.what() << endl;
-	}	
 }
 
 ostream& Logbook::PrintLogEntries(ostream& ost) {

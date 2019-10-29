@@ -80,7 +80,17 @@ Logbook::Date Vehicle::CreateDate(size_t const& day, size_t const& month, size_t
 			throw exception("Wrong Date: Your year is not valid");
 		}
 
-		if (year > m_currentYear || month > m_currentMonth || day > m_currentDay) {
+		if (year == m_currentYear) {
+			if (month > m_currentMonth) {
+				throw exception("Wrong Date: Back to the Future?");
+			}
+			else if (month == m_currentMonth) {
+				if (day > m_currentDay) {
+					throw exception("Wrong Date: Back to the Future?");
+				}
+			}
+		}
+		else if (year > m_currentYear) {
 			throw exception("Wrong Date: Back to the Future?");
 		}
 

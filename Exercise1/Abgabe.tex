@@ -121,10 +121,9 @@ It contains the following functions:
 	\item Get the sum of milages
 \end{itemize}
 
-The Carpool class manages all Verhicles. The pointers to the individual vehicles are stored in a vector.
-With the methods "AddCar", "AddTruck" and "AddMotorcycle" a new vehicle can be created. Should a car
-already exist with the same license plate. So this vehicle is not stored and an error message output.
-"Remove" deletes a vehicle with a specific flag. If none is stored with the license plate was, then again an error is issued.
+The Carpool class manages all Verhicles. It uses unique pointers stored in a vector, to avoid shallow-copies.
+With the methods "AddCar", "AddTruck" and "AddMotorcycle" a new vehicle can be created. Should a car already exist with the same license plate. So this vehicle is not stored and an error message output.
+"Remove" deletes a vehicle with a specific flag. If none is stored with the license plate an exception get`s thrown and caught in the same method.
 With "AddLogbookEntry" a day, month, year and the driven kilometers are given and saved as a new entry in the logbook.
 With "ChangeLastLogbookEntry" the last entry can be edited.
 With the method "SearchByNumberplate" it is possible to search for a vehicle with the specific flag and to output it.

@@ -32,29 +32,43 @@ typedef TVehicles::const_iterator VehicleCItor;
 
 class Carpool{
 public:
+	//CTor & DTor
 	Carpool();
 	~Carpool();
+	//Copy-CTor
 	Carpool(Carpool const& toCopy);
 
+	//Addfunctions to add derived classes to container
 	void AddCar(std::string const& brand, std::string const& numberplate, Fuel fuel);
 	void AddTruck(std::string const& brand, std::string const& numberplate, Fuel fuel);
 	void AddMotorcycle(std::string const& brand, std::string const& numberplate, Fuel fuel);
 
+	//Removes Vehicle with the given numberplate
 	void Remove(std::string const& numberplate);
+
+	//Adds one entry in the logbook of the vehicle with the given numberplate
 	void AddLogbookEntry(std::string const& numberplate, int const& day, int const& month, int const& year, int const distance);
+
+	//Deletes current last entry in the logbook of the vehicle with the given numberplate and replaces it with the new val given
 	void ChangeLastLogbookEntry(std::string const& numberplate, int const& day, int const& month, int const& year, int const distance);
 	
+	//Searches the vehicle with the given numberplate and Prints its data (if found)
+	//or throws an exception when there is no such numberplate in the database
 	void SearchByNumberplate(std::string const& numberplate);
 
+	//Adds tge total mileages of every single vehicle in the current pool
 	unsigned long TotalMileage() const;
 
+	//Overloaded assignment- and outputoperator
 	Carpool& operator =(Carpool const& toCopy);
 	
 	friend std::ostream& operator<<(std::ostream& ost, Carpool const& c);
 
 private:
+	//Stores all vehicles
 	TVehicles mVehicles;
 
+	//Helper functions
 	void Add(TUptr v);
 	VehicleItor FindVehicle(std::string const& numberplate);
 

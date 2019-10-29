@@ -16,16 +16,20 @@ Carpool::Carpool() {
 Carpool::~Carpool() {
 }
 
+//Deep copy already defined in the assignment operator
 Carpool::Carpool(Carpool const& toCopy) {
 	*this = toCopy;
 }
 
+//Adds car only if it isn`t already contained in the Container; throws and catches an exception
+//if the number is already contained
 void Carpool::Add(TUptr v) {
 	try {
 		if (FindVehicle((*v).GetNumberplate()) != this->mVehicles.cend()) {
 			throw exception("Add failed: Number already in the Database!");
 		}
 
+		//unique pointers can only be moved, not copied!
 		mVehicles.emplace_back(move(v));
 	}
 	catch (exception const& ex) {
@@ -51,6 +55,8 @@ void Carpool::AddMotorcycle(std::string const& brand, std::string const& numberp
 	Add(make_unique<Motorcycle>(tmp));
 }
 
+//uses private helper function "FindVehicle" to find the car which needs to be deleted
+//throws and catches an exception if there is no such numberplate registered in the database
 void Carpool::Remove(std::string const& numberplate) {
 	try {
 		VehicleCItor vehicleToDel = FindVehicle(numberplate);
@@ -68,6 +74,7 @@ void Carpool::Remove(std::string const& numberplate) {
 		cerr << "memory allocation: " << ex.what() << endl;
 	}
 }
+
 
 void Carpool::AddLogbookEntry(std::string const& numberplate, int const& day, 
 						  int const& month, int const& year, int const distance) {
@@ -91,6 +98,9 @@ void Carpool::SearchByNumberplate(std::string const& numberplate) {
 	}
 }
 
+//Private Helperfunction based on STL-Find_if and a UnaryPred
+//Returns Iterator to given numberplate (if found)
+//Returns Iterator == cont.end() if not found
 VehicleItor Carpool::FindVehicle(std::string const& numberplate)  {
 	auto PredNumberP = [numberplate](unique_ptr<Vehicle> const&  v) {
 		return (numberplate == (*v).GetNumberplate());
@@ -107,6 +117,7 @@ unsigned long Carpool::TotalMileage() const {
 	return tmpMileage;
 }
 
+//Iterates through the container and performs a deep copy
 Carpool& Carpool::operator=(Carpool const& toCopy) {
 	if (&toCopy != this)  {
 		for (VehicleCItor i = toCopy.mVehicles.cbegin(); i < toCopy.mVehicles.cend(); i++) {
@@ -116,7 +127,7 @@ Carpool& Carpool::operator=(Carpool const& toCopy) {
 	return *this;
 }
 
-
+//Overloaded Output-Operator
 ostream& operator<<(ostream& ost, Carpool const& c) {
 	if (ost.good()) {
 		auto LPrint = [&ost](TUptr const& x) { (*x).Print(ost); ost << endl; };

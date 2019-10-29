@@ -15,6 +15,7 @@ using namespace std;
 Motorcycle::Motorcycle() {
 }
 Motorcycle::Motorcycle(std::string const& brand, std::string const& numberplate, Fuel fuel){
+	//set brand, numberplate and fuel
 	m_brand = brand;
 	m_numberplate = numberplate;
 	m_fuel = fuel;
@@ -23,12 +24,14 @@ Motorcycle::Motorcycle(std::string const& brand, std::string const& numberplate,
 Motorcycle::~Motorcycle() {};
 
 ostream& Motorcycle::Print(ostream& ost) {
+	//chek if ostream is valid
 	if (ost.good()) {
 		ost << "Fahrzeugart: Motorrad" << endl;
 		ost << "Marke: " << m_brand << endl;
 		ost << "Kennzeichen: " << m_numberplate << endl;
+		//print all logbook entries
+		Vehicle::PrintList(ost);
 	}
-	Vehicle::PrintList(ost);
 	return ost;
 }
 

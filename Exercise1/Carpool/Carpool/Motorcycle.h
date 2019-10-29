@@ -14,10 +14,15 @@
 class Motorcycle : public Vehicle
 {
 public:
+	//constructor
 	Motorcycle();
+	//create a new motorcycle
 	Motorcycle(std::string const& brand, std::string const& numberplate, Fuel fuel);
+	//deconstrcutor
 	virtual ~Motorcycle();
+	//Prints the brand, type, numberplate and logbook dat
 	virtual std::ostream& Print(std::ostream& ost) override;
+	//clone motorcycle
 	virtual std::unique_ptr<Vehicle> Clone() override;
 };
 

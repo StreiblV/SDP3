@@ -63,28 +63,14 @@ Viktoria Streibl - S1810306013\\
 	\item estimated: 6ph 
 	\item actually: 8 ph
 \end{itemize}
-% Für eine numerierte Aufzählung verwendet man 
-
-%\begin{enumerate}
-%	\item 
-%\end{enumerate}
 
 \section{Requirenment Definition(System Specification)}
-
-%Hier wird die Aufgabenstellung beschrieben. Sie ist gegebenfalls aus der Systemspezifikation abzuleiten und in kompakter Form zu halten. Man sollte hier in kurzen und
-%prägnanten Worten lesen können, worum es überhaupt geht. Neben den Anforderungen und Zielen steht hier alles, was von fundamentaler Bedeutung für das Verständnis
-%eines nicht versierten Lesers (der aber sehr wohl über einschlägige Kenntnisse verfügt) nötig ist. Alles andere entfällt hier.
-
 It was a carpool desired the various types of vehicles includes, such as cars, trucks and motorcycles. Each vehicle type should also include and output some key data such as car make, license plate and fuel type. In addition, each vehicle must keep a logbook and enter the kilometers driven in one day.
 Any number of vehicles can be added and deleted in the program. You can search for the license plate and output all vehicles with the basic data.
 
 \section{System Design}
-%Hier erfolgt die Beschreibung des Systementwurfes. Der Leser muss diesem Kapitel
-%die Grundstruktur des Softwaresystems entnehmen können. Soweit notwendig, sind
-%auch komplexere Teilsysteme funktional zu zerlegen.
-%Der Leser entnimmt hier....
 \subsection{Classdiagram}
-%classdiagram
+\includegraphics{Carpool_Class_Diagram.png}
 
 \subsection{Design Decisions}
 \subsubsection{Inheritance}
@@ -102,12 +88,6 @@ The logbook contains a date and a mileage of the respective day. This date is st
 If the date of a new entry is older than the date of the last entry, an error message will be displayed. Only current entries can be entered. If new entry is the same date as the old entry, then the mileage will be added up.
 
 \section{Component Design}
-%Wichtig ist hier, ein einheitliches Schema zu verwenden, damit die Beschreibung konsistent ist – gerade wenn mehrere Software-Entwickler daran arbeiten.
-%Da diese Dokumentation sehr änderungsanfällig ist, empfiehlt es sich ab einer gewissen Projektgröße die nötigen Informationen in den Programmcode als formatierten
-%Kommentar aufzunehmen. Mit speziellen Werkzeugen (z.B. Doxygen) ist es möglich,
-%die Kommentare zu extrahieren und somit ohne Mehraufwand immer eine aktuelle
-%Dokumentation zu haben.
-
 \subsection{Class Carpool}
 Manages all vehicles in the carpool.
 It contains the following functions:
@@ -199,10 +179,6 @@ This class has a struct "Date" that includes the current date with "Tag", "Monat
 The Testdriver test alle functions of the Carpool. It adds cars, trucks and motorcycles and deletes them.
 It searchs vehicles by numerplate and print all of them. It tests all logbook functions and the carpool.
 
-%\section{File Description}
-%Hier werden die verwendeten Dateien beschrieben, sofern Informationen aus externen
-%Dateien gelesen bzw. in diese geschrieben werden. Eine solche Beschreibung umfasst...
-
 \section{Test Protocol}
 It has been tested in the file "TestDriver", the following points have been tested:
 \begin{itemize}
@@ -216,23 +192,6 @@ It has been tested in the file "TestDriver", the following points have been test
 
 \subsection{Console Output}
 \sourceCode{./Carpool/output.txt}
-
-%\section{Tables and Graphs}
-%Ergänzende und unterstützende Tabellen und Diagramme können am Ende der Systemdokumentation angefügt werden.
-% Zur Info: Tabellen am besten in Excel erstellen und dann als Bild hier einfügen - Tabellen können in Latex sehr unangenehm werden!!
-% Befehl um Bilder einzufügen:
-%\includegraphics{Relativer/Pfad/zum/Bild.Endung}
-
-\section{Software Quality Metrics}
-
-%Metriken dienen dazu, die Qualität von Software zu messen. Für C++ gibt es hier
-%etwa das frei verfügbare Programm CCCC, welches für Linux und Windows unter
-%der Adresse http://sourceforge.net/projects/cccc verfügbar ist. Für einen gegebenen
-%Souce Code werden die Metriken ermittelt und ausgegeben. Eine (kompakte und auf
-%das Wesentliche gekürzte) Ausgabe kann hier auf freiwilliger Basis aufgenommen
-%werden und dient als Referenz bei Wartungsarbeiten (Degeneration des Codes und
-%Designs).
-
 
 \section{Source Code}
 

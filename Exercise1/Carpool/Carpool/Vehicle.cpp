@@ -11,6 +11,7 @@
 using namespace std;
 
 Vehicle::Vehicle() {
+	//set default values
 	m_brand = "";
 	m_numberplate = "";
 	m_fuel = Fuel::Petrol;
@@ -20,7 +21,7 @@ Vehicle::Vehicle() {
 
 Vehicle::~Vehicle() {};
 
-
+//copy
 Vehicle& Vehicle::operator=(Vehicle const& toCopy) {
 	if (&toCopy != this)  {
 		m_logbook = toCopy.m_logbook;
@@ -45,21 +46,27 @@ void Vehicle::SetFuel(Fuel fuel) {
 }
 
 ostream& Vehicle::PrintList(ostream& ost) {
+	//print all entries of logbook
 	m_logbook.PrintLogEntries(ost);
 	return ost;
 }
 
 unsigned long Vehicle::GetMileage() const{
+	//return total driven kilometers by vehicle
 	return m_logbook.GetTotalDistance();
 }
 
 void Vehicle::AddNewLogbookEntry(size_t const& day, size_t const& month, size_t const& year, int const& distance) {
+	//create the struct Date by the given data
 	Logbook::Date date = CreateDate(day, month, year);
+	//add new entry, set date and distance
 	m_logbook.AddNewEntry(date, distance);
 }
 
 void Vehicle::ChangeLastLogbookEntry(size_t const& day, size_t const& month, size_t const& year, int const& distance) {
+	//create the struct Date by the given data
 	Logbook::Date date = CreateDate(day, month, year);
+	//renew entry, set new date and new distance
 	m_logbook.ChangeLastEntry(date, distance);
 }
 
@@ -70,16 +77,20 @@ Logbook::Date Vehicle::CreateDate(size_t const& day, size_t const& month, size_t
 	date.year = 0;
 
 	try {
+		//check if day is between 1 and 31
 		if (day <= 0 && day > m_daysPerMonth) {
 			throw exception("Wrong Date: Your day is not valid");
 		}
+		//check if month is between 1 and 12
 		if (month <= 0 && month > m_monthPerYear) {
 			throw exception("Wrong Date: Your month is not valid");
 		}
+		//check if year is not negativ
 		if (year < 0) {
 			throw exception("Wrong Date: Your year is not valid");
 		}
 
+		//check if the new date is not in the future
 		if (year == m_currentYear) {
 			if (month > m_currentMonth) {
 				throw exception("Wrong Date: Back to the Future?");
@@ -110,7 +121,10 @@ void Vehicle::setCurrentDate() {
 	tm ltm;
 	localtime_s(&ltm, &now);
 
+	//calculate the current year
 	m_currentYear = ltm.tm_year + 1900;
+	//calculate the current month
 	m_currentMonth = 1 + ltm.tm_mon;
+	//gets the current day
 	m_currentDay = ltm.tm_mday;
 }

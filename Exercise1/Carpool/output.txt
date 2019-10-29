@@ -71,8 +71,8 @@ Kennzeichen: PE-21HR
 Fahrzeugart: PKW
 Marke: Daniels Sweetheart
 Kennzeichen: LL-Caro1
-14.2.2017.45 km
-14.2.2018.50 km
+14.2.2017    45 km
+14.2.2018    50 km
 
 Fahrzeugart: PKW
 Marke: Fiat Multipla
@@ -99,8 +99,8 @@ Kennzeichen: PE-21HR
 Fahrzeugart: PKW
 Marke: Daniels Sweetheart
 Kennzeichen: LL-Caro1
-14.2.2017.45 km
-14.2.2018.50 km
+14.2.2017    45 km
+14.2.2018    50 km
 
 Fahrzeugart: PKW
 Marke: Fiat Multipla
@@ -127,8 +127,8 @@ Kennzeichen: PE-21HR
 Fahrzeugart: PKW
 Marke: Daniels Sweetheart
 Kennzeichen: LL-Caro1
-14.2.2017.45 km
-14.2.2018.50 km
+14.2.2017    45 km
+14.2.2018    50 km
 
 Fahrzeugart: PKW
 Marke: Fiat Multipla

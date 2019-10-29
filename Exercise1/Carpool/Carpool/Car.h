@@ -15,11 +15,15 @@
 class Car : public Vehicle
 {
 public:
+	//constructor
 	Car();
+	//create a new car
 	Car(std::string const& brand, std::string const& numberplate, Fuel fuel);
+	//deconstrcutor
 	virtual ~Car();
+	//Prints the brand, type, numberplate and logbook data
 	virtual std::ostream& Print(std::ostream& ost) override;
+	//clone car
 	virtual std::unique_ptr<Vehicle> Clone() override;
 };
 #endif // CAR
-

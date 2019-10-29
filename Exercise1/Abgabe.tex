@@ -3,6 +3,8 @@
 \begin{document}
 \graphicspath{{./}}
 
+
+
 \includepdf[pages=-]{Angabe.pdf}
 
 \title{SDP - Exercise 01} % Übungsname und Nummer angeben
@@ -18,6 +20,10 @@ Viktoria Streibl - S1810306013\\
 \newpage
 \tableofcontents % Inhaltsverzeichnis erstellen
 \newpage
+
+\ihead{Viktoria Streibl}
+\ohead{Daniel Weyrer}
+\chead{SDP3-UE Uebung 01}
 
 \section{Organizational}
 \subsection{Team}
@@ -63,7 +69,7 @@ Viktoria Streibl - S1810306013\\
 
 \subsubsection {Daniel Weyrer}
 \begin{itemize}
-	\item estimated: 6ph 
+	\item estimated: 6 ph 
 	\item actually: 8 ph
 \end{itemize}
 % Für eine numerierte Aufzählung verwendet man 
@@ -199,18 +205,14 @@ This class has a struct "Date" that includes the current date with "Tag", "Monat
 
 \subsection{TestDriver}
 The Testdriver test alle functions of the Carpool. It adds cars, trucks and motorcycles and deletes them.
-It searchs vehicles by numerplate and print all of them. It tests all logbook functions and the carpool.
+It searches vehicles by numberplate and print all of them. It tests all logbook functions and the carpool.
 
 %\section{File Description}
 %Hier werden die verwendeten Dateien beschrieben, sofern Informationen aus externen
 %Dateien gelesen bzw. in diese geschrieben werden. Eine solche Beschreibung umfasst...
 
+\newpage
 \section{Test Protocol}
-
-Im Testprotokoll werden die Testdaten und die Testergebnisse für alle Testfälle beschrieben. Weiters muss die Testumgebung angeführt sein (welches Testframework
-wurde verwendet, mit welchen Komponentenversionen wurde gestestet, welche Stubs
-wurden verwendet, etc). Wenn die Komponenten und Subsysteme getrennt getestet
-wurden, ist die Testprotokollierung für die Komponenten getrennt anzugeben. Weiters sind identifizierte Schwachstellen und Probleme festzuhalten.
 
 \sourceCode{./Carpool/output.txt}
 
@@ -220,17 +222,7 @@ wurden, ist die Testprotokollierung für die Komponenten getrennt anzugeben. Wei
 % Befehl um Bilder einzufügen:
 %\includegraphics{Relativer/Pfad/zum/Bild.Endung}
 
-\section{Software Quality Metrics}
-
-%Metriken dienen dazu, die Qualität von Software zu messen. Für C++ gibt es hier
-%etwa das frei verfügbare Programm CCCC, welches für Linux und Windows unter
-%der Adresse http://sourceforge.net/projects/cccc verfügbar ist. Für einen gegebenen
-%Souce Code werden die Metriken ermittelt und ausgegeben. Eine (kompakte und auf
-%das Wesentliche gekürzte) Ausgabe kann hier auf freiwilliger Basis aufgenommen
-%werden und dient als Referenz bei Wartungsarbeiten (Degeneration des Codes und
-%Designs).
-
-
+\newpage
 \section{Source Code}
 
 \subsection{Class Carpool}
@@ -242,21 +234,28 @@ wurden, ist die Testprotokollierung für die Komponenten getrennt anzugeben. Wei
 \subsection{Class Vehicle}
 \subsubsection{Vehicle.h}
 \sourceCode{./Carpool/Carpool/Vehicle.h}
+
+\newpage
 \subsubsection{Vehicle.cpp}
 \sourceCode{./Carpool/Carpool/Vehicle.cpp}
 
+\newpage
 \subsection{Class Logbook}
 \subsubsection{Logbook.h}
 \sourceCode{./Carpool/Carpool/Logbook.h}
+
+\newpage
 \subsubsection{Logbook.cpp}
 \sourceCode{./Carpool/Carpool/Logbook.cpp}
 
 \subsection{Class Motorcycle}
 \subsubsection{Motorcycle.h}
 \sourceCode{./Carpool/Carpool/Motorcycle.h}
+\newpage
 \subsubsection{Motorcycle.cpp}
 \sourceCode{./Carpool/Carpool/Motorcycle.cpp}
 
+\newpage
 \subsection{Class Car}
 \subsubsection{Car.h}
 \sourceCode{./Carpool/Carpool/Car.h}
@@ -268,6 +267,9 @@ wurden, ist die Testprotokollierung für die Komponenten getrennt anzugeben. Wei
 \sourceCode{./Carpool/Carpool/Truck.h}
 \subsubsection{Truck.cpp}
 \sourceCode{./Carpool/Carpool/Truck.cpp}
+
+\subsubsection{TestDriver.cpp}
+\sourceCode{./Carpool/Carpool/TestDriver.cpp}
 
 % Um Quellcode einzufügen einfach diesen Befehl verwenden:
 %\sourceCode{Relativer/Pfad/zum/SourceCode.Endung}

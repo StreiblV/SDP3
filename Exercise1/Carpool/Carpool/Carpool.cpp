@@ -120,6 +120,9 @@ unsigned long Carpool::TotalMileage() const {
 //Iterates through the container and performs a deep copy
 Carpool& Carpool::operator=(Carpool const& toCopy) {
 	if (&toCopy != this)  {
+		//delete old vehicles in Vector!
+		mVehicles.clear();
+
 		for (VehicleCItor i = toCopy.mVehicles.cbegin(); i < toCopy.mVehicles.cend(); i++) {
 			Add((**i).Clone());
 		}

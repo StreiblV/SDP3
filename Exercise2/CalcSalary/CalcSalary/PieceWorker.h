@@ -4,16 +4,18 @@
 
 #include "Employee.h"
 
-class PieceWorker {
-	virtual std::string GetType() const override;
+class PieceWorker : public Employee {
+	virtual wBase GetType() const override;
+	virtual double Salary() const override;
 
-	virtual void SetProducedPieces() override;
-	virtual void SetSoldPieces() override;
-	virtual std::size_t GetProdPieces() const override;
-	virtual std::size_t GetSoldPieces() const override;
+	void SetProducedPieces(size_t const pieces);
+	std::size_t GetProdPieces() const;
+
+	friend std::ostream& operator <<(std::ostream& ost, PieceWorker const& worker);
 
 private:
-	size_t prodPieces;
+	size_t m_prodPieces;
+	double m_wagePPiece;
 };
 
 #endif //PIECEWORKER_H

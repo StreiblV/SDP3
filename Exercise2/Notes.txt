@@ -2,4 +2,7 @@
 ####		Space for Something		       ####
 ###########################################################
 
-coming soon~
+Designentscheidungen:
+
+Nicknames werden nicht generiert, da jede Firma eigene Namensgebungen hat --> Es wird lediglich überprüft ob dieser Unique ist!
+Wenn nicht, muss ein anderer Nickname gewählt werden.

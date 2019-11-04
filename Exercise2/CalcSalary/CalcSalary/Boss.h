@@ -7,14 +7,12 @@
 class Boss : public Employee {
 public:
 	virtual wBase GetType() const override;
+	virtual double Salary() const override;
 
-	virtual void SetProducedPieces() override;
-	virtual void SetSoldPieces() override;
-	virtual std::size_t GetProdPieces() const override;
-	virtual std::size_t GetSoldPieces() const override;
-
-	void SetBaseSalary(double const& baseSalary);
+	void SetBaseSalary(double const baseSalary);
 	double GetBaseSalary() const;
+
+	friend std::ostream& operator <<(std::ostream& ost, Employee const&);
 
 private:
 	double m_baseSalary;

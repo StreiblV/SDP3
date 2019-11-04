@@ -9,18 +9,21 @@
 class CommissionWorker : public Employee {
 public:
 	virtual wBase GetType() const override;
+	virtual double Salary() const override;
 
-	virtual void SetProducedPieces() override;
-	virtual void SetSoldPieces() override;
+	void SetSoldPieces(size_t const pieces);
+	std::size_t GetSoldPieces() const;
 
-	virtual std::size_t GetProdPieces() const override;
-	virtual std::size_t GetSoldPieces() const override;
-
-	void SetBaseSalary(double const& baseSalary);
+	void SetBaseSalary(double const baseSalary);
 	double GetBaseSalary() const;
+
+	friend std::ostream& operator <<(std::ostream& ost, CommissionWorker const& worker);
+
 
 private:
 	size_t m_soldPieces;
+	double m_wagePPiece;
+
 	double m_baseSalary;
 };
 #endif //COMISSIONWORKER_H

@@ -15,8 +15,26 @@ public:
 		size_t year;
 	} TDate;
 
+	virtual ~Employee();
+
 	virtual wBase GetType() const = 0;	
 	virtual double Salary() const = 0;
+
+	virtual void SetProducedPieces(size_t const pieces) = 0;
+	virtual std::size_t GetProdPieces() const = 0;
+
+	virtual void SetSoldPieces(size_t const pieces) = 0;
+	virtual std::size_t GetSoldPieces() const = 0;
+
+
+	virtual void SetWorkingHours(double const hours) = 0;
+	virtual double GetWorkingHours() const = 0;
+
+	virtual void SetHourlyWage(double const wage) = 0;
+	virtual double GetHourlyWage() const = 0;
+
+	virtual void SetWagePPiece(double const wage) = 0;
+	virtual double GetWagePPiece() const = 0;
 
 	void SetFirstname(std::string const& firstname);
 	std::string GetFirstname();
@@ -35,6 +53,8 @@ public:
 
 	void SetDateOfJoining(TDate const& dateOfJoining);
 	void SetDateOfJoining(std::size_t day, std::size_t month, std::size_t year);
+
+	bool operator ==(Employee const&)
 
 private:
 	std::string m_firstname;

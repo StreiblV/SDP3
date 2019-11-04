@@ -74,6 +74,10 @@ void Employee::SetDateOfJoining(std::size_t day, std::size_t month, std::size_t 
 	SetDateOfJoining(MakeDate(day, month, year));
 }
 
+bool Employee::operator==(Employee const& e) {
+	return (this->GetNickname() == e.GetNickname());
+}
+
 Employee::TDate Employee::MakeDate(std::size_t day, std::size_t month, std::size_t year) {
 	TDate tmp;
 	tmp.day = day; tmp.month = month; tmp.year = year;

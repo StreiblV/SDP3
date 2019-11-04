@@ -26,8 +26,8 @@ Exercise1/Carpool/Debug/Carpool.pdb
 Exercise1/Carpool/Debug/Carpool.ilk
 Exercise1/Carpool/Debug/Carpool.exe
 *.ipch
+Exercise1/Carpool/Carpool/ClassDiagram_CarPool.cd
 *.obj
 Exercise2/CalcSalary/.vs/
 *.user
 *.filters
-Exercise2/CalcSalary/CalcSalary/CalcSalary.vcxproj

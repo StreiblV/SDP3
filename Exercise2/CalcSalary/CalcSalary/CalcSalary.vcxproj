@@ -18,30 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Car.cpp" />
-    <ClCompile Include="Carpool.cpp" />
-    <ClCompile Include="Logbook.cpp" />
-    <ClCompile Include="Motorcycle.cpp" />
-    <ClCompile Include="TestDriver.cpp" />
-    <ClCompile Include="Truck.cpp" />
-    <ClCompile Include="Vehicle.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Car.h" />
-    <ClInclude Include="Carpool.h" />
-    <ClInclude Include="Logbook.h" />
-    <ClInclude Include="Motorcycle.h" />
-    <ClInclude Include="Truck.h" />
-    <ClInclude Include="Vehicle.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{F2D4148B-2FFA-48E5-8D05-251AA128D02E}</ProjectGuid>
-    <RootNamespace>Carpool</RootNamespace>
+    <ProjectGuid>{908D6242-8D1E-4BDE-8F78-EABA7E7C2461}</ProjectGuid>
+    <RootNamespace>CalcSalary</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,6 +122,24 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="CommissionWorker.cpp" />
+    <ClCompile Include="Company.cpp" />
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="HourlyWorker.cpp" />
+    <ClCompile Include="PieceWorker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="CommissionWorker.h" />
+    <ClInclude Include="Company.h" />
+    <ClInclude Include="Employee.h" />
+    <ClInclude Include="HourlyWorker.h" />
+    <ClInclude Include="ICompany.h" />
+    <ClInclude Include="PieceWorker.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

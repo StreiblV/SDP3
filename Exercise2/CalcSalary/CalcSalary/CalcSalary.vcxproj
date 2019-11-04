@@ -129,7 +129,6 @@
     <ClCompile Include="Company.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="HourlyWorker.cpp" />
-    <ClCompile Include="ICompany.cpp" />
     <ClCompile Include="PieceWorker.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +137,7 @@
     <ClInclude Include="Company.h" />
     <ClInclude Include="Employee.h" />
     <ClInclude Include="HourlyWorker.h" />
+    <ClInclude Include="ICompany.h" />
     <ClInclude Include="PieceWorker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

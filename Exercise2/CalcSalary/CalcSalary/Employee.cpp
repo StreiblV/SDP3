@@ -127,6 +127,25 @@ bool Employee::isDateValid(Employee::TDate const& date) {
 	return true;
 }
 
+std::ostream& operator<<(std::ostream& ost, Employee::TDate const& date) {
+	if (ost.good()) {
+		ost << date.day << "." << date.month << "." << date.year;
+	}
+	return ost;
+}
+
+std::ostream& operator<<(std::ostream& ost, wBase const& base) {
+	if (ost.good()) {
+		switch (base) {
+		case wBase::Boss: ost << "Boss";
+		case wBase::Hourly: ost << "HourlyWorker";
+		case wBase::Piece: ost << "PieceWorker";
+		case wBase::Comission: ost << "ComissionWorker";
+		}
+	}
+	return ost;
+}
+
 bool Employee::isSSNValid(std::string const& ssn) {
 	if (ssn.length() != 10) {
 		return false;
@@ -138,6 +157,13 @@ bool Employee::isSSNValid(std::string const& ssn) {
 Employee::TDate Employee::GetDateOfJoining() const {
 	return m_dateOfJoining;
 
+}
+
+void Employee::Print() {
+	std::cout << "Name: " << this->GetFirstname() << " " << this->GetLastname() << std::endl;
+	std::cout << "Kürzel: " << this->GetNickname() << std::endl;
+	std::cout << "Sozialversicherungsnummer: " << this->GetSSN() << std::endl;
+	std::cout << "Einstiegsjahr: " << this->GetDateOfJoining() << std::endl;
 }
 
 void Employee::SetFirstname(std::string const& firstname) {

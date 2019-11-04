@@ -37,7 +37,7 @@ void TestLinzAG() {
 		std::cout << "Everything OK..." << std::endl;
 	}
 	else {
-		std::cout << "Somehting failed..." << std::endl;
+		std::cout << "Something failed..." << std::endl;
 	}
 
 }
@@ -54,7 +54,7 @@ void TestSequality() {
 		std::cout << "Everything OK..." << std::endl;
 	}
 	else {
-		std::cout << "Somehting failed..." << std::endl;
+		std::cout << "Something failed..." << std::endl;
 	}
 }
 
@@ -70,6 +70,6 @@ void TestTractive() {
 		std::cout << "Everything OK..." << std::endl;
 	}
 	else {
-		std::cout << "Somehting failed..." << std::endl;
+		std::cout << "Something failed..." << std::endl;
 	}
 }

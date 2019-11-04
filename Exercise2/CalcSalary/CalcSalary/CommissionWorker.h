@@ -8,6 +8,7 @@
 
 class CommissionWorker : public Employee {
 public:
+	CommissionWorker() = default;
 	virtual wBase GetType() const override;
 	virtual double Salary() const override;
 
@@ -17,7 +18,8 @@ public:
 	void SetBaseSalary(double const baseSalary);
 	double GetBaseSalary() const;
 
-	friend std::ostream& operator <<(std::ostream& ost, CommissionWorker const& worker);
+	virtual void Print() override;
+
 
 
 private:

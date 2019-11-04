@@ -2,9 +2,11 @@
 #define EMPLOYEE_H
 #include <string>
 
+enum class wBase { Boss, Hourly, Piece, Comission };
+
 class Employee {
 public:
-	virtual std::string GetType() const = 0;
+	virtual wBase GetType() const = 0;
 
 	virtual void SetProducedPieces() = 0;
 	virtual void SetSoldPieces() = 0;

@@ -8,7 +8,7 @@
 
 class CommissionWorker : public Employee {
 public:
-	virtual std::string GetType() const override;
+	virtual wBase GetType() const override;
 
 	virtual void SetProducedPieces() override;
 	virtual void SetSoldPieces() override;

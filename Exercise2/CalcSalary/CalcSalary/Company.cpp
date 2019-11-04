@@ -26,7 +26,7 @@ void Company::GetEmployee(std::string const nickname) {
 	EIter itList;
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		if (nickname == (**itList).GetNickname()) {
-			//(**itList).Print(); --Daniel
+			(**itList).Print();
 		}
 	}
 }
@@ -35,7 +35,7 @@ void Company::GetEmployee(wBase type){
 	EIter itList;
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		if (type == (**itList).GetType()) {
-			//(**itList).Print() --Daniel
+			(**itList).Print();
 		}
 	}
 }
@@ -120,7 +120,7 @@ void Company::Print() {
 		cout << "Datenblatt" << endl;	
 		cout << "---------------" << endl;
 
-		//(**itList).Print() -- Daniel
+		(**itList).Print();
 
 		cout << "-------------------------------------------" << endl;
 		cout << "v1.0 Oktober 2019" << endl;

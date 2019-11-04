@@ -15,3 +15,6 @@ Exercise2/CalcSalary/.vs/
 *.user
 *.filters
 
+Exercise2/CalcSalary/x64/Debug/CalcSalary.exe
+Exercise2/CalcSalary/x64/Debug/CalcSalary.ilk
+Exercise2/CalcSalary/x64/Debug/CalcSalary.pdb

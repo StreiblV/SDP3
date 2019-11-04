@@ -36,8 +36,6 @@ public:
 	void SetDateOfJoining(TDate const& dateOfJoining);
 	void SetDateOfJoining(std::size_t day, std::size_t month, std::size_t year);
 
-
-	
 private:
 	std::string m_firstname;
 	std::string m_lastname;
@@ -53,6 +51,5 @@ private:
 	TDate MakeDate(std::size_t day, std::size_t month, std::size_t year);
 
 };
-
 
 #endif //EMPLOYEE_H

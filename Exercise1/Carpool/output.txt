@@ -1,0 +1,147 @@
+##################################
+## 1. Add Vehicles
+##################################
+Cars added successfully...
+Trucks added successfully...
+Motorcycles added successfully...
+
+##################################
+## 2. Remove Vehicle
+##################################
+Car removed successfully...
+Truck removed successfully...
+Motorcycle removed successfully...
+Delete failed: The entered numberplate is not registered in this carpool!
+
+##################################
+## 3. Find Vehicle
+##################################
+Fahrzeugart: PKW
+Marke: Fiat Multipla
+Kennzeichen: RO-666H
+The vehicle with the numberplate :RO-677H is not registered in this carpool!
+
+##################################
+## 4. Print vehicles
+##################################
+Fahrzeugart: PKW
+Marke: Audi
+Kennzeichen: PE-21HR
+
+Fahrzeugart: PKW
+Marke: Daniels Sweetheart
+Kennzeichen: LL-Caro1
+
+Fahrzeugart: PKW
+Marke: Fiat Multipla
+Kennzeichen: RO-666H
+
+Fahrzeugart: LKW
+Marke: Man
+Kennzeichen: LL-Bau1
+
+Fahrzeugart: LKW
+Marke: Volvo
+Kennzeichen: FR-Erde1
+
+Fahrzeugart: Motorrad
+Marke: BMW
+Kennzeichen: IL-24TW
+
+
+
+##################################
+## 5. Logbook
+##################################
+Add 3 Entries
+Add Entry with same date
+Add old Entry
+Wrong Date: Please input a date after the last entry
+Add Entry for the future
+Wrong Date: Back to the Future?
+
+##################################
+## 6. Carpool copy & co
+##################################
+Original...
+Fahrzeugart: PKW
+Marke: Audi
+Kennzeichen: PE-21HR
+
+Fahrzeugart: PKW
+Marke: Daniels Sweetheart
+Kennzeichen: LL-Caro1
+14.2.2017    45 km
+14.2.2018    50 km
+
+Fahrzeugart: PKW
+Marke: Fiat Multipla
+Kennzeichen: RO-666H
+
+Fahrzeugart: LKW
+Marke: Man
+Kennzeichen: LL-Bau1
+
+Fahrzeugart: LKW
+Marke: Volvo
+Kennzeichen: FR-Erde1
+
+Fahrzeugart: Motorrad
+Marke: BMW
+Kennzeichen: IL-24TW
+
+
+Copied via Copy-CTor...
+Fahrzeugart: PKW
+Marke: Audi
+Kennzeichen: PE-21HR
+
+Fahrzeugart: PKW
+Marke: Daniels Sweetheart
+Kennzeichen: LL-Caro1
+14.2.2017    45 km
+14.2.2018    50 km
+
+Fahrzeugart: PKW
+Marke: Fiat Multipla
+Kennzeichen: RO-666H
+
+Fahrzeugart: LKW
+Marke: Man
+Kennzeichen: LL-Bau1
+
+Fahrzeugart: LKW
+Marke: Volvo
+Kennzeichen: FR-Erde1
+
+Fahrzeugart: Motorrad
+Marke: BMW
+Kennzeichen: IL-24TW
+
+
+Copied via Assignment...
+Fahrzeugart: PKW
+Marke: Audi
+Kennzeichen: PE-21HR
+
+Fahrzeugart: PKW
+Marke: Daniels Sweetheart
+Kennzeichen: LL-Caro1
+14.2.2017    45 km
+14.2.2018    50 km
+
+Fahrzeugart: PKW
+Marke: Fiat Multipla
+Kennzeichen: RO-666H
+
+Fahrzeugart: LKW
+Marke: Man
+Kennzeichen: LL-Bau1
+
+Fahrzeugart: LKW
+Marke: Volvo
+Kennzeichen: FR-Erde1
+
+Fahrzeugart: Motorrad
+Marke: BMW
+Kennzeichen: IL-24TW

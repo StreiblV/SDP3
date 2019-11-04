@@ -1,12 +1,15 @@
 
 \include{Definition} %beinhaltet alle benötigten Packages etc.
 \begin{document}
+\graphicspath{{./}}
 
-\title{SDP - Uebung 02} % Übungsname und Nummer angeben
-\subtitle{Wintersemester 2019/20} % Semester angeben oder auskommentieren, falls nicht erwünscht
+\includepdf[pages=-]{Angabe.pdf}
+
+\title{SDP - Exercise 02} % Übungsname und Nummer angeben
+\subtitle{winter semester 2019/20} % Semester angeben oder auskommentieren, falls nicht erwünscht
 \author{
 Viktoria Streibl - S1810306013\\
-  Daniel Weyrer - S1820306047
+  Daniel Weyrer - S1820306044
 } % Autorenname
 \date{\today} % Das heutige Datum automatisch einfügen
 
@@ -16,86 +19,227 @@ Viktoria Streibl - S1810306013\\
 \tableofcontents % Inhaltsverzeichnis erstellen
 \newpage
 
-% Kure Befehlsreferenz
-%\section{} erstellt eine Überschrift
-%während
-%\subsection{} eine Unterüberschrift erstellt
-% Eine neue Seite wird mit \newpage erstellt
+\ihead{Viktoria Streibl}
+\ohead{Daniel Weyrer}
+\chead{SDP3-UE Uebung 02}
 
-\section{Organisatorisches}
-
-Hier werden organisatorische Dinge angeführt, etwa:
+\section{Organizational}
+\subsection{Team}
 \begin{itemize}
-	\item das Team und seine Mitarbeiter,
-	\item die Aufteilung und die Verantwortungsbereiche der Mitarbeiter,
-	\item der geschätzte Aufwand in Mh,
+	\item Viktoria 	Streibl 		- 	S1810306013
+	\item Daniel 	Weyrer		-	S1820306044
 \end{itemize}
 
-% Für eine numerierte Aufzählung verwendet man 
+\subsection{Roles and responsibilities}
 
-%\begin{enumerate}
-%	\item 
-%\end{enumerate}
+\subsubsection{Jointly}
+\begin{itemize}
+	\item planning
+	\item Documentation
+	\item Systemdocumentation
+	\item Class Diagram
+\end{itemize}
+
+\subsubsection{Viktoria Streibl}
+\begin{itemize}
+	\item Main Class Company
+	\item Interface ICompany
+	\item Testdriver Client
+	\item Main Testdriver
+	
+\end{itemize}
+
+\subsubsection{Daniel Weyrer}
+\begin{itemize}
+	\item Base Class for Employee
+	\item Derived Classes
+		\subitem Class Commission Worker
+		\subitem Class Hourly Worker
+		\subitem Class Pieces Worker
+		\subitem Class Boss
+\end{itemize}
+
+\subsection{Effort}
+
+\subsubsection {Viktoria Streibl}
+\begin{itemize}
+	\item estimated: 10ph 
+	\item actually: - ph
+\end{itemize}
+
+\subsubsection {Daniel Weyrer}
+\begin{itemize}
+	\item estimated: 10 ph 
+	\item actually: - ph
+\end{itemize}
+
+\section{Requirenment Definition(System Specification)}
+It was a company desired the various types of employees includes, such as commission worker, hourly worker, pieces worker and boss. Each employee type should also include and output some key data such as name, SSN, date of joining, salary and birthday. In addition, each company has to ouput the name and location.
+Any number of employees can be added and deleted in the programm, but the client is not allowed to do so. It is possible to search for employees by nickname as well as by the type. The Client can also get all produces and all sold pieces.
+
+\section{System Design}
+\subsection{Classdiagram}
+\includegraphics[scale=0.65]{ClassDiagram}
+
+\subsection{Design Decisions}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{Search Employee}
+Employee is searched by nickname because it has to be unique. To be sure that the nickname is unique we check it while adding new employee.
+
+\section{Component Design}
+\subsection{Class Client}
+The Client simulate a person which use the interface.
+The following functions tests the functionality:
+\begin{itemize}
+	\item Test the company name
+	\item Test the company location
+	\item Test if it is possible ot find a employee by nickname
+	\item Test if it is possible ot find a employee by birthday
+\end{itemize}
+
+\subsection{Class ICompany}
+Is an interface which is used by the Client.
+It contains the following functions:
+\begin{itemize}
+	\item Get the company name
+	\item Get the company location
+	\item Get an employee by nickname
+	\item Get employees by birthday
+	\item Get all sold pieces
+	\item Get all produced pieces
+	\item Count all employees in the company
+	\item Count all employees with the same age
+	\item Ouput all employees in the company and some general data
+\end{itemize}
+
+The ICompany is the interface between an client and the company. The Client is not allowed to manipulate the employees.
+It defines the methodes with can be used by the client.
+
+"GetCompanyName", returns the name of the company.
+"GetCompanyLocation", returns the location of the company.
+"GetEmployee", can be used with the nickname or with the birthday and returns the employees.
+"GetSoldPieces", counts all pieces which are sold by the company.
+"GetProdPieces", counts all pieces which are produces by the employees.
+"CountEmployees", returns the number of employees in the company.
+"Print", outputs the name and location of the company, as well as all employees.
+
+\subsection{Class Company}
+Manages all employees in the company. It implements the interface ICompany.
+It contains the following functions:
+\begin{itemize}
+	\item Add a new Employee
+	\item Remove a Employee
+	\item All functions from ICompany
+\end{itemize}
+
+The Company class manages all Employees. It uses unique pointers stored in a vector, to avoid shallow-copies.
+With the method "AddEmploye" a new employee can be created. Should a employee already exist with the same nickname. So this employee is not stored and an error message output.
+"DeleteEmployee" deletes a employee. If none is stored with the nickname an exception get`s thrown and caught in the same method.
+
+\subsection{Class Employee}
+Is the base class of all employee types.
+It contains the following functions:
+\begin{itemize}
+	\item 
+\end{itemize}
+
+\subsection{Class CommissionWorker}
+This class represents a comission worker.
+\begin{itemize}
+	\item
+\end{itemize}
+
+\subsection{Class HourlyWorker}
+This class represents a hourly worker.
+\begin{itemize}
+	\item
+\end{itemize}
+
+\subsection{Class PiecesWorker}
+This class represents a pieces worker.
+\begin{itemize}
+	\item
+\end{itemize}
+
+\subsection{Class Boss}
+This class represents a boss.
+\begin{itemize}
+	\item
+\end{itemize}
+
+\subsection{TestDriver}
+The Testdriver test alle functions of the Client. It adds commisson worker, hourly worker, pieces worker and a boss and deletes them.
+It searches employees by nickname and birthday and print all of them.
+
+\newpage
+\section{Test Protocol}
+It has been tested in the file "TestDriver", the following points have been tested:
+\begin{itemize}
+	\item 
+\end{itemize}
+
+\subsection{Console Output}
+\sourceCode{./CalcSalary/output.txt}
+\newpage
+
+\section{Source Code}
 
 
-\section{Anforderungsdefinition (Systemspezifikation)}
+\subsection{Class Client}
+\subsubsection{Client.h}
+\sourceCode{./CalcSalary/CalcSalary/Client.h}
+\newpage
+\subsubsection{Client.cpp}
+\sourceCode{./CalcSalary/CalcSalary/Client.cpp}
 
-Hier wird die Aufgabenstellung beschrieben. Sie ist gegebenfalls aus der Systemspezifikation abzuleiten und in kompakter Form zu halten. Man sollte hier in kurzen und
-prägnanten Worten lesen können, worum es überhaupt geht. Neben den Anforderungen und Zielen steht hier alles, was von fundamentaler Bedeutung für das Verständnis
-eines nicht versierten Lesers (der aber sehr wohl über einschlägige Kenntnisse verfügt) nötig ist. Alles andere entfällt hier.
+\subsection{Interface ICompany}
+\subsubsection{ICompany.h}
+\sourceCode{./CalcSalary/CalcSalary/ICompany.h}
 
-\section{Systementwurf}
+\subsection{Class Company}
+\subsubsection{Company.h}
+\sourceCode{./CalcSalary/CalcSalary/Company.h}
+\subsubsection{Company.cpp}
+\sourceCode{./CalcSalary/CalcSalary/Company.cpp}
 
-Hier erfolgt die Beschreibung des Systementwurfes. Der Leser muss diesem Kapitel
-die Grundstruktur des Softwaresystems entnehmen können. Soweit notwendig, sind
-auch komplexere Teilsysteme funktional zu zerlegen.
-Der Leser entnimmt hier....
+\subsection{Class Employee}
+\subsubsection{Employee.h}
+\sourceCode{./CalcSalary/CalcSalary/Employee.h}
+\subsubsection{Employee.cpp}
+\sourceCode{./CalcSalary/CalcSalary/Employee.cpp}
 
+\newpage
+\subsection{Class CommissionWorker}
+\subsubsection{CommissionWorker.h}
+\sourceCode{./CalcSalary/CalcSalary/CommissionWorker.h}
+\newpage
+\subsubsection{CommissionWorker.cpp}
+\sourceCode{./CalcSalary/CalcSalary/CommissionWorker.cpp}
 
-\section{Komponentenentwurf}
+\subsection{Class HourlyWorker}
+\subsubsection{HourlyWorker.h}
+\sourceCode{./CalcSalary/CalcSalary/HourlyWorker.h}
+\newpage
+\subsubsection{HourlyWorker.cpp}
+\sourceCode{./CalcSalary/CalcSalary/HourlyWorker.cpp}
 
-...
+\subsection{Class PieceWorker}
+\subsubsection{PieceWorker.h}
+\sourceCode{./CalcSalary/CalcSalary/PieceWorker.h}
+\newpage
+\subsubsection{PieceWorker.cpp}
+\sourceCode{./CalcSalary/CalcSalary/PieceWorker.cpp}
 
-Wichtig ist hier, ein einheitliches Schema zu verwenden, damit die Beschreibung konsistent ist – gerade wenn mehrere Software-Entwickler daran arbeiten.
-Da diese Dokumentation sehr änderungsanfällig ist, empfiehlt es sich ab einer gewissen Projektgröße die nötigen Informationen in den Programmcode als formatierten
-Kommentar aufzunehmen. Mit speziellen Werkzeugen (z.B. Doxygen) ist es möglich,
-die Kommentare zu extrahieren und somit ohne Mehraufwand immer eine aktuelle
-Dokumentation zu haben.
+\subsection{Class Boss}
+\subsubsection{Boss.h}
+\sourceCode{./CalcSalary/CalcSalary/Boss.h}
+\newpage
+\subsubsection{Boss.cpp}
+\sourceCode{./CalcSalary/CalcSalary/Boss.cpp}
 
-
-\section{Dateibeschreibung}
-
-Hier werden die verwendeten Dateien beschrieben, sofern Informationen aus externen
-Dateien gelesen bzw. in diese geschrieben werden. Eine solche Beschreibung umfasst...
-
-\section{Testprotokollierung}
-
-Im Testprotokoll werden die Testdaten und die Testergebnisse für alle Testfälle beschrieben. Weiters muss die Testumgebung angeführt sein (welches Testframework
-wurde verwendet, mit welchen Komponentenversionen wurde gestestet, welche Stubs
-wurden verwendet, etc). Wenn die Komponenten und Subsysteme getrennt getestet
-wurden, ist die Testprotokollierung für die Komponenten getrennt anzugeben. Weiters sind identifizierte Schwachstellen und Probleme festzuhalten.
-
-\section{Tabellen und Diagramme}
-
-Ergänzende und unterstützende Tabellen und Diagramme können am Ende der Systemdokumentation angefügt werden.
-
-% Zur Info: Tabellen am besten in Excel erstellen und dann als Bild hier einfügen - Tabellen können in Latex sehr unangenehm werden!!
-% Befehl um Bilder einzufügen:
-%\includegraphics{Relativer/Pfad/zum/Bild.Endung}
-
-\section{Software-Qualitätsmetriken}
-
-Metriken dienen dazu, die Qualität von Software zu messen. Für C++ gibt es hier
-etwa das frei verfügbare Programm CCCC, welches für Linux und Windows unter
-der Adresse http://sourceforge.net/projects/cccc verfügbar ist. Für einen gegebenen
-Souce Code werden die Metriken ermittelt und ausgegeben. Eine (kompakte und auf
-das Wesentliche gekürzte) Ausgabe kann hier auf freiwilliger Basis aufgenommen
-werden und dient als Referenz bei Wartungsarbeiten (Degeneration des Codes und
-Designs).
-
-\section{Quellcode}
-
-\subsection{Erster Header}
+\subsubsection{TestDriver.cpp}
+\sourceCode{./CalcSalary/CalcSalary/TestDriver.cpp}
 
 % Um Quellcode einzufügen einfach diesen Befehl verwenden:
 %\sourceCode{Relativer/Pfad/zum/SourceCode.Endung}

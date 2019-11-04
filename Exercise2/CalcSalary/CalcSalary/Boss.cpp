@@ -15,3 +15,38 @@ void Boss::SetBaseSalary(double const baseSalary) {
 double Boss::GetBaseSalary() const {
 	return m_baseSalary;
 }
+
+void Boss::SetProducedPieces(size_t const pieces) {
+}
+
+std::size_t Boss::GetProdPieces() const {
+	return 0;
+}
+
+void Boss::SetSoldPieces(size_t const pieces) {
+}
+
+std::size_t Boss::GetSoldPieces() const {
+	return 0;
+}
+
+void Boss::SetWorkingHours(double const hours) {
+}
+
+double Boss::GetWorkingHours() const {
+	return 0.0;
+}
+
+void Boss::SetHourlyWage(double const wage) {
+}
+
+double Boss::GetHourlyWage() const {
+	return 0.0;
+}
+
+void Boss::SetWagePPiece(double const wage) {
+}
+
+double Boss::GetWagePPiece() const {
+	return 0.0;
+}

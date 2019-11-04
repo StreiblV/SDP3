@@ -54,7 +54,7 @@ public:
 	void SetDateOfJoining(TDate const& dateOfJoining);
 	void SetDateOfJoining(std::size_t day, std::size_t month, std::size_t year);
 
-	bool operator ==(Employee const&)
+	bool operator ==(Employee const&);
 
 private:
 	std::string m_firstname;

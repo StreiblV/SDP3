@@ -6,6 +6,7 @@
 #include <algorithm>
 
 enum class wBase { Boss, Hourly, Piece, Comission };
+std::ostream& operator<<(std::ostream& ost, wBase const& base);
 
 class Employee {
 public:
@@ -14,6 +15,7 @@ public:
 		size_t month;
 		size_t year;
 	} TDate;
+	friend std::ostream& operator<<(std::ostream& ost, TDate const& date);
 
 	virtual ~Employee();
 
@@ -36,6 +38,8 @@ public:
 	virtual void SetWagePPiece(double const wage) = 0;
 	virtual double GetWagePPiece() const = 0;
 
+	virtual void Print();
+
 	void SetFirstname(std::string const& firstname);
 	std::string GetFirstname();
 
@@ -51,10 +55,13 @@ public:
 	void SetBirthday(TDate const& birthday);
 	TDate GetBirthday() const;
 
+	TDate GetDateOfJoining() const;
 	void SetDateOfJoining(TDate const& dateOfJoining);
 	void SetDateOfJoining(std::size_t day, std::size_t month, std::size_t year);
 
 	bool operator ==(Employee const&);
+
+
 
 private:
 	std::string m_firstname;
@@ -67,7 +74,6 @@ private:
 	//private helper methods
 	bool isDateValid(TDate const& date);
 	bool isSSNValid(std::string const& ssn);
-	TDate GetDateOfJoining() const;
 	TDate MakeDate(std::size_t day, std::size_t month, std::size_t year);
 
 };

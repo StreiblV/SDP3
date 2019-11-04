@@ -56,7 +56,7 @@ void TestLinzAG(Company* const linzag) {
 		std::cout << "Everything OK..." << std::endl;
 	}
 	else {
-		std::cout << "Somehting failed..." << std::endl;
+		std::cout << "Something failed..." << std::endl;
 	}
 
 }
@@ -75,7 +75,7 @@ void TestSequality(Company* const sequality) {
 		std::cout << "Everything OK..." << std::endl;
 	}
 	else {
-		std::cout << "Somehting failed..." << std::endl;
+		std::cout << "Something failed..." << std::endl;
 	}
 }
 void TestTractive(Company* const tractive) {
@@ -92,6 +92,6 @@ void TestTractive(Company* const tractive) {
 		std::cout << "Everything OK..." << std::endl;
 	}
 	else {
-		std::cout << "Somehting failed..." << std::endl;
+		std::cout << "Something failed..." << std::endl;
 	}
 }

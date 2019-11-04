@@ -6,6 +6,8 @@
 
 class HourlyWorker : public Employee {
 public:
+	HourlyWorker() = default;
+
 	virtual wBase GetType() const override;
 	virtual double Salary() const override;
 
@@ -25,14 +27,11 @@ public:
 	virtual void SetWagePPiece(double const wage);
 	virtual double GetWagePPiece() const;
 
-	friend std::ostream& operator <<(std::ostream& ost, HourlyWorker const& worker);
+	virtual void Print() override;
+
 
 private:
-	size_t m_soldPieces;
-	size_t m_prodPieces;
 	double m_workingHours;
-
 	double m_hourlyWage;
-	double m_wagePPiece;
 };
 #endif //HOURLYWORKER_H

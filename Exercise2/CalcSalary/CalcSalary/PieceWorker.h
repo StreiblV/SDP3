@@ -5,13 +5,30 @@
 #include "Employee.h"
 
 class PieceWorker : public Employee {
+
+	PieceWorker() = default;
+
 	virtual wBase GetType() const override;
 	virtual double Salary() const override;
 
-	void SetProducedPieces(size_t const pieces);
-	std::size_t GetProdPieces() const;
+	virtual void SetProducedPieces(size_t const pieces) override;
+	virtual std::size_t GetProdPieces() const override;
 
-	friend std::ostream& operator <<(std::ostream& ost, PieceWorker const& worker);
+	virtual void SetSoldPieces(size_t const pieces) override;
+	virtual std::size_t GetSoldPieces() const override;
+
+
+	virtual void SetWorkingHours(double const hours) override;
+	virtual double GetWorkingHours() const override;
+
+	virtual void SetHourlyWage(double const wage) override;
+	virtual double GetHourlyWage() const override;
+
+	virtual void SetWagePPiece(double const wage) override;
+	virtual double GetWagePPiece() const override;
+
+	virtual void Print() override;
+
 
 private:
 	size_t m_prodPieces;

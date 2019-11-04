@@ -6,16 +6,14 @@ wBase HourlyWorker::GetType() const {
 
 double HourlyWorker::Salary() const {
 	double tmpWage;
-	tmpWage = m_workingHours * m_hourlyWage + m_prodPieces * m_wagePPiece;
+	tmpWage = m_workingHours * m_hourlyWage;
 	return tmpWage;
 }
 
 void HourlyWorker::SetProducedPieces(size_t const pieces) {
-	m_prodPieces = pieces;
 }
 
 void HourlyWorker::SetSoldPieces(size_t const pieces) {
-	m_soldPieces = pieces;
 }
 
 void HourlyWorker::SetWorkingHours(double const hours) {
@@ -23,11 +21,11 @@ void HourlyWorker::SetWorkingHours(double const hours) {
 }
 
 std::size_t HourlyWorker::GetProdPieces() const {
-	return m_prodPieces;
+	return 0;
 }
 
 std::size_t HourlyWorker::GetSoldPieces() const {
-	return m_soldPieces;
+	return 0;
 }
 
 double HourlyWorker::GetWorkingHours() const {
@@ -43,9 +41,15 @@ double HourlyWorker::GetHourlyWage() const {
 }
 
 void HourlyWorker::SetWagePPiece(double const wage) {
-	m_wagePPiece = wage;
 }
 
 double HourlyWorker::GetWagePPiece() const {
-	return m_wagePPiece;
+	return 0;
+}
+
+void HourlyWorker::Print() {
+	std::cout << "Mitarbeiterklasse: " << this->GetType() << std::endl;
+	std::cout << "Arbeitsstunden: " << this->GetWorkingHours() << std::endl;
+	std::cout << "Stundenlohn: " << this->GetHourlyWage() << " EUR" << std::endl;
+	std::cout << "Gehalt: " << this->Salary() << " EUR" << std::endl;
 }

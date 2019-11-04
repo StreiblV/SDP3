@@ -50,3 +50,8 @@ void Boss::SetWagePPiece(double const wage) {
 double Boss::GetWagePPiece() const {
 	return 0.0;
 }
+
+void Boss::Print() {
+	std::cout << "Mitarbeiterklasse: " << this->GetType() << std::endl;
+	std::cout << "Gehalt: " << this->Salary() <<" EUR" << std::endl;
+}

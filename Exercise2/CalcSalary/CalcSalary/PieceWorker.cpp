@@ -15,3 +15,38 @@ void PieceWorker::SetProducedPieces(size_t const pieces) {
 std::size_t PieceWorker::GetProdPieces() const {
 	return m_prodPieces;
 }
+
+void PieceWorker::SetSoldPieces(size_t const pieces) {
+}
+
+std::size_t PieceWorker::GetSoldPieces() const {
+	return 0;
+}
+
+void PieceWorker::SetWorkingHours(double const hours) {
+}
+
+double PieceWorker::GetWorkingHours() const {
+	return 0.0;
+}
+
+void PieceWorker::SetHourlyWage(double const wage) {
+}
+
+double PieceWorker::GetHourlyWage() const {
+	return 0.0;
+}
+
+void PieceWorker::SetWagePPiece(double const wage) {
+}
+
+double PieceWorker::GetWagePPiece() const {
+	return 0.0;
+}
+
+void PieceWorker::Print() {
+	std::cout << "Mitarbeiterklasse: " << this->GetType() << std::endl;
+	std::cout << "Stückzahl: " << this->GetProdPieces() << std::endl;
+	std::cout << "Stückwert: " << this->GetWagePPiece() << " EUR" << std::endl;
+	std::cout << "Gehalt: " << this->Salary() << " EUR" << std::endl;
+}

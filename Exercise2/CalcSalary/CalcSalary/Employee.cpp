@@ -124,7 +124,7 @@ bool Employee::isDateValid(Employee::TDate const& date) {
 }
 
 bool Employee::isSSNValid(std::string const& ssn) {
-	if (ssn.length != 10) {
+	if (ssn.length() != 10) {
 		return false;
 	}
 	auto PredSSN = [](char const c) {return (isdigit(c)); };

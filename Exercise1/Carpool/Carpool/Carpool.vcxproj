@@ -25,16 +25,18 @@
     <ClCompile Include="Motorcycle.cpp" />
     <ClCompile Include="TestDriver.cpp" />
     <ClCompile Include="Truck.cpp" />
-    <ClCompile Include="Vehicles.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h" />
     <ClInclude Include="Carpool.h" />
     <ClInclude Include="Logbook.h" />
     <ClInclude Include="Motorcycle.h" />
-    <ClInclude Include="TestDriver.h" />
     <ClInclude Include="Truck.h" />
-    <ClInclude Include="Vehicles.h" />
+    <ClInclude Include="Vehicle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

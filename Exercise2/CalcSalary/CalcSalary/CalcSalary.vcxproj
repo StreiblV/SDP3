@@ -140,6 +140,7 @@
     <ClInclude Include="Employee.h" />
     <ClInclude Include="HourlyWorker.h" />
     <ClInclude Include="ICompany.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="PieceWorker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

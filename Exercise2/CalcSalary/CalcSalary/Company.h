@@ -1,4 +1,13 @@
-#pragma once
+/* ______________________________________________________________________
+| Workfile : Company .h
+| Description : [ HEADER ] Class Company to store all data
+| Name : Viktoria Streibl			PKZ : S1810306013
+| Date : 04.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
+#ifndef COMPANY_H
+#define COMPANY_H
 
 #include <string>
 #include <list>
@@ -14,6 +23,7 @@ class Company : public ICompany
 
 public:
 	Company(std::string const name, std::string const location);
+	~Company() = default;
 
 	std::string GetCompanyName() override;
 	std::string GetCompanyLocation() override;
@@ -21,8 +31,11 @@ public:
 	void GetEmployee(wBase type) override;
 	int GetSoldPieces() override;
 	int GetProdPieces() override;
+	double GetSalaryOfEmployee(std::string nickname) override;
+	std::string GetOldestEmployee() override;
 	int CountEmployees() override;
-	int CountEmployess(Employee::TDate birthday) override;
+	int CountEmployees(wBase type) override;
+	int CountEmployeesOlderThan(int year) override;
 	void Print() override;
 
 	void AddEmployee(EUptr e);
@@ -35,4 +48,4 @@ private:
 
 	EIter FindEmployee(std::string nickname);
 };
-
+#endif //COMPANY_H

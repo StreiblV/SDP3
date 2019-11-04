@@ -1,3 +1,11 @@
+/* ______________________________________________________________________
+| Workfile : Company.cpp
+| Description : [ SOURCE ] Class Company to store all data
+| Name : Viktoria Streibl			PKZ : S1810306013
+| Date : 04.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
 #include "Company.h"
 
 using namespace std;
@@ -18,7 +26,7 @@ void Company::GetEmployee(std::string const nickname) {
 	EIter itList;
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		if (nickname == (**itList).GetNickname()) {
-			//(**itList).Print() --Daniel
+			//(**itList).Print(); --Daniel
 		}
 	}
 }
@@ -37,7 +45,7 @@ int Company::GetSoldPieces() {
 
 	list<EUptr>::const_iterator itList;
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
-		//sumSoldPieces += (**itList).GetSoldPieces(); --Daniel
+		sumSoldPieces += (**itList).GetSoldPieces();
 	}
 	return sumSoldPieces;
 }
@@ -46,18 +54,57 @@ int Company::GetProdPieces() {
 	int sumProdPieces = 0;
 	list<EUptr>::const_iterator itList;
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
-		//sumProdPieces += (**itList).GetProdPieces(); --Daniel
+		sumProdPieces += (**itList).GetProdPieces();
 	}
 	return sumProdPieces;
+}
+
+double Company::GetSalaryOfEmployee(std::string nickname) {
+	EIter iter = FindEmployee(nickname);
+	return (**iter).Salary();
+}
+
+string Company::GetOldestEmployee() {
+	list<EUptr>::const_iterator itList = m_employees.cbegin();
+	string nickname = (**itList).GetNickname();
+	Employee::TDate birthday = (**itList).GetBirthday();
+	for (itList = ++m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
+		if ((**itList).GetBirthday().year == birthday.year) {
+			if ((**itList).GetBirthday().month == birthday.month) {
+				if ((**itList).GetBirthday().day > birthday.day) {
+					nickname = (**itList).GetNickname();
+					birthday = (**itList).GetBirthday();
+				}
+			}
+			else if ((**itList).GetBirthday().year > birthday.year) {
+				nickname = (**itList).GetNickname();
+				birthday = (**itList).GetBirthday();
+			}
+		}
+		else if ((**itList).GetBirthday().year > birthday.year) {
+			nickname = (**itList).GetNickname();
+			birthday = (**itList).GetBirthday();
+		}
+	}
+
+	return nickname;
 }
 
 int Company::CountEmployees() {
 	return m_employees.size();
 }
 
-int Company::CountEmployess(Employee::TDate birthday) {
-	auto PredBirthday = [birthday](EUptr const& e) {
-		return (birthday.year == (*e).GetBirthday().year);
+int Company::CountEmployees(wBase type) {
+	auto PredType = [type](EUptr const& e) {
+		return (type == (*e).GetType());
+	};
+
+	return count_if(m_employees.begin(), m_employees.end(), PredType);
+}
+
+int Company::CountEmployeesOlderThan(int year){
+	auto PredBirthday = [year](EUptr const& e) {
+		return (year <= (*e).GetBirthday().year);
 	};
 
 	return count_if(m_employees.begin(), m_employees.end(), PredBirthday);
@@ -99,9 +146,6 @@ void Company::DeleteEmployee(EUptr e) {
 	}
 	catch (exception const& ex) {
 		cerr << ex.what() << endl;
-	}
-	catch (bad_alloc const& ex) {
-		cerr << " memory allocation : " << ex.what() << endl;
 	}
 }
 

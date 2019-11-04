@@ -130,9 +130,11 @@
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="HourlyWorker.cpp" />
     <ClCompile Include="PieceWorker.cpp" />
+    <ClCompile Include="Testdriver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Boss.h" />
+    <ClInclude Include="Client.h" />
     <ClInclude Include="CommissionWorker.h" />
     <ClInclude Include="Company.h" />
     <ClInclude Include="Employee.h" />

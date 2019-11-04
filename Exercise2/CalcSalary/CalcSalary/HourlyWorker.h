@@ -9,21 +9,21 @@ public:
 	virtual wBase GetType() const override;
 	virtual double Salary() const override;
 
-	void SetProducedPieces(size_t const pieces);
-	std::size_t GetProdPieces() const;
+	virtual void SetProducedPieces(size_t const pieces) override;
+	virtual std::size_t GetProdPieces() const override;
 
-	void SetSoldPieces(size_t const pieces);
-	std::size_t GetSoldPieces() const;
+	virtual void SetSoldPieces(size_t const pieces) override;
+	virtual std::size_t GetSoldPieces() const override;
 
 
-	void SetWorkingHours(double const hours);
-	double GetWorkingHours() const;
+	virtual void SetWorkingHours(double const hours) override;
+	virtual double GetWorkingHours() const override;
 
-	void SetHourlyWage(double const wage);
-	double GetHourlyWage() const;
+	virtual void SetHourlyWage(double const wage);
+	virtual double GetHourlyWage() const;
 
-	void SetWagePPiece(double const wage);
-	double GetWagePPiece() const;
+	virtual void SetWagePPiece(double const wage);
+	virtual double GetWagePPiece() const;
 
 	friend std::ostream& operator <<(std::ostream& ost, HourlyWorker const& worker);
 

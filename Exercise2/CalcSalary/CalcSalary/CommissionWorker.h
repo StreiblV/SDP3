@@ -11,8 +11,8 @@ public:
 	virtual wBase GetType() const override;
 	virtual double Salary() const override;
 
-	void SetSoldPieces(size_t const pieces);
-	std::size_t GetSoldPieces() const;
+	virtual void SetSoldPieces(size_t const pieces) override;
+	virtual std::size_t GetSoldPieces() const override;
 
 	void SetBaseSalary(double const baseSalary);
 	double GetBaseSalary() const;

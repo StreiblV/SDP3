@@ -34,7 +34,7 @@ public:
 	//count how many employees are older than a specific year and check it
 	bool TestCountEmployeesOlderThan(int year, int expectedResult) const;
 	//tests if the salary of an employee is correct
-	bool TestGetSalaryOfEmployee(std::string nickname, double expectedResult) const; 
+	bool TestGetSalaryOfEmployee(std::string nickname, double expectedResult) const;
 	//tests if the oldest employee is correct
 	bool TestGetOldestEmployee(std::string expectedNickname) const;
 	//check for the employee with is the oldest member

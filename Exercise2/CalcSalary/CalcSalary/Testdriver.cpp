@@ -65,8 +65,8 @@ int main() {
 	HourlyWorker hw;
 	hw.SetFirstname("Daniel");
 	hw.SetLastname("Weyrer");
-	hw.SetWagePPiece(13);
-	hw.SetHourlyWage(80);
+	hw.SetWorkingHours(80);
+	hw.SetHourlyWage(13);
 	birthday.day = 17;
 	birthday.month = 1;
 	birthday.year = 1998;
@@ -80,11 +80,11 @@ int main() {
 	linzag.AddEmployee(std::make_unique<HourlyWorker>(hw));
 	tractive.AddEmployee(std::make_unique<HourlyWorker>(hw));
 
-	PieceWorker pw;
+	/*PieceWorker pw;
 	pw.SetFirstname("John");
 	pw.SetLastname("Doe");
 	pw.SetProducedPieces(10);
-	pw.SetWagePPiece(5);
+	pw.SetWagePPiece(5.0);
 	birthday.day = 28;
 	birthday.month = 2;
 	birthday.year = 1983;
@@ -96,7 +96,7 @@ int main() {
 	joinDate.year = 2003;
 	pw.SetDateOfJoining(joinDate);
 	linzag.AddEmployee(std::make_unique<PieceWorker>(pw));
-	tractive.AddEmployee(std::make_unique<PieceWorker>(pw));
+	tractive.AddEmployee(std::make_unique<PieceWorker>(pw));*/
 
 	TestLinzAG(&linzag);
 	TestSequality(&sequality);
@@ -122,6 +122,11 @@ void TestLinzAG(Company* const linzag) {
 	isLinzAGValid = isLinzAGValid ? client_linzAG.TestCompanyName("Linz AG") : false;
 	isLinzAGValid = isLinzAGValid ? client_linzAG.TestCompanyLocation("Linz") : false;
 	isLinzAGValid = isLinzAGValid ? client_linzAG.TestCountEmployees(4) : false;
+	isLinzAGValid = isLinzAGValid ? client_linzAG.TestFindEmployeeByNickname("DaW") : false;
+	isLinzAGValid = isLinzAGValid ? client_linzAG.TestCountEmployeesOlderThan(1990, 2) : false;
+	isLinzAGValid = isLinzAGValid ? client_linzAG.TestGetOldestEmployee("CG-Boss") : false;
+	isLinzAGValid = isLinzAGValid ? client_linzAG.TestLongestTimeInCompany("CG-Boss") : false;
+	client_linzAG.TestPrintAll();
 
 	if (isLinzAGValid) {
 		std::cout << "Everything OK..." << std::endl;
@@ -141,6 +146,9 @@ void TestSequality(Company* const sequality) {
 
 	isSequalityValid = isSequalityValid ? client_sequality.TestCompanyName("Sequality GmbH") : false;
 	isSequalityValid = isSequalityValid ? client_sequality.TestCompanyLocation("Hagenberg") : false;
+	isSequalityValid = isSequalityValid ? client_sequality.TestCountEmployeesByType(wBase::Comission, 1) : false;
+	isSequalityValid = isSequalityValid ? client_sequality.TestCountTotalSoldPieces(11) : false;
+	client_sequality.TestPrintAll();
 
 	if (isSequalityValid) {
 		std::cout << "Everything OK..." << std::endl;
@@ -158,6 +166,9 @@ void TestTractive(Company* const tractive) {
 
 	isTractiveValid = isTractiveValid ? client_tractive.TestCompanyName("Tractive") : false;
 	isTractiveValid = isTractiveValid ? client_tractive.TestCompanyLocation("Pasching") : false;
+	isTractiveValid = isTractiveValid ? client_tractive.TestCountTotalProducesPieces(10) : false;
+	isTractiveValid = isTractiveValid ? client_tractive.TestGetSalaryOfEmployee("DaW", 1040) : false;
+	client_tractive.TestPrintAll();
 
 	if (isTractiveValid) {
 		std::cout << "Everything OK..." << std::endl;

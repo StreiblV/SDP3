@@ -38,7 +38,7 @@ public:
 	//returns the nickname of the oldest employee
 	virtual std::string GetOldestEmployee() = 0;
 	//check for the employee with is the oldest member
-	virtual std::string GetEmployeeWithLongestTimeInCompany();
+	virtual std::string GetEmployeeWithLongestTimeInCompany() = 0;
 	//returns the number of employees in the company
 	virtual int CountEmployees() = 0;
 	//returns the number of employees of a specific type in the company

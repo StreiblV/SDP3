@@ -28,6 +28,13 @@ std::size_t HourlyWorker::GetSoldPieces() const {
 	return 0;
 }
 
+void HourlyWorker::SetBaseSalary(double const baseSalary) {
+}
+
+double HourlyWorker::GetBaseSalary() const {
+	return 0.0;
+}
+
 double HourlyWorker::GetWorkingHours() const {
 	return m_workingHours;
 }

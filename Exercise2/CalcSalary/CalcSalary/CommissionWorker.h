@@ -15,12 +15,22 @@ public:
 	virtual void SetSoldPieces(size_t const pieces) override;
 	virtual std::size_t GetSoldPieces() const override;
 
-	void SetBaseSalary(double const baseSalary);
-	double GetBaseSalary() const;
+	virtual void SetBaseSalary(double const baseSalary) override;
+	virtual double GetBaseSalary() const override;
+
+	virtual void SetProducedPieces(size_t const pieces) override;
+	virtual std::size_t GetProdPieces() const override;
+
+	virtual void SetWorkingHours(double const hours) override;
+	virtual double GetWorkingHours() const override;
+
+	virtual void SetHourlyWage(double const wage);
+	virtual double GetHourlyWage() const;
+
+	virtual void SetWagePPiece(double const wage);
+	virtual double GetWagePPiece() const;
 
 	virtual void Print() override;
-
-
 
 private:
 	size_t m_soldPieces;

@@ -24,6 +24,34 @@ double CommissionWorker::GetBaseSalary() const {
 	return m_baseSalary;
 }
 
+void CommissionWorker::SetProducedPieces(size_t const pieces) {
+}
+
+std::size_t CommissionWorker::GetProdPieces() const {
+	return 0;
+}
+
+void CommissionWorker::SetWorkingHours(double const hours) {
+}
+
+double CommissionWorker::GetWorkingHours() const {
+	return 0.0;
+}
+
+void CommissionWorker::SetHourlyWage(double const wage) {
+}
+
+double CommissionWorker::GetHourlyWage() const {
+	return 0.0;
+}
+
+void CommissionWorker::SetWagePPiece(double const wage) {
+}
+
+double CommissionWorker::GetWagePPiece() const {
+	return 0.0;
+}
+
 void CommissionWorker::Print() {
 	std::cout << "Mitarbeiterklasse: " << this->GetType() << std::endl;
 	std::cout << "Grundgehalt: " << this->GetBaseSalary() << std::endl;

@@ -1,5 +1,9 @@
 #include "Boss.h"
 
+Boss::Boss(double const baseSalary) {
+	m_baseSalary = baseSalary;
+}
+
 wBase Boss::GetType() const {
 	return wBase::Boss;
 }

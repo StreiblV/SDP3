@@ -1,5 +1,6 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
+#include "Object.h"
 #include <string>
 #include <time.h>
 #include <iostream>
@@ -8,7 +9,7 @@
 enum class wBase { Boss, Hourly, Piece, Comission };
 std::ostream& operator<<(std::ostream& ost, wBase const& base);
 
-class Employee {
+class Employee : public Object {
 public:
 	typedef struct  {
 		size_t day;
@@ -16,8 +17,7 @@ public:
 		size_t year;
 	} TDate;
 	friend std::ostream& operator<<(std::ostream& ost, TDate const& date);
-
-	virtual ~Employee();
+	Employee() = default;
 
 	virtual wBase GetType() const = 0;	
 	virtual double Salary() const = 0;
@@ -28,6 +28,8 @@ public:
 	virtual void SetSoldPieces(size_t const pieces) = 0;
 	virtual std::size_t GetSoldPieces() const = 0;
 
+	virtual void SetBaseSalary(double const baseSalary) = 0;
+	virtual double GetBaseSalary() const = 0;
 
 	virtual void SetWorkingHours(double const hours) = 0;
 	virtual double GetWorkingHours() const = 0;

@@ -39,7 +39,7 @@ void Employee::SetBirthday(Employee::TDate const& birthday) {
 			localtime_s(&ltm, &now);
 
 			//Worker needs to be older than the minimum Age
-			if ((ltm.tm_year - minimumAge) >= birthday.year && ltm.tm_mon >= birthday.month && ltm.tm_mday >= birthday.day) {
+			if (((ltm.tm_year + 1900) - minimumAge) /* >= birthday.year && ltm.tm_mon >= birthday.month && ltm.tm_mday >= birthday.day*/) {
 				m_birthday = birthday;
 			}
 			else {
@@ -123,7 +123,7 @@ bool Employee::isDateValid(Employee::TDate const& date) {
 	}
 
 	//Check if current date is in the past
-	if (date.year > ltm.tm_year || date.month > ltm.tm_mon || date.day > ltm.tm_mday) {
+	if (date.year > ltm.tm_year && date.month > ltm.tm_mon && date.day > ltm.tm_mday) {
 		return false;
 	}
 
@@ -167,12 +167,6 @@ std::string Employee::GetLastname() const {
 }
 
 //Overloaded Output-Operators for date struct and enum class
-
-
-
-
-
-
 
 std::ostream& operator<<(std::ostream& ost, Employee::TDate const& date) {
 	if (ost.good()) {

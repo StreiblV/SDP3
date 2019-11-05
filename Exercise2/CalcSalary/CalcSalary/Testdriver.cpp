@@ -37,7 +37,7 @@ int main() {
 	birthday.month = 1;
 	birthday.year = 1972;
 	b.SetBirthday(birthday);
-	b.SetNickname("CG-Boss");
+	b.SetNickname("CGB");
 	b.setSSN("1234512345");
 	joinDate.day = 1;
 	joinDate.month = 1;
@@ -130,8 +130,8 @@ void TestLinzAG(Company* const linzag) {
 	isLinzAGValid = isLinzAGValid ? client_linzAG.TestCountEmployees(4) : false;
 	isLinzAGValid = isLinzAGValid ? client_linzAG.TestFindEmployeeByNickname("DaW") : false;
 	isLinzAGValid = isLinzAGValid ? client_linzAG.TestCountEmployeesOlderThan(1990, 2) : false;
-	isLinzAGValid = isLinzAGValid ? client_linzAG.TestGetOldestEmployee("CG-Boss") : false;
-	isLinzAGValid = isLinzAGValid ? client_linzAG.TestLongestTimeInCompany("CG-Boss") : false;
+	isLinzAGValid = isLinzAGValid ? client_linzAG.TestGetOldestEmployee("CGB") : false;
+	isLinzAGValid = isLinzAGValid ? client_linzAG.TestLongestTimeInCompany("CGB") : false;
 	client_linzAG.TestPrintAll();
 
 	//check if everything works

@@ -64,7 +64,7 @@ Viktoria Streibl - S1810306013\\
 \subsubsection {Viktoria Streibl}
 \begin{itemize}
 	\item estimated: 10ph 
-	\item actually: - ph
+	\item actually: 11 ph
 \end{itemize}
 
 \subsubsection {Daniel Weyrer}
@@ -92,11 +92,22 @@ Employee is searched by nickname because it has to be unique. To be sure that th
 The Client simulate a person which use the interface.
 The following functions tests the functionality:
 \begin{itemize}
-	\item Test the company name
-	\item Test the company location
-	\item Test if it is possible ot find a employee by nickname
-	\item Test if it is possible ot find a employee by birthday
+	\item Tests the company name
+	\item Tests the company location
+	\item Tests if it is possible ot find a employee by nickname
+	\item Tests if the employee which is search by his nickname is correct
+	\item Counts all employees and check if it is correct
+	\item Counts all employees of one type and check it
+	\item Counts all procuded pieces and check them
+	\item Counts all sold pieces and check them
+	\item Count how many employees are older than a specific year and check it
+	\item Tests if the salary of an employee is correct
+	\item Tests if the oldest employee is correct
+	\item Check for the employee with is the oldest member
+	\item Print all data of company and employees
 \end{itemize}
+
+All these methods are only for testing the funcitonality of Company. Futhermore, the Client gets the company with the constructor as ICompany.
 
 \subsection{Class ICompany}
 Is an interface which is used by the Client.
@@ -105,11 +116,15 @@ It contains the following functions:
 	\item Get the company name
 	\item Get the company location
 	\item Get an employee by nickname
-	\item Get employees by birthday
+	\item Get all employees of the same type
 	\item Get all sold pieces
 	\item Get all produced pieces
+	\item Get salary of an employee
+	\item Get oldest employee
+	\item Get employee with the longest time in the company
 	\item Count all employees in the company
-	\item Count all employees with the same age
+	\item Count all employees with the same type
+	\item Count all employees which are older than a specific year
 	\item Ouput all employees in the company and some general data
 \end{itemize}
 
@@ -118,10 +133,14 @@ It defines the methodes with can be used by the client.
 
 "GetCompanyName", returns the name of the company.
 "GetCompanyLocation", returns the location of the company.
-"GetEmployee", can be used with the nickname or with the birthday and returns the employees.
+"GetEmployee", can be used with the nickname or the type and returns the employees.
 "GetSoldPieces", counts all pieces which are sold by the company.
 "GetProdPieces", counts all pieces which are produces by the employees.
-"CountEmployees", returns the number of employees in the company.
+"GetSalaryOfEmployee", returns the salaray of an employee.
+"GetOldestEmployee", returns the oldest employee.
+"GetEmployeeWithLongestTimeInCompany", returns the nickname of the employee with the oldes join in date
+"CountEmployees", returns the number of employees in the company, can be specifified with type.
+"CountEmployeesOlderThan", counts how many amployees are older than a specific year.
 "Print", outputs the name and location of the company, as well as all employees.
 
 \subsection{Class Company}
@@ -131,11 +150,13 @@ It contains the following functions:
 	\item Add a new Employee
 	\item Remove a Employee
 	\item All functions from ICompany
+	\item findEmployee
 \end{itemize}
 
 The Company class manages all Employees. It uses unique pointers stored in a vector, to avoid shallow-copies.
 With the method "AddEmploye" a new employee can be created. Should a employee already exist with the same nickname. So this employee is not stored and an error message output.
 "DeleteEmployee" deletes a employee. If none is stored with the nickname an exception get`s thrown and caught in the same method.
+The private function "FindEmployee", loop through the list and checks if there is any employee with the specific nickname.
 
 \subsection{Class Employee}
 Is the base class of all employee types.
@@ -169,14 +190,25 @@ This class represents a boss.
 \end{itemize}
 
 \subsection{TestDriver}
-The Testdriver test alle functions of the Client. It adds commisson worker, hourly worker, pieces worker and a boss and deletes them.
-It searches employees by nickname and birthday and print all of them.
+The Testdriver test alle functions of the Client. It adds commisson worker, hourly worker, pieces worker and a boss.
+The functions "TestLinzAG", "TestSequality" and "TestTractive" call the testing functions of client and check if everything worked.
+The test-functions in Client returns a bool. If the bool returns false something didn't pass and this Testcase cannot get valid again.
+It ouputs a error message if there was no successful run.
 
 \newpage
 \section{Test Protocol}
 It has been tested in the file "TestDriver", the following points have been tested:
 \begin{itemize}
-	\item 
+	\item get name of the company
+	\item get location of the company
+	\item count all employees in the company
+	\item find an employee by his nickname
+	\item searching for the oldest employee
+	\item count all employees older than 1990.
+	\item get the employee with the oldest joining date.
+	\item count all employees by the same type
+	\item count all sold pieces this month
+	\item test the salary of a employee
 \end{itemize}
 
 \subsection{Console Output}

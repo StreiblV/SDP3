@@ -48,6 +48,7 @@ int main() {
 	w.SetFirstname("Viktoria");
 	w.SetLastname("Streibl");
 	w.SetBaseSalary(2100);
+	w.SetSoldPieces(11);
 	birthday.day = 29;
 	birthday.month = 10;
 	birthday.year = 1998;
@@ -64,7 +65,8 @@ int main() {
 	HourlyWorker hw;
 	hw.SetFirstname("Daniel");
 	hw.SetLastname("Weyrer");
-	hw.SetBaseSalary(1500);
+	hw.SetWagePPiece(13);
+	hw.SetHourlyWage(80);
 	birthday.day = 17;
 	birthday.month = 1;
 	birthday.year = 1998;
@@ -82,6 +84,7 @@ int main() {
 	pw.SetFirstname("John");
 	pw.SetLastname("Doe");
 	pw.SetProducedPieces(10);
+	pw.SetWagePPiece(5);
 	birthday.day = 28;
 	birthday.month = 2;
 	birthday.year = 1983;

@@ -7,7 +7,6 @@
 class Boss : public Employee {
 public:
 	Boss() : m_baseSalary{ 0 } {}
-	Boss(double const baseSalary);
 	virtual ~Boss() override = default;
 
 	virtual wBase GetType() const override;

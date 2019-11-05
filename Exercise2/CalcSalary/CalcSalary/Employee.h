@@ -27,7 +27,7 @@ public:
 	//returns specific salary (depends on type)
 	virtual double Salary() const = 0;
 
-	//pure virtual Getter/Setter Methods; Getter return 0 requested value is not contained
+	//pure virtual Getter/Setter Methods; Getter return 0 if requested value is not contained
 	//in the derived class!
 	virtual void SetProducedPieces(size_t const pieces) = 0;
 	virtual std::size_t GetProdPieces() const = 0;
@@ -81,7 +81,6 @@ private:
 	TDate m_birthday;
 	TDate m_dateOfJoining;
 
-	//private helper methods
 	//returns true if Date-format is valid and not in the future
 	bool isDateValid(TDate const& date);
 

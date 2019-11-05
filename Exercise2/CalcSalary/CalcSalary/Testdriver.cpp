@@ -86,7 +86,7 @@ int main() {
 	pw.SetProducedPieces(10);
 	pw.SetWagePPiece(5.0);
 	birthday.day = 28;
-	birthday.month = 2;
+	birthday.month = 4;
 	birthday.year = 1983;
 	pw.SetBirthday(birthday);
 	pw.SetNickname("JoD");

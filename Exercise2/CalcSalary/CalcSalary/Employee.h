@@ -24,8 +24,11 @@ public:
 	//returns type of derived class
 	virtual wBase GetType() const = 0;	
 	
+	//returns specific salary (depends on type)
 	virtual double Salary() const = 0;
 
+	//pure virtual Getter/Setter Methods; Getter return 0 requested value is not contained
+	//in the derived class!
 	virtual void SetProducedPieces(size_t const pieces) = 0;
 	virtual std::size_t GetProdPieces() const = 0;
 
@@ -44,8 +47,10 @@ public:
 	virtual void SetWagePPiece(double const wage) = 0;
 	virtual double GetWagePPiece() const = 0;
 
+	//Prints Base and Derived Class
 	virtual void Print();
 
+	//Getter/Setter for Baseclass
 	void SetFirstname(std::string const& firstname);
 	std::string GetFirstname();
 
@@ -65,6 +70,7 @@ public:
 	void SetDateOfJoining(TDate const& dateOfJoining);
 	void SetDateOfJoining(std::size_t day, std::size_t month, std::size_t year);
 
+	//overloaded ==-Operator (nickname is unique)
 	bool operator ==(Employee const&);
 
 private:
@@ -76,8 +82,13 @@ private:
 	TDate m_dateOfJoining;
 
 	//private helper methods
+	//returns true if Date-format is valid and not in the future
 	bool isDateValid(TDate const& date);
+
+	//returns true if the string contains only numbers and is 10 digits long
 	bool isSSNValid(std::string const& ssn);
+
+	//returns the created struct based on the given values
 	TDate MakeDate(std::size_t day, std::size_t month, std::size_t year);
 
 };

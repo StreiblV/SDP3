@@ -1,5 +1,6 @@
 #include "Employee.h"
 
+//minimum age in Austria is 15 years!
 size_t static const minimumAge = 15;
 
 
@@ -32,9 +33,12 @@ std::string Employee::GetSSN() const {
 void Employee::SetBirthday(Employee::TDate const& birthday) {
 	try {
 		if (isDateValid(birthday)) {
+			//get current date (time-library)
 			time_t now = time(0);
 			tm ltm;
 			localtime_s(&ltm, &now);
+
+			//Worker needs to be older than the minimum Age
 			if ((ltm.tm_year - minimumAge) >= birthday.year && ltm.tm_mon >= birthday.month && ltm.tm_mday >= birthday.day) {
 				m_birthday = birthday;
 			}
@@ -49,7 +53,6 @@ void Employee::SetBirthday(Employee::TDate const& birthday) {
 	catch (std::exception const& ex) {
 		std::cerr << "Date-Exception: " << ex.what() << std::endl;
 	}
-
 }
 
 Employee::TDate Employee::GetBirthday() const {
@@ -127,25 +130,6 @@ bool Employee::isDateValid(Employee::TDate const& date) {
 	return true;
 }
 
-std::ostream& operator<<(std::ostream& ost, Employee::TDate const& date) {
-	if (ost.good()) {
-		ost << date.day << "." << date.month << "." << date.year;
-	}
-	return ost;
-}
-
-std::ostream& operator<<(std::ostream& ost, wBase const& base) {
-	if (ost.good()) {
-		switch (base) {
-		case wBase::Boss: ost << "Boss";
-		case wBase::Hourly: ost << "HourlyWorker";
-		case wBase::Piece: ost << "PieceWorker";
-		case wBase::Comission: ost << "ComissionWorker";
-		}
-	}
-	return ost;
-}
-
 bool Employee::isSSNValid(std::string const& ssn) {
 	if (ssn.length() != 10) {
 		return false;
@@ -180,4 +164,31 @@ void Employee::SetLastname(std::string const& lastname) {
 
 std::string Employee::GetLastname() const {
 	return m_lastname;
+}
+
+//Overloaded Output-Operators for date struct and enum class
+
+
+
+
+
+
+
+std::ostream& operator<<(std::ostream& ost, Employee::TDate const& date) {
+	if (ost.good()) {
+		ost << date.day << "." << date.month << "." << date.year;
+	}
+	return ost;
+}
+
+std::ostream& operator<<(std::ostream& ost, wBase const& base) {
+	if (ost.good()) {
+		switch (base) {
+		case wBase::Boss: ost << "Boss";
+		case wBase::Hourly: ost << "HourlyWorker";
+		case wBase::Piece: ost << "PieceWorker";
+		case wBase::Comission: ost << "ComissionWorker";
+		}
+	}
+	return ost;
 }

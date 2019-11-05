@@ -5,7 +5,7 @@ wBase PieceWorker::GetType() const {
 }
 
 double PieceWorker::Salary() const {
-	return m_wagePPiece * m_prodPieces;
+	return (m_wagePPiece * m_prodPieces);
 }
 
 void PieceWorker::SetProducedPieces(size_t const pieces) {
@@ -21,6 +21,13 @@ void PieceWorker::SetSoldPieces(size_t const pieces) {
 
 std::size_t PieceWorker::GetSoldPieces() const {
 	return 0;
+}
+
+void PieceWorker::SetBaseSalary(double const baseSalary) {
+}
+
+double PieceWorker::GetBaseSalary() const {
+	return 0.0;
 }
 
 void PieceWorker::SetWorkingHours(double const hours) {

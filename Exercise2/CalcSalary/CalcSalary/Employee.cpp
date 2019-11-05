@@ -147,7 +147,7 @@ void Employee::Print() {
 	std::cout << "Name: " << this->GetFirstname() << " " << this->GetLastname() << std::endl;
 	std::cout << "Kürzel: " << this->GetNickname() << std::endl;
 	std::cout << "Sozialversicherungsnummer: " << this->GetSSN() << std::endl;
-	std::cout << "Einstiegsjahr: " << this->GetDateOfJoining() << std::endl;
+	std::cout << "Einstiegsjahr: " << m_dateOfJoining.year << std::endl;
 }
 
 void Employee::SetFirstname(std::string const& firstname) {

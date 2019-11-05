@@ -45,10 +45,11 @@ double PieceWorker::GetHourlyWage() const {
 }
 
 void PieceWorker::SetWagePPiece(double const wage) {
+	m_wagePPiece = wage;
 }
 
 double PieceWorker::GetWagePPiece() const {
-	return 0.0;
+	return m_wagePPiece;
 }
 
 void PieceWorker::Print() {

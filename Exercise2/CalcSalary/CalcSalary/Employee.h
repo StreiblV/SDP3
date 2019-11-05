@@ -13,9 +13,9 @@ class Employee : public Object {
 public:
 	//struct to save dates
 	typedef struct  {
-		size_t day;
-		size_t month;
-		size_t year;
+		size_t day = 0;
+		size_t month = 0;
+		size_t year = 0;
 	} TDate;
 	//Overloaded output-operator
 	friend std::ostream& operator<<(std::ostream& ost, TDate const& date);

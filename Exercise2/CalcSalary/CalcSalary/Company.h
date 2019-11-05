@@ -1,4 +1,4 @@
-/* ______________________________________________________________________
+	/* ______________________________________________________________________
 | Workfile : Company .h
 | Description : [ HEADER ] Class Company to store all data
 | Name : Viktoria Streibl			PKZ : S1810306013

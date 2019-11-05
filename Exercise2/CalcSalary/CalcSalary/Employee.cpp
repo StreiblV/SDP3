@@ -39,7 +39,7 @@ void Employee::SetBirthday(Employee::TDate const& birthday) {
 			localtime_s(&ltm, &now);
 
 			//Worker needs to be older than the minimum Age
-			if (((ltm.tm_year + 1900) - minimumAge) /* >= birthday.year && ltm.tm_mon >= birthday.month && ltm.tm_mday >= birthday.day*/) {
+			if (((ltm.tm_year + 1900) - minimumAge) >= birthday.year) {
 				m_birthday = birthday;
 			}
 			else {

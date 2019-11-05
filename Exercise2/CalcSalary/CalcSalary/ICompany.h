@@ -26,23 +26,25 @@ public:
 	//returns the location of the company
 	virtual std::string GetCompanyLocation() = 0;
 	//print a employee found by the nickname
-	virtual void GetEmployee(std::string nickname) = 0;
+	virtual void GetEmployee(std::string const nickname) = 0;
 	//print all employees of the type
-	virtual void GetEmployee(wBase type) = 0;
+	virtual void GetEmployee(wBase const type) = 0;
 	//return total sold pieces last month
 	virtual int GetSoldPieces() = 0;
 	//return total produced pieces last month
 	virtual int GetProdPieces() = 0;
 	//return the salary of the employee
-	virtual double GetSalaryOfEmployee(std::string nickname) = 0;
+	virtual double GetSalaryOfEmployee(std::string const nickname) = 0;
 	//returns the nickname of the oldest employee
 	virtual std::string GetOldestEmployee() = 0;
+	//check for the employee with is the oldest member
+	virtual std::string GetEmployeeWithLongestTimeInCompany();
 	//returns the number of employees in the company
 	virtual int CountEmployees() = 0;
 	//returns the number of employees of a specific type in the company
-	virtual int CountEmployees(wBase type) = 0;
+	virtual int CountEmployees(wBase const type) = 0;
 	//returns the number of employees older than a specific year
-	virtual int CountEmployeesOlderThan(int year) = 0;
+	virtual int CountEmployeesOlderThan(int const year) = 0;
 	//print all data of the company and employees
 	virtual void Print() = 0;
 };

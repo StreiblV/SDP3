@@ -37,6 +37,8 @@ public:
 	bool TestGetSalaryOfEmployee(std::string nickname, double expectedResult) const; 
 	//tests if the oldest employee is correct
 	bool TestGetOldestEmployee(std::string expectedNickname) const;
+	//check for the employee with is the oldest member
+	bool TestLongestTimeInCompany(std::string expectedNickname) const;
 	//let print all data of company and employees
 	bool TestPrintAll() const;
 

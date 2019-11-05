@@ -124,6 +124,18 @@ bool Client::TestGetOldestEmployee(std::string expectedNickname) const {
 	}
 }
 
+bool Client::TestLongestTimeInCompany(std::string expectedNickname) const {
+	//get nickname of oldest employee compare with expected nickname
+	std::string nickname = m_company->GetEmployeeWithLongestTimeInCompany();
+	if (expectedNickname == nickname) {
+		return true;
+	}
+	else {
+		ErrorMsg("Finding employee which is in the company for the longest time was wrong");
+		return false;
+	}
+}
+
 bool Client::TestPrintAll() const {
 	//print everything
 	m_company->Print();

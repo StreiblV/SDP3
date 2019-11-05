@@ -24,19 +24,83 @@ int main() {
 	Company sequality("Sequality GmbH", "Hagenberg");
 	Company tractive("Tractive", "Pasching");
 
+	Employee::TDate birthday;
+	Employee::TDate joinDate;
+
 	Boss b;
-	b.SetBaseSalary(111);
+	b.SetFirstname("Christian");
+	b.SetLastname("Grey");
+	b.SetBaseSalary(4800);
+	birthday.day = 12;
+	birthday.month = 1;
+	birthday.year = 1972;
+	b.SetBirthday(birthday);
+	b.SetNickname("CG-Boss");
+	b.setSSN("1234512345");
+	joinDate.day = 1;
+	joinDate.month = 1;
+	joinDate.year = 2001;
 	linzag.AddEmployee(std::make_unique<Boss>(b));
+	sequality.AddEmployee(std::make_unique<Boss>(b));
+	tractive.AddEmployee(std::make_unique<Boss>(b));
 
 	CommissionWorker w;
-	w.setSSN("1111111111");
-	w.SetNickname("DAW");
+	w.SetFirstname("Viktoria");
+	w.SetLastname("Streibl");
+	w.SetBaseSalary(2100);
+	w.SetSoldPieces(11);
+	birthday.day = 29;
+	birthday.month = 10;
+	birthday.year = 1998;
+	w.SetBirthday(birthday);
+	w.SetNickname("ViS");
+	w.setSSN("1290012900");
+	joinDate.day = 1;
+	joinDate.month = 1;
+	joinDate.year = 2010;
+	w.SetDateOfJoining(joinDate);
+	linzag.AddEmployee(std::make_unique<CommissionWorker>(w));
+	sequality.AddEmployee(std::make_unique<CommissionWorker>(w));
+
+	HourlyWorker hw;
+	hw.SetFirstname("Daniel");
+	hw.SetLastname("Weyrer");
+	hw.SetWagePPiece(13);
+	hw.SetHourlyWage(80);
+	birthday.day = 17;
+	birthday.month = 1;
+	birthday.year = 1998;
+	hw.SetBirthday(birthday);
+	hw.SetNickname("DaW");
+	hw.setSSN("7733177331");
+	joinDate.day = 1;
+	joinDate.month = 1;
+	joinDate.year = 2015;
+	hw.SetDateOfJoining(joinDate);
+	linzag.AddEmployee(std::make_unique<HourlyWorker>(hw));
+	tractive.AddEmployee(std::make_unique<HourlyWorker>(hw));
+
+	PieceWorker pw;
+	pw.SetFirstname("John");
+	pw.SetLastname("Doe");
+	pw.SetProducedPieces(10);
+	pw.SetWagePPiece(5);
+	birthday.day = 28;
+	birthday.month = 2;
+	birthday.year = 1983;
+	pw.SetBirthday(birthday);
+	pw.SetNickname("JoD");
+	pw.setSSN("1230502539");
+	joinDate.day = 15;
+	joinDate.month = 7;
+	joinDate.year = 2003;
+	pw.SetDateOfJoining(joinDate);
+	linzag.AddEmployee(std::make_unique<PieceWorker>(pw));
+	tractive.AddEmployee(std::make_unique<PieceWorker>(pw));
 
 	TestLinzAG(&linzag);
 	TestSequality(&sequality);
 	TestTractive(&tractive);
-
-
 
 	return 0;
 }
@@ -57,7 +121,7 @@ void TestLinzAG(Company* const linzag) {
 
 	isLinzAGValid = isLinzAGValid ? client_linzAG.TestCompanyName("Linz AG") : false;
 	isLinzAGValid = isLinzAGValid ? client_linzAG.TestCompanyLocation("Linz") : false;
-	//isLinzAGValid = isLinzAGValid ? client_linzAG.TestFindEmployeeByBirthday() : false;
+	isLinzAGValid = isLinzAGValid ? client_linzAG.TestCountEmployees(4) : false;
 
 	if (isLinzAGValid) {
 		std::cout << "Everything OK..." << std::endl;

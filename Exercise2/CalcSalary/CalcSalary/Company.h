@@ -42,6 +42,8 @@ public:
 	double GetSalaryOfEmployee(std::string nickname) override;
 	//returns the nickname of the oldest employee
 	std::string GetOldestEmployee() override;
+	//check for the employee with is the oldest member
+	std::string GetEmployeeWithLongestTimeInCompany() override;
 	//returns the number of employees in the company
 	int CountEmployees() override;
 	//returns the number of employees of a specific type in the company

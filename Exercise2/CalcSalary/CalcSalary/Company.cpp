@@ -104,6 +104,36 @@ string Company::GetOldestEmployee() {
 	return nickname;
 }
 
+string Company::GetEmployeeWithLongestTimeInCompany() {
+	list<EUptr>::const_iterator itList = m_employees.cbegin();
+	//get nickname and joinDate of first employee
+	string nickname = (**itList).GetNickname();
+	Employee::TDate joinDate = (**itList).GetDateOfJoining();
+
+	//loop through and check if the current employee's joinDate is older than the
+	//last saved one.
+	for (itList = ++m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
+		if ((**itList).GetDateOfJoining().year == joinDate.year) {
+			if ((**itList).GetDateOfJoining().month == joinDate.month) {
+				if ((**itList).GetDateOfJoining().day > joinDate.day) {
+					nickname = (**itList).GetNickname();
+					joinDate = (**itList).GetDateOfJoining();
+				}
+			}
+			else if ((**itList).GetDateOfJoining().year > joinDate.year) {
+				nickname = (**itList).GetNickname();
+				joinDate = (**itList).GetDateOfJoining();
+			}
+		}
+		else if ((**itList).GetDateOfJoining().year > joinDate.year) {
+			nickname = (**itList).GetNickname();
+			joinDate = (**itList).GetDateOfJoining();
+		}
+	}
+	//return nickname of oldest employee
+	return nickname;
+}
+
 int Company::CountEmployees() {
 	//return how many employees are in the company
 	return m_employees.size();

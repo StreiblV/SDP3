@@ -5,7 +5,7 @@ wBase CommissionWorker::GetType() const {
 }
 
 double CommissionWorker::Salary() const {
-	return m_baseSalary + m_wagePPiece * m_soldPieces;
+	return (m_baseSalary + (m_wagePPiece * m_soldPieces));
 }
 
 void CommissionWorker::SetSoldPieces(size_t const pieces) {
@@ -46,17 +46,18 @@ double CommissionWorker::GetHourlyWage() const {
 }
 
 void CommissionWorker::SetWagePPiece(double const wage) {
+	m_wagePPiece = wage;
 }
 
 double CommissionWorker::GetWagePPiece() const {
-	return 0.0;
+	return m_wagePPiece;
 }
 
 void CommissionWorker::Print() {
 	Employee::Print();
 	std::cout << "Mitarbeiterklasse: " << this->GetType() << std::endl;
 	std::cout << "Grundgehalt: " << this->GetBaseSalary() << " EUR" << std::endl;
-	std::cout << "Provision: " << (this->GetSoldPieces()) * (this->GetWagePPiece()) << std::endl;
+	std::cout << "Provision: " << (this->GetSoldPieces() * this->GetWagePPiece()) << std::endl;
 	std::cout << "Gehalt: " << this->Salary() << " EUR" << std::endl;
 }
 

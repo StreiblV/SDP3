@@ -39,8 +39,7 @@ void Employee::SetBirthday(Employee::TDate const& birthday) {
 			localtime_s(&ltm, &now);
 
 			//Worker needs to be older than the minimum Age; ltm.tm_years = years since 1900!
-			//cast to prevent overflow!
-			if (((static_cast<int>(ltm.tm_year) + 1900) - minimumAge) >= birthday.year) {
+			if (((ltm.tm_year + 1900) - minimumAge) >= birthday.year) {
 				m_birthday = birthday;
 			}
 			else {
@@ -148,7 +147,7 @@ void Employee::Print() {
 	std::cout << "Name: " << this->GetFirstname() << " " << this->GetLastname() << std::endl;
 	std::cout << "Kürzel: " << this->GetNickname() << std::endl;
 	std::cout << "Sozialversicherungsnummer: " << this->GetSSN() << std::endl;
-	std::cout << "Einstiegsjahr: " << this->GetDateOfJoining() << std::endl;
+	std::cout << "Einstiegsjahr: " << m_dateOfJoining.year << std::endl;
 }
 
 void Employee::SetFirstname(std::string const& firstname) {

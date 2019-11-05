@@ -13,13 +13,13 @@ class Employee : public Object {
 public:
 	//struct to save dates
 	typedef struct  {
-		size_t day;
-		size_t month;
-		size_t year;
+		size_t day = 0;
+		size_t month = 0;
+		size_t year = 0;
 	} TDate;
 	//Overloaded output-operator
 	friend std::ostream& operator<<(std::ostream& ost, TDate const& date);
-	Employee() = default;
+	Employee() : m_firstname{ "" }, m_lastname{ "" }, m_nickname{ 0 }, m_SSN{ 0 } {}
 
 	//returns type of derived class
 	virtual wBase GetType() const = 0;	
@@ -32,18 +32,23 @@ public:
 	virtual void SetProducedPieces(size_t const pieces) = 0;
 	virtual std::size_t GetProdPieces() const = 0;
 
+	//Set/Get sold pieces
 	virtual void SetSoldPieces(size_t const pieces) = 0;
 	virtual std::size_t GetSoldPieces() const = 0;
 
+	//Set/Get base salary
 	virtual void SetBaseSalary(double const baseSalary) = 0;
 	virtual double GetBaseSalary() const = 0;	
 
+	//Set/Get Workinghours
 	virtual void SetWorkingHours(double const hours) = 0;
 	virtual double GetWorkingHours() const = 0;
 
+	//Set/Get wage per hour
 	virtual void SetHourlyWage(double const wage) = 0;
 	virtual double GetHourlyWage() const = 0;
 
+	//Set/Get wage per Piece
 	virtual void SetWagePPiece(double const wage) = 0;
 	virtual double GetWagePPiece() const = 0;
 

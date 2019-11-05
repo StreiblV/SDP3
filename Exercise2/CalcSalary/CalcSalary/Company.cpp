@@ -115,17 +115,17 @@ string Company::GetEmployeeWithLongestTimeInCompany() {
 	for (itList = ++m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		if ((**itList).GetDateOfJoining().year == joinDate.year) {
 			if ((**itList).GetDateOfJoining().month == joinDate.month) {
-				if ((**itList).GetDateOfJoining().day > joinDate.day) {
+				if ((**itList).GetDateOfJoining().day < joinDate.day) {
 					nickname = (**itList).GetNickname();
 					joinDate = (**itList).GetDateOfJoining();
 				}
 			}
-			else if ((**itList).GetDateOfJoining().year > joinDate.year) {
+			else if ((**itList).GetDateOfJoining().year < joinDate.year) {
 				nickname = (**itList).GetNickname();
 				joinDate = (**itList).GetDateOfJoining();
 			}
 		}
-		else if ((**itList).GetDateOfJoining().year > joinDate.year) {
+		else if ((**itList).GetDateOfJoining().year < joinDate.year) {
 			nickname = (**itList).GetNickname();
 			joinDate = (**itList).GetDateOfJoining();
 		}

@@ -1,0 +1,121 @@
+###############################
+Client test for Linz AG
+###############################
+Name: Daniel Weyrer
+K³rzel: DaW
+Sozialversicherungsnummer: 7733177331
+Einstiegsjahr: 2015
+Mitarbeiterklasse: HourlyWorker
+Arbeitsstunden: 80
+Stundenlohn: 13 EUR
+Gehalt: 1040 EUR
+*******************************************
+Linz AG, Linz
+*******************************************
+Datenblatt
+---------------
+
+Name: Christian Grey
+K³rzel: CGB
+Sozialversicherungsnummer: 1234512345
+Einstiegsjahr: 0
+Mitarbeiterklasse: Boss
+Gehalt: 4800 EUR
+
+Name: Viktoria Streibl
+K³rzel: ViS
+Sozialversicherungsnummer: 1290012900
+Einstiegsjahr: 2010
+Mitarbeiterklasse: ComissionWorker
+Grundgehalt: 2100 EUR
+Provision: 88
+Gehalt: 2188 EUR
+
+Name: Daniel Weyrer
+K³rzel: DaW
+Sozialversicherungsnummer: 7733177331
+Einstiegsjahr: 2015
+Mitarbeiterklasse: HourlyWorker
+Arbeitsstunden: 80
+Stundenlohn: 13 EUR
+Gehalt: 1040 EUR
+
+Name: John Doe
+K³rzel: JoD
+Sozialversicherungsnummer: 1230502539
+Einstiegsjahr: 2003
+Mitarbeiterklasse: PieceWorker
+St³ckzahl: 10
+St³ckwert: 5 EUR
+Gehalt: 50 EUR
+-------------------------------------------
+v1.0 Oktober 2019
+-------------------------------------------
+Everything OK...
+
+###############################
+Client test for Sequality GmbH
+###############################
+*******************************************
+Sequality GmbH, Hagenberg
+*******************************************
+Datenblatt
+---------------
+
+Name: Christian Grey
+K³rzel: CGB
+Sozialversicherungsnummer: 1234512345
+Einstiegsjahr: 0
+Mitarbeiterklasse: Boss
+Gehalt: 4800 EUR
+
+Name: Viktoria Streibl
+K³rzel: ViS
+Sozialversicherungsnummer: 1290012900
+Einstiegsjahr: 2010
+Mitarbeiterklasse: ComissionWorker
+Grundgehalt: 2100 EUR
+Provision: 88
+Gehalt: 2188 EUR
+-------------------------------------------
+v1.0 Oktober 2019
+-------------------------------------------
+Everything OK...
+
+###############################
+Client test for Tractive
+###############################
+*******************************************
+Tractive, Pasching
+*******************************************
+Datenblatt
+---------------
+
+Name: Christian Grey
+K³rzel: CGB
+Sozialversicherungsnummer: 1234512345
+Einstiegsjahr: 0
+Mitarbeiterklasse: Boss
+Gehalt: 4800 EUR
+
+Name: Daniel Weyrer
+K³rzel: DaW
+Sozialversicherungsnummer: 7733177331
+Einstiegsjahr: 2015
+Mitarbeiterklasse: HourlyWorker
+Arbeitsstunden: 80
+Stundenlohn: 13 EUR
+Gehalt: 1040 EUR
+
+Name: John Doe
+K³rzel: JoD
+Sozialversicherungsnummer: 1230502539
+Einstiegsjahr: 2003
+Mitarbeiterklasse: PieceWorker
+St³ckzahl: 10
+St³ckwert: 5 EUR
+Gehalt: 50 EUR
+-------------------------------------------
+v1.0 Oktober 2019
+-------------------------------------------
+Everything OK...

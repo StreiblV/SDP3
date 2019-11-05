@@ -24,8 +24,13 @@ int main() {
 	Company sequality("Sequality GmbH", "Hagenberg");
 	Company tractive("Tractive", "Pasching");
 
-	//Boss* boss = new Boss();
-	//linzag.AddEmployee(std::make_unique<Employee>(&e));
+	Boss b;
+	b.SetBaseSalary(111);
+	linzag.AddEmployee(std::make_unique<Boss>(b));
+
+	CommissionWorker w;
+	w.setSSN("1111111111");
+	w.SetNickname("DAW");
 
 	TestLinzAG(&linzag);
 	TestSequality(&sequality);

@@ -7,13 +7,14 @@
 class Boss : public Employee {
 public:
 	Boss() = default;
+	Boss(double const baseSalary);
 	virtual ~Boss() override = default;
 
 	virtual wBase GetType() const override;
 	virtual double Salary() const override;
 
 	void SetBaseSalary(double const baseSalary);
-	double GetBaseSalary() const;
+	double GetBaseSalary() const;	
 
 	virtual void SetProducedPieces(size_t const pieces) override;
 	virtual std::size_t GetProdPieces() const override;	

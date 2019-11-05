@@ -28,6 +28,8 @@ public:
 	virtual void SetSoldPieces(size_t const pieces) = 0;
 	virtual std::size_t GetSoldPieces() const = 0;
 
+	virtual void SetBaseSalary(double const baseSalary) = 0;
+	virtual double GetBaseSalary() const = 0;
 
 	virtual void SetWorkingHours(double const hours) = 0;
 	virtual double GetWorkingHours() const = 0;

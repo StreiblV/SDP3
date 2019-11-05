@@ -11,15 +11,19 @@ std::ostream& operator<<(std::ostream& ost, wBase const& base);
 
 class Employee : public Object {
 public:
+	//struct to save dates
 	typedef struct  {
 		size_t day;
 		size_t month;
 		size_t year;
 	} TDate;
+	//Overloaded output-operator
 	friend std::ostream& operator<<(std::ostream& ost, TDate const& date);
 	Employee() = default;
 
+	//returns type of derived class
 	virtual wBase GetType() const = 0;	
+	
 	virtual double Salary() const = 0;
 
 	virtual void SetProducedPieces(size_t const pieces) = 0;

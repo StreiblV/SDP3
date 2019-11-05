@@ -80,7 +80,7 @@ int main() {
 	linzag.AddEmployee(std::make_unique<HourlyWorker>(hw));
 	tractive.AddEmployee(std::make_unique<HourlyWorker>(hw));
 
-	/*PieceWorker pw;
+	PieceWorker pw;
 	pw.SetFirstname("John");
 	pw.SetLastname("Doe");
 	pw.SetProducedPieces(10);
@@ -96,7 +96,7 @@ int main() {
 	joinDate.year = 2003;
 	pw.SetDateOfJoining(joinDate);
 	linzag.AddEmployee(std::make_unique<PieceWorker>(pw));
-	tractive.AddEmployee(std::make_unique<PieceWorker>(pw));*/
+	tractive.AddEmployee(std::make_unique<PieceWorker>(pw));
 
 	TestLinzAG(&linzag);
 	TestSequality(&sequality);

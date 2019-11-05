@@ -8,7 +8,7 @@
 
 class CommissionWorker : public Employee {
 public:
-	CommissionWorker() = default;
+	CommissionWorker() : m_soldPieces{ 0 }, m_wagePPiece{ 0 }, m_baseSalary{ 0 }{}
 	virtual wBase GetType() const override;
 	virtual double Salary() const override;
 

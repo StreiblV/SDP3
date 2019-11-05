@@ -6,7 +6,7 @@
 
 class HourlyWorker : public Employee {
 public:
-	HourlyWorker() = default;
+	HourlyWorker() : m_workingHours{ 0 }, m_hourlyWage{ 0 }{}
 
 	virtual wBase GetType() const override;
 	virtual double Salary() const override;

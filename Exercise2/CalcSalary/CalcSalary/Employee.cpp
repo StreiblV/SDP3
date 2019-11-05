@@ -38,8 +38,9 @@ void Employee::SetBirthday(Employee::TDate const& birthday) {
 			tm ltm;
 			localtime_s(&ltm, &now);
 
-			//Worker needs to be older than the minimum Age
-			if (((ltm.tm_year + 1900) - minimumAge) >= birthday.year) {
+			//Worker needs to be older than the minimum Age; ltm.tm_years = years since 1900!
+			//cast to prevent overflow!
+			if (((static_cast<int>(ltm.tm_year) + 1900) - minimumAge) >= birthday.year) {
 				m_birthday = birthday;
 			}
 			else {
@@ -178,10 +179,10 @@ std::ostream& operator<<(std::ostream& ost, Employee::TDate const& date) {
 std::ostream& operator<<(std::ostream& ost, wBase const& base) {
 	if (ost.good()) {
 		switch (base) {
-		case wBase::Boss: ost << "Boss";
-		case wBase::Hourly: ost << "HourlyWorker";
-		case wBase::Piece: ost << "PieceWorker";
-		case wBase::Comission: ost << "ComissionWorker";
+		case wBase::Boss: ost << "Boss"; break;
+		case wBase::Hourly: ost << "HourlyWorker"; break;
+		case wBase::Piece: ost << "PieceWorker"; break;
+		case wBase::Comission: ost << "ComissionWorker"; break;
 		}
 	}
 	return ost;

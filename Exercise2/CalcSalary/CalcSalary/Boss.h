@@ -6,7 +6,7 @@
 
 class Boss : public Employee {
 public:
-	Boss() = default;
+	Boss() : m_baseSalary{ 0 } {}
 	Boss(double const baseSalary);
 	virtual ~Boss() override = default;
 

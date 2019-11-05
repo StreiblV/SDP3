@@ -164,10 +164,9 @@ void Company::Print() {
 	cout << "*******************************************" << endl;
 	cout << "Datenblatt" << endl;
 	cout << "---------------" << endl;
-	cout << endl;
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
-		(**itList).Print();
 		cout << endl;
+		(**itList).Print();
 	}
 	cout << "-------------------------------------------" << endl;
 	cout << "v1.0 Oktober 2019" << endl;

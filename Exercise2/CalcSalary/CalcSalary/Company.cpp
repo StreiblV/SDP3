@@ -85,17 +85,17 @@ string Company::GetOldestEmployee() {
 	for (itList = ++m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		if ((**itList).GetBirthday().year == birthday.year) {
 			if ((**itList).GetBirthday().month == birthday.month) {
-				if ((**itList).GetBirthday().day > birthday.day) {
+				if ((**itList).GetBirthday().day < birthday.day) {
 					nickname = (**itList).GetNickname();
 					birthday = (**itList).GetBirthday();
 				}
 			}
-			else if ((**itList).GetBirthday().year > birthday.year) {
+			else if ((**itList).GetBirthday().year < birthday.year) {
 				nickname = (**itList).GetNickname();
 				birthday = (**itList).GetBirthday();
 			}
 		}
-		else if ((**itList).GetBirthday().year > birthday.year) {
+		else if ((**itList).GetBirthday().year < birthday.year) {
 			nickname = (**itList).GetNickname();
 			birthday = (**itList).GetBirthday();
 		}

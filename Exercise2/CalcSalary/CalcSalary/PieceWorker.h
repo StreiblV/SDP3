@@ -5,7 +5,7 @@
 #include "Employee.h"
 
 class PieceWorker : public Employee {
-
+public:
 	PieceWorker() = default;
 
 	virtual wBase GetType() const override;

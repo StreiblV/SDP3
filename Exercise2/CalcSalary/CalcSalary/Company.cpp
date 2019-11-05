@@ -24,6 +24,7 @@ string Company::GetCompanyLocation() {
 
 void Company::GetEmployee(std::string const nickname) {
 	EIter itList;
+	//loop through list and search for nickname
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		if (nickname == (**itList).GetNickname()) {
 			(**itList).Print();
@@ -33,6 +34,7 @@ void Company::GetEmployee(std::string const nickname) {
 
 void Company::GetEmployee(wBase type){
 	EIter itList;
+	//loop through list and count every employee with the same type
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		if (type == (**itList).GetType()) {
 			(**itList).Print();
@@ -44,6 +46,7 @@ int Company::GetSoldPieces() {
 	int sumSoldPieces = 0;
 
 	list<EUptr>::const_iterator itList;
+	//loop through list and sum all sold pieces
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		sumSoldPieces += (**itList).GetSoldPieces();
 	}
@@ -53,6 +56,7 @@ int Company::GetSoldPieces() {
 int Company::GetProdPieces() {
 	int sumProdPieces = 0;
 	list<EUptr>::const_iterator itList;
+	//loop through list and sum all produced pieces
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		sumProdPieces += (**itList).GetProdPieces();
 	}
@@ -60,14 +64,24 @@ int Company::GetProdPieces() {
 }
 
 double Company::GetSalaryOfEmployee(std::string nickname) {
+	//get nickname of expected employee
 	EIter iter = FindEmployee(nickname);
+	if (iter == m_employees.cend()) {
+		cout << "Warning: No employee was found." << endl;
+		return 0;
+	}
+	//return salary of employee
 	return (**iter).Salary();
 }
 
 string Company::GetOldestEmployee() {
 	list<EUptr>::const_iterator itList = m_employees.cbegin();
+	//get nickname and birthday of first employee
 	string nickname = (**itList).GetNickname();
 	Employee::TDate birthday = (**itList).GetBirthday();
+
+	//loop through and check if the current employee's birthday is older than the
+	//last saved one.
 	for (itList = ++m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		if ((**itList).GetBirthday().year == birthday.year) {
 			if ((**itList).GetBirthday().month == birthday.month) {
@@ -86,46 +100,46 @@ string Company::GetOldestEmployee() {
 			birthday = (**itList).GetBirthday();
 		}
 	}
-
+	//return nickname of oldest employee
 	return nickname;
 }
 
 int Company::CountEmployees() {
+	//return how many employees are in the company
 	return m_employees.size();
 }
 
 int Company::CountEmployees(wBase type) {
+	//compare types
 	auto PredType = [type](EUptr const& e) {
 		return (type == (*e).GetType());
 	};
-
+	//count if types are equal
 	return count_if(m_employees.begin(), m_employees.end(), PredType);
 }
 
 int Company::CountEmployeesOlderThan(int year){
+	//compare birthday year
 	auto PredBirthday = [year](EUptr const& e) {
-		return (year <= (*e).GetBirthday().year);
+		return (year < (*e).GetBirthday().year);
 	};
-
+	//count if types are older than year
 	return count_if(m_employees.begin(), m_employees.end(), PredBirthday);
 }
 
 void Company::Print() {
 	list<EUptr>::const_iterator itList;
+	cout << "*******************************************" << endl;
+	cout << m_name << ", " << m_location << endl;
+	cout << "*******************************************" << endl;
+	cout << "Datenblatt" << endl;
+	cout << "---------------" << endl;
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
-		cout << (**itList).GetFirstname();
-		cout << "*******************************************" << endl;
-		cout << m_name <<", " << m_location << endl;
-		cout << "*******************************************" << endl;
-		cout << "Datenblatt" << endl;	
-		cout << "---------------" << endl;
-
 		(**itList).Print();
-
-		cout << "-------------------------------------------" << endl;
-		cout << "v1.0 Oktober 2019" << endl;
-		cout << "-------------------------------------------" << endl;
 	}
+	cout << "-------------------------------------------" << endl;
+	cout << "v1.0 Oktober 2019" << endl;
+	cout << "-------------------------------------------" << endl;
 }
 
 void Company::AddEmployee(EUptr e) {
@@ -150,9 +164,10 @@ void Company::DeleteEmployee(EUptr e) {
 }
 
 EIter Company::FindEmployee(string nickname) {
+	//compare nicknames
 	auto PredBirthday = [nickname](unique_ptr<Employee> const& e) {
 		return (nickname == (*e).GetNickname());
 	};
-	
+	//find the correct employee by nickname
 	return find_if(m_employees.begin(), m_employees.end(), PredBirthday);
 }

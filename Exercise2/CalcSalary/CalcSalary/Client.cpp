@@ -13,6 +13,7 @@ Client::Client(ICompany* const company) {
 }
 
 bool Client::TestCompanyName(std::string expectedName) const{
+	//get company name and compare with expected name
 	std::string name = m_company->GetCompanyName();
 	if (name == expectedName) {
 		return true;
@@ -23,6 +24,7 @@ bool Client::TestCompanyName(std::string expectedName) const{
 	}
 }
 bool Client::TestCompanyLocation(std::string expectedLocation) const {
+	//get company location and compare with expected location
 	std::string name = m_company->GetCompanyLocation();
 	if (name == expectedLocation) {
 		return true;
@@ -33,11 +35,13 @@ bool Client::TestCompanyLocation(std::string expectedLocation) const {
 	}
 }
 bool Client::TestFindEmployeeByNickname(std::string nickname) const {
+	//search for employee by nickname and print it
 	m_company->GetEmployee(nickname);
 	return true;
 }
 
 bool Client::TestCountEmployees(int expectedResult) const {
+	//get number of employees and compare with expected result
 	int currEmployees = m_company->CountEmployees();
 	if (expectedResult == currEmployees) {
 		return true;
@@ -49,6 +53,7 @@ bool Client::TestCountEmployees(int expectedResult) const {
 }
 
 bool Client::TestCountEmployeesByType(wBase type, int expectedResult) const {
+	//get number of employees of specific type and compare with expected result
 	int currEmployees = m_company->CountEmployees(type);
 	if (expectedResult == currEmployees) {
 		return true;
@@ -60,6 +65,7 @@ bool Client::TestCountEmployeesByType(wBase type, int expectedResult) const {
 }
 
 bool Client::TestCountTotalProducesPieces(int expectedResult) const {
+	//get total produced pieces and compare with expected result
 	int totalProdPieces = m_company->GetProdPieces();
 	if (expectedResult == totalProdPieces) {
 		return true;
@@ -71,6 +77,7 @@ bool Client::TestCountTotalProducesPieces(int expectedResult) const {
 }
 
 bool Client::TestCountTotalSoldPieces(int expectedResult) const {
+	//get total sold pieces and compare with expected result
 	int totalSoldPieces = m_company->GetSoldPieces();
 	if (expectedResult == totalSoldPieces) {
 		return true;
@@ -82,6 +89,7 @@ bool Client::TestCountTotalSoldPieces(int expectedResult) const {
 }
 
 bool Client::TestCountEmployeesOlderThan(int year, int expectedResult) const {
+	//get number of employees older than year and compare with expected result
 	int employeesOlderThan = m_company->CountEmployeesOlderThan(year);
 	if (expectedResult == employeesOlderThan) {
 		return true;
@@ -93,6 +101,7 @@ bool Client::TestCountEmployeesOlderThan(int year, int expectedResult) const {
 }
 
 bool Client::TestGetSalaryOfEmployee(std::string nickname, double expectedResult) const {
+	//get salary of employee and compare with expected result
 	double salaryOfEmployee = m_company->GetSalaryOfEmployee(nickname);
 	if (expectedResult == salaryOfEmployee) {
 		return true;
@@ -104,6 +113,7 @@ bool Client::TestGetSalaryOfEmployee(std::string nickname, double expectedResult
 }
 
 bool Client::TestGetOldestEmployee(std::string expectedNickname) const {
+	//get nickname of oldest employee compare with expected nickname
 	std::string nickname = m_company->GetOldestEmployee();
 	if (expectedNickname == nickname) {
 		return true;
@@ -115,10 +125,12 @@ bool Client::TestGetOldestEmployee(std::string expectedNickname) const {
 }
 
 bool Client::TestPrintAll() const {
+	//print everything
 	m_company->Print();
 	return true;
 }
 
 void Client::ErrorMsg(std::string msg) const{
+	//outputs the error message
 	std::cout << "!Error: " << msg << std::endl;
 }

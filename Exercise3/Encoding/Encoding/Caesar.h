@@ -13,6 +13,7 @@
 
 class Caesar : public Encryptor
 {
+public:
 	// Inherited via Encryptor
 	virtual void Encrypt(std::string const& fileName) override;
 	virtual void Decrypt(std::string const& fileName) override;

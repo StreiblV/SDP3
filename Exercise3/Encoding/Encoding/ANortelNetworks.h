@@ -10,12 +10,18 @@
 #define ANORTEL_NETWORKS_H
 
 #include "INortelNetworks.h"
+#include "RSA.h"
+#include "Caesar.h"
 
 class AEpos : public INortelNetworks
 {
 public:
 	void Encipher(TEncoding enc, std::string const& fileName) override;
 	void Decipher(TEncoding enc, std::string const& fileName) override;
+
+private:
+	RSA* m_rsa;
+	Caesar* m_ceasar;
 };
 
 #endif //ANORTEL_NETWORKS_H

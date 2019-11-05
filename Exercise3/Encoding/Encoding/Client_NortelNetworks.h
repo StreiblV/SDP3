@@ -14,6 +14,14 @@
 
 class Client_NortelNetworks : public Object
 {
+public:
+	Client_NortelNetworks(INortelNetworks& nortelNetworks);
+
+	void Encipher(TEncoding type, std::string const& fileName);
+	void Decipher(TEncoding type, std::string const& fileName);
+
+private:
+	INortelNetworks* m_nortelNetworks;
 };
 
 #endif //CLIENT_NORTEL_NETWORKS_H

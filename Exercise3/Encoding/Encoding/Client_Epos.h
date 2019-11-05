@@ -14,7 +14,14 @@
 
 class Client_Epos : public Object
 {
+public:
+	Client_Epos(IEpos& epos);
 
+	void EncryptRSA(std::string const& fileName);
+	void DecryptRSA(std::string const& fileName);
+
+private:
+	IEpos* m_epos;
 };
 
 #endif //CLIENT_EPOS_H

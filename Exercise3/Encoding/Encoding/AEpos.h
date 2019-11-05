@@ -10,6 +10,7 @@
 #define AEPOS_H
 
 #include "IEpos.h"
+#include "RSA.h"
 
 class AEpos : public IEpos
 {
@@ -17,6 +18,8 @@ public:
 	void EncryptRSA(std::string const& fileName) override;
 	void DecryptRSA(std::string const& fileName) override;
 
+private:
+	RSA* m_rsa;
 };
 
 #endif //AEPOS_H

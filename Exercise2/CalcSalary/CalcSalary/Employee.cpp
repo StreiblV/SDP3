@@ -43,11 +43,11 @@ void Employee::SetBirthday(Employee::TDate const& birthday) {
 				m_birthday = birthday;
 			}
 			else {
-				throw ("Employee is not allowed to work yet!");
+				throw std::exception ("Employee is not allowed to work yet!");
 			}
 		}
 		else {
-			throw("Entered date is invalid");
+			throw std::exception ("Entered date is invalid");
 		}
 	}
 	catch (std::exception const& ex) {
@@ -65,7 +65,7 @@ void Employee::SetDateOfJoining(Employee::TDate const& dateOfJoining) {
 			m_dateOfJoining = dateOfJoining;
 		}
 		else {
-			throw("Entered Date is invalid");
+			throw std::exception ("Entered Date is invalid");
 		}
 	}
 	catch (std::exception const& ex) {

@@ -29,7 +29,7 @@ public:
 	virtual std::size_t GetSoldPieces() const = 0;
 
 	virtual void SetBaseSalary(double const baseSalary) = 0;
-	virtual double GetBaseSalary() const = 0;
+	virtual double GetBaseSalary() const = 0;	
 
 	virtual void SetWorkingHours(double const hours) = 0;
 	virtual double GetWorkingHours() const = 0;
@@ -62,8 +62,6 @@ public:
 	void SetDateOfJoining(std::size_t day, std::size_t month, std::size_t year);
 
 	bool operator ==(Employee const&);
-
-
 
 private:
 	std::string m_firstname;

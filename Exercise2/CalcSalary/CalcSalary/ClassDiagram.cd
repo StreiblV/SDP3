@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="Boss">
+    <Position X="0.75" Y="11.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAECiBAAAAgAAASAAAAQAQAAAAABEAAAAAAAAUEAA=</HashCode>
+      <FileName>Boss.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client">
+    <Position X="8.25" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAgBAAAgABAAgBAAAAAIAAAAAAgAFAgACQ=</HashCode>
+      <FileName>Client.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommissionWorker">
+    <Position X="9" Y="11.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>JQAAECiBABAAgAAACAAAAQAQAAAAAEEAAAAAAAAUEAA=</HashCode>
+      <FileName>CommissionWorker.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Company">
+    <Position X="12.25" Y="6" Width="3" />
+    <TypeIdentifier>
+      <HashCode>MEAAAEAAACIIgAAAAAAIEAQAAAAAwAAAAAAABAAEAAA=</HashCode>
+      <FileName>Company.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employee">
+    <Position X="4" Y="1.75" Width="3.25" />
+    <NestedTypes>
+      <Typedef Name="Employee::TDate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Employee.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Struct Name="Employee::__unnamed_struct_0009_1" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Employee.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>4RQgECiBEFAAggCACAAMEQAQCUAAACEAAEEAAIAVEAA=</HashCode>
+      <FileName>Employee.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HourlyWorker">
+    <Position X="6.25" Y="11.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAECiBAAAAgAAACAAAAQAQAIAAAAGAAABAAAAUEAA=</HashCode>
+      <FileName>HourlyWorker.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ICompany">
+    <Position X="12.25" Y="1.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>IEAAAAEAAAAIgAAAQAAAEAQAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>ICompany.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Object" Collapsed="true">
+    <Position X="8.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PieceWorker">
+    <Position X="3.5" Y="11.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>JQAAECiBAABAgAAACACAAQAQAAAAAAEAAAAAAAAUEAA=</HashCode>
+      <FileName>PieceWorker.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="wBase">
+    <Position X="8.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAQAAAAAAAAAAAAAAAAAAQIAAAAAA=</HashCode>
+      <FileName>Employee.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -6,7 +6,7 @@
 
 class PieceWorker : public Employee {
 public:
-	PieceWorker() = default;
+	PieceWorker() : m_prodPieces{ 0 }, m_wagePPiece{ 0 } {}
 
 	virtual wBase GetType() const override;
 	virtual double Salary() const override;

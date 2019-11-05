@@ -5,7 +5,7 @@ wBase CommissionWorker::GetType() const {
 }
 
 double CommissionWorker::Salary() const {
-	return m_baseSalary + m_wagePPiece * m_soldPieces;
+	return (m_baseSalary + (m_wagePPiece * m_soldPieces));
 }
 
 void CommissionWorker::SetSoldPieces(size_t const pieces) {

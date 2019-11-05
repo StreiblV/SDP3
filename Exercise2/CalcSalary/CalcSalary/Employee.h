@@ -19,7 +19,7 @@ public:
 	} TDate;
 	//Overloaded output-operator
 	friend std::ostream& operator<<(std::ostream& ost, TDate const& date);
-	Employee() = default;
+	Employee() : m_firstname{ "" }, m_lastname{ "" }, m_nickname{ 0 }, m_SSN{ 0 } {}
 
 	//returns type of derived class
 	virtual wBase GetType() const = 0;	

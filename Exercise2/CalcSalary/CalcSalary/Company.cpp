@@ -151,7 +151,7 @@ int Company::CountEmployees(wBase type) {
 int Company::CountEmployeesOlderThan(int year){
 	//compare birthday year
 	auto PredBirthday = [year](EUptr const& e) {
-		return (year < (*e).GetBirthday().year);
+		return (year > (*e).GetBirthday().year);
 	};
 	//count if types are older than year
 	return count_if(m_employees.begin(), m_employees.end(), PredBirthday);
@@ -164,8 +164,10 @@ void Company::Print() {
 	cout << "*******************************************" << endl;
 	cout << "Datenblatt" << endl;
 	cout << "---------------" << endl;
+	cout << endl;
 	for (itList = m_employees.cbegin(); itList != m_employees.cend(); ++itList) {
 		(**itList).Print();
+		cout << endl;
 	}
 	cout << "-------------------------------------------" << endl;
 	cout << "v1.0 Oktober 2019" << endl;

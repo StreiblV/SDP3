@@ -1,3 +1,12 @@
+/* ______________________________________________________________________
+| Workfile : Boss.cpp
+| Description : [ SOURCE ] Derived Class Boss
+| Name : Daniel Weyrer					PKZ : S1820306044
+| Date : 04.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
+
 #include "Boss.h"
 
 wBase Boss::GetType() const {

@@ -1,3 +1,12 @@
+/* ______________________________________________________________________
+| Workfile : Boss.h
+| Description : [ HEADER ] Derived Class Boss
+| Name : Daniel Weyrer					PKZ : S1820306044
+| Date : 04.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
+
 #ifndef BOSS_H
 #define BOSS_H
 

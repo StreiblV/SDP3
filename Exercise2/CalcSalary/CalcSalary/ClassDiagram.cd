@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
   <Class Name="Boss">
-    <Position X="0.75" Y="11.5" Width="2.5" />
+    <Position X="3.75" Y="12" Width="2.5" />
     <TypeIdentifier>
       <HashCode>IQAAECiBAAAAgAAASAAAAQAQAAAAABEAAAAAAAAUEAA=</HashCode>
       <FileName>Boss.h</FileName>
@@ -15,7 +15,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CommissionWorker">
-    <Position X="9" Y="11.5" Width="2.75" />
+    <Position X="12" Y="12" Width="2.75" />
     <TypeIdentifier>
       <HashCode>JQAAECiBABAAgAAACAAAAQAQAAAAAEEAAAAAAAAUEAA=</HashCode>
       <FileName>CommissionWorker.h</FileName>
@@ -48,7 +48,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="HourlyWorker">
-    <Position X="6.25" Y="11.5" Width="2.5" />
+    <Position X="9.25" Y="12" Width="2.5" />
     <TypeIdentifier>
       <HashCode>IQAAECiBAAAAgAAACAAAAQAQAIAAAAGAAABAAAAUEAA=</HashCode>
       <FileName>HourlyWorker.h</FileName>
@@ -69,7 +69,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PieceWorker">
-    <Position X="3.5" Y="11.5" Width="2.5" />
+    <Position X="6.5" Y="12" Width="2.5" />
     <TypeIdentifier>
       <HashCode>JQAAECiBAABAgAAACACAAQAQAAAAAAEAAAAAAAAUEAA=</HashCode>
       <FileName>PieceWorker.h</FileName>

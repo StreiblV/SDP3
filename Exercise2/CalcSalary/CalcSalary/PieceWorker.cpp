@@ -1,3 +1,13 @@
+/* ______________________________________________________________________
+| Workfile : PieceWorker.cpp
+| Description : [ SOURCE ] Derived Class PieceWorker
+| Name : Daniel Weyrer					PKZ : S1820306044
+| Date : 04.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
+
+
 #include "PieceWorker.h"
 
 wBase PieceWorker::GetType() const {

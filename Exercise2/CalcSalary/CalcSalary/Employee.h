@@ -1,3 +1,13 @@
+/* ______________________________________________________________________
+| Workfile : Employee.h
+| Description : [ HEADER ] Baseclass for derived classes (diff worktype)
+| Name : Daniel Weyrer					PKZ : S1820306044
+| Date : 04.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
+
+
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 #include "Object.h"
@@ -65,12 +75,15 @@ public:
 	void SetNickname(std::string const& nickname);
 	std::string GetNickname() const;
 	
+	//Sets SSN after its validation
 	void setSSN(std::string const& ssn);
 	std::string GetSSN() const;
 
+	//Sets Birthday after a Date and Age-Verification
 	void SetBirthday(TDate const& birthday);
 	TDate GetBirthday() const;
 
+	//Sets Date of Joining after a Date-Verification
 	TDate GetDateOfJoining() const;
 	void SetDateOfJoining(TDate const& dateOfJoining);
 	void SetDateOfJoining(std::size_t day, std::size_t month, std::size_t year);

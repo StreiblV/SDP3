@@ -1,3 +1,12 @@
+/* ______________________________________________________________________
+| Workfile : CommssionWorker.h
+| Description : [ HEADER ] Derived Class ComissionWorker
+| Name : Daniel Weyrer					PKZ : S1820306044
+| Date : 04.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
+
 #ifndef COMISSIONWORKER_H
 #define COMISSIONWORKER_H
 

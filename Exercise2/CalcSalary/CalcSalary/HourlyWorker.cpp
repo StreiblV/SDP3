@@ -1,3 +1,13 @@
+/* ______________________________________________________________________
+| Workfile : HourlyWorker.cpp
+| Description : [ SOURCE ] Derived Class HourlyWorker
+| Name : Daniel Weyrer					PKZ : S1820306044
+| Date : 04.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
+
+
 #include "HourlyWorker.h"
 
 wBase HourlyWorker::GetType() const {

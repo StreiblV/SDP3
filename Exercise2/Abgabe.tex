@@ -70,7 +70,7 @@ Viktoria Streibl - S1810306013\\
 \subsubsection {Daniel Weyrer}
 \begin{itemize}
 	\item estimated: 10 ph 
-	\item actually: - ph
+	\item actually: 11 ph
 \end{itemize}
 
 \section{Requirenment Definition(System Specification)}
@@ -79,11 +79,20 @@ Any number of employees can be added and deleted in the programm, but the client
 
 \section{System Design}
 \subsection{Classdiagram}
-\includegraphics[scale=0.65]{ClassDiagram}
+\includegraphics[scale=0.6]{ClassDiagram}
 
 \subsection{Design Decisions}
-\subsubsection{}
-\subsubsection{}
+\subsubsection{cTor`s Derived Classes (Base: Employee)}
+The cTor`s of the derived classes set every wage and number to 0, to identify uninitialized variables (as the Salary is 0 when one of the two parameters are 0!).
+\subsubsection{isDateValid}
+The Date get`s it`s validation in two steps:
+\begin{itemize}
+	\item correct date-syntax
+	\item is the entered date in a valid range
+\end{itemize}
+The first step is achieved by checking with number of days in each month while taking care of the leapyears!
+
+The second step is done by comparing the current date with the entered date (which has to be in the past!).
 \subsubsection{Search Employee}
 Employee is searched by nickname because it has to be unique. To be sure that the nickname is unique we check it while adding new employee.
 
@@ -94,11 +103,11 @@ The following functions tests the functionality:
 \begin{itemize}
 	\item Tests the company name
 	\item Tests the company location
-	\item Tests if it is possible ot find a employee by nickname
+	\item Tests if it is possible to find a employee by nickname
 	\item Tests if the employee which is search by his nickname is correct
 	\item Counts all employees and check if it is correct
 	\item Counts all employees of one type and check it
-	\item Counts all procuded pieces and check them
+	\item Counts all produced pieces and check them
 	\item Counts all sold pieces and check them
 	\item Count how many employees are older than a specific year and check it
 	\item Tests if the salary of an employee is correct
@@ -107,7 +116,7 @@ The following functions tests the functionality:
 	\item Print all data of company and employees
 \end{itemize}
 
-All these methods are only for testing the funcitonality of Company. Futhermore, the Client gets the company with the constructor as ICompany.
+All these methods are only for testing the functionality of Company. Furthermore, the Client gets the company with the constructor as ICompany.
 
 \subsection{Class ICompany}
 Is an interface which is used by the Client.
@@ -125,11 +134,11 @@ It contains the following functions:
 	\item Count all employees in the company
 	\item Count all employees with the same type
 	\item Count all employees which are older than a specific year
-	\item Ouput all employees in the company and some general data
+	\item Output all employees in the company and some general data
 \end{itemize}
 
 The ICompany is the interface between an client and the company. The Client is not allowed to manipulate the employees.
-It defines the methodes with can be used by the client.
+It defines the methods with can be used by the client.
 
 "GetCompanyName", returns the name of the company.
 "GetCompanyLocation", returns the location of the company.
@@ -142,6 +151,7 @@ It defines the methodes with can be used by the client.
 "CountEmployees", returns the number of employees in the company, can be specifified with type.
 "CountEmployeesOlderThan", counts how many amployees are older than a specific year.
 "Print", outputs the name and location of the company, as well as all employees.
+\newpage
 
 \subsection{Class Company}
 Manages all employees in the company. It implements the interface ICompany.
@@ -162,31 +172,33 @@ The private function "FindEmployee", loop through the list and checks if there i
 Is the base class of all employee types.
 It contains the following functions:
 \begin{itemize}
-	\item 
+	\item Contains the Get and Set pure virtual functions for the derived classes
+	\item Overloaded Output-Operator for date-struct
 \end{itemize}
 
 \subsection{Class CommissionWorker}
-This class represents a comission worker.
+This class represents a commission worker.
 \begin{itemize}
-	\item
+	\item The ComissionWorker gets a base Salary and a commssion for every sold piece
 \end{itemize}
 
 \subsection{Class HourlyWorker}
 This class represents a hourly worker.
 \begin{itemize}
-	\item
+	\item contains workinghours and the hourly wage the worker gets for each hour.
 \end{itemize}
 
 \subsection{Class PiecesWorker}
 This class represents a pieces worker.
 \begin{itemize}
-	\item
+	\item saves number of produced pieces and the wage the worker gets for every piece he produces
+	
 \end{itemize}
 
 \subsection{Class Boss}
 This class represents a boss.
 \begin{itemize}
-	\item
+	\item BaseSalary, as it`s independent from the Boss' actions!
 \end{itemize}
 
 \subsection{TestDriver}
@@ -224,20 +236,21 @@ It has been tested in the file "TestDriver", the following points have been test
 \newpage
 \subsubsection{Client.cpp}
 \sourceCode{./CalcSalary/CalcSalary/Client.cpp}
-
+\newpage
 \subsection{Interface ICompany}
 \subsubsection{ICompany.h}
 \sourceCode{./CalcSalary/CalcSalary/ICompany.h}
-
+\newpage
 \subsection{Class Company}
 \subsubsection{Company.h}
 \sourceCode{./CalcSalary/CalcSalary/Company.h}
 \subsubsection{Company.cpp}
 \sourceCode{./CalcSalary/CalcSalary/Company.cpp}
-
+\newpage
 \subsection{Class Employee}
 \subsubsection{Employee.h}
 \sourceCode{./CalcSalary/CalcSalary/Employee.h}
+\newpage
 \subsubsection{Employee.cpp}
 \sourceCode{./CalcSalary/CalcSalary/Employee.cpp}
 

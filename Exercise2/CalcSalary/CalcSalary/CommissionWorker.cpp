@@ -1,3 +1,13 @@
+/* ______________________________________________________________________
+| Workfile : CommissionWorker.cpp
+| Description : [ SOURCE ] Derived Class CommissionWorker
+| Name : Daniel Weyrer					PKZ : S1820306044
+| Date : 04.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
+
+
 #include "CommissionWorker.h"
 
 wBase CommissionWorker::GetType() const {

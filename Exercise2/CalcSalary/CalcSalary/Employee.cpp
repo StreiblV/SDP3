@@ -1,3 +1,12 @@
+/* ______________________________________________________________________
+| Workfile : Employee.cpp
+| Description : [ SOURCE ] Implementation of Baseclass
+| Name : Daniel Weyrer					PKZ : S1820306044
+| Date : 04.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
+
 #include "Employee.h"
 
 //minimum age in Austria is 15 years!
@@ -11,6 +20,7 @@ void Employee::SetNickname(std::string const& nickname) {
 std::string Employee::GetNickname() const {
 	return m_nickname;
 }
+
 
 void Employee::setSSN(std::string const& ssn) {
 	try {

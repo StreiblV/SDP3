@@ -2,7 +2,7 @@
 Client test for Linz AG
 ###############################
 Name: Daniel Weyrer
-K³rzel: DaW
+Kuerzel: DaW
 Sozialversicherungsnummer: 7733177331
 Einstiegsjahr: 2015
 Mitarbeiterklasse: HourlyWorker
@@ -16,14 +16,14 @@ Datenblatt
 ---------------
 
 Name: Christian Grey
-K³rzel: CGB
+Kuerzel: CGB
 Sozialversicherungsnummer: 1234512345
 Einstiegsjahr: 0
 Mitarbeiterklasse: Boss
 Gehalt: 4800 EUR
 
 Name: Viktoria Streibl
-K³rzel: ViS
+Kuerzel: ViS
 Sozialversicherungsnummer: 1290012900
 Einstiegsjahr: 2010
 Mitarbeiterklasse: ComissionWorker
@@ -32,7 +32,7 @@ Provision: 88
 Gehalt: 2188 EUR
 
 Name: Daniel Weyrer
-K³rzel: DaW
+Kuerzel: DaW
 Sozialversicherungsnummer: 7733177331
 Einstiegsjahr: 2015
 Mitarbeiterklasse: HourlyWorker
@@ -41,12 +41,12 @@ Stundenlohn: 13 EUR
 Gehalt: 1040 EUR
 
 Name: John Doe
-K³rzel: JoD
+Kuerzel: JoD
 Sozialversicherungsnummer: 1230502539
 Einstiegsjahr: 2003
 Mitarbeiterklasse: PieceWorker
-St³ckzahl: 10
-St³ckwert: 5 EUR
+Stueckzahl: 10
+Stueckzahl: 5 EUR
 Gehalt: 50 EUR
 -------------------------------------------
 v1.0 Oktober 2019
@@ -63,14 +63,14 @@ Datenblatt
 ---------------
 
 Name: Christian Grey
-K³rzel: CGB
+Kuerzel: CGB
 Sozialversicherungsnummer: 1234512345
 Einstiegsjahr: 0
 Mitarbeiterklasse: Boss
 Gehalt: 4800 EUR
 
 Name: Viktoria Streibl
-K³rzel: ViS
+Kuerzel: ViS
 Sozialversicherungsnummer: 1290012900
 Einstiegsjahr: 2010
 Mitarbeiterklasse: ComissionWorker
@@ -92,14 +92,14 @@ Datenblatt
 ---------------
 
 Name: Christian Grey
-K³rzel: CGB
+Kuerzel: CGB
 Sozialversicherungsnummer: 1234512345
 Einstiegsjahr: 0
 Mitarbeiterklasse: Boss
 Gehalt: 4800 EUR
 
 Name: Daniel Weyrer
-K³rzel: DaW
+Kuerzel: DaW
 Sozialversicherungsnummer: 7733177331
 Einstiegsjahr: 2015
 Mitarbeiterklasse: HourlyWorker
@@ -108,12 +108,12 @@ Stundenlohn: 13 EUR
 Gehalt: 1040 EUR
 
 Name: John Doe
-K³rzel: JoD
+Kuerzel: JoD
 Sozialversicherungsnummer: 1230502539
 Einstiegsjahr: 2003
 Mitarbeiterklasse: PieceWorker
-St³ckzahl: 10
-St³ckwert: 5 EUR
+Stueckzahl: 10
+Stueckzahl: 5 EUR
 Gehalt: 50 EUR
 -------------------------------------------
 v1.0 Oktober 2019

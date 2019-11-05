@@ -52,6 +52,7 @@ double PieceWorker::GetWagePPiece() const {
 }
 
 void PieceWorker::Print() {
+	Employee::Print();
 	std::cout << "Mitarbeiterklasse: " << this->GetType() << std::endl;
 	std::cout << "Stückzahl: " << this->GetProdPieces() << std::endl;
 	std::cout << "Stückwert: " << this->GetWagePPiece() << " EUR" << std::endl;

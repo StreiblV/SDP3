@@ -53,8 +53,9 @@ double CommissionWorker::GetWagePPiece() const {
 }
 
 void CommissionWorker::Print() {
+	Employee::Print();
 	std::cout << "Mitarbeiterklasse: " << this->GetType() << std::endl;
-	std::cout << "Grundgehalt: " << this->GetBaseSalary() << std::endl;
+	std::cout << "Grundgehalt: " << this->GetBaseSalary() << " EUR" << std::endl;
 	std::cout << "Provision: " << (this->GetSoldPieces()) * (this->GetWagePPiece()) << std::endl;
 	std::cout << "Gehalt: " << this->Salary() << " EUR" << std::endl;
 }

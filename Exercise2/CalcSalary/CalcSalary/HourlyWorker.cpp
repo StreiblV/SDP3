@@ -55,6 +55,7 @@ double HourlyWorker::GetWagePPiece() const {
 }
 
 void HourlyWorker::Print() {
+	Employee::Print();
 	std::cout << "Mitarbeiterklasse: " << this->GetType() << std::endl;
 	std::cout << "Arbeitsstunden: " << this->GetWorkingHours() << std::endl;
 	std::cout << "Stundenlohn: " << this->GetHourlyWage() << " EUR" << std::endl;

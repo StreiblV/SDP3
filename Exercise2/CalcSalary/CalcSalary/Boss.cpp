@@ -56,6 +56,7 @@ double Boss::GetWagePPiece() const {
 }
 
 void Boss::Print() {
+	Employee::Print();
 	std::cout << "Mitarbeiterklasse: " << this->GetType() << std::endl;
 	std::cout << "Gehalt: " << this->Salary() <<" EUR" << std::endl;
 }

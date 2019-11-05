@@ -1,19 +1,19 @@
 /* ______________________________________________________________________
-| Workfile : ICompany .h
-| Description : [ Interface ] Interface between Client and Company
-| Name : Viktoria Streibl			PKZ : S1810306013
-| Date : 04.11.2019
+| Workfile : Encryptor.h
+| Description : [ HEADER ] Base Class for encryptors
+| Name : Daniel Weyrer									PKZ : S1820306044
+| Date : 05.11.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
 #ifndef ENCRYPTOR_H
 #define ENCRYPTOR_H
-
+#include <fstream>
+#include <iostream>
 #include <string>
 #include "Object.h"
 
-class Encryptor : public Object
-{
+class Encryptor : public Object {
 public:
 	virtual void Encrypt(std::string const& fileName) = 0;
 	virtual void Decrypt(std::string const& fileName) = 0;

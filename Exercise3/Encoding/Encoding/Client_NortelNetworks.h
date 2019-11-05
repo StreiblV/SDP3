@@ -12,8 +12,7 @@
 #include "Object.h"
 #include "INortelNetworks.h"
 
-class Client_NortelNetworks : public Object
-{
+class Client_NortelNetworks : public Object {
 };
 
 #endif //CLIENT_NORTEL_NETWORKS_H

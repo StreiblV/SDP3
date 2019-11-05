@@ -1,8 +1,8 @@
 /* ______________________________________________________________________
-| Workfile : ICompany .h
-| Description : [ Interface ] Interface between Client and Company
-| Name : Viktoria Streibl			PKZ : S1810306013
-| Date : 04.11.2019
+| Workfile : RSA.h
+| Description : [ HEADER ] Derived Class to encrypt via RSA technique
+| Name : Viktoria Streibl							PKZ : S1820306044
+| Date : 05.11.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */

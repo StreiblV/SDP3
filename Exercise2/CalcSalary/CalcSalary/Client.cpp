@@ -144,5 +144,5 @@ bool Client::TestPrintAll() const {
 
 void Client::ErrorMsg(std::string msg) const{
 	//outputs the error message
-	std::cout << "!Error: " << msg << std::endl;
+	std::cout << "!!!!!! Error: " << msg << std::endl;
 }

@@ -151,7 +151,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Encoding.cpp" />
+    <ClCompile Include="AEpos.cpp" />
+    <ClCompile Include="ANortelNetworks.cpp" />
+    <ClCompile Include="Caesar.cpp" />
+    <ClCompile Include="Client_Epos.cpp" />
+    <ClCompile Include="Client_NortelNetworks.cpp" />
+    <ClCompile Include="Encryptor.cpp" />
+    <ClCompile Include="RSA.cpp" />
+    <ClCompile Include="TestDriver.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AEpos.h" />
+    <ClInclude Include="ANortelNetworks.h" />
+    <ClInclude Include="Caesar.h" />
+    <ClInclude Include="Client_Epos.h" />
+    <ClInclude Include="Client_NortelNetworks.h" />
+    <ClInclude Include="Encryptor.h" />
+    <ClInclude Include="IEpos.h" />
+    <ClInclude Include="INortelNetworks.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="RSA.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

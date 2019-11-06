@@ -11,15 +11,20 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <iterator>
+
 #include "Object.h"
 
 class Encryptor : public Object {
 public:
+	Encryptor() = default;
+	virtual ~Encryptor() = default;
 	virtual void Encrypt(std::string const& fileName) = 0;
 	virtual void Decrypt(std::string const& fileName) = 0;
 
-private:
-	void GenFile(std::string const& newFileName, std::string const& content);
+protected:
+	virtual void GenFile(std::string const& FileName, std::string const& content);
+	std::string ReadFile(std::string const& fileName);
 };
 
 #endif // ENCRYPTOR_H

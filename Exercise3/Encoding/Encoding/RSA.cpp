@@ -9,10 +9,13 @@
 
 #include "RSA.h"
 
-void RSA::Encrypt(std::string const& fileName)
-{
+void RSA::Encrypt(std::string const& fileName) {
 }
 
-void RSA::Decrypt(std::string const& fileName)
-{
+void RSA::Decrypt(std::string const& fileName) {
+}
+
+void RSA::GenFile(std::string const& FileName, std::string const& content) {
+	std::string newFileName = FileName + ".RSA";
+	Encryptor::GenFile(newFileName, content);
 }

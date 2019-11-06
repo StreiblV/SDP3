@@ -9,13 +9,27 @@
 #ifndef CAESAR_H
 #define CAESAR_H
 
-#include "Encryptor.h"
+#include <algorithm>
 
-class Caesar : public Encryptor
-{
+#include "Encryptor.h"
+static const size_t encryptionKey = 98;
+
+class Caesar : public Encryptor {
+public:
+	Caesar() : key{ encryptionKey } {}
+	virtual ~Caesar() override = default;
+
 	// Inherited via Encryptor
 	virtual void Encrypt(std::string const& fileName) override;
 	virtual void Decrypt(std::string const& fileName) override;
+	virtual void GenFile(std::string const& newFileName, std::string const& content) override;
+
+private:
+	std::size_t key;
+
+	//helper methods
+	void EncryptSingleChar(char c);
+	void DecryptSingleChar(char c);
 };
 
 #endif //CAESAR_H

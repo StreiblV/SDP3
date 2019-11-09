@@ -8,6 +8,9 @@
 | _______________________________________________________________________ */
 #ifndef RSA_H
 #define RSA_H
+#include <algorithm>
+
+
 #include "Encryptor.h"
 
 static const size_t n_default = 187;
@@ -28,6 +31,8 @@ private:
 	size_t e;
 	size_t d;
 
+	//void EncryptSingleChar(char& c);
+	//void DecryptSingleChar(char& c);
 };
 
 #endif //RSA_H

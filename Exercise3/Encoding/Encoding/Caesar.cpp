@@ -17,14 +17,14 @@ void Caesar::Encrypt(std::string const& fileName) {
 	auto EncryptSingleChar = [this](char const c) { char encrypted = ((c + key) % maxNumberASCII); return encrypted; };
 	std::string sEncrypt = ReadFile(fileName);
 	std::string encrypted;
-	std::transform(sEncrypt.begin(), sEncrypt.end(), std::back_inserter(encrypted), &EncryptSingleChar);
+	std::transform(sEncrypt.begin(), sEncrypt.end(), std::back_inserter(encrypted), EncryptSingleChar);
 	GenFile(fileName, sEncrypt);
 }
 
 void Caesar::Decrypt(std::string const& fileName) {
 	try {
 		//check for correct file_ending
-		std::string::const_iterator it = std::search(fileName.cbegin(), fileName.cend(), fileEnding);
+		std::string::const_iterator it = std::search(fileName.cbegin(), fileName.cend(), fileEnding.cbegin(), fileEnding.cend());
 		if (it == fileName.end()) {
 			throw std::exception("wrong file-ending! Check filename.");
 		}

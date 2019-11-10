@@ -11,7 +11,7 @@
 
 void Encryptor::GenFile(std::string const& FileName, std::string const& content) {
 		std::ofstream outFile{ FileName, std::ios::out };
-		if (!outFile.good() && outFile.fail()) {
+		if (!outFile.good() || outFile.fail()) {
 			outFile.close();
 			throw std::exception("Error creating new File");
 		}

@@ -17,7 +17,7 @@ void RSA::Encrypt(std::string const& fileName) {
 		std::string unEncrypted = ReadFile(fileName);
 		std::string encrypted;
 
-		auto EncryptSingleChar = [this](char const c) {unsigned long long encr = ((c ^ e) % n); return encr; };
+		auto EncryptSingleChar = [this](char const c) {char encr = ((c ^ e) % n); return encr; };
 		std::transform(unEncrypted.cbegin(), unEncrypted.cend(), std::back_inserter(encrypted), EncryptSingleChar);
 
 	}
@@ -29,7 +29,7 @@ void RSA::Encrypt(std::string const& fileName) {
 void RSA::Decrypt(std::string const& fileName) {
 	try {
 		//check for correct file_ending
-		std::string::const_iterator it = std::search(fileName.cbegin(), fileName.cend(), fileEnding);
+		std::string::const_iterator it = std::search(fileName.cbegin(), fileName.cend(), fileEnding.cbegin(), fileEnding.cend());
 		if (it == fileName.end()) {
 			throw std::exception("wrong file-ending! Check filename.");
 		}
@@ -40,7 +40,7 @@ void RSA::Decrypt(std::string const& fileName) {
 		newFileName.assign(fileName.cbegin(), (--it));
 		std::string sDecrypt = ReadFile(fileName);
 		std::string decrypted;
-		auto DecryptSingleChar = [this](char const c) {unsigned long long decr = (c ^ d) % n; return decr; };
+		auto DecryptSingleChar = [this](char const c) {char decr = (c ^ d) % n; return decr; };
 
 		std::transform(sDecrypt.begin(), sDecrypt.end(), std::back_inserter(decrypted), DecryptSingleChar);
 

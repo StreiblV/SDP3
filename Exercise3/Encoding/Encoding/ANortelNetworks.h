@@ -13,15 +13,17 @@
 #include "RSA.h"
 #include "Caesar.h"
 
-class AEpos : public INortelNetworks
+class ANortelNetworks : public INortelNetworks
 {
 public:
+	ANortelNetworks();
+	~ANortelNetworks() = default;
 	void Encipher(TEncoding enc, std::string const& fileName) override;
 	void Decipher(TEncoding enc, std::string const& fileName) override;
 
 private:
 	RSA* m_rsa;
-	Caesar* m_ceasar;
+	Caesar* m_caesar;
 };
 
 #endif //ANORTEL_NETWORKS_H

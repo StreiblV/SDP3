@@ -171,6 +171,7 @@
     <ClInclude Include="INortelNetworks.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="RSA.h" />
+    <ClInclude Include="TestDriver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

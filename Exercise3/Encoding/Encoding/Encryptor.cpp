@@ -35,10 +35,16 @@ std::string Encryptor::NewFileEnding(std::string const& oldFileName, std::string
 	//create new Filename with new FileEnding
 	std::string newFileName;
 
-	newFileName.assign(oldFileName.cbegin(), (--it));
+	newFileName.assign(oldFileName.cbegin(), it);
 	newFileName += newFileEnding;
 
 	return newFileName;
+}
+
+std::string Encryptor::NewFileEnding(std::string const& oldFileName, std::string const& oldFileEnding, std::string const& newFileEnding, std::string const& appendix)
+{
+	std::string tmpFileEnding = appendix + newFileEnding;
+	return NewFileEnding(oldFileName, oldFileEnding, tmpFileEnding);
 }
 
 std::string Encryptor::ReadFile(std::string const& fileName) {

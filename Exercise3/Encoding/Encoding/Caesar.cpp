@@ -11,6 +11,7 @@
 static const unsigned int maxNumberASCII = 128;
 static const std::string fileEndingCaesar = ".Caesar";
 static const std::string fileEndingUnencrypted = ".txt";
+static const std::string decryptedFileAppendix = "_decrypted";
 
 
 //Reads content of given File, encrypts and saves it into a new File with a new FileEnding
@@ -44,7 +45,7 @@ void Caesar::Encrypt(std::string const& fileName) {
 //Decrypts the content of the given file and saves it into a new file
 void Caesar::Decrypt(std::string const& fileName) {
 	try {
-		std::string newFileName = Encryptor::NewFileEnding(fileName, fileEndingCaesar, fileEndingUnencrypted);
+		std::string newFileName = Encryptor::NewFileEnding(fileName, fileEndingCaesar, fileEndingUnencrypted, decryptedFileAppendix);
 
 		//read file to String
 		std::string encrypted = ReadFile(fileName);
@@ -59,7 +60,7 @@ void Caesar::Decrypt(std::string const& fileName) {
 		std::string decrypted;
 
 		//Iterate through encrypted string, decrypt every single char and save it into "decrypted"
-		std::transform(encrypted.begin(), encrypted.end(), decrypted.begin(), DecryptSingleChar);
+		std::transform(encrypted.begin(), encrypted.end(), std::back_inserter(decrypted), DecryptSingleChar);
 
 		Encryptor::GenFile(newFileName, decrypted);
 	}

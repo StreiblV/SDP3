@@ -11,6 +11,8 @@
 
 static const std::string fileEndingRSA = ".RSA";
 static const std::string fileEndingUnencrypted = ".txt";
+static const std::string decryptedFileAppendix = "_decrypted";
+
 
 //Reads content of given File, encrypts and saves it into a new File with a new FileEnding
 void RSA::Encrypt(std::string const& fileName) {
@@ -31,6 +33,7 @@ void RSA::Encrypt(std::string const& fileName) {
 		//iterate through unencrypted string, encrypt every single char and save it into encrypted
 		std::transform(unencrypted.cbegin(), unencrypted.cend(), std::back_inserter(encrypted), EncryptSingleChar);
 
+		Encryptor::GenFile(newFileName, encrypted);
 	}
 	catch (std::exception const& ex) {
 		std::cerr << "Error while encrypting " << '"' << fileName << '"' << " :" << ex.what()<< std::endl;
@@ -40,7 +43,7 @@ void RSA::Encrypt(std::string const& fileName) {
 //Decrypts the content of the given file and saves it into a new file
 void RSA::Decrypt(std::string const& fileName) {
 	try {
-		std::string newFileName = Encryptor::NewFileEnding(fileName, fileEndingRSA, fileEndingUnencrypted);
+		std::string newFileName = Encryptor::NewFileEnding(fileName, fileEndingRSA, fileEndingUnencrypted, decryptedFileAppendix);
 
 		//read content of encrypted file into encrypted
 		std::string encrypted = ReadFile(fileName);

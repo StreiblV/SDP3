@@ -26,6 +26,7 @@ public:
 protected:
 	void GenFile(std::string const& FileName, std::string const& content);
 	std::string NewFileEnding(std::string const& oldFileName, std::string const& oldFileEnding, std::string const& newFileEnding);
+	std::string NewFileEnding(std::string const& oldFileName, std::string const& oldFileEnding, std::string const& newFileEnding, std::string const& appendix);
 	std::string ReadFile(std::string const& fileName);
 
 };

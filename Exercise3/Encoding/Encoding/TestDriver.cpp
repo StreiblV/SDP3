@@ -1,10 +1,28 @@
 #include "Testdriver.h"
 
+#include <windows.h>
+
 int main()
 {
-	testRSA_EPOS("../testFiles/alphabet");
-	test_NN(TEncoding::eCaesar, "../testFiles/alphabet-c");
-	test_NN(TEncoding::eRSA, "../testFiles/alphabet-r");
+	///////////////////////////////////////////////
+	//   Test alphabet and numbers
+	///////////////////////////////////////////////
+	CreateFullTest("Test alphabet and numbers", "alphabet");
+
+	///////////////////////////////////////////////
+	//   Test special characters
+	///////////////////////////////////////////////
+	CreateFullTest("Test special characters", "specialCharacters");
+
+	///////////////////////////////////////////////
+	//   Test characters not in ASCII-128
+	///////////////////////////////////////////////
+	CreateFullTest("Test characters not in ASCII-128", "noascii128");
+
+	///////////////////////////////////////////////
+	//   Testing an email file
+	///////////////////////////////////////////////
+	CreateFullTest("Testing an email file", "email");
 
 	return 0;
 }
@@ -23,4 +41,35 @@ void test_NN(TEncoding type, std::string filename) {
 		c_nortelNetworks.Encipher(TEncoding::eRSA, filename + ".txt");
 		c_nortelNetworks.Decipher(TEncoding::eRSA, filename + ".RSA");
 	}
+}
+
+void PrintSubheader(std::string subtitle) {
+	std::cout << "###################################" << std::endl;
+	std::cout << subtitle << std::endl;
+	std::cout << "###################################" << std::endl;
+}
+
+void CreateFullTest(std::string subtitle, std::string filename) {
+
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	PrintSubheader(subtitle);
+	std::cout << "Test epos... " << std::endl;
+	SetConsoleTextAttribute(hConsole, 4);
+	testRSA_EPOS("../testFiles/"+ filename);
+	SetConsoleTextAttribute(hConsole, 15);
+	std::cout << "...completed!" << std::endl;
+
+	std::cout << "Test Nortel Networks Caesar... ";
+	SetConsoleTextAttribute(hConsole, 4);
+	test_NN(TEncoding::eCaesar, "../testFiles/"+ filename + "-c");
+	SetConsoleTextAttribute(hConsole, 15);
+	std::cout << " completed!" << std::endl;
+
+	std::cout << "Test Nortel Networks RSA... ";
+	SetConsoleTextAttribute(hConsole, 4);
+	test_NN(TEncoding::eRSA, "../testFiles/" + filename + "-r");
+	SetConsoleTextAttribute(hConsole, 15);
+	std::cout << " completed!" << std::endl;
+	std::cout << std::endl;
 }

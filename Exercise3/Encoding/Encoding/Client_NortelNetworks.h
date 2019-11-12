@@ -23,5 +23,4 @@ public:
 private:
 	INortelNetworks* m_nortelNetworks;
 };
-
 #endif //CLIENT_NORTEL_NETWORKS_H

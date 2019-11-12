@@ -12,6 +12,7 @@
 #include <iostream>
 #include <string>
 #include <iterator>
+#include <algorithm>
 
 #include "Object.h"
 
@@ -23,8 +24,10 @@ public:
 	virtual void Decrypt(std::string const& fileName) = 0;
 
 protected:
-	virtual void GenFile(std::string const& FileName, std::string const& content);
+	void GenFile(std::string const& FileName, std::string const& content);
+	std::string NewFileEnding(std::string const& oldFileName, std::string const& oldFileEnding, std::string const& newFileEnding);
 	std::string ReadFile(std::string const& fileName);
+
 };
 
 #endif // ENCRYPTOR_H

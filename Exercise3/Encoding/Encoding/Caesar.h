@@ -12,7 +12,7 @@
 #include <algorithm>
 
 #include "Encryptor.h"
-static const size_t encryptionKey = 98;
+static const unsigned int encryptionKey = 98;
 
 class Caesar : public Encryptor {
 public:
@@ -22,14 +22,10 @@ public:
 	// Inherited via Encryptor
 	virtual void Encrypt(std::string const& fileName) override;
 	virtual void Decrypt(std::string const& fileName) override;
-	virtual void GenFile(std::string const& newFileName, std::string const& content) override;
 
-	//char EncryptSingleChar(char const c);
-	//char DecryptSingleChar(char const c);
 
 private:
-	std::size_t key;
-
+	unsigned int key;
 	//helper methods
 	
 };

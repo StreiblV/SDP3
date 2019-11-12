@@ -8,15 +8,37 @@
 | _______________________________________________________________________ */
 #include "Encryptor.h"
 
-
+//Generate file with given FileName and store the given content in it
 void Encryptor::GenFile(std::string const& FileName, std::string const& content) {
+		//Create File
 		std::ofstream outFile{ FileName, std::ios::out };
+
+		//Check created file; throw exception in case of a fault
 		if (!outFile.good() || outFile.fail()) {
 			outFile.close();
 			throw std::exception("Error creating new File");
 		}
+		//write content into created file and close it afterwards
 		outFile << content;
 		outFile.close();
+}
+//Check Ending of File and add new ending if valid
+std::string Encryptor::NewFileEnding(std::string const& oldFileName, std::string const& oldFileEnding, std::string const& newFileEnding) {
+
+	//check for correct file_ending
+	std::string::const_iterator it = std::search(oldFileName.cbegin(), oldFileName.cend(), oldFileEnding.cbegin(), oldFileEnding.cend());
+
+	if (it == oldFileName.cend()) {
+		throw std::exception("wrong file-ending! Check filename.");
+	}
+
+	//create new Filename with new FileEnding
+	std::string newFileName;
+
+	newFileName.assign(oldFileName.cbegin(), (--it));
+	newFileName += newFileEnding;
+
+	return newFileName;
 }
 
 std::string Encryptor::ReadFile(std::string const& fileName) {

@@ -1,7 +1,7 @@
 /* ______________________________________________________________________
 | Workfile : RSA.h
 | Description : [ HEADER ] Derived Class to encrypt via RSA technique
-| Name : Viktoria Streibl							PKZ : S1820306044
+| Name : Daniel Weyrer							PKZ : S1820306044
 | Date : 05.11.2019
 | Remarks : -
 | Revision : 0
@@ -25,14 +25,13 @@ public:
 	// Inherited via Encryptor
 	virtual void Encrypt(std::string const& fileName) override;
 	virtual void Decrypt(std::string const& fileName) override;
-	virtual void GenFile(std::string const& newFileName, std::string const& content) override;
+
 private:
 	size_t n;
 	size_t e;
 	size_t d;
 
-	//void EncryptSingleChar(char& c);
-	//void DecryptSingleChar(char& c);
+	char CalcPowMod(char const c, unsigned int const pow, unsigned int const mod);
 };
 
 #endif //RSA_H

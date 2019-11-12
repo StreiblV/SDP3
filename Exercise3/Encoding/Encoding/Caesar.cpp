@@ -8,57 +8,63 @@
 | _______________________________________________________________________ */
 #include "Caesar.h"
 
-static const std::size_t maxNumberASCII = 2 ^ 7;
-static const std::string fileEnding = ".Caesar";
+static const unsigned int maxNumberASCII = 128;
+static const std::string fileEndingCaesar = ".Caesar";
+static const std::string fileEndingUnencrypted = ".txt";
 
-//!! privateMemberfunction cant be used in transform (pointer to member not possible!)
-//Encryption: ASCII-128-Bit 
+
+//Reads content of given File, encrypts and saves it into a new File with a new FileEnding
 void Caesar::Encrypt(std::string const& fileName) {
-	auto EncryptSingleChar = [this](char const c) { char encrypted = ((c + key) % maxNumberASCII); return encrypted; };
-	std::string sEncrypt = ReadFile(fileName);
-	std::string encrypted;
-	std::transform(sEncrypt.begin(), sEncrypt.end(), std::back_inserter(encrypted), EncryptSingleChar);
-	GenFile(fileName, sEncrypt);
+	try {
+
+		std::string newFileName = Encryptor::NewFileEnding(fileName, fileEndingUnencrypted, fileEndingCaesar);
+
+		//Read content of File
+		std::string unencrypted = ReadFile(fileName);
+
+		//Lambda Function to Encrypt a single Char
+		auto EncryptSingleChar = [this](char const c) {
+			char encryptedChar = ((c + key) % maxNumberASCII);
+			return encryptedChar;
+		};
+
+		std::string encrypted;
+
+		//Iterate through unencrypted string, encrypt every single char and save it into "encrypted"
+		std::transform(unencrypted.cbegin(), unencrypted.cend(), std::back_inserter(encrypted), EncryptSingleChar);
+
+		//Generate File with encrypted content
+		GenFile(newFileName, encrypted);
+	}
+	catch (std::exception const& ex) {
+		std::cerr << "Error while encrypting " << '"' << fileName << '"' << " :" << ex.what() << std::endl;
+	}
 }
 
+//Decrypts the content of the given file and saves it into a new file
 void Caesar::Decrypt(std::string const& fileName) {
 	try {
-		//check for correct file_ending
-		std::string::const_iterator it = std::search(fileName.cbegin(), fileName.cend(), fileEnding.cbegin(), fileEnding.cend());
-		if (it == fileName.end()) {
-			throw std::exception("wrong file-ending! Check filename.");
-		}
+		std::string newFileName = Encryptor::NewFileEnding(fileName, fileEndingCaesar, fileEndingUnencrypted);
 
-		//create new Filename without ending
-		std::string newFileName;
-
-		auto DecryptSingleChar = [this](char const c) { char encrypted = (((c - key) + maxNumberASCII) % maxNumberASCII);
-															return encrypted; };
+		//read file to String
+		std::string encrypted = ReadFile(fileName);
 
 
-		newFileName.assign(fileName.cbegin(), (--it));
-		std::string sDecrypt = ReadFile(fileName);
-		std::transform(sDecrypt.begin(), sDecrypt.end(), sDecrypt.begin(), DecryptSingleChar);
+		//Lambdafunction for decrypting a single char
+		auto DecryptSingleChar = [this](char const c) {
+			char decryptedChar = (((c - key) + maxNumberASCII) % maxNumberASCII);
+			return decryptedChar;
+		};
 
-		Encryptor::GenFile(newFileName, sDecrypt);
+		std::string decrypted;
+
+		//Iterate through encrypted string, decrypt every single char and save it into "decrypted"
+		std::transform(encrypted.begin(), encrypted.end(), decrypted.begin(), DecryptSingleChar);
+
+		Encryptor::GenFile(newFileName, decrypted);
 	}
 
 	catch (std::exception const& ex) {
-		std::cerr << "Exception: " << ex.what() << std::endl;
+		std::cerr << "Error while decrypting " << '"' << fileName << '"' << " :" << ex.what() << std::endl;
 	}
 }
-
-void Caesar::GenFile(std::string const& FileName, std::string const& content) {
-	std::string newFileName = FileName + fileEnding;
-	Encryptor::GenFile(newFileName, content);
-}
-
-//char Caesar::EncryptSingleChar(char const c) {
-//	char encrChar;
-//	return encrChar	= ((c + key) % maxNumberASCII);
-//}
-//
-//char Caesar::DecryptSingleChar(char const c) {
-//	char decrChar;
-//	return decrChar = ((c - key) + maxNumberASCII) % maxNumberASCII;
-//}

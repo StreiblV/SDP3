@@ -9,57 +9,69 @@
 
 #include "RSA.h"
 
-static const std::size_t maxNumberASCII = 2 ^ 7;
-static const std::string fileEnding = ".RSA";
+static const std::string fileEndingRSA = ".RSA";
+static const std::string fileEndingUnencrypted = ".txt";
 
+//Reads content of given File, encrypts and saves it into a new File with a new FileEnding
 void RSA::Encrypt(std::string const& fileName) {
 	try {
-		std::string unEncrypted = ReadFile(fileName);
+
+		std::string newFileName = Encryptor::NewFileEnding(fileName, fileEndingUnencrypted, fileEndingRSA);
+
+		//Read unencrypted file and save it into unencrypted
+		std::string unencrypted = ReadFile(fileName);
+
+
+		auto EncryptSingleChar = [this](char const c) {
+			return CalcPowMod(c, e, n); 
+		};
+
 		std::string encrypted;
 
-		auto EncryptSingleChar = [this](char const c) {char encr = ((c ^ e) % n); return encr; };
-		std::transform(unEncrypted.cbegin(), unEncrypted.cend(), std::back_inserter(encrypted), EncryptSingleChar);
+		//iterate through unencrypted string, encrypt every single char and save it into encrypted
+		std::transform(unencrypted.cbegin(), unencrypted.cend(), std::back_inserter(encrypted), EncryptSingleChar);
 
 	}
 	catch (std::exception const& ex) {
-		std::cerr << "" << ex.what()<< std::endl;
+		std::cerr << "Error while encrypting " << '"' << fileName << '"' << " :" << ex.what()<< std::endl;
 	}
 }
 
+//Decrypts the content of the given file and saves it into a new file
 void RSA::Decrypt(std::string const& fileName) {
 	try {
-		//check for correct file_ending
-		std::string::const_iterator it = std::search(fileName.cbegin(), fileName.cend(), fileEnding.cbegin(), fileEnding.cend());
-		if (it == fileName.end()) {
-			throw std::exception("wrong file-ending! Check filename.");
-		}
+		std::string newFileName = Encryptor::NewFileEnding(fileName, fileEndingRSA, fileEndingUnencrypted);
 
-		//create new Filename without ending
-		std::string newFileName;
+		//read content of encrypted file into encrypted
+		std::string encrypted = ReadFile(fileName);
 
-		newFileName.assign(fileName.cbegin(), (--it));
-		std::string sDecrypt = ReadFile(fileName);
+		//Lambda for decrypting a single char
+		auto DecryptSingleChar = [this](char const c) { 
+			return CalcPowMod(c, d, n); 
+		};
+
 		std::string decrypted;
-		auto DecryptSingleChar = [this](char const c) {char decr = (c ^ d) % n; return decr; };
 
-		std::transform(sDecrypt.begin(), sDecrypt.end(), std::back_inserter(decrypted), DecryptSingleChar);
+		//iterate through encrypted string, decrypt it char by char and save it into decrypted
+		std::transform(encrypted.begin(), encrypted.end(), std::back_inserter(decrypted), DecryptSingleChar);
 
 		Encryptor::GenFile(newFileName, decrypted);
 	}
 	catch (std::exception const& ex) {
-		std::cerr << "" << ex.what() << std::endl;
+		std::cerr << "Error while decrypting "<< '"' << fileName << '"' << " :"<< ex.what() << std::endl;
 	}
 }
 
-void RSA::GenFile(std::string const& FileName, std::string const& content) {
-	std::string newFileName = FileName + ".RSA";
-	Encryptor::GenFile(newFileName, content);
-}
+//Calculates (c^pow) % mod; Avoids high numbers by doing it step by step
+char RSA::CalcPowMod(char const c, unsigned int const pow, unsigned int const mod) {
+	
+	unsigned int tmp, mult;
 
-//void RSA::EncryptSingleChar(char& c) {
-//	c = (c ^ e) % n;
-//}
-//
-//void RSA::DecryptSingleChar(char& c) {
-//	c = (c ^ d) % n;
-//}
+	//necessary cast to do the calculation!
+	tmp = mult = static_cast<unsigned char>(c);
+	
+	for (size_t i = 1; i < pow; i++) {
+		tmp = (tmp * mult) % mod;
+	}
+	return static_cast<char>(tmp);
+}

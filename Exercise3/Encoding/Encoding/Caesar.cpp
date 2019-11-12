@@ -8,7 +8,7 @@
 | _______________________________________________________________________ */
 #include "Caesar.h"
 
-static const unsigned int maxNumberASCII = 128;
+static const unsigned int maxNumberASCII = 127;
 static const std::string fileEndingCaesar = ".Caesar";
 static const std::string fileEndingUnencrypted = ".txt";
 static const std::string decryptedFileAppendix = "_decrypted";
@@ -24,7 +24,11 @@ void Caesar::Encrypt(std::string const& fileName) {
 		std::string unencrypted = ReadFile(fileName);
 
 		//Lambda Function to Encrypt a single Char
-		auto EncryptSingleChar = [this](char const c) {
+		auto EncryptSingleChar = [this, fileName](char const c) {
+			if (c > maxNumberASCII) {
+				std::cerr << "Character " << c << " in  file " << fileName << " is not a standard-ASCII value!" << std::endl;
+				return c;
+			}
 			char encryptedChar = ((c + key) % maxNumberASCII);
 			return encryptedChar;
 		};
@@ -52,7 +56,11 @@ void Caesar::Decrypt(std::string const& fileName) {
 
 
 		//Lambdafunction for decrypting a single char
-		auto DecryptSingleChar = [this](char const c) {
+		auto DecryptSingleChar = [this, fileName](char const c) {
+			if (c > maxNumberASCII) {
+				std::cerr << "Character " << c << " in  file " << fileName << " is not a standard-ASCII value!" << std::endl;
+				return c;
+			}
 			char decryptedChar = (((c - key) + maxNumberASCII) % maxNumberASCII);
 			return decryptedChar;
 		};
@@ -60,7 +68,7 @@ void Caesar::Decrypt(std::string const& fileName) {
 		std::string decrypted;
 
 		//Iterate through encrypted string, decrypt every single char and save it into "decrypted"
-		std::transform(encrypted.begin(), encrypted.end(), std::back_inserter(decrypted), DecryptSingleChar);
+		std::transform(encrypted.cbegin(), encrypted.cend(), std::back_inserter(decrypted), DecryptSingleChar);
 
 		Encryptor::GenFile(newFileName, decrypted);
 	}

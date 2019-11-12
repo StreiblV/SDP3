@@ -3,3 +3,4 @@
 ###########################################################
 
 Designentscheidungen:
+Copy to string, damit file gleich wieder geschlossen werden kann. txt-files sind nicht so groß, dass diese ein Speicherproblem auslösen können.

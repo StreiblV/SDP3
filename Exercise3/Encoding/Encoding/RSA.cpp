@@ -12,6 +12,7 @@
 static const std::string fileEndingRSA = ".RSA";
 static const std::string fileEndingUnencrypted = ".txt";
 static const std::string decryptedFileAppendix = "_decrypted";
+static const unsigned int maxNumberASCII = 127;
 
 
 //Reads content of given File, encrypts and saves it into a new File with a new FileEnding
@@ -24,8 +25,12 @@ void RSA::Encrypt(std::string const& fileName) {
 		std::string unencrypted = ReadFile(fileName);
 
 
-		auto EncryptSingleChar = [this](char const c) {
-			return CalcPowMod(c, e, n); 
+		auto EncryptSingleChar = [this, &fileName](char const c) {
+			if (c >	maxNumberASCII) {
+				std::cerr << "Character " << c << " in  file " << fileName << " is not a standard-ASCII value!" << std::endl;
+				return c;
+			}
+			return CalcPowMod(c, e, n);
 		};
 
 		std::string encrypted;
@@ -49,14 +54,19 @@ void RSA::Decrypt(std::string const& fileName) {
 		std::string encrypted = ReadFile(fileName);
 
 		//Lambda for decrypting a single char
-		auto DecryptSingleChar = [this](char const c) { 
-			return CalcPowMod(c, d, n); 
+		auto DecryptSingleChar = [this, &fileName](char const c) { 
+			char tmp = CalcPowMod(c, d, n);
+			if (tmp > maxNumberASCII) {
+				std::cerr << "Character " << c << " in  file " << fileName << " is not a standard-ASCII value!" << std::endl;
+				return c;
+			}
+			return tmp;
 		};
 
 		std::string decrypted;
 
 		//iterate through encrypted string, decrypt it char by char and save it into decrypted
-		std::transform(encrypted.begin(), encrypted.end(), std::back_inserter(decrypted), DecryptSingleChar);
+		std::transform(encrypted.cbegin(), encrypted.cend(), std::back_inserter(decrypted), DecryptSingleChar);
 
 		Encryptor::GenFile(newFileName, decrypted);
 	}

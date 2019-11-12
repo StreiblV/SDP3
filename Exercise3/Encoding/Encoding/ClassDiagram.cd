@@ -36,7 +36,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Encryptor">
-    <Position X="7.25" Y="1.75" Width="2" />
+    <Position X="7" Y="1.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AQAAABAAAAAAQAAQAAAAAAACAAAAAAAAAAAEAQAAAAA=</HashCode>
       <FileName>Encryptor.h</FileName>
@@ -64,7 +64,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="RSA">
-    <Position X="8.5" Y="5.5" Width="2" />
+    <Position X="8.25" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>IQAIAAAAAAAAAAAQAAAAAAAAAAAAAAAGEAAIAAAAAAA=</HashCode>
       <FileName>RSA.h</FileName>

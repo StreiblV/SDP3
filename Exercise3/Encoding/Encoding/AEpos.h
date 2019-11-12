@@ -15,6 +15,8 @@
 class AEpos : public IEpos
 {
 public:
+	AEpos();
+	~AEpos() = default;
 	void EncryptRSA(std::string const& fileName) override;
 	void DecryptRSA(std::string const& fileName) override;
 

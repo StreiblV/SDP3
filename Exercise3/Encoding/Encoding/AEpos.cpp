@@ -1,5 +1,9 @@
 #include "AEpos.h"
 
+AEpos::AEpos() {
+	m_rsa = new RSA;
+}
+
 void AEpos::EncryptRSA(std::string const& fileName)
 {
 	m_rsa->Encrypt(fileName);

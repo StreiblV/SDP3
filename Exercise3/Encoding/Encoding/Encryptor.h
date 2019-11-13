@@ -24,10 +24,11 @@ public:
 	virtual void Decrypt(std::string const& fileName) = 0;
 
 protected:
-	void GenFile(std::string const& FileName, std::string const& content);
+	void GenFile(std::string const& fileName, std::string const& content);
+	std::string ReadFile(std::string const& fileName);
+	
 	std::string NewFileEnding(std::string const& oldFileName, std::string const& oldFileEnding, std::string const& newFileEnding);
 	std::string NewFileEnding(std::string const& oldFileName, std::string const& oldFileEnding, std::string const& newFileEnding, std::string const& appendix);
-	std::string ReadFile(std::string const& fileName);
 
 };
 

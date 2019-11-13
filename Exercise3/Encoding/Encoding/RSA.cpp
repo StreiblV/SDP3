@@ -12,8 +12,8 @@
 static const std::string fileEndingRSA = ".RSA";
 static const std::string fileEndingUnencrypted = ".txt";
 static const std::string decryptedFileAppendix = "_decrypted";
-static const unsigned int maxNumberASCII = 127;
 
+static const unsigned int maxNumberASCII = 127;
 
 //Reads content of given File, encrypts and saves it into a new File with a new FileEnding
 void RSA::Encrypt(std::string const& fileName) {

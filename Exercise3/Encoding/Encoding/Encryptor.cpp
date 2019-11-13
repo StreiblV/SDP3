@@ -9,9 +9,9 @@
 #include "Encryptor.h"
 
 //Generate file with given FileName and store the given content in it
-void Encryptor::GenFile(std::string const& FileName, std::string const& content) {
+void Encryptor::GenFile(std::string const& fileName, std::string const& content) {
 		//Create File
-		std::ofstream outFile{ FileName, std::ios::binary };
+		std::ofstream outFile{ fileName, std::ios::binary };
 
 		//Check created file; throw exception in case of a fault
 		if (!outFile.good() || outFile.fail()) {
@@ -57,11 +57,17 @@ std::string Encryptor::ReadFile(std::string const& fileName) {
 
 		//Seek end, to calc the size of inFile
 		inFile.seekg(std::ios::end);
-
+		//need to check flags before new seek, as it deletes the file-flags
+		if (inFile.fail()) {
+			throw std::exception("Error while calculating size of file!");
+		}
 		//Reserve the size of inFile in tmp --> more Efficent when copying larger files!
 		tmp.reserve(inFile.tellg());
 		//Seek beginning to start reading
 		inFile.seekg(std::ios::beg);
+		if (inFile.fail()) {
+			throw std::exception("Error while calculating size of file!");
+		}
 		//assigning content of inFile to tmp string
 		tmp.assign(std::istreambuf_iterator<char>(inFile), std::istreambuf_iterator<char>());
 		inFile.close();

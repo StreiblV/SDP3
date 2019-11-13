@@ -28,7 +28,6 @@ void RSA::Encrypt(std::string const& fileName) {
 		auto EncryptSingleChar = [this, &fileName](char const c) {
 			if (c >	maxNumberASCII) {
 				std::cerr << "Character " << c << " in  file " << fileName << " is not a standard-ASCII value!" << std::endl;
-				return c;
 			}
 			return CalcPowMod(c, e, n);
 		};
@@ -58,7 +57,6 @@ void RSA::Decrypt(std::string const& fileName) {
 			char tmp = CalcPowMod(c, d, n);
 			if (tmp > maxNumberASCII) {
 				std::cerr << "Character " << c << " in  file " << fileName << " is not a standard-ASCII value!" << std::endl;
-				return c;
 			}
 			return tmp;
 		};
@@ -78,13 +76,13 @@ void RSA::Decrypt(std::string const& fileName) {
 //Calculates (c^pow) % mod; Avoids high numbers by doing it step by step
 char RSA::CalcPowMod(char const c, unsigned int const pow, unsigned int const mod) {
 	
-	unsigned int tmp, mult;
+	unsigned int tmp, origChar;
 
 	//necessary cast to do the calculation!
-	tmp = mult = static_cast<unsigned char>(c);
+	tmp = origChar = static_cast<unsigned char>(c);
 	
 	for (size_t i = 1; i < pow; i++) {
-		tmp = (tmp * mult) % mod;
+		tmp = (tmp * origChar) % mod;
 	}
 	return static_cast<char>(tmp);
 }

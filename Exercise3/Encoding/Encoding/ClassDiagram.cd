@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
+  <Class Name="AEpos">
+    <Position X="10.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAABAAAAAAAAAACAEAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>AEpos.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ANortelNetworks">
+    <Position X="3.75" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAIQIAAAAAAEAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>ANortelNetworks.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caesar">
+    <Position X="6.25" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQAEAEAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Caesar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client_Epos">
+    <Position X="13" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAACAAAACAAAAAAIAAAAA=</HashCode>
+      <FileName>Client_Epos.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client_NortelNetworks">
+    <Position X="1" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAiAAAAAAAAAAAAIAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Client_NortelNetworks.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Encryptor">
+    <Position X="7" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAABAAAAAAQAAQAAAAAAACAAAAAAAAAAAEAQAAAAA=</HashCode>
+      <FileName>Encryptor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IEpos">
+    <Position X="10.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>IEpos.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="INortelNetworks">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INortelNetworks.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Object" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSA">
+    <Position X="8.25" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IQAIAAAAAAAAAAAQAAAAAAAAAAAAAAAGEAAIAAAAAAA=</HashCode>
+      <FileName>RSA.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TEncoding">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>INortelNetworks.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

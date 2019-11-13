@@ -15,11 +15,6 @@ int main()
 	CreateFullTest("Test special characters", "specialCharacters");
 
 	///////////////////////////////////////////////
-	//   Test characters not in ASCII-128
-	///////////////////////////////////////////////
-	CreateFullTest("Test characters not in ASCII-128", "noascii128");
-
-	///////////////////////////////////////////////
 	//   Testing an email file
 	///////////////////////////////////////////////
 	CreateFullTest("Testing an email file", "email");
@@ -54,7 +49,7 @@ void CreateFullTest(std::string subtitle, std::string filename) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 	PrintSubheader(subtitle);
-	std::cout << "Test epos... " << std::endl;
+	std::cout << "Test epos... ";
 	SetConsoleTextAttribute(hConsole, 4);
 	testRSA_EPOS("../testFiles/"+ filename);
 	SetConsoleTextAttribute(hConsole, 15);

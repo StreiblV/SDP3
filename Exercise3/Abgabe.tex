@@ -106,7 +106,7 @@ The encryption is limited to 7-Bit ASCII-Values, which limits the encryption to 
 
 \subsubsection{Exception-Handling}
 \begin{itemize}
-	\item \_bad_alloc (thrown by e.g. string::reserve())
+	\item badalloc (thrown by e.g. string::reserve())
 	\item std::exception (thrown by systemfunctions and user)
 	\item unhandled exceptions
 \end{itemize}
@@ -148,11 +148,11 @@ Base Class, contains base-functionality such as:
 \item void GenFile(fileName, content)
 \subitem Creates new File with the given Filename and writes the content into the file
 
-\item[string ReadFile(fileName)]
+\item string ReadFile(fileName)
 \subitem Reads of the file with the given File-name into a string and returns the string.
 
-\item[string NewFileEnding(oldFileName, oldFileEnding, newFileEnding (, appendix)]
-\subitem Checks for correct file-ending of the file and creates a new one with the new file-extension and optional with an appendix (to create "filename_decrypted.txt"). Throws an exception if the file has the wrong file-extension, returns string with new Filename (and extension) otherwise.
+\item string NewFileEnding(oldFileName, oldFileEnding, newFileEnding (, appendix)
+\subitem Checks for correct file-ending of the file and creates a new one with the new file-extension and optional with an appendix (to create "filename decrypted.txt"). Throws an exception if the file has the wrong file-extension, returns string with new Filename (and extension) otherwise.
 
 \end{itemize}
 \subsection{Class Caesar}
@@ -173,21 +173,21 @@ It ouputs a error message if there was no successful run.
 
 \section{Source Code}
 
-\subsection{\_Client_Epos}
-\subsubsection{\_Client_Epos.h}
-\sourceCode{\_./Encoding/Encoding/Client_Epos.h}
-\subsubsection{\_Client_Epos.cpp}
-\sourceCode{\_./Encoding/Encoding/Client_Epos.cpp}
+\subsection{ClientEpos}
+\subsubsection{ClientEpos.h}
+\sourceCode{./Encoding/Encoding/Client_Epos.h}
+\subsubsection{ClientEpos.cpp}
+\sourceCode{./Encoding/Encoding/Client_Epos.cpp}
 \newpage
 \subsection{Client Nortel Networks}
-\subsubsection{\_Client_NortelNetworks.h}
-\sourceCode{\_./Encoding/Encoding/Client_NortelNetworks.h}
-\subsubsection{\_Client_NortelNetworks.h}
-\sourceCode{\_./Encoding/Encoding/Client_NortelNetworks.cpp}
+\subsubsection{ClientNortelNetworks.h}
+\sourceCode{./Encoding/Encoding/Client_NortelNetworks.h}
+\subsubsection{ClientNortelNetworks.h}
+\sourceCode{./Encoding/Encoding/Client_NortelNetworks.cpp}
 \newpage
 \subsection{Interface IEpos}
 \subsubsection{IEpos.h}
-\sourceCode{\_./Encoding/Encoding/IEpos.h}
+\sourceCode{./Encoding/Encoding/IEpos.h}
 
 \subsection{Interface INortelNetworks}
 \subsubsection{INortelNetworks.h}

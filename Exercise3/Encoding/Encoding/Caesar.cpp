@@ -41,8 +41,15 @@ void Caesar::Encrypt(std::string const& fileName) {
 		//Generate File with encrypted content
 		GenFile(newFileName, encrypted);
 	}
+	catch (std::bad_alloc const& ex) {
+		std::cerr << "Memory Allocation Error: " << ex.what() << std::endl;
+	}
 	catch (std::exception const& ex) {
-		std::cerr << "Error while encrypting " << '"' << fileName << '"' << " :" << ex.what() << std::endl;
+		std::cerr << "Error while encrypting Caesar" << '"' << fileName << '"' << ": "
+			<< ex.what() << std::endl;
+	}
+	catch (...) {
+		std::cerr << "Unhandled Exception!" << std::endl;
 	}
 }
 
@@ -72,8 +79,14 @@ void Caesar::Decrypt(std::string const& fileName) {
 
 		Encryptor::GenFile(newFileName, decrypted);
 	}
-
+	catch (std::bad_alloc const& ex) {
+		std::cerr << "Memory Allocation Error: " << ex.what() << std::endl;
+	}
 	catch (std::exception const& ex) {
-		std::cerr << "Error while decrypting " << '"' << fileName << '"' << " :" << ex.what() << std::endl;
+		std::cerr << "Error while decrypting Caesar" << '"' << fileName << '"' << ": " 
+			<< ex.what() << std::endl;
+	}
+	catch (...) {
+		std::cerr << "Unhandled Exception!" << std::endl;
 	}
 }

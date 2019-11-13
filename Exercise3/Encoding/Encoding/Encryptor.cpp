@@ -50,7 +50,7 @@ std::string Encryptor::NewFileEnding(std::string const& oldFileName, std::string
 std::string Encryptor::ReadFile(std::string const& fileName) {
 	std::string tmp;
 		std::ifstream inFile{ fileName, std::ios::binary};
-		if (inFile.eof() && inFile.fail() && !inFile.good()) {
+		if (inFile.eof() || inFile.fail() || !inFile.good()) {
 			inFile.close();
 			throw std::exception("Error Reading File!");
 		}

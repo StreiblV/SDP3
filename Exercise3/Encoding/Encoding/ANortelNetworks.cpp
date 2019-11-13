@@ -1,3 +1,12 @@
+/* ______________________________________________________________________
+| Workfile : AEpos.h
+| Description : [SOURCE] Implements the INortelNetwors interface and
+				handles which encryption/decryption should be used
+| Name : Viktoria Streibl			PKZ : S1810306013
+| Date : 08.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
 #include "ANortelNetworks.h"
 
 ANortelNetworks::ANortelNetworks() {
@@ -7,6 +16,7 @@ ANortelNetworks::ANortelNetworks() {
 
 void ANortelNetworks::Encipher(TEncoding enc, std::string const& fileName)
 {
+	//check if the encoding type is caesar
 	if (enc == TEncoding::eCaesar) {
 		m_caesar->Encrypt(fileName);
 	}
@@ -17,6 +27,7 @@ void ANortelNetworks::Encipher(TEncoding enc, std::string const& fileName)
 
 void ANortelNetworks::Decipher(TEncoding enc, std::string const& fileName)
 {
+	//check if the encoding type is caesar
 	if (enc == TEncoding::eCaesar) {
 		m_caesar->Decrypt(fileName);
 	}

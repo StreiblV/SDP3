@@ -1,8 +1,8 @@
 /* ______________________________________________________________________
-| Workfile : ICompany .h
-| Description : [ Interface ] Interface between Client and Company
+| Workfile : Client_NortelNetworks.h
+| Description : [HEADER] Client uses the Interface INortelNetworks
 | Name : Viktoria Streibl			PKZ : S1810306013
-| Date : 04.11.2019
+| Date : 08.11.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
@@ -15,9 +15,12 @@
 class Client_NortelNetworks : public Object
 {
 public:
+	//Constructor
 	Client_NortelNetworks(INortelNetworks& nortelNetworks);
 
+	//calls the encryption by encoding type
 	void Encipher(TEncoding type, std::string const& fileName);
+	//calls the decryption by encoding type
 	void Decipher(TEncoding type, std::string const& fileName);
 
 private:

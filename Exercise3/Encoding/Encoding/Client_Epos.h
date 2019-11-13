@@ -1,8 +1,8 @@
 /* ______________________________________________________________________
-| Workfile : ICompany .h
-| Description : [ Interface ] Interface between Client and Company
+| Workfile : Client_Epos.h
+| Description : [HEADER] Client uses the Interface IEpos
 | Name : Viktoria Streibl			PKZ : S1810306013
-| Date : 04.11.2019
+| Date : 08.11.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
@@ -15,9 +15,13 @@
 class Client_Epos : public Object
 {
 public:
+	//Constructor
 	Client_Epos(IEpos& epos);
 
+	//calls the encryption logic
 	void EncryptRSA(std::string const& fileName);
+
+	//calls the decryption logic
 	void DecryptRSA(std::string const& fileName);
 
 private:

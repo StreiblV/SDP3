@@ -1,8 +1,8 @@
 /* ______________________________________________________________________
-| Workfile : ICompany .h
-| Description : [ Interface ] Interface between Client and Company
+| Workfile : IEpos.h
+| Description : [ Interface ] Interface between Client and RSA and Caesar
 | Name : Viktoria Streibl			PKZ : S1810306013
-| Date : 04.11.2019
+| Date : 08.11.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
@@ -14,7 +14,14 @@
 
 class IEpos : public Object {
 public:
+	//Default Constructor
+	IEpos() = default;
+	//Default Destructor
+	~IEpos() = default;
+
+	//calls the encrpytion method for RSA
 	virtual void EncryptRSA(std::string const& fileName) = 0;
+	//calls the decrpytion method for RSA
 	virtual void DecryptRSA(std::string const& fileName) = 0;
 };
 

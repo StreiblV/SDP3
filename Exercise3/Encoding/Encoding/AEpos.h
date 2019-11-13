@@ -1,8 +1,8 @@
 /* ______________________________________________________________________
-| Workfile : ICompany .h
-| Description : [ Interface ] Interface between Client and Company
+| Workfile : AEpos.h
+| Description : [HEADER] Implements the IEpos interface
 | Name : Viktoria Streibl			PKZ : S1810306013
-| Date : 04.11.2019
+| Date : 08.11.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
@@ -15,9 +15,15 @@
 class AEpos : public IEpos
 {
 public:
+	//Constructor
 	AEpos();
+	//Default deconstructor
 	~AEpos() = default;
+
+	//encrypt the file with RSA
 	void EncryptRSA(std::string const& fileName) override;
+
+	//decrypt the file with RSA
 	void DecryptRSA(std::string const& fileName) override;
 
 private:

@@ -1,8 +1,8 @@
 /* ______________________________________________________________________
-| Workfile : ICompany .h
-| Description : [ Interface ] Interface between Client and Company
+| Workfile : INortelNetworks.h
+| Description : [ Interface ] Interface between Client and RSA and Caesar
 | Name : Viktoria Streibl			PKZ : S1810306013
-| Date : 04.11.2019
+| Date : 08.11.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
@@ -12,6 +12,7 @@
 #include <string>
 #include "Object.h"
 
+//enum for the encoding types
 enum class TEncoding {
 	eRSA,
 	eCaesar
@@ -19,7 +20,14 @@ enum class TEncoding {
 
 class INortelNetworks : public Object {
 public:
+	//Default Constructor
+	INortelNetworks() = default;
+	//Default Destructor
+	~INortelNetworks() = default;
+
+	//calls the correct encryption method by type
 	virtual void Encipher(TEncoding enc, std::string const& fileName) = 0;
+	//calls the correct decryption method by type
 	virtual void Decipher(TEncoding enc, std::string const& fileName) = 0;
 };
 

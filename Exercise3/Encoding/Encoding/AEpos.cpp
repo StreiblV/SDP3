@@ -1,3 +1,11 @@
+/* ______________________________________________________________________
+| Workfile : AEpos.cpp
+| Description : [SOURCE] Implements the IEpos interface
+| Name : Viktoria Streibl			PKZ : S1810306013
+| Date : 08.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
 #include "AEpos.h"
 
 AEpos::AEpos() {

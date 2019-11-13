@@ -1,8 +1,9 @@
 /* ______________________________________________________________________
-| Workfile : ICompany .h
-| Description : [ Interface ] Interface between Client and Company
+| Workfile : AEpos.h
+| Description : [HEADER] Implements the INortelNetwors interface and
+				handles which encryption/decryption should be used
 | Name : Viktoria Streibl			PKZ : S1810306013
-| Date : 04.11.2019
+| Date : 08.11.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
@@ -16,9 +17,14 @@
 class ANortelNetworks : public INortelNetworks
 {
 public:
+	//Constructor
 	ANortelNetworks();
+	//Default deconstructor
 	~ANortelNetworks() = default;
+
+	//encrypt the file based on the encoding type
 	void Encipher(TEncoding enc, std::string const& fileName) override;
+	//decrypt the file based on the encoding type
 	void Decipher(TEncoding enc, std::string const& fileName) override;
 
 private:

@@ -1,3 +1,11 @@
+/* ______________________________________________________________________
+| Workfile : Client_NortelNetworks.cpp
+| Description : [SOURCE] Client uses the Interface INortelNetworks
+| Name : Viktoria Streibl			PKZ : S1810306013
+| Date : 08.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
 #include "Client_NortelNetworks.h"
 
 Client_NortelNetworks::Client_NortelNetworks(INortelNetworks& nortelNetworks)

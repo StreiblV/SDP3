@@ -122,20 +122,18 @@ All Exceptions are thrown in the base-class (protected, non-public functions) an
 This class is the for the company Epos and uses the interface IEpos.
 \begin{itemize}
 \item void EncryptRSA(fileName)
-\subitem Implements the function of the Interface. It calls the RSA encrypting algorithmn and encrypts the file.
+\subitem It calls the method EncryptRSA of the interface.
 \item void DecryptRSA(fileName)
-\subitem Implements the function of the Interface. It calls the RSA decrypting algorithmn and decrypts the file.
+\subitem It calls the method DecryptRSA of the interface.
 \end{itemize}
 
 \subsection{Client Nortel Networks}
 This class is the for the company Epos and uses the interface INortelNetworks, it contains following functions:
 \begin{itemize}
 \item void Encipher(type, fileName)
-\subitem Implements the function of the Interface. It checks which kind of encoding type it should use and calls
-the respective algorithmn of encrypting.
+\subitem It calls the method Encipher of the interface.
 \item void Decipher(type, fileName)
-\subitem Implements the function of the Interface. It checks which kind of encoding type it should use and calls
-the respective algorithmn of decrypting.
+\subitem It calls the method Decipher of the interface.
 \end{itemize}
 
 \subsection{Interface IEpos}
@@ -157,7 +155,24 @@ This interface holds the following functions:
 \end{itemize}
 
 \subsection{Adaptor AEpos}
+This class is an adapter for the Interface IEpos. It contains following methods:
+\begin{itemize}
+\item void EncryptRSA(fileName)
+\subitem Implements the function of the Interface. It calls the RSA encrypting algorithmn and encrypts the file.
+\item void DecryptRSA(fileName)
+\subitem Implements the function of the Interface. It calls the RSA decrypting algorithmn and decrypts the file.
+\end{itemize}
+
 \subsection{ANortelNetworks}
+This class is an adapter for the Interface INortelNetworks. It contains following methods:
+\begin{itemize}
+\item void Encipher(type, fileName)
+\subitem Implements the function of the Interface. It checks which kind of encoding type it should use and calls
+the respective algorithmn of encrypting.
+\item void Decipher(type, fileName)
+\subitem Implements the function of the Interface. It checks which kind of encoding type it should use and calls
+the respective algorithmn of decrypting.
+\end{itemize}
 
 \subsection{Class Encryptor}
 Base Class, contains base-functionality such as:

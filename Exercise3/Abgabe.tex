@@ -70,7 +70,7 @@ Viktoria Streibl - S1810306013\\
 \subsubsection {Viktoria Streibl}
 \begin{itemize}
 	\item estimated: 12 ph 
-	\item actually: XX ph
+	\item actually: 6 ph
 \end{itemize}
 
 \subsubsection {Daniel Weyrer}
@@ -84,7 +84,7 @@ The two Companies Epos and Nortel Networks should get access to a new encryption
 
 \section{System Design}
 \subsection{Classdiagram}
-\includegraphics[scale=0.6, angle=90]{ClassDiagram}
+\includegraphics[scale=0.56, angle=90]{ClassDiagram}
 
 \subsection{Design Decisions}
 \subsubsection{Reading File into String}
@@ -95,13 +95,15 @@ The encryption is limited to 7-Bit ASCII-Values, which limits the encryption to 
 	
 	\subitem Encrypting: Characters are written unencrypted into the .Caesar with a warning written 
 	\subitem in the command-line. 
-	
-	\subitem Decrypting: ASCII-values over 127 in a decrypted file (.caesar) are getting copied over to the decrypted.txt without any decryption. A warning is being delivered to the command-line
-	
+	\subitem Decrypting: ASCII-values over 127 in a decrypted file (.caesar) are getting copied over to the decrypted.txt without any decryption. 
+			A warning is being delivered to the command-line
+
 	\item RSA-Encryption
-		\subitem Encrypting: Characters are being ignored and a warning is being delivered to the cmd, because we 				found no solution to handle values over 127 when decrypting a message. 
-		
-		\subitem Decrypting: All values are getting decrypted. If a decrypted-value is over 127 a warning is 							being delivered to the command-line and the decrypted-value is stored in the decrypted.txt
+	\subitem Encrypting: Characters are being ignored and a warning is being delivered to the cmd, because we found no solution 
+		to handle values over 127 when decrypting a message. 
+	\subitem Decrypting: All values are getting decrypted. If a decrypted-value is over 127 a warning is being delivered to 
+		the command-line and the decrypted-value is stored in the decrypted.txt
+
 \end{itemize}
 
 \subsubsection{Exception-Handling}
@@ -110,35 +112,50 @@ The encryption is limited to 7-Bit ASCII-Values, which limits the encryption to 
 	\item std::exception (thrown by systemfunctions and user)
 	\item unhandled exceptions
 \end{itemize}
-
 All Exceptions are thrown in the base-class (protected, non-public functions) and captured in the derived classes!
+
+\subsubsection{Clients}
+ To make the testing easier and avoid code duplication, we decided to not test in the Client-Files this time. We created all tests in the Testdriver and used the client object for testing.
 	
 \section{Component Design}
-\subsection{Class Client}
-The Client simulate a person which use the interface.
-The following functions tests the functionality:
+\subsection{Client Epos}
+This class is the for the company Epos and uses the interface IEpos.
 \begin{itemize}
-	\item Tests the company name
-	\item Tests the company location
-	\item Tests if it is possible to find a employee by nickname
-	\item Tests if the employee which is search by his nickname is correct
-	\item Counts all employees and check if it is correct
-	\item Counts all employees of one type and check it
-	\item Counts all produced pieces and check them
-	\item Counts all sold pieces and check them
-	\item Count how many employees are older than a specific year and check it
-	\item Tests if the salary of an employee is correct
-	\item Tests if the oldest employee is correct
-	\item Check for the employee with is the oldest member
-	\item Print all data of company and employees
+\item void EncryptRSA(fileName)
+\subitem Implements the function of the Interface. It calls the RSA encrypting algorithmn and encrypts the file.
+\item void DecryptRSA(fileName)
+\subitem Implements the function of the Interface. It calls the RSA decrypting algorithmn and decrypts the file.
 \end{itemize}
 
-All these methods are only for testing the functionality of Company. Furthermore, the Client gets the company with the constructor as ICompany.
-
-\subsection{Client Epos}
 \subsection{Client Nortel Networks}
+This class is the for the company Epos and uses the interface INortelNetworks, it contains following functions:
+\begin{itemize}
+\item void Encipher(type, fileName)
+\subitem Implements the function of the Interface. It checks which kind of encoding type it should use and calls
+the respective algorithmn of encrypting.
+\item void Decipher(type, fileName)
+\subitem Implements the function of the Interface. It checks which kind of encoding type it should use and calls
+the respective algorithmn of decrypting.
+\end{itemize}
+
 \subsection{Interface IEpos}
+This interface holds the following functions:
+\begin{itemize}
+\item virtual  void EncryptRSA(fileName)
+\subitem Defines a function for encrypting a file via RSA.
+\item virtual void DecryptRSA(fileName)
+\subitem Defines a function for decrypting a file via RSA.
+\end{itemize}
+
 \subsection{Interface INortelNetworks}
+This interface holds the following functions:
+\begin{itemize}
+\item virtual  void Encipher(type, fileName)
+\subitem Defines a function for encrypting a file with the algorithm of the specific type.
+\item virtual void Decipher(type, fileName)
+\subitem Defines a function for decrypting a file with the algorithm of the specific type.
+\end{itemize}
+
 \subsection{Adaptor AEpos}
 \subsection{ANortelNetworks}
 
@@ -153,24 +170,76 @@ Base Class, contains base-functionality such as:
 
 \item string NewFileEnding(oldFileName, oldFileEnding, newFileEnding (, appendix)
 \subitem Checks for correct file-ending of the file and creates a new one with the new file-extension and optional with an appendix (to create "filename decrypted.txt"). Throws an exception if the file has the wrong file-extension, returns string with new Filename (and extension) otherwise.
-
 \end{itemize}
+
 \subsection{Class Caesar}
 \subsection{Class RSA}
 
 \subsection{TestDriver}
-The Testdriver test alle functions of the Client. It adds commisson worker, hourly worker, pieces worker and a boss.
-The functions "TestLinzAG", "TestSequality" and "TestTractive" call the testing functions of client and check if everything worked.
-The test-functions in Client returns a bool. If the bool returns false something didn't pass and this Testcase cannot get valid again.
+The Testdriver test alle functions of the clients. It tests the interface for the Epos-Company as well as the NortelNetwork-Company. It encrypt and decrypt several files. It contains also some functions:
+\begin{itemize}
+\item int main()
+\subitem It calls all tests.
+
+\item void CreateFullTest(subtitle, filename)
+\subitem This function calls the function to print the title of the tests. Then i tests the Epos functionality and the Nortel Network functionality.
+
+\item void testEPOS(fileName)
+\subitem It calls at first the encrypting method of the specific file and than the decrypting method.
+
+\item void testNN(type, fileName)
+\subitem It calls at first the encrypting method of the specific file tests all encoding types, than it decrypts the outcome.
+
+\item void PrintSubheader(subtitle)
+\subitem This function outputs the title of the following test.
+\end{itemize}
+Following tests are implemented:
+\begin{itemize}
+\item Test alphabet and numbers
+\item Test special characters
+\item Testing an email file
+\item Test if no file is there
+\item Test if file is empty
+\end{itemize}
 It ouputs a error message if there was no successful run.
 
 \newpage
 \section{Test Protocol}
 
+\subsection{Testfiles}
+\subsubsection{alphabet.txt}
+\sourceCode{./Encoding/testFiles/alphabet.txt}
+\subsubsection{specialCharacters.txt}
+\sourceCode{./Encoding/testFiles/specialCharacters.txt}
+\subsubsection{email.txt}
+\sourceCode{./Encoding/testFiles/email.txt}
 
+%\subsection{Encrypted Files}
+%\subsubsection{alphabet.RSA}
+%\sourceCode{./Encoding/testFiles/alphabet-r.RSA}
+%\subsubsection{alphabet.Caesar}
+%\sourceCode{./Encoding/testFiles/alphabet-c.Caesar}
+%\subsubsection{specialCharacters.RSA}
+%\sourceCode{./Encoding/testFiles/specialCharacters-r.RSA}
+%\subsubsection{specialCharacters.Caesar}
+%\sourceCode{./Encoding/testFiles/specialCharacters-c.Caesar}
+%\subsubsection{email.RSA}
+%\sourceCode{./Encoding/testFiles/email-r.RSA}
+%\subsubsection{email.Caesar}
+%\sourceCode{./Encoding/testFiles/email-c.Caesar}
+
+\subsection{Decrypted Files}
+\subsubsection{alphabet-decrypted.txt}
+\sourceCode{./Encoding/testFiles/alphabet-decrypted.txt}
+\subsubsection{specialCharacters-decrypted.txt}
+\sourceCode{./Encoding/testFiles/specialCharacters-decrypted.txt}
+\subsubsection{email-decrypted.txt}
+\sourceCode{./Encoding/testFiles/email-decrypted.txt}
+\newpage
 \subsection{Console Output}
+\sourceCode{./Encoding/output.txt}
 
-
+\newpage
 \section{Source Code}
 
 \subsection{ClientEpos}
@@ -185,6 +254,7 @@ It ouputs a error message if there was no successful run.
 \subsubsection{ClientNortelNetworks.h}
 \sourceCode{./Encoding/Encoding/Client_NortelNetworks.cpp}
 \newpage
+
 \subsection{Interface IEpos}
 \subsubsection{IEpos.h}
 \sourceCode{./Encoding/Encoding/IEpos.h}

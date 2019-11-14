@@ -1,0 +1,43 @@
+###################################
+####  Test alphabet and numbers
+###################################
+Test epos... ...completed!
+Test Nortel Networks Caesar...  completed!
+Test Nortel Networks RSA...  completed!
+
+###################################
+####  Test special characters
+###################################
+Test epos... ...completed!
+Test Nortel Networks Caesar...  completed!
+Test Nortel Networks RSA...  completed!
+
+###################################
+####  Testing an email file
+###################################
+Test epos... completed!
+Test Nortel Networks Caesar...  completed!
+Test Nortel Networks RSA...  completed!
+
+###################################
+####  Test if no file is there
+###################################
+Test epos... 
+Error while encrypting RSA"../testFiles/youCannotFindMe.txt": Error Reading File!
+Error while decrypting RSA "../testFiles/youCannotFindMe.RSA": Error Reading File!
+...completed!
+Test Nortel Networks Caesar... 
+Error while encrypting Caesar"../testFiles/youCannotFindMe-c.txt": Error Reading File!
+Error while decrypting Caesar"../testFiles/youCannotFindMe-c.Caesar": Error Reading File!
+...completed!
+Test Nortel Networks RSA... 
+Error while encrypting RSA"../testFiles/youCannotFindMe-r.txt": Error Reading File!
+Error while decrypting RSA "../testFiles/youCannotFindMe-r.RSA": Error Reading File!
+...completed!
+
+###################################
+####  Test if the file is empty
+###################################
+Test epos... completed!
+Test Nortel Networks Caesar...  completed!
+Test Nortel Networks RSA...  completed!

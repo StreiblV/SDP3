@@ -156,7 +156,52 @@ Base Class, contains base-functionality such as:
 
 \end{itemize}
 \subsection{Class Caesar}
+Derived class, responsible for the Caesar-Encryption
+\begin{itemize}
+	\item Caesar()
+	\subitem Sets default encryption-key
+	
+	\item Encrypt(fileName)
+	\subitem Main Encryptionfunction, responsible for the whole encryption process:
+	\subsubitem Check file for correct ending
+	\subsubitem Read file to a String
+	\subsubitem create a encrypted string (character by character)
+	\subsubitem create a file with the new file extension ".caesar" 
+	\subsubitem Write encrypted string to the newly created file
+	
+	\item Decrypt(fileName)
+	\subitem Main Decryptionfunction, responsible for the whole decryption process:
+	\subsubitem Check for correct file extension
+	\subsubitem Read File to a string
+	\subsubitem create a decrypted string
+	\subsubitem create a new file with "-decrypted.txt" ending and extension
+	\subsubitem write the decrypted string to the newly created file
+\end{itemize}
 \subsection{Class RSA}
+Derived class, responsible for the RSA-Encryption
+\begin{itemize}
+	\item Caesar()
+	\subitem Sets default encryption-keys
+	
+	\item Encrypt(fileName)
+	\subitem Main Encryptionfunction, responsible for the whole encryption process:
+	\subsubitem Check file for correct ending
+	\subsubitem Read file to a String
+	\subsubitem create a encrypted string (character by character)
+	\subsubitem create a file with the new file extension ".RSA" 
+	\subsubitem Write encrypted string to the newly created file
+	
+	\item Decrypt(fileName)
+	\subitem Main Decryptionfunction, responsible for the whole decryption process:
+	\subsubitem Check for correct file extension
+	\subsubitem Read File to a string
+	\subsubitem create a decrypted string
+	\subsubitem create a new file with "-decrypted.txt" ending and extension
+	\subsubitem write the decrypted string to the newly created file
+	
+	\item CalcPowMod(c, pow, mod)
+	\subitem Based on the RSA Algorithm, it is needed to calculate \(c^{pow} \bmod mod\). This function splits the calculation into pieces to avoid high numbers.
+\end{itemize}
 
 \subsection{TestDriver}
 The Testdriver test alle functions of the Client. It adds commisson worker, hourly worker, pieces worker and a boss.

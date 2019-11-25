@@ -56,9 +56,8 @@ void JavaSymbolFactory::ReadFromFile() {
 		std::string tp;
 		while (std::getline(outdataVar, tp)) { //read data from file object and put it into string.
 			std::string type = tp.substr(0, tp.find(" "));
-			AddType(type);
 			std::string var = tp.substr(tp.find(" ") + 1, tp.find(";"));
-			AddType(var);
+			AddVariable(var, type);
 		}
 	}
 

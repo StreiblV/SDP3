@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>110</y>
+      <y>100</y>
       <w>260</w>
       <h>210</h>
     </coordinates>
@@ -16,6 +16,7 @@
 +SetFactory(SymbolFactory*):void
 --
 -m_fact : SymbolFactory*
+-firstStart : bool
 
 
 
@@ -26,7 +27,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>490</x>
-      <y>20</y>
+      <y>10</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
@@ -38,15 +39,17 @@
     <id>UMLClass</id>
     <coordinates>
       <x>570</x>
-      <y>110</y>
+      <y>100</y>
       <w>240</w>
       <h>210</h>
     </coordinates>
     <panel_attributes>SymbolFactory
 --
-AddType(name) : void
-AddVariable(name, type) : void
-WriteIntoFile() : void
++AddType(name) : void
++AddVariable(name, type) : void
++WriteIntoFile() : void
++ReadFromFile() : void
+
 --
 -m_types : Types
 -m_variables : Variables</panel_attributes>
@@ -56,45 +59,49 @@ WriteIntoFile() : void
     <id>UMLClass</id>
     <coordinates>
       <x>690</x>
-      <y>430</y>
+      <y>420</y>
       <w>310</w>
-      <h>150</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>JavaSymbolFactory
 --
-Delete() : void
-GetInstance() : JavaSymbolFactory&amp;
-operator==(): JavaSymbolFactory&amp;
++Delete() : void
++GetInstance() : JavaSymbolFactory&amp;
++operator=(): JavaSymbolFactory&amp;
++WriteIntoFile() : void
++ReadFromFile() : void
 --
-mInstance : unique_ptr&lt;JavaSymbolFactory&gt;
-typeFilename : string
-varFilename : string</panel_attributes>
+-mInstance : unique_ptr&lt;JavaSymbolFactory&gt;
+-typeFilename : string
+-varFilename : string</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>340</x>
-      <y>430</y>
+      <y>420</y>
       <w>310</w>
-      <h>150</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>IECSymbolFactory
 --
-Delete() : void
-GetInstance() : IECSymbolFactory&amp;
-operator==(): IECSymbolFactory&amp;
++Delete() : void
++GetInstance() : IECSymbolFactory&amp;
++operator=(): IECSymbolFactory&amp;
++WriteIntoFile() : void
++ReadFromFile() : void
 --
-mInstance : unique_ptr&lt;IECSymbolFactory&gt;
-typeFilename : string
-varFilename : string</panel_attributes>
+-mInstance : unique_ptr&lt;IECSymbolFactory&gt;
+-typeFilename : string
+-varFilename : string</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>490</x>
-      <y>310</y>
+      <y>300</y>
       <w>220</w>
       <h>140</h>
     </coordinates>
@@ -105,7 +112,7 @@ varFilename : string</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>680</x>
-      <y>310</y>
+      <y>300</y>
       <w>200</w>
       <h>140</h>
     </coordinates>
@@ -116,7 +123,7 @@ varFilename : string</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>400</x>
-      <y>50</y>
+      <y>40</y>
       <w>160</w>
       <h>80</h>
     </coordinates>
@@ -127,7 +134,7 @@ varFilename : string</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>50</y>
+      <y>40</y>
       <w>200</w>
       <h>80</h>
     </coordinates>

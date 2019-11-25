@@ -1,2 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="IECSymbolFactory">
+    <Position X="3.75" Y="7.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>EAAIAAAAAAAABQAIAEAAAAAABAEAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>IECSymbolFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JavaSymbolFactory">
+    <Position X="8.25" Y="7.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>EAAIAAAAAAAABQAIAAAAAAAABAEAABAAAAAgAAAAAAA=</HashCode>
+      <FileName>JavaSymbolFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Object" Collapsed="true">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SymbolFactory">
+    <Position X="5.5" Y="3.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAABABUEAAAAgAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>SymbolFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SymbolParser">
+    <Position X="0.5" Y="3.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAggAAAARAAAAAAgAAAAAAAAAAgAQAAAAAAAAAA=</HashCode>
+      <FileName>SymbolParser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TypeAlreadyDefinedException" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SymbolFactory.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TypeNotDefinedException" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SymbolFactory.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="VariableAlreadyDefinedException" Collapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SymbolFactory.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

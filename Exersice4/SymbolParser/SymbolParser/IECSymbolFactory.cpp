@@ -38,10 +38,6 @@ void IECSymbolFactory::WriteIntoFile() {
 			outdataVar << "VAR " << m_variables.at(i).first << " : " << m_variables.at(i).second << ";" << endl;
 		}
 	}
-
 	outdataTyp.close();
 	outdataVar.close();
-
-	m_types.clear();
-	m_variables.clear();
 }

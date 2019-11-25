@@ -19,10 +19,9 @@ void SymbolFactory::AddType(std::string const& name) {
 void SymbolFactory::AddVariable(std::string const& name, std::string const& type) {
 	try{
 		if (!m_types.empty()) {
-			if (!m_variables.empty()) {
-				auto resType = std::find(m_types.begin(), m_types.end(), type);
-
-				if (resType != m_types.end()) {
+			auto resType = std::find(m_types.begin(), m_types.end(), type);
+			if (resType != m_types.end()) {
+				if (!m_variables.empty()) {
 					auto resDub = m_variables.begin();
 					bool isDub = false;
 					for (; resDub != m_variables.end(); resDub++) {
@@ -35,15 +34,15 @@ void SymbolFactory::AddVariable(std::string const& name, std::string const& type
 						throw VariableAlreadyDefinedException();
 					}
 				}
-				else {
-					throw TypeNotDefinedException();
-				}
+				m_variables.push_back(std::make_pair(name, type));
+			}
+			else {
+				throw TypeNotDefinedException();
 			}
 		}
 		else {
 			throw TypeNotDefinedException();
 		}
-		m_variables.push_back(std::make_pair(name, type));
 	}
 	catch (TypeAlreadyDefinedException & e) {
 		std::cout << e.what(type) << std::endl;

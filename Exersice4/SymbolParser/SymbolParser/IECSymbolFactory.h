@@ -23,7 +23,10 @@ public:
 		return *mInstance;
 	}
 	//free singleton before end of program
-	static void Delete() { mInstance.reset(); }
+	static void Delete() { 
+		mInstance.reset(); 
+		mInstance.get()->WriteIntoFile();
+	}
 
 	//write all types and variables into the file
 	virtual void WriteIntoFile() override;

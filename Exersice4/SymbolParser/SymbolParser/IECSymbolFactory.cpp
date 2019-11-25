@@ -41,3 +41,12 @@ void IECSymbolFactory::WriteIntoFile() {
 	outdataTyp.close();
 	outdataVar.close();
 }
+
+//read in and save the 
+void IECSymbolFactory::ReadFromFile() {
+	//open file
+	//read line by line
+	//get type and/or variable from line and save it into vector
+	//close file
+	//--see write into file
+}

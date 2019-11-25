@@ -9,8 +9,8 @@
 #include "JavaSymbolFactory.h"
 
 std::unique_ptr<JavaSymbolFactory> JavaSymbolFactory::mInstance{ nullptr };
-
 using namespace std;
+
 void JavaSymbolFactory::WriteIntoFile() {
 	ofstream outdata;
 
@@ -35,4 +35,12 @@ void JavaSymbolFactory::WriteIntoFile() {
 		}
 	}
 	outdata.close();
+}
+
+void JavaSymbolFactory::ReadFromFile() {
+	//open file
+	//read line by line
+	//get type and/or variable from line and save it into vector
+	//close file
+	//--see write into file
 }

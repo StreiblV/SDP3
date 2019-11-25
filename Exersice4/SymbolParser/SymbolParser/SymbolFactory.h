@@ -22,7 +22,7 @@ typedef std::vector<Variable> Variables;
 
 //template singleton base class
 class SymbolFactory {
-
+	
 public:
 	SymbolFactory() = default;
 	~SymbolFactory() = default;
@@ -35,6 +35,9 @@ public:
 	//write all types and variables into the file
 	virtual void WriteIntoFile() = 0;
 
+	//read from the file
+	virtual void ReadFromFile() = 0;
+
 protected:	
 	//vector types
 	Types m_types;
@@ -42,7 +45,9 @@ protected:
 	Variables m_variables;
 };
 
+//
 //Exceptions
+//
 struct TypeAlreadyDefinedException : public std::exception
 {
 	const std::string what(std::string typeName) const throw ()

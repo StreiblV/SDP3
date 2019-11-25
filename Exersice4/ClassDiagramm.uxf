@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>110</y>
+      <w>260</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>SymbolParser
+--
++AddType(name): void
++AddVariable(name, type):void
++SetFactory(SymbolFactory*):void
+--
+-m_fact : SymbolFactory*
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>20</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Object
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>110</y>
+      <w>240</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>SymbolFactory
+--
+AddType(name) : void
+AddVariable(name, type) : void
+WriteIntoFile() : void
+--
+-m_types : Types
+-m_variables : Variables</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>430</y>
+      <w>310</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>JavaSymbolFactory
+--
+Delete() : void
+GetInstance() : JavaSymbolFactory&amp;
+operator==(): JavaSymbolFactory&amp;
+--
+mInstance : unique_ptr&lt;JavaSymbolFactory&gt;
+typeFilename : string
+varFilename : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>430</y>
+      <w>310</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>IECSymbolFactory
+--
+Delete() : void
+GetInstance() : IECSymbolFactory&amp;
+operator==(): IECSymbolFactory&amp;
+--
+mInstance : unique_ptr&lt;IECSymbolFactory&gt;
+typeFilename : string
+varFilename : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>310</y>
+      <w>220</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;200.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>310</y>
+      <w>200</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;180.0;70.0;180.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>50</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;140.0;30.0;10.0;30.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>50</y>
+      <w>200</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;180.0;30.0;180.0;60.0</additional_attributes>
+  </element>
+</diagram>

@@ -10,6 +10,8 @@
 #define SYMBOLPARSER_H
 
 #include <string>
+#include <iostream>
+#include <fstream>
 
 #include "Object.h"
 #include "SymbolFactory.h"
@@ -30,10 +32,13 @@ public:
 	//add a new variable to the list
 	void AddVariable(std::string const& name, std::string const& type);
 
+	void ReadFile();
+
 	//set the current programming language
 	void SetFactory(SymbolFactory* fact);
 private:
 	SymbolFactory* m_fact = nullptr;
+	bool firstStart = false;
 };
 
 #endif // !SYMBOLPARSER_H

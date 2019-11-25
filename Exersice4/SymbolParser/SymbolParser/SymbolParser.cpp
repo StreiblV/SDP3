@@ -24,4 +24,19 @@ void SymbolParser::SetFactory(SymbolFactory* fact) {
 		m_fact->WriteIntoFile();
 	}
 	m_fact = fact;
+	if(!firstStart) {
+		m_fact->ReadFromFile();
+	}
+
+	if (!firstStart) {
+		firstStart = true;
+	}
+}
+
+void SymbolParser::ReadFile() {
+	JavaSymbolFactory& factJava = JavaSymbolFactory::GetInstance();
+	factJava.ReadFromFile();
+
+	IECSymbolFactory& factIEC = IECSymbolFactory::GetInstance();
+	factIEC.ReadFromFile();
 }

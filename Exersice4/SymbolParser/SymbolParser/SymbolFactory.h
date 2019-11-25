@@ -16,12 +16,14 @@
 #include <string>
 #include <vector>
 
+#include "Object.h"
+
 typedef std::vector<std::string> Types;
 typedef std::pair<std::string, std::string> Variable;
 typedef std::vector<Variable> Variables;
 
 //template singleton base class
-class SymbolFactory {
+class SymbolFactory : public Object {
 	
 public:
 	SymbolFactory() = default;

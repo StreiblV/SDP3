@@ -38,9 +38,30 @@ void JavaSymbolFactory::WriteIntoFile() {
 }
 
 void JavaSymbolFactory::ReadFromFile() {
-	//open file
-	//read line by line
-	//get type and/or variable from line and save it into vector
-	//close file
-	//--see write into file
+	std::ifstream outdataType;
+	std::ifstream outdataVar;
+
+	outdataType.open(typeFilename, std::ios::in); //open a file to perform read operation using file object
+	if (outdataType.is_open()) {   //checking whether the file is open
+		std::string tp;
+		while (std::getline(outdataType, tp)) { //read data from file object and put it into string.
+			std::string type = tp.substr(tp.find(" ") + 1, tp.length());
+			AddType(type);
+
+		}
+	}
+
+	outdataVar.open(varFilename, std::ios::in); //open a file to perform read operation using file object
+	if (outdataVar.is_open()) {   //checking whether the file is open
+		std::string tp;
+		while (std::getline(outdataVar, tp)) { //read data from file object and put it into string.
+			std::string type = tp.substr(0, tp.find(" "));
+			AddType(type);
+			std::string var = tp.substr(tp.find(" ") + 1, tp.find(";"));
+			AddType(var);
+		}
+	}
+
+	outdataType.close();
+	outdataVar.close();
 }

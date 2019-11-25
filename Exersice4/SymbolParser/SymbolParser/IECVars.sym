@@ -1,0 +1,2 @@
+VAR mCont : SpeedController;
+VAR mHu : Hugo;

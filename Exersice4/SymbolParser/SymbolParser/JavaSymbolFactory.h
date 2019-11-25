@@ -25,8 +25,11 @@ public:
 	//free singleton before end of program
 	static void Delete() { mInstance.reset(); }
 
-	//write all types and variables into the file
+	//write all types and variables into the files
 	virtual void WriteIntoFile() override;
+
+	//read all types and variables from the files
+	virtual void ReadFromFile() override;
 
 private:
 	//hide default ctor

@@ -22,7 +22,7 @@ typedef std::vector<Variable> Variables;
 
 //template singleton base class
 class SymbolFactory {
-
+	
 public:
 	SymbolFactory() = default;
 	~SymbolFactory() = default;

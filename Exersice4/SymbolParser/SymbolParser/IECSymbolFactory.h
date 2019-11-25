@@ -31,6 +31,9 @@ public:
 	//write all types and variables into the file
 	virtual void WriteIntoFile() override;
 
+	//read all types and variables from the files
+	virtual void ReadFromFile() override;
+
 private:
 	//hide default ctor
 	IECSymbolFactory() = default;

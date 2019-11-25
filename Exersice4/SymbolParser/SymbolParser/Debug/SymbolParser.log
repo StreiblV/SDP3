@@ -1,6 +1,3 @@
-﻿  IECSymbolFactory.cpp
-C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\SymbolParser\IECSymbolFactory.cpp(26,21): warning C4018: '<': signed/unsigned mismatch
-  SymbolParser.cpp
-  Generating Code...
-C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\SymbolParser\IECSymbolFactory.cpp(37,21): warning C4018: '<': signed/unsigned mismatch
-  SymbolParser.vcxproj -> C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\Debug\SymbolParser.exe
+﻿  SymbolFactory.cpp
+SymbolFactory.obj : error LNK2019: unresolved external symbol "public: virtual void __thiscall SymbolFactory::ReadFromFile(void)" (?ReadFromFile@SymbolFactory@@UAEXXZ) referenced in function "public: __thiscall SymbolFactory::SymbolFactory(void)" (??0SymbolFactory@@QAE@XZ)
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\Debug\SymbolParser.exe : fatal error LNK1120: 1 unresolved externals

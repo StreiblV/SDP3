@@ -8,6 +8,12 @@
 | _______________________________________________________________________ */
 #include "SymbolParser.h"
 
+SymbolParser::~SymbolParser() {
+	m_fact->WriteIntoFile();
+	IECSymbolFactory::Delete();
+	JavaSymbolFactory::Delete();
+}
+
 void SymbolParser::AddType(std::string const& name) {
 	m_fact->AddType(name);
 }

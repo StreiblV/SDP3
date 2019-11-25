@@ -25,7 +25,6 @@ public:
 	//free singleton before end of program
 	static void Delete() { 
 		mInstance.reset(); 
-		mInstance.get()->WriteIntoFile();
 	}
 
 	//write all types and variables into the file

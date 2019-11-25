@@ -3,5 +3,4 @@
 ###########################################################
 
 Designentscheidungen:
-- Solange keine neue Instance aufgerufen wird, wird nicht gespeichert (auch nicht beim Programm beenden).
 - Es wird die Datei nicht ausgelesen sondern nur jene Typen/Variablen berücksichtigt und geschrieben, die wärend der Programmdauer erstellt werden.

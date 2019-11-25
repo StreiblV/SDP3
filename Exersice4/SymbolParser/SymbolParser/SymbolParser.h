@@ -20,7 +20,7 @@ class SymbolParser : public Object
 {
 public:
 	SymbolParser() = default;
-	~SymbolParser() = default;
+	~SymbolParser();
 	void AddType(std::string const& name);
 	void AddVariable(std::string const& name, std::string const& type);
 

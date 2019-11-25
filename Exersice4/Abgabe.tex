@@ -67,7 +67,7 @@ Viktoria Streibl - S1810306013\\
 \subsubsection {Daniel Weyrer}
 \begin{itemize}
 	\item estimated: 3 ph 
-	\item actually: 8 ph
+	\item actually: 3 ph
 \end{itemize}
 
 \section{Requirenment Definition(System Specification)}
@@ -84,14 +84,25 @@ Viktoria Streibl - S1810306013\\
 \subsection{SymbolParser}
 
 
+
+
 \subsection{SymbolFactory}
 
 \subsection{IECSymbolFactory}
+\subsubsection{WriteIntoFile}
+Opens the Type and Variable file and writes every single type and variable into the file by iterating through both vectors.
+
+\subsubsection{ReadFromFile}
+Opens the File, reads the content into an ifstream before it gets converted to an string. The string gets handed over to the specific function till it reaches EOF.
+This get`s done for both of the files in the object (Variables and Types).
 
 \subsection{JavaSymbolFactory}
+\subsubsection{WriteIntoFile}
+Opens the Type and Variable file and writes every single type and variable into the file by iterating through both vectors.
 
-
-
+\subsubsection{ReadFromFile}
+Opens the File, reads the content into an ifstream before it gets converted to an string. The string gets handed over to the specific function till it reaches EOF.
+This get`s done for both of the files in the object (Variables and Types).
 
 
 \subsection{TestDriver}

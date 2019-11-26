@@ -44,7 +44,7 @@ void SymbolFactory::AddVariable(std::string const& name, std::string const& type
 			throw TypeNotDefinedException();
 		}
 	}
-	catch (TypeAlreadyDefinedException & e) {
+	catch (TypeNotDefinedException & e) {
 		std::cout << e.what(type) << std::endl;
 	}
 	catch (VariableAlreadyDefinedException & e) {

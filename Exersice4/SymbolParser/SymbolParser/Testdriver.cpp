@@ -33,7 +33,7 @@ int main() {
 	parser.AddType("SpeedController");
 	parser.AddType("Hugo");
 	parser.AddType("Nero");
-	parser.AddVariable("mCont", "SpeedController");
+	parser.AddVariable("mCont", "SpeedControlleer");
 	parser.AddVariable("mHu", "Hugo");
 
 	//

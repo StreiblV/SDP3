@@ -1,3 +1,11 @@
+/* ______________________________________________________________________
+| Workfile : SymbolParser.cpp
+| Description : [ SOURCE ]
+| Name : Viktoria Streibl			PKZ : S1810306013
+| Date : 24.11.2019
+| Remarks : -
+| Revision : 0
+| _______________________________________________________________________ */
 #include "SymbolFactory.h"
 
 void SymbolFactory::AddType(std::string const& name) {

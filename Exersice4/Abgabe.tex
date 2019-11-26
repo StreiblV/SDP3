@@ -77,57 +77,76 @@ Viktoria Streibl - S1810306013\\
 \subsection{Classdiagram}
 \includegraphics[scale=0.56, angle=90]{ClassDiagramm}
 
-\subsection{Design Decisions}
-\subsubsection{}
+%\subsection{Design Decisions}
+%\subsubsection{}
 	
 \section{Component Design}
 \subsection{SymbolParser}
-
+\begin{itemize}
+	\item AddType
+	\subitem Calls the AddType of SymbolFactory
+	\item AddVariable
+	\subitem Calls the AddVariable of SymbolFactory
+	\item ReadFile
+	\subitem Reads the files and adds all existing types and variables
+	\item SetFactory
+	 \subitem Gets the current language and sets it as current factory. Calls ReadFile at the first call
+\end{itemize}
 
 \subsection{SymbolFactory}
+\begin{itemize}
+	\item AddType
+	\subitem Gets the type and adds to the others if it's not exists.
+	\item AddVariable
+	\subitem Gets the variable name and adds to the others. It checks if it is the first variable-name of this type.
+	\item WriteIntoFile
+	\subitem Virtual Method to write all types ad variables back into the file
+	\item ReadFromFile
+	 \subitem Virtual Method to read all types and variables of a file
+\end{itemize}
 
 \subsection{IECSymbolFactory}
+Is a Singleton Class.
+\begin{itemize}
+	\item AddType
+	\subitem Gets the type and adds to the others if it's not exists.
+	\item AddVariable
+	\subitem Gets the variable name and adds to the others. It checks if it is the first variable-name of this type.
+	\item WriteIntoFile
+	\subitem Writes all types and variables into the iec files.
+	\item ReadFromFile
+	 \subitem Reads from the iec-files and save all types and variables into the programm.
+\end{itemize}
 
 \subsection{JavaSymbolFactory}
-
-
-
-
+Is a Singleton Class.
+\begin{itemize}
+	\item AddType
+	\subitem Gets the type and adds to the others if it's not exists.
+	\item AddVariable
+	\subitem Gets the variable name and adds to the others. It checks if it is the first variable-name of this type.
+	\item WriteIntoFile
+	\subitem Writes all types and variables into the java files.
+	\item ReadFromFile
+	 \subitem Reads from the java-files and save all types and variables into the programm.
+\end{itemize}
 
 \subsection{TestDriver}
-The Testdriver test alle functions of the clients. It tests the interface for the Epos-Company as well as the NortelNetwork-Company. It encrypt and decrypt several files. It contains also some functions:
 \begin{itemize}
-\item int main()
-\subitem It calls all tests.
-
-\item void CreateFullTest(subtitle, filename)
-\subitem This function calls the function to print the title of the tests. Then i tests the Epos functionality and the Nortel Network functionality.
-
-\item void testEPOS(fileName)
-\subitem It calls at first the encrypting method of the specific file and than the decrypting method.
-
-\item void testNN(type, fileName)
-\subitem It calls at first the encrypting method of the specific file tests all encoding types, than it decrypts the outcome.
-
-\item void PrintSubheader(subtitle)
-\subitem This function outputs the title of the following test.
+	\item Adds Types and Variables of Java and IEC
+	\item Tests what happens to add a Variable but no existing Type
+	\item Tests to read the Files and a new Variable
+	\item Tests to add existing Type 
 \end{itemize}
-Following tests are implemented:
-\begin{itemize}
-\item Test alphabet and numbers
-\item Test special characters
-\item Testing an email file
-\item Test if no file is there
-\item Test if file is empty
-\end{itemize}
-It ouputs a error message if there was no successful run.
 
 \newpage
 \section{Test Protocol}
 
 \subsection{Testfiles}
-
-
+%IECTypes.sym
+%IECTVars.sym
+%JavaTypes.sym
+%JavaTVars.sym
 
 
 \newpage

@@ -1,3 +1,1 @@
-﻿  SymbolFactory.cpp
-SymbolFactory.obj : error LNK2019: unresolved external symbol "public: virtual void __thiscall SymbolFactory::ReadFromFile(void)" (?ReadFromFile@SymbolFactory@@UAEXXZ) referenced in function "public: __thiscall SymbolFactory::SymbolFactory(void)" (??0SymbolFactory@@QAE@XZ)
-C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\Debug\SymbolParser.exe : fatal error LNK1120: 1 unresolved externals
+﻿  SymbolParser.vcxproj -> C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\Debug\SymbolParser.exe

@@ -23,14 +23,10 @@ class SymbolParser : public Object
 public:
 	//Konstruktor
 	SymbolParser() = default;
-<<<<<<< HEAD
-	~SymbolParser();
-=======
 	//Dekonstruktor
 	~SymbolParser() = default;
 
 	//add a type to the list
->>>>>>> 4-viktoria
 	void AddType(std::string const& name);
 
 	//add a new variable to the list

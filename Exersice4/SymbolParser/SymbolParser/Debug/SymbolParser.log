@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  IECSymbolFactory.cpp
 C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\SymbolParser\IECSymbolFactory.cpp(26,21): warning C4018: '<': signed/unsigned mismatch
   SymbolParser.cpp
@@ -5,3 +6,6 @@ C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\Symbol
   Generating Code...
 C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\SymbolParser\IECSymbolFactory.cpp(37,21): warning C4018: '<': signed/unsigned mismatch
   SymbolParser.vcxproj -> C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\Debug\SymbolParser.exe
+=======
+﻿  SymbolParser.vcxproj -> C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice4\SymbolParser\Debug\SymbolParser.exe
+>>>>>>> 4-viktoria

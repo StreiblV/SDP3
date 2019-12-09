@@ -21,7 +21,7 @@ int main() {
 	bool exit = false;
 	
 	Car::SPter pCar{ std::make_shared<Car>(car) };
-	IDisplay::SPter distance{ std::make_shared<Distance>(pCar)};
+	IDisplay::SPter distance{ std::make_shared<Distance>(pCar) };
 	IDisplay::SPter speed{ std::make_shared<Speed>(pCar) };
 
 	car.Attach(distance);

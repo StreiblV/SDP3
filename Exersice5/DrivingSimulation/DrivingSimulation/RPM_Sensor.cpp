@@ -15,6 +15,7 @@ unsigned int RPM_Sensor::GetRevolutions() {
 	}
 	else {
 		std::cerr<< "End of testdata reached!" <<std::endl;
+		return 0;
 	}
 }
 

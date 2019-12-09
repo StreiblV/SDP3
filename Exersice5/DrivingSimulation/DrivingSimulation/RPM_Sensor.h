@@ -24,7 +24,13 @@ class RPM_Sensor :
 	public Object {
 
 public:
+	/**
+	 * @brief Getter
+	 * @param
+	 * @return current RPMs
+	 */
 	unsigned int GetRevolutions();
+	
 	using SPter = std::unique_ptr<RPM_Sensor>;
 
 private:
@@ -32,7 +38,12 @@ private:
 	std::vector<unsigned int> mRevTable;
 	std::vector<unsigned int>::const_iterator currPos;
 	
-	//helper
+	
+	/**
+	 * @brief Reads integers of file and stores them into mRevTable
+	 * @param string with fileName
+	 * @return -
+	 */
 	void ReadFile(std::string const& fileName);
 
 };

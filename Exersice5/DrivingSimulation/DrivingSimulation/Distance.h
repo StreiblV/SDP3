@@ -15,15 +15,30 @@
 
 class Distance :
 	public IDisplay {
+	/**
+	 * @brief constructor for concrete observer Distance; initializes Shared-Pointer and Distance
+	 * @param shared pointer to a car
+	 * @return 
+	 */
 	Distance(Car::SPter const& car) : mCar{ car }, mDistance{ CalcDistance(car->GetRPM()) } {}
 
+	/**
+	 * @brief requests current revolutions, calculates distance travelled and saves it into member
+	 * @param -
+	 * @return -
+	 */
 	virtual void Update() override;
 
 private:
 	double mDistance;
 	Car::SPter mCar;
 
-	double CalcDistance(unsigned int rpm) const;
+	/**
+	 * @brief Calculates Distance based on the current Speed
+	 * @param velocity: current velocity the car travels 
+	 * @return current Distance travelled
+	 */
+	double CalcDistance(unsigned int const velocity) const;
 };
 
 #endif //DISTANCE_H

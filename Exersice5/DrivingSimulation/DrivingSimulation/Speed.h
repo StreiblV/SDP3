@@ -15,8 +15,18 @@
 class Speed :
 	public IDisplay {
 public:
+	/**
+	 * @brief constructor for Speed-Observer
+	 * @param Shared-Pointer to a Car
+	 * @return -
+	 */
 	Speed(Car::SPter const& car) : mCar{ car }, mSpeed{ car->GetCurrentSpeed() } {}
 
+	/**
+	 * @brief gets current speed of the Car pointed to
+	 * @param -
+	 * @return -
+	 */
 	virtual void Update() override;
 
 private:

@@ -15,7 +15,13 @@
 class IDisplay {
 
 public:
+	/**
+	 * @brief pure virtual Function, ready to be implemented in an concrete observer
+	 * @param -
+	 * @return -
+	 */
 	virtual void Update() = 0;
+
 	virtual ~IDisplay() = default;
 
 	using SPter = std::shared_ptr<IDisplay>;

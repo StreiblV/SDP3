@@ -13,12 +13,12 @@ static const double conversionFactorToKMH = 3.6;
 
 
 void Distance::Update() {
-	mDistance = CalcDistance(mCar->GetRPM());
+	mDistance += CalcDistance(mCar->GetCurrentSpeed());
 }
 
-double Distance::CalcDistance(unsigned int rpm) const {
-	if (rpm != 0) {
-		return ((rpm) / conversionFactorToKMH) / 2;
+double Distance::CalcDistance(unsigned int const velocity) const {
+	if (velocity != 0) {
+		return ((velocity) / conversionFactorToKMH) / 2;
 	}
 	return 0;
 }

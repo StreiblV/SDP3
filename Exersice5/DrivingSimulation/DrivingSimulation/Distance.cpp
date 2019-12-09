@@ -18,6 +18,10 @@ void Distance::Update() {
 	WindowsDisplay::SPtr anaDisp = std::make_shared<AnalogDisplay>();
 	
 	mDistance += CalcDistance(mCar->GetCurrentSpeed());
+	if (anaDisp->SendValue(mDistance))
+	{
+		std::cout << "Distance: " << mDistance << std::endl;
+	}
 }
 
 double Distance::CalcDistance(double const velocity) const {

@@ -11,8 +11,6 @@
 #ifndef RPM_SENSOR_H
 #define RPM_SENSOR_H
 
-
-
 #include "Object.h"
 
 #include <string>
@@ -21,9 +19,7 @@
 #include <memory>
 #include <iostream>
 
-class RPM_Sensor :
-	public Object {
-
+class RPM_Sensor : public Object {
 public:
 
 	RPM_Sensor(std::string const& fileName);
@@ -43,7 +39,7 @@ private:
 	
 	/**
 	 * @brief Reads integers of file and stores them into mRevTable
-	 * @param string with fileName
+	 * @param fileName with fileName
 	 * @return -
 	 */
 	void ReadFile(std::string const& fileName);

@@ -2,7 +2,6 @@
 | Workfile : Speed.h
 | Description : [ HEADER ]
 | Name : Daniel Weyrer			PKZ : S1820306044
-	 	 Viktoria Streibl		PKZ : S1810306013
 | Date : 09.12.2019
 | Remarks : -
 | Revision : 0

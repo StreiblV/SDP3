@@ -7,6 +7,17 @@
 | Revision : 0
 | _______________________________________________________________________ */
 
-int main() {
+#include "Car.h"
+#define LOOP_DURATION 25
 
+int main() {
+	Car car;
+
+	bool exit = false;
+
+	for(int i = 0; i < LOOP_DURATION; i++){
+		car.Process();
+	}
+
+	return 0;
 }

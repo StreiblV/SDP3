@@ -11,8 +11,6 @@
 #ifndef RPM_SENSOR_H
 #define RPM_SENSOR_H
 
-
-
 #include "Object.h"
 
 #include <string>
@@ -20,8 +18,7 @@
 #include <fstream>
 #include <memory>
 #include <iostream>
-class RPM_Sensor :
-	public Object {
+class RPM_Sensor : public Object {
 
 public:
 	unsigned int GetRevolutions();

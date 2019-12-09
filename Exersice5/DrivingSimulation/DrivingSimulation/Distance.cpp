@@ -19,7 +19,10 @@ void Distance::Update() {
 
 	mDistance = CalcDistance(mCar->GetRPM());
 
-
+	if (anaDisp->SendValue(mDistance))
+	{
+		std::cout << "Distance: " << mDistance << std::endl;
+	}
 }
 
 double Distance::CalcDistance(unsigned int rpm) const {

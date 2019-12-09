@@ -21,10 +21,27 @@
 class Vehicle :
 	public Object {
 public:
+
+	/**
+	 * @brief Adds given shared_ptr to observer container
+	 * @param obs shared pointer of type IDisplay, which will be added to the container
+	 * @return
+	 */
 	void Attach(IDisplay::SPter const& obs);
+
+	/**
+	 * @brief Removes given observer-ptr from container if it`s contained
+	 * @param obs shared pointer of type IDisplay, which will be added to the container
+	 * @return -
+	 */
 	void Detach(IDisplay::SPter const& obs);
 
 protected:
+	/**
+	 * @brief iterates through vector of Observers and calls Update() on every observer
+	 * @param -
+	 * @return -
+	 */
 	void NotifyObservers();
 
 private:

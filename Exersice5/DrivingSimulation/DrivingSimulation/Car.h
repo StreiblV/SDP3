@@ -18,40 +18,45 @@ class Car :
 
 public:
 
+		/**
+	 * @brief Constructor, saves the fileName into member and initializes tireDimension and current RPMs
+	 * @param -
+	 * @return -
+	 */
 	Car(std::string const& fileName, unsigned int tireDim = 600) : mFileName{ fileName }, mTireDim{ tireDim }, mTireRPM{ 0 }{}
 
 	/**
-	 * @brief
-	 * @param
-	 * @return
+	 * @brief Calls GetRevolutions of RPM_Sensor and stores delivered value in membervariable, starts Notificationprocess
+	 * @param -
+	 * @return -
 	 */
 	void Process();
 
 	/**
-	 * @brief
-	 * @param
-	 * @return
+	 * @brief Getter
+	 * @param -
+	 * @return current Rotations per Minute for one Wheel
 	 */
 	unsigned int GetRPM() const;
 
 	/**
-	 * @brief
-	 * @param
-	 * @return
+	 * @brief Calculates current speed based on Wheel diameter and RPMs
+	 * @param -
+	 * @return current Speed 
 	 */
 	double GetCurrentSpeed() const;
 
 	/**
-	 * @brief
-	 * @param
-	 * @return
+	 * @brief Replaces old value for Tire Dimension with the given Diameter
+	 * @param newDim new Dimension for Tire Diameter
+	 * @return -
 	 */
 	void SetTireDim(unsigned int newDim);
 	
 	/**
-	 * @brief
-	 * @param
-	 * @return
+	 * @brief Getter
+	 * @param -
+	 * @return current Tire Diameter
 	 */
 	unsigned int GetTireDim() const;
 

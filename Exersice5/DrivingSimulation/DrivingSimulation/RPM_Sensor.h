@@ -22,6 +22,11 @@
 class RPM_Sensor : public Object {
 public:
 
+	/**
+	 * @brief Constructor, calls ReadFile() to read and store integers in the vector
+	 * @param
+	 * @return current RPMs
+	 */
 	RPM_Sensor(std::string const& fileName);
 
 	/**
@@ -38,7 +43,7 @@ private:
 	
 	
 	/**
-	 * @brief Reads integers of file and stores them into mRevTable
+	 * @brief Reads integers of file (line by line) and stores them into mRevTable
 	 * @param fileName with fileName
 	 * @return -
 	 */

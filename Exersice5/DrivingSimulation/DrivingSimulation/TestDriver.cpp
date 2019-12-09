@@ -8,16 +8,26 @@
 | _______________________________________________________________________ */
 
 #include "Car.h"
+#include "IDisplay.h"
+#include "Distance.h"
+#include "Speed.h"
 #define LOOP_DURATION 25
 
 int main() {
-	Car car;
+	Car car{ "testData.txt" };
 
 	bool exit = false;
+	
+	Car::SPter pCar{ std::make_shared<Car>(car) };
+	IDisplay::SPter distance{ std::make_shared<Distance>(pCar) };
+//	IDisplay::SPter speed{ std::make_shared<Speed>(car) };
+
+//	pCar->Attach(distance);
+//	pCar->Attach(speed);
 
 	for(int i = 0; i < LOOP_DURATION; i++){
 		car.Process();
-		Sleep(500);
+		//Sleep(500);
 	}
 
 	return 0;

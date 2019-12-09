@@ -13,7 +13,7 @@ static const double conversionFactorToKMH = 3.6;
 
 void Car::Process() {
 	try {
-		mTireRPM = mFrontRight->GetRevolutions();
+		mTireRPM = mFrontRight.GetRevolutions();
 	}
 	catch (std::exception const& ex) {
 		std::cerr << "Error while fetching Revolutions: "<< ex.what() << std::endl;

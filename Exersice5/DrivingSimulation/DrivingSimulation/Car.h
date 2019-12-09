@@ -17,6 +17,9 @@ class Car :
 	public Vehicle {
 
 public:
+
+	Car(std::string const& fileName, unsigned int tireDim = 600) : mFileName{ fileName }, mTireDim{ tireDim }, mTireRPM{ 0 }{}
+
 	/**
 	 * @brief
 	 * @param
@@ -56,7 +59,9 @@ public:
 
 
 private:
-	RPM_Sensor::SPter mFrontRight;
+	std::string mFileName;
+	RPM_Sensor mFrontRight{ mFileName };
+
 	unsigned int mTireRPM;
 	unsigned int mTireDim;
 

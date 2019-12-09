@@ -14,5 +14,4 @@ void Speed::Update() {
 	WindowsDisplay::SPtr digDisp = std::make_shared<DigitalDisplay>();
 
 	mSpeed = mCar->GetCurrentSpeed();
-	//forward it to WindowDisplay!
 }

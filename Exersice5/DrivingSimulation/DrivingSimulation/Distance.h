@@ -20,7 +20,7 @@ class Distance :
 	 * @param shared pointer to a car
 	 * @return 
 	 */
-	Distance(Car::SPter const& car) : mCar{ car }, mDistance{ CalcDistance(car->GetRPM()) } {}
+	Distance(Car::SPter const& car) : mCar{ car }, mDistance{ 0 } {}
 
 	/**
 	 * @brief requests current revolutions, calculates distance travelled and saves it into member
@@ -38,7 +38,7 @@ private:
 	 * @param velocity: current velocity the car travels 
 	 * @return current Distance travelled
 	 */
-	double CalcDistance(unsigned int const velocity) const;
+	double CalcDistance(double const velocity) const;
 };
 
 #endif //DISTANCE_H

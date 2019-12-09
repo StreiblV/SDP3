@@ -20,18 +20,20 @@
 #include <fstream>
 #include <memory>
 #include <iostream>
+
 class RPM_Sensor :
 	public Object {
 
 public:
+
+	RPM_Sensor(std::string const& fileName);
+
 	/**
 	 * @brief Getter
 	 * @param
 	 * @return current RPMs
 	 */
 	unsigned int GetRevolutions();
-	
-	using SPter = std::unique_ptr<RPM_Sensor>;
 
 private:
 	unsigned int mRevolutions;

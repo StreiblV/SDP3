@@ -18,12 +18,13 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <memory>
 class RPM_Sensor :
 	public Object {
 
 public:
 	unsigned int GetRevolutions();
-
+	using SPter = std::unique_ptr<RPM_Sensor>;
 private:
 	unsigned int mRevolutions;
 	std::vector<unsigned int> mRevTable;
@@ -31,6 +32,7 @@ private:
 	
 	//helper
 	unsigned int ReadFile(std::string const& fileName);
+
 };
 
 #endif //RPM_SENSOR_H

@@ -25,9 +25,11 @@ public:
 	unsigned int GetTireDim() const;
 
 private:
-	RPM_Sensor frontRight;
+	RPM_Sensor::SPter mFrontRight;
 	unsigned int mTireRPM;
 	unsigned int mTireDim;
+
+
 };
 
 #endif //CAR_H

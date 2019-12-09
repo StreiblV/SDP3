@@ -12,7 +12,7 @@ static const double PI = 3.14159265359;
 static const double conversionFactorToKMH = 3.6;
 
 void Car::Process() {
-	mTireRPM = frontRight.GetRevolutions();
+	mTireRPM = mFrontRight->GetRevolutions();
 	NotifyObservers();
 }
 

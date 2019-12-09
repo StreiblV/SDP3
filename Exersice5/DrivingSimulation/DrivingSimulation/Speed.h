@@ -20,7 +20,7 @@ public:
 	virtual void Update() override;
 
 private:
-	unsigned int mSpeed;
+	double mSpeed;
 	Car::SPter mCar;
 };
 

@@ -15,9 +15,10 @@
 
 class Distance :
 	public IDisplay {
-	Distance(Car::SPter const& car) : mCar{ car }, mDistance{ CalcDistance(car->GetRPM() } {}
+	Distance(Car::SPter const& car) : mCar{ car }, mDistance{ CalcDistance(car->GetRPM()) } {}
 
 	virtual void Update() override;
+
 private:
 	double mDistance;
 	Car::SPter mCar;

@@ -7,7 +7,9 @@
 | Revision : 0
 | _______________________________________________________________________ */
 
+#include <windows.h>
 #include "Car.h"
+
 #define LOOP_DURATION 25
 
 int main() {
@@ -17,6 +19,7 @@ int main() {
 
 	for(int i = 0; i < LOOP_DURATION; i++){
 		car.Process();
+		Sleep(500);
 	}
 
 	return 0;

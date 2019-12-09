@@ -29,7 +29,7 @@ double Car::GetCurrentSpeed() const {
 	return ((static_cast<double>(mTireRPM)/60)* mTireDim * PI * conversionFactorToKMH);
 }
 
-void Car::SetTireDim(unsigned int newDim) {
+void Car::SetTireDim(double newDim) {
 	if (newDim > 0) {
 		mTireDim = newDim;
 	}
@@ -38,6 +38,6 @@ void Car::SetTireDim(unsigned int newDim) {
 	}
 }
 
-unsigned int Car::GetTireDim() const {
+double Car::GetTireDim() const {
 	return mTireDim;
 }

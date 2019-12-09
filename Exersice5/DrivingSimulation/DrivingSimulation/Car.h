@@ -23,7 +23,7 @@ public:
 	 * @param -
 	 * @return -
 	 */
-	Car(std::string const& fileName, unsigned int tireDim = 600) : mFileName{ fileName }, mTireDim{ tireDim }, mTireRPM{ 0 }{}
+	Car(double tireDim = 0.6) : mTireDim{ tireDim }, mTireRPM{ 0 }{}
 
 	/**
 	 * @brief Calls GetRevolutions of RPM_Sensor and stores delivered value in membervariable, starts Notificationprocess
@@ -51,24 +51,23 @@ public:
 	 * @param newDim new Dimension for Tire Diameter
 	 * @return -
 	 */
-	void SetTireDim(unsigned int newDim);
+	void SetTireDim(double newDim);
 	
 	/**
 	 * @brief Getter
 	 * @param -
 	 * @return current Tire Diameter
 	 */
-	unsigned int GetTireDim() const;
+	double GetTireDim() const;
 
 	using SPter = std::shared_ptr<Car>;
 
 
 private:
-	std::string mFileName;
-	RPM_Sensor mFrontRight{ mFileName };
+	RPM_Sensor mFrontRight;
 
 	unsigned int mTireRPM;
-	unsigned int mTireDim;
+	double mTireDim;
 
 
 };

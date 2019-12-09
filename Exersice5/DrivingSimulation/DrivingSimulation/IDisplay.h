@@ -9,7 +9,16 @@
 
 #ifndef IDISPLAY_H
 #define IDISPLAY_H
+
+#include <memory>
+
 class IDisplay {
+
+public:
+	virtual void Update() = 0;
+	virtual ~IDisplay() = default;
+
+	using SPter = std::shared_ptr<IDisplay>;
 };
 
 #endif //IDISPLAY_H

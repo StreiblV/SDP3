@@ -8,3 +8,8 @@
 | _______________________________________________________________________ */
 
 #include "Speed.h"
+
+void Speed::Update() {
+	mSpeed = mCar->GetCurrentSpeed();
+	//forward it to WindowDisplay!
+}

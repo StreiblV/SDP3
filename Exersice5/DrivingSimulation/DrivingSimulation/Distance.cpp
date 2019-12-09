@@ -8,3 +8,13 @@
 | _______________________________________________________________________ */
 
 #include "Distance.h"
+static const double conversionFactorToKMH = 3.6;
+
+
+void Distance::Update() {
+	mDistance = CalcDistance(mCar->GetRPM);
+}
+
+double Distance::CalcDistance(unsigned int rpm) const {
+	return ((rpm) / conversionFactorToKMH) / 2;
+}

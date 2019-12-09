@@ -10,8 +10,22 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
 #include "Object.h"
+#include "IDisplay.h"
+
+#include <vector>
+#include <memory>
+
 class Vehicle :
 	public Object {
+public:
+	void Attach(IDisplay::SPter const& obs);
+	void Detach(IDisplay::SPter const& obs);
+
+protected:
+	void NotifyObservers();
+
+private:
+	std::vector<IDisplay::SPter> mObservers;
 };
 
 #endif //VEHICLE_H

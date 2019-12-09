@@ -12,7 +12,12 @@ static const double PI = 3.14159265359;
 static const double conversionFactorToKMH = 3.6;
 
 void Car::Process() {
-	mTireRPM = mFrontRight->GetRevolutions();
+	try {
+		mTireRPM = mFrontRight->GetRevolutions();
+	}
+	catch (std::exception const& ex) {
+		std::cerr << "Error while fetching Revolutions: "<< ex.what() << std::endl;
+	}
 	NotifyObservers();
 }
 

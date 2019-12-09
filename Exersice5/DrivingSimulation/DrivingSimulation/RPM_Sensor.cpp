@@ -10,28 +10,38 @@
 
 
 unsigned int RPM_Sensor::GetRevolutions() {
-	std::advance(currPos, 1);
-	if (currPos != mRevolutions.cend()) {
-		return (*currPos);
+	if (currPos != mRevTable.cend()) {
+		return (*currPos++);
 	}
 	else {
-		throw std::exception("Reached end of Testdata!");
+		std::cerr<< "End of testdata reached!" <<std::endl;
 	}
 }
 
-unsigned int RPM_Sensor::ReadFile(std::string const& fileName) {
+void RPM_Sensor::ReadFile(std::string const& fileName) {
 	unsigned int tmp;
 	//Create Filestream
-	std::ifstream inFile{ fileName, std::ios::binary };
+	try {
+		std::ifstream inFile{ fileName, std::ios::binary };
 
-	//Check created file; throw exception in case of a fault
-	if (!inFile.good() || inFile.fail()) {
+		//Check file; throw exception in case of a fault
+		if (!inFile.good() || inFile.fail()) {
+			inFile.close();
+			throw std::exception("Error opening file!");
+		}
+
+		while (inFile >> tmp) {
+			mRevTable.push_back(tmp);
+		}
 		inFile.close();
-		throw std::exception("Error creating new File");
 	}
-
-	while (inFile >> tmp) {
-		mRevTable.push_back(tmp);
+	catch (std::exception const& ex) {
+		std::cerr << "Exception while reading File: "<< ex.what() <<std::endl;
 	}
-	inFile.close();
+	catch (std::bad_alloc const& ex) {
+		std::cerr << "Memory allocation error: " << ex.what() << std::endl;
+	}
+	catch (...) {
+		std::cerr << "Unhandled exception!" << std::endl;
+	}
 }

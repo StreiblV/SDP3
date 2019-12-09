@@ -13,8 +13,8 @@
 #include "IDisplay.h"
 #include "Car.h"
 
-class Distance :
-	public IDisplay {
+class Distance : public IDisplay {
+public:
 	/**
 	 * @brief constructor for concrete observer Distance; initializes Shared-Pointer and Distance
 	 * @param shared pointer to a car

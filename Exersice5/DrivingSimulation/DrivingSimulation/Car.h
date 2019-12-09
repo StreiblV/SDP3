@@ -10,7 +10,7 @@
 #ifndef CAR_H
 #define CAR_H
 #include "Vehicle.h"
-#include "RPM_Sensor.h"
+#include "RPMSensor.h"
 
 #include <iostream>
 class Car :

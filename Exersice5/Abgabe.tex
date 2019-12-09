@@ -61,7 +61,7 @@ Viktoria Streibl - S1810306013\\
 \subsubsection {Daniel Weyrer}
 \begin{itemize}
 	\item estimated: 8 ph 
-	\item actually:  ph
+	\item actually: 5 ph
 \end{itemize}
 
 \section{Requirenment Definition(System Specification)}
@@ -71,7 +71,12 @@ Viktoria Streibl - S1810306013\\
 \subsection{Classdiagram}
 \includegraphics[scale=0.65]{ClassDiagramm}
 
-%\subsection{Design Decisions}
+\subsection{Design Decisions}
+\subsubsection{FileName in Constructor for Car}
+As the Sensor is only simulated and useless without a fileName, we decided to store the fileName in the car class.
+
+\subsubsection{ReadFile}
+As we write the Simulation file on our own and the exercise manager said, it is not necessary, we decided to skip the syntax check for the inFiles!
 %\subsubsection{}
 
 \newpage
@@ -94,7 +99,7 @@ The Testdriver test alle functions of the clients.
 
 \subsection{Testfiles}
 \subsubsection{output.txt}
-\sourceCode{./XY/XY/output.txt}
+%\sourceCode{./XY/XY/output.txt}
 
 %\subsection{ConsoleOutput}
 %\sourceCode{./SymbolParser/SymbolParser/ConsoleOutput.txt}
@@ -102,17 +107,63 @@ The Testdriver test alle functions of the clients.
 \newpage
 \section{Source Code}
 
-\subsection{Name}
+\subsection{Object.h}
 \subsubsection{header.h}
-\sourceCode{./XY/XY/header.h}
-\subsubsection{source.cpp}
-\sourceCode{./XY/XY/source.cpp}
+\sourceCode{./DrivingSimulation/DrivingSimulation/Object.h}
 \newpage
+
+
+\subsection{Vehicle}
+\subsubsection{Vehicle.h}
+\sourceCode{./DrivingSimulation/DrivingSimulation/Vehicle.h}
+\subsubsection{Vehicle.cpp}
+\sourceCode{./DrivingSimulation/DrivingSimulation/Vehicle.cpp}
+\newpage
+
+\subsection{Car}
+\subsubsection{Car.h}
+\sourceCode{./DrivingSimulation/DrivingSimulation/Car.h}
+\subsubsection{Car.cpp}
+\sourceCode{./DrivingSimulation/DrivingSimulation/Car.cpp}
+\newpage
+
+\subsection{RPMSensor}
+\subsubsection{RPMSensor.h}
+\sourceCode{./DrivingSimulation/DrivingSimulation/RPMSensor.h}
+\subsubsection{RPMSensor.cpp}
+\sourceCode{./DrivingSimulation/DrivingSimulation/RPMSensor.cpp}
+\newpage
+
+\subsection{IDisplay}
+\subsubsection{IDisplay.h}
+\sourceCode{./DrivingSimulation/DrivingSimulation/IDisplay.h}
+\newpage
+
+\subsection{Speed}
+\subsubsection{Speed.h}
+\sourceCode{./DrivingSimulation/DrivingSimulation/Speed.h}
+\subsubsection{Speed.cpp}
+\sourceCode{./DrivingSimulation/DrivingSimulation/Speed.cpp}
+\newpage
+
+\subsection{Distance}
+\subsubsection{Distance.h}
+\sourceCode{./DrivingSimulation/DrivingSimulation/Distance.h}
+\subsubsection{Distance.cpp}
+\sourceCode{./DrivingSimulation/DrivingSimulation/Distance.cpp}
+\newpage
+
+\subsection{WindowsDisplay}
+\subsubsection{WindowsDisplay.h}
+\sourceCode{./DrivingSimulation/DrivingSimulation/WindowsDisplay.h}
+\subsubsection{WindowsDisplay.cpp}
+\sourceCode{./DrivingSimulation/DrivingSimulation/WindowsDisplay.h}
 
 
 \subsection{TestDriver}
 \subsubsection{TestDriver.cpp}
-\sourceCode{./XY/XY/TestDriver.cpp}
+\sourceCode{./DrivingSimulation/DrivingSimulation/TestDriver.cpp}
+\newpage
 \newpage
 % Um Quellcode einzufügen einfach diesen Befehl verwenden:
 %\sourceCode{Relativer/Pfad/zum/SourceCode.Endung}

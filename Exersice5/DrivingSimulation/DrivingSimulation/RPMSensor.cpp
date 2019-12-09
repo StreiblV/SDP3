@@ -6,7 +6,7 @@
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
-#include "RPM_Sensor.h"
+#include "RPMSensor.h"
 
 
 RPM_Sensor::RPM_Sensor(std::string const& fileName) {

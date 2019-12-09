@@ -127,7 +127,7 @@
     <ClInclude Include="Distance.h" />
     <ClInclude Include="IDisplay.h" />
     <ClInclude Include="Object.h" />
-    <ClInclude Include="RPM_Sensor.h" />
+    <ClInclude Include="RPMSensor.h" />
     <ClInclude Include="Speed.h" />
     <ClInclude Include="Vehicle.h" />
     <ClInclude Include="WindowsDisplay.h" />
@@ -136,7 +136,7 @@
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Distance.cpp" />
     <ClCompile Include="IDisplay.cpp" />
-    <ClCompile Include="RPM_Sensor.cpp" />
+    <ClCompile Include="RPMSensor.cpp" />
     <ClCompile Include="Speed.cpp" />
     <ClCompile Include="TestDriver.cpp" />
     <ClCompile Include="Vehicle.cpp" />

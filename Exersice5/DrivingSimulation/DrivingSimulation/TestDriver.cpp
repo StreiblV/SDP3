@@ -24,8 +24,8 @@ int main() {
 	IDisplay::SPter distance{ std::make_shared<Distance>(pCar)};
 	IDisplay::SPter speed{ std::make_shared<Speed>(pCar) };
 
-	pCar->Attach(distance);
-	pCar->Attach(speed);
+	car.Attach(distance);
+	car.Attach(speed);
 
 	for(int i = 0; i < LOOP_DURATION; i++){
 		car.Process();

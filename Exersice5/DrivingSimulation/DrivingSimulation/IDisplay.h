@@ -11,6 +11,7 @@
 #define IDISPLAY_H
 
 #include <memory>
+#include "WindowsDisplay.h"
 
 class IDisplay {
 
@@ -25,6 +26,8 @@ public:
 	virtual ~IDisplay() = default;
 
 	using SPter = std::shared_ptr<IDisplay>;
+	WindowsDisplay::SPtr anaDisp = std::make_shared<AnalogDisplay>();
+	WindowsDisplay::SPtr digDisp = std::make_shared<DigitalDisplay>();
 };
 
 #endif //IDISPLAY_H

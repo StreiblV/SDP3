@@ -8,13 +8,10 @@
 | _______________________________________________________________________ */
 
 #include "Distance.h"
-#include "WindowsDisplay.h"
-
 
 static const double conversionFactorToKMH = 3.6;
 
 void Distance::Update() {
-	WindowsDisplay::SPtr anaDisp = std::make_shared<AnalogDisplay>();
 	
 	mDistance += CalcDistance(mCar->GetCurrentSpeed());
 	if (anaDisp->SendValue(mDistance))

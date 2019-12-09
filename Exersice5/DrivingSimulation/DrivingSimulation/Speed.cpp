@@ -9,10 +9,8 @@
 | _______________________________________________________________________ */
 
 #include "Speed.h"
-#include "WindowsDisplay.h"
 
 void Speed::Update() {
-	WindowsDisplay::SPtr digDisp = std::make_shared<DigitalDisplay>();
 
 	mSpeed = mCar->GetCurrentSpeed();
 

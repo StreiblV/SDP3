@@ -130,6 +130,7 @@
     <ClInclude Include="RPM_Sensor.h" />
     <ClInclude Include="Speed.h" />
     <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="WindowsDisplay.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Car.cpp" />
@@ -137,7 +138,9 @@
     <ClCompile Include="IDisplay.cpp" />
     <ClCompile Include="RPM_Sensor.cpp" />
     <ClCompile Include="Speed.cpp" />
+    <ClCompile Include="TestDriver.cpp" />
     <ClCompile Include="Vehicle.cpp" />
+    <ClCompile Include="WindowsDisplay.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

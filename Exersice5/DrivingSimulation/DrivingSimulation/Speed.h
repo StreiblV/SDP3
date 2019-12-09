@@ -2,6 +2,7 @@
 | Workfile : Speed.h
 | Description : [ HEADER ]
 | Name : Daniel Weyrer			PKZ : S1820306044
+	 	 Viktoria Streibl		PKZ : S1810306013
 | Date : 09.12.2019
 | Remarks : -
 | Revision : 0
@@ -12,8 +13,7 @@
 #define SPEED_H
 #include "IDisplay.h"
 #include "Car.h"
-class Speed :
-	public IDisplay {
+class Speed : public IDisplay {
 public:
 	/**
 	 * @brief constructor for Speed-Observer

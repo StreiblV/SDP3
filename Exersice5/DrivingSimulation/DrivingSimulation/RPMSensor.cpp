@@ -9,13 +9,14 @@
 #include "RPMSensor.h"
 
 
-RPM_Sensor::RPM_Sensor(std::string const& fileName) {
+RPM_Sensor::RPM_Sensor() {
 	ReadFile(fileName);
 	currPos = mRevTable.cbegin();
 }
 
 unsigned int RPM_Sensor::GetRevolutions() {
 	if (currPos != mRevTable.cend()) {
+		mRevolutions = *currPos;
 		return (*currPos++);
 	}
 	else {

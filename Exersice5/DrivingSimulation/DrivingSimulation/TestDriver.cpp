@@ -16,19 +16,17 @@
 #define LOOP_DURATION 25
 
 int main() {
-	Car car{ "testData.txt" };
-
 	bool exit = false;
 	
-	Car::SPter pCar{ std::make_shared<Car>(car) };
+	Car::SPter pCar{ std::make_shared<Car>() };
 	IDisplay::SPter distance{ std::make_shared<Distance>(pCar) };
 	IDisplay::SPter speed{ std::make_shared<Speed>(pCar) };
 
-	car.Attach(distance);
-	car.Attach(speed);
+	pCar->Attach(distance);
+	pCar->Attach(speed);
 
 	for(int i = 0; i < LOOP_DURATION; i++){
-		car.Process();
+		pCar->Process();
 		Sleep(500);
 	}
 

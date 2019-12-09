@@ -19,16 +19,11 @@
 #include <memory>
 #include <iostream>
 
+static const std::string fileName = "testData.txt";
+
 class RPM_Sensor : public Object {
 public:
-
-	/**
-	 * @brief Constructor, calls ReadFile() to read and store integers in the vector
-	 * @param
-	 * @return current RPMs
-	 */
-	RPM_Sensor(std::string const& fileName);
-
+	RPM_Sensor();
 	/**
 	 * @brief Getter
 	 * @param

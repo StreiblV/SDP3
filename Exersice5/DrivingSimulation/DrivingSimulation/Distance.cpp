@@ -13,7 +13,6 @@
 
 static const double conversionFactorToKMH = 3.6;
 
-
 void Distance::Update() {
 	WindowsDisplay::SPtr anaDisp = std::make_shared<AnalogDisplay>();
 	

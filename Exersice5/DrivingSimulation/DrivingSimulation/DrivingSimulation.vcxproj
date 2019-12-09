@@ -123,6 +123,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Car.h" />
+    <ClInclude Include="Distance.h" />
+    <ClInclude Include="IDisplay.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="RPM_Sensor.h" />
+    <ClInclude Include="Speed.h" />
+    <ClInclude Include="Vehicle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="Distance.cpp" />
+    <ClCompile Include="IDisplay.cpp" />
+    <ClCompile Include="RPM_Sensor.cpp" />
+    <ClCompile Include="Speed.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

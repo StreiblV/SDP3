@@ -9,11 +9,14 @@
 
 #ifndef VEHICLE_H
 #define VEHICLE_H
+
 #include "Object.h"
 #include "IDisplay.h"
 
 #include <vector>
 #include <memory>
+#include <algorithm>
+#include <iostream>
 
 class Vehicle :
 	public Object {

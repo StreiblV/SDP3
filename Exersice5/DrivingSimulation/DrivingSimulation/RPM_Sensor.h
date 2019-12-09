@@ -10,11 +10,27 @@
 
 #ifndef RPM_SENSOR_H
 #define RPM_SENSOR_H
+
+
+
 #include "Object.h"
+
+#include <string>
+#include <vector>
+#include <fstream>
 class RPM_Sensor :
 	public Object {
 
+public:
+	unsigned int GetRevolutions();
 
+private:
+	unsigned int mRevolutions;
+	std::vector<unsigned int> mRevTable;
+	std::vector<unsigned int>::const_iterator currPos;
+	
+	//helper
+	unsigned int ReadFile(std::string const& fileName);
 };
 
 #endif //RPM_SENSOR_H

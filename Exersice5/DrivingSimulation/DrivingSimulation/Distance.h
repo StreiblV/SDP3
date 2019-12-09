@@ -11,8 +11,18 @@
 #define DISTANCE_H
 
 #include "IDisplay.h"
+#include "Car.h"
+
 class Distance :
 	public IDisplay {
+	Distance(Car::SPter const& car) : mCar{ car }, mDistance{ CalcDistance(car->GetRPM() } {}
+
+	virtual void Update() override;
+private:
+	double mDistance;
+	Car::SPter mCar;
+
+	double CalcDistance(unsigned int rpm) const;
 };
 
 #endif //DISTANCE_H

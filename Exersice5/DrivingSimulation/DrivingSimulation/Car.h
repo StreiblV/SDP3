@@ -10,8 +10,24 @@
 #ifndef CAR_H
 #define CAR_H
 #include "Vehicle.h"
+#include "RPM_Sensor.h"
 class Car :
 	public Vehicle {
+
+public:
+	void Process();
+	using SPter = std::shared_ptr<Car>;
+
+	unsigned int GetRPM() const;
+	double GetCurrentSpeed() const;
+
+	void SetTireDim(unsigned int newDim);
+	unsigned int GetTireDim() const;
+
+private:
+	RPM_Sensor frontRight;
+	unsigned int mTireRPM;
+	unsigned int mTireDim;
 };
 
 #endif //CAR_H

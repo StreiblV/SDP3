@@ -11,8 +11,17 @@
 #ifndef SPEED_H
 #define SPEED_H
 #include "IDisplay.h"
+#include "Car.h"
 class Speed :
 	public IDisplay {
+public:
+	Speed(Car::SPter const& car) : mCar{ car }, mSpeed{ car->GetCurrentSpeed() } {}
+
+	virtual void Update() override;
+
+private:
+	unsigned int mSpeed;
+	Car::SPter mCar;
 };
 
 #endif //SPEED_H

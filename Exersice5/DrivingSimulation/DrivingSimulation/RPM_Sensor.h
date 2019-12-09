@@ -19,19 +19,21 @@
 #include <vector>
 #include <fstream>
 #include <memory>
+#include <iostream>
 class RPM_Sensor :
 	public Object {
 
 public:
 	unsigned int GetRevolutions();
 	using SPter = std::unique_ptr<RPM_Sensor>;
+
 private:
 	unsigned int mRevolutions;
 	std::vector<unsigned int> mRevTable;
 	std::vector<unsigned int>::const_iterator currPos;
 	
 	//helper
-	unsigned int ReadFile(std::string const& fileName);
+	void ReadFile(std::string const& fileName);
 
 };
 

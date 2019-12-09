@@ -11,6 +11,8 @@
 #define CAR_H
 #include "Vehicle.h"
 #include "RPM_Sensor.h"
+
+#include <iostream>
 class Car :
 	public Vehicle {
 

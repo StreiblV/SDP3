@@ -41,12 +41,18 @@ Viktoria Streibl - S1810306013\\
 
 \subsubsection{Viktoria Streibl}
 \begin{itemize}
-	\item XY
+	\item Class IDisplay
+	\subitem Class Speed
+	\item Testdriver
 \end{itemize}
 
 \subsubsection{Daniel Weyrer}
 \begin{itemize}
-	\item XY
+	\item Class Vehicle
+		\subitem Class Car
+		\subitem Class RPMSensor
+	\item Class Distance
+	
 	
 \end{itemize}
 
@@ -55,7 +61,7 @@ Viktoria Streibl - S1810306013\\
 \subsubsection {Viktoria Streibl}
 \begin{itemize}
 	\item estimated: 6 ph 
-	\item actually:  ph
+	\item actually: 4 ph
 \end{itemize}
 
 \subsubsection {Daniel Weyrer}
@@ -64,33 +70,28 @@ Viktoria Streibl - S1810306013\\
 	\item actually: 5 ph
 \end{itemize}
 
-\section{Requirenment Definition(System Specification)}
-
 
 \section{System Design}
 \subsection{Classdiagram}
-\includegraphics[scale=0.65]{ClassDiagramm}
+\includegraphics[scale=0.65]{ClassDiagramm1}
 
 \subsection{Design Decisions}
 \subsubsection{FileName in Constructor for Car}
 As the Sensor is only simulated and useless without a fileName, we decided to store the fileName in the car class.
 
 \subsubsection{ReadFile}
-As we write the Simulation file on our own and the exercise manager said, it is not necessary, we decided to skip the syntax check for the inFiles!
-%\subsubsection{}
+ReadFile uses the static filename given in the header to read the content to the container.
 
-\newpage
-\section{Component Design}
-pdfpages
+
 \newpage
 \section{Test Protocol}
 
 \subsection{Testfiles}
 \subsubsection{output.txt}
-%\sourceCode{./XY/XY/output.txt}
+\sourceCode{./DrivingSimulation/DrivingSimulation/output.txt}
 
-%\subsection{ConsoleOutput}
-%\sourceCode{./SymbolParser/SymbolParser/ConsoleOutput.txt}
+\includegraphics[scale=0.55]{DigitalDisplay.jpeg}
+\includegraphics[scale=0.55]{AnalogDisplay.jpeg}
 
 \newpage
 \section{Source Code}
@@ -151,9 +152,12 @@ pdfpages
 \subsection{TestDriver}
 \subsubsection{TestDriver.cpp}
 \sourceCode{./DrivingSimulation/DrivingSimulation/TestDriver.cpp}
-\newpage
-\newpage
+
 % Um Quellcode einzufügen einfach diesen Befehl verwenden:
 %\sourceCode{Relativer/Pfad/zum/SourceCode.Endung}
+
+\section{Methoddescriptions}
+\includepdf[pages=7-15]{refman.pdf}
+
 
 \end{document}

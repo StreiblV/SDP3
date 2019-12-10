@@ -1,0 +1,7 @@
+###########################################################
+####		Space for Something		       ####
+###########################################################
+
+Designentscheidungen:
+- root-Folder
+- Weakpointer -> Shortcut lebt weiter

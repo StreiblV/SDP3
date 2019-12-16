@@ -11,6 +11,11 @@
 #define FILTERFILES_H
 
 #include "IVisitor.h"
+
+#include "File.h"
+#include "Folder.h"
+#include "Referral.h"
+
 class FilterFiles :	public IVisitor {
 public:
 	void Visit(File& type) override;

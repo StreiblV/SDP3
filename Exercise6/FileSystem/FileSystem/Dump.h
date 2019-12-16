@@ -12,6 +12,10 @@
 
 #include "IVisitor.h"
 
+#include "File.h"
+#include "Folder.h"
+#include "Referral.h"
+
 class Dump : public IVisitor {
 public:
 	void Visit(File& type) override;

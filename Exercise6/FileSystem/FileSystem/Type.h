@@ -35,11 +35,8 @@ public:
 	virtual void AddItem(std::shared_ptr<Type> const item) = 0;
 
 	virtual eType GetType() const = 0;
-	
 
-	friend bool operator== (Type const& lhs, Type const& rhs);
-
-private:
+protected:
 	std::shared_ptr<IVisitor> m_pVisitor;
 	std::string m_name;
 };

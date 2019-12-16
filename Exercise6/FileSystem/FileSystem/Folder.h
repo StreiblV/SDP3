@@ -19,6 +19,8 @@
 
 class Folder : public Type {
 public:
+	Folder(std::string const& name);
+
 	virtual void Accept(IVisitor& v) override;
 
 	virtual cIterItems GetBegin() const override;

@@ -15,10 +15,10 @@
 
 class File : public Type {
 public:
-	File(size_t const blockSize, size_t const numberOfBlocks) : 
+	File(size_t const blockSize, size_t const numberOfBlocks, std::string const& name) : 
 		m_size{ blockSize * numberOfBlocks },
 		m_blockSize{ blockSize }, 
-		m_numberOfBlocks(numberOfBlocks) {}
+		m_numberOfBlocks(numberOfBlocks) { m_name = name; }
 
 	virtual void Accept(IVisitor& v) override;
 

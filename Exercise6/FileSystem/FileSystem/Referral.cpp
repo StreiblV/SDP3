@@ -8,6 +8,10 @@
 | _______________________________________________________________________ */
 #include "Referral.h"
 
+Referral::Referral(std::string const& name) {
+		m_name = name;
+}
+
 void Referral::Accept(IVisitor& v) {
 	//v.Visit(*this);
 }

@@ -1,12 +1,16 @@
 /* ______________________________________________________________________
-| Workfile : FileSystem.cpp
-| Description : [ SOURCE ]
+| Workfile : Factory.h
+| Description : [ HEADER ]
 | Name : Daniel Weyrer			PKZ : S1820306044
-| Name : Viktoria Streibl		PKZ : S1810306013
-| Date : 09.12.2019
+| Date : 16.12.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
 
-#include <iostream>
-#include "FileSystem.h"
+#ifndef FACTORY_H
+#define FACTORY_H
+
+class Factory {
+};
+
+#endif //!FACTORY_H

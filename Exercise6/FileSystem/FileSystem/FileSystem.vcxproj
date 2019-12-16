@@ -151,10 +151,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Dump.cpp" />
+    <ClCompile Include="Factory.cpp" />
+    <ClCompile Include="File.cpp" />
     <ClCompile Include="FileSystem.cpp" />
+    <ClCompile Include="FilterFiles.cpp" />
+    <ClCompile Include="Folder.cpp" />
+    <ClCompile Include="IVisitor.cpp" />
+    <ClCompile Include="Referral.cpp" />
+    <ClCompile Include="TestDriver.cpp" />
+    <ClCompile Include="Type.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Dump.h" />
+    <ClInclude Include="Factory.h" />
+    <ClInclude Include="File.h" />
     <ClInclude Include="FileSystem.h" />
+    <ClInclude Include="FilterFiles.h" />
+    <ClInclude Include="Folder.h" />
+    <ClInclude Include="IVisitor.h" />
+    <ClInclude Include="Referral.h" />
+    <ClInclude Include="Type.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

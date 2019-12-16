@@ -1,12 +1,19 @@
 /* ______________________________________________________________________
-| Workfile : FileSystem.cpp
-| Description : [ SOURCE ]
-| Name : Daniel Weyrer			PKZ : S1820306044
+| Workfile : Dump.h
+| Description : [ HEADER ]
 | Name : Viktoria Streibl		PKZ : S1810306013
-| Date : 09.12.2019
+| Date : 16.12.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
 
-#include <iostream>
-#include "FileSystem.h"
+#ifndef DUMP_H
+#define DUMP_H
+
+#include "IVisitor.h"
+
+class Dump : public IVisitor {
+};
+
+#endif //!DUMP_H
+

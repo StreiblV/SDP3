@@ -1,9 +1,8 @@
-
 \include{Definition} %beinhaltet alle benötigten Packages etc.
 \begin{document}
 \graphicspath{{./}}
 
-\includepdf[pages=-]{Angabe.pdf}
+\includepdf[pages=-]{../Angabe.pdf}
 
 \title{SDP - Exercise 06} % Übungsname und Nummer angeben
 \subtitle{winter semester 2019/20} % Semester angeben oder auskommentieren, falls nicht erwünscht
@@ -37,32 +36,25 @@ Viktoria Streibl - S1810306013\\
 	\item Documentation
 	\item Systemdocumentation
 	\item Class Diagram
+	\item Class FileSystem
+	\item TestDriver
 \end{itemize}
 
 \subsubsection{Viktoria Streibl}
 \begin{itemize}
-	\item Clients
-	\subitem Client Nortel Networks
-	\subitem Client Epos
-
-	\item Interfaces
-	\subitem IEpos
-	\subitem INortelNetworks
-
-	\item Adaptors
-	\subitem AEpos
-	\subitem ANorteNetworks
-		
-	\item Testdriver
-	
+	\item Visitors
+	\subitem Visitor Dump
+	\subitem Visitor FilterFiles			
 \end{itemize}
 
 \subsubsection{Daniel Weyrer}
 \begin{itemize}
-	\item Base Class Encryptor
+	\item Base Class Type
 	\item Derived Classes
-		\subitem Class RSA
-		\subitem Class Caesar
+		\subitem Class File
+		\subitem Class Referral
+		\subitem Class Folder
+	\item Factory
 \end{itemize}
 
 \subsection{Effort}
@@ -83,8 +75,9 @@ Viktoria Streibl - S1810306013\\
 The two Companies Epos and Nortel Networks should get access to a new encryption tool via two independent interfaces (which are already given in the information sheet). As the algorithms should be changeable while running the program, we came up with the idea of two adaptors and one base class.
 
 \section{System Design}
+\newpage
 \subsection{Classdiagram}
-\includegraphics[scale=0.56, angle=90]{ClassDiagram}
+\includegraphics[scale=1, angle=90]{../ClassDiagram.pdf}
 
 \subsection{Design Decisions}
 \subsubsection{Reading File into String}
@@ -267,103 +260,80 @@ It ouputs a error message if there was no successful run.
 \section{Test Protocol}
 
 \subsection{Testfiles}
-\subsubsection{alphabet.txt}
-\sourceCode{./Encoding/testFiles/alphabet.txt}
-\subsubsection{specialCharacters.txt}
-\sourceCode{./Encoding/testFiles/specialCharacters.txt}
-\subsubsection{email.txt}
-\sourceCode{./Encoding/testFiles/email.txt}
-
-%\subsection{Encrypted Files}
-%\subsubsection{alphabet.RSA}
-%\sourceCode{./Encoding/testFiles/alphabet-r.RSA}
-%\subsubsection{alphabet.Caesar}
-%\sourceCode{./Encoding/testFiles/alphabet-c.Caesar}
-%\subsubsection{specialCharacters.RSA}
-%\sourceCode{./Encoding/testFiles/specialCharacters-r.RSA}
-%\subsubsection{specialCharacters.Caesar}
-%\sourceCode{./Encoding/testFiles/specialCharacters-c.Caesar}
-%\subsubsection{email.RSA}
-%\sourceCode{./Encoding/testFiles/email-r.RSA}
-%\subsubsection{email.Caesar}
-%\sourceCode{./Encoding/testFiles/email-c.Caesar}
-
-\subsection{Decrypted Files}
-\subsubsection{alphabet-decrypted.txt}
-\sourceCode{./Encoding/testFiles/alphabet-decrypted.txt}
-\subsubsection{specialCharacters-decrypted.txt}
-\sourceCode{./Encoding/testFiles/specialCharacters-decrypted.txt}
-\subsubsection{email-decrypted.txt}
-\sourceCode{./Encoding/testFiles/email-decrypted.txt}
-\newpage
-\subsection{Console Output}
-\sourceCode{./Encoding/output.txt}
+\subsubsection{}
 
 \newpage
 \section{Source Code}
 
-\subsection{ClientEpos}
-\subsubsection{ClientEpos.h}
-\sourceCode{./Encoding/Encoding/Client_Epos.h}
-\subsubsection{ClientEpos.cpp}
-\sourceCode{./Encoding/Encoding/Client_Epos.cpp}
-\newpage
-\subsection{Client Nortel Networks}
-\subsubsection{ClientNortelNetworks.h}
-\sourceCode{./Encoding/Encoding/Client_NortelNetworks.h}
-\subsubsection{ClientNortelNetworks.h}
-\sourceCode{./Encoding/Encoding/Client_NortelNetworks.cpp}
+\subsection{FileSystem}
+\subsubsection{FileSystem.h}
+\sourceCode{../../FileSystem/FileSystem/FileSystem.h}
+\subsubsection{FileSystem.cpp}
+\sourceCode{../../FileSystem/FileSystem/FileSystem.cpp}
 \newpage
 
-\subsection{Interface IEpos}
-\subsubsection{IEpos.h}
-\sourceCode{./Encoding/Encoding/IEpos.h}
-
-\subsection{Interface INortelNetworks}
-\subsubsection{INortelNetworks.h}
-\sourceCode{./Encoding/Encoding/INortelNetworks.h}
+\subsection{Type}
+\subsubsection{Type.h}
+\sourceCode{../../FileSystem/FileSystem/Type.h}
+\subsubsection{Type.cpp}
+\sourceCode{../../FileSystem/FileSystem/Type.cpp}
 \newpage
 
-\subsection{Adaptor AEpos}
-\subsubsection{AEpos.h}
-\sourceCode{./Encoding/Encoding/AEpos.h}
-\subsubsection{AEpos.cpp}
-\sourceCode{./Encoding/Encoding/AEpos.cpp}
-\newpage
-\subsection{ANortelNetworks}
-\subsubsection{ANortelNetworks.h}
-\sourceCode{./Encoding/Encoding/ANortelNetworks.h}
-\subsubsection{ANortelNetworks.cpp}
-\sourceCode{./Encoding/Encoding/ANortelNetworks.cpp}
+\subsection{File}
+\subsubsection{File.h}
+\sourceCode{../../FileSystem/FileSystem/File.h}
+\subsubsection{File.cpp}
+\sourceCode{../../FileSystem/FileSystem/File.cpp}
 \newpage
 
-\subsection{Class Encryptor}
-\subsubsection{Encryptor.h}
-\sourceCode{./Encoding/Encoding/Encryptor.h}
-\subsubsection{Encryptor.cpp}
-\sourceCode{./Encoding/Encoding/Encryptor.cpp}
+\subsection{Referral}
+\subsubsection{Referral.h}
+\sourceCode{../../FileSystem/FileSystem/Referral.h}
+\subsubsection{Referral.cpp}
+\sourceCode{../../FileSystem/FileSystem/Referral.cpp}
 \newpage
 
-\subsection{Class Caesar}
-\subsubsection{Caesar.h}
-\sourceCode{./Encoding/Encoding/Caesar.h}
-\subsubsection{Caesar.cpp}
-\sourceCode{./Encoding/Encoding/Caesar.cpp}
+\subsection{Folder}
+\subsubsection{Folder.h}
+\sourceCode{../../FileSystem/FileSystem/Folder.h}
+\subsubsection{Folder.cpp}
+\sourceCode{../../FileSystem/FileSystem/Folder.cpp}
 \newpage
-\subsection{Class RSA}
-\subsubsection{RSA.h}
-\sourceCode{./Encoding/Encoding/RSA.h}
-\subsubsection{RSA.cpp}
-\sourceCode{./Encoding/Encoding/RSA.cpp}
+
+\subsection{IVisitor}
+\subsubsection{IVisitor.h}
+\sourceCode{../../FileSystem/FileSystem/IVisitor.h}
+\subsubsection{IVisitor.cpp}
+\sourceCode{../../FileSystem/FileSystem/IVisitor.cpp}
+\newpage
+
+\subsection{Dump}
+\subsubsection{Dump.h}
+\sourceCode{../../FileSystem/FileSystem/Dump.h}
+\subsubsection{Dump.cpp}
+\sourceCode{../../FileSystem/FileSystem/File.cpp}
+\newpage
+
+\subsection{FilterFiles}
+\subsubsection{FilterFiles.h}
+\sourceCode{../../FileSystem/FileSystem/FilterFiles.h}
+\subsubsection{FilterFiles.cpp}
+\sourceCode{../../FileSystem/FileSystem/FilterFiles.cpp}
+\newpage
+
+\subsection{Factory}
+\subsubsection{Factory.h}
+\sourceCode{../../FileSystem/FileSystem/Factory.h}
+\subsubsection{Factory.cpp}
+\sourceCode{../../FileSystem/FileSystem/Factory.cpp}
 \newpage
 
 \subsection{TestDriver}
-\subsubsection{TestDriver.h}
-\sourceCode{./Encoding/Encoding/TestDriver.h}
 \subsubsection{TestDriver.cpp}
-\sourceCode{./Encoding/Encoding/TestDriver.cpp}
+\sourceCode{../../FileSystem/FileSystem/TestDriver.cpp}
 \newpage
-% Um Quellcode einzufügen einfach diesen Befehl verwenden:
-%\sourceCode{Relativer/Pfad/zum/SourceCode.Endung}
+
+
+
 
 \end{document}

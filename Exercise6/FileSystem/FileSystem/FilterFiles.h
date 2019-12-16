@@ -1,12 +1,19 @@
 /* ______________________________________________________________________
-| Workfile : FileSystem.cpp
-| Description : [ SOURCE ]
-| Name : Daniel Weyrer			PKZ : S1820306044
+| Workfile : FilterFiles.h
+| Description : [ HEADER ]
 | Name : Viktoria Streibl		PKZ : S1810306013
-| Date : 09.12.2019
+| Date : 16.12.2019
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
 
-#include <iostream>
-#include "FileSystem.h"
+#ifndef FILTERFILES_H
+#define FILTERFILES_H
+
+#include "IVisitor.h"
+class FilterFiles :	public IVisitor {
+public:
+};
+
+#endif //!FILTERFILES_H
+

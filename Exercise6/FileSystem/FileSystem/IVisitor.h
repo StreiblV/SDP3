@@ -11,6 +11,8 @@
 #define IVISITOR_H
 
 class IVisitor {
+public:
+
 };
 
 

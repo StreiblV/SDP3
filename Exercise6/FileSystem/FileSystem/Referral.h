@@ -9,8 +9,8 @@
 
 #ifndef REFERRAL_H
 #define REFERRAL_H
-
 #include "Type.h"
+
 #include <memory>
 
 class Referral : public Type {

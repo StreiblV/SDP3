@@ -10,9 +10,9 @@
 #ifndef IVISITOR_H
 #define IVISITOR_H
 
-#include "File.h"
-#include "Folder.h"
-#include "Referral.h"
+class File;
+class Folder;
+class Referral;
 
 class IVisitor {
 public:

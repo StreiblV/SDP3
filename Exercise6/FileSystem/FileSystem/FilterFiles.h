@@ -13,6 +13,11 @@
 #include "IVisitor.h"
 class FilterFiles :	public IVisitor {
 public:
+	void Visit(File& type) override;
+	void Visit(Folder& type) override;
+	void Visit(Referral& type) override;
+
+private:
 };
 
 #endif //!FILTERFILES_H

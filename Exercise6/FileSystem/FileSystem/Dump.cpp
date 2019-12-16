@@ -8,3 +8,15 @@
 | _______________________________________________________________________ */
 
 #include "Dump.h"
+
+void Dump::Visit(File& type) {
+
+}
+
+void Dump::Visit(Folder& type) {
+
+}
+
+void Dump::Visit(Referral& type) {
+
+}

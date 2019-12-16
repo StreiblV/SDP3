@@ -7,3 +7,14 @@
 | Revision : 0
 | _______________________________________________________________________ */
 #include "FilterFiles.h"
+
+void FilterFiles::Visit(File& type) {
+}
+
+void FilterFiles::Visit(Folder& type) {
+
+}
+
+void FilterFiles::Visit(Referral& type) {
+
+}

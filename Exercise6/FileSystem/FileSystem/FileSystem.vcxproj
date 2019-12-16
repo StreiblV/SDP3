@@ -157,7 +157,6 @@
     <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="FilterFiles.cpp" />
     <ClCompile Include="Folder.cpp" />
-    <ClCompile Include="IVisitor.cpp" />
     <ClCompile Include="Referral.cpp" />
     <ClCompile Include="TestDriver.cpp" />
     <ClCompile Include="Type.cpp" />

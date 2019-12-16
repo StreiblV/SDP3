@@ -13,6 +13,12 @@
 #include "IVisitor.h"
 
 class Dump : public IVisitor {
+public:
+	void Visit(File& type) override;
+	void Visit(Folder& type) override;
+	void Visit(Referral& type) override;
+
+private:
 };
 
 #endif //!DUMP_H

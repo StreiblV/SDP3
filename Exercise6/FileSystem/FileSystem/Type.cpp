@@ -13,6 +13,3 @@ std::string Type::GetName() const {
 	return m_name;
 }
 
-bool operator==(Type const& lhs, Type const& rhs) {
-	return lhs.GetName() == rhs.GetName();
-}

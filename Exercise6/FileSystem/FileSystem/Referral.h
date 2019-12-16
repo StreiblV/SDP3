@@ -15,6 +15,9 @@
 
 class Referral : public Type {
 public:
+
+	Referral(std::string const& name);
+
 	virtual void Accept(IVisitor& v) override;
 	virtual Type::cIterItems GetBegin() const override;
 	virtual cIterItems GetEnd() const override;

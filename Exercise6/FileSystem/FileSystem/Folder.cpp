@@ -9,6 +9,10 @@
 
 #include "Folder.h"
 
+Folder::Folder(std::string const& name) {
+	m_name = name;
+}
+
 void Folder::Accept(IVisitor& v) {
 	//v.Visit(*this);
 }

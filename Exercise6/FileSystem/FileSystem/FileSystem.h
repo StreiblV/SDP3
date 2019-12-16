@@ -19,7 +19,9 @@
 
 class FileSystem {
 public:
+	FileSystem(std::shared_ptr<Type> root) : m_root{ root } {}
 	void Add(std::string const& path, std::shared_ptr<Type> what);
+
 private:
 	std::shared_ptr<Type> m_root;
 };

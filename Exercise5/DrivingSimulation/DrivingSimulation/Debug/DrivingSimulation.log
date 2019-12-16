@@ -1,0 +1,27 @@
+﻿  Car.cpp
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,37): error C2664: 'RPM_Sensor::RPM_Sensor(RPM_Sensor &&)': cannot convert argument 1 from 'std::string' to 'const RPM_Sensor &'
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,37): message : Reason: cannot convert from 'std::string' to 'const RPM_Sensor'
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,26): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  Distance.cpp
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\RPMSensor.h(47,1): message : see declaration of 'RPM_Sensor::RPM_Sensor'
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,37): error C2664: 'RPM_Sensor::RPM_Sensor(RPM_Sensor &&)': cannot convert argument 1 from 'std::string' to 'const RPM_Sensor &'
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,37): message : Reason: cannot convert from 'std::string' to 'const RPM_Sensor'
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,26): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\RPMSensor.h(47,1): message : see declaration of 'RPM_Sensor::RPM_Sensor'
+  Speed.cpp
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Distance.cpp(17,25): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,37): error C2664: 'RPM_Sensor::RPM_Sensor(RPM_Sensor &&)': cannot convert argument 1 from 'std::string' to 'const RPM_Sensor &'
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,37): message : Reason: cannot convert from 'std::string' to 'const RPM_Sensor'
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,26): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\RPMSensor.h(47,1): message : see declaration of 'RPM_Sensor::RPM_Sensor'
+  TestDriver.cpp
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Speed.cpp(17,25): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,37): error C2664: 'RPM_Sensor::RPM_Sensor(RPM_Sensor &&)': cannot convert argument 1 from 'std::string' to 'const RPM_Sensor &'
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,37): message : Reason: cannot convert from 'std::string' to 'const RPM_Sensor'
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Car.h(68,26): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  Vehicle.cpp
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\RPMSensor.h(47,1): message : see declaration of 'RPM_Sensor::RPM_Sensor'
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Vehicle.cpp(24,2): warning C4286: 'const std::bad_alloc &': is caught by base class ('const std::exception &') on line 21
+  WindowsDisplay.cpp
+  Generating Code...
+C:\Users\vikto\OneDrive\Dokumente\FH\Semester3\SDP\Exersice5\DrivingSimulation\DrivingSimulation\Vehicle.cpp(42,2): warning C4286: 'const std::bad_alloc &': is caught by base class ('const std::exception &') on line 39

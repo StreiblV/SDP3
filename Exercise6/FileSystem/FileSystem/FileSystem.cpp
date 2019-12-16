@@ -14,13 +14,11 @@
 
 bool operator== (std::shared_ptr<Type> const& lhs, std::string const& rhs) {
 	return (lhs->GetName() == rhs);
-};
+}
 
 void FileSystem::Add(std::string const& path, std::shared_ptr<Type> what) {
 	try {
-		size_t posRel = path.find("/");
-		std::string::const_iterator pos1 = path.cbegin();
-		std::advance(pos1, posRel);
+		std::string::const_iterator pos1{ std::find(path.cbegin(), path.cend(), '/') };
 
 		std::string::const_iterator pos = path.cbegin();
 		std::string partOfPath;
@@ -46,10 +44,10 @@ void FileSystem::Add(std::string const& path, std::shared_ptr<Type> what) {
 			partOfPath.clear();
 			spType = *cItem;
 
-			posRel = path.find("/");
-			std::string::const_iterator pos1 = path.cbegin();
-			std::advance(pos1, posRel);
+			
+			pos1 = std::find(pos1, path.cend(), '/');
 		}
+
 		spType->AddItem(what);
 	}
 

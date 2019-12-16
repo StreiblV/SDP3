@@ -11,7 +11,26 @@
 #define FOLDER_H
 
 #include "Type.h"
+#include "FileSystem.h"
+
+#include <iostream>
+#include <memory>
+#include <list>
+
 class Folder : public Type {
+public:
+	virtual void Accept(IVisitor& v) override;
+
+	virtual cIterItems GetBegin() const override;
+	virtual cIterItems GetEnd() const override;
+
+	virtual eType GetType() const override;
+
+
+	virtual void AddItem(std::shared_ptr<Type> item) override;
+	
+private:
+	std::list<std::shared_ptr<Type>> m_items;
 };
 
 #endif //!FOLDER_H

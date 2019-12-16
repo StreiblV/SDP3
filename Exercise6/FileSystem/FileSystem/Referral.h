@@ -11,8 +11,19 @@
 #define REFERRAL_H
 
 #include "Type.h"
-class Referral :
-	public Type {
+#include <memory>
+
+class Referral : public Type {
+public:
+	virtual void Accept(IVisitor& v) override;
+	virtual Type::cIterItems GetBegin() const override;
+	virtual cIterItems GetEnd() const override;
+	virtual void AddItem(std::shared_ptr<Type> item) override;
+	virtual eType GetType() const override;
+
+
+private:
+	std::shared_ptr<Type> m_ref;
 };
 
 #endif //!REFERRAL_H

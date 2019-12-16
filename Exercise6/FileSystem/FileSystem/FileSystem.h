@@ -7,12 +7,21 @@
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
-
 #ifndef FILESYSTEM_H
 #define FILESYSTEM_H
 
+#include "Type.h"
+
+#include <string>
+#include <memory>
+
+
 
 class FileSystem {
+public:
+	void Add(std::string const& path, std::shared_ptr<Type> what);
+private:
+	std::shared_ptr<Type> m_root;
 };
 
 #endif //!FILESYSTEM_H

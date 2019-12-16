@@ -8,3 +8,28 @@
 | _______________________________________________________________________ */
 
 #include "Folder.h"
+
+void Folder::Accept(IVisitor& v) {
+	//v.Visit(*this);
+}
+
+Type::cIterItems Folder::GetBegin() const {
+	return (m_items.cbegin());
+}
+
+Type::cIterItems Folder::GetEnd() const {
+	return m_items.cend();
+}
+
+eType Folder::GetType() const {
+	return eType::FOLDER;
+}
+
+void Folder::AddItem(std::shared_ptr<Type> item) {
+	if (item != nullptr) {
+		m_items.emplace_back(item);
+	}
+	else {
+		std::cerr << "Error while Adding Item" << std::endl;
+	}
+}

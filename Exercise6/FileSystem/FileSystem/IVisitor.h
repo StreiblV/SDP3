@@ -15,6 +15,7 @@
 #include "Referral.h"
 
 class IVisitor {
+public:
 	virtual void Visit(File& type) = 0;
 	virtual void Visit(Folder& type) = 0;
 	virtual void Visit(Referral& type) = 0;

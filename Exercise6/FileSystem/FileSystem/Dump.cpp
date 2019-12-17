@@ -11,22 +11,35 @@
 
 void Dump::Visit(File& type) {
 	//get first element
-	currentDepth = 0;
-	PrintCurrentElement(outputType, type.GetName());
+	FindFirstElement(type);
+
+	Visit();
 }
 
 void Dump::Visit(Folder& type) {
 	//get first element
-	currentDepth = 0;
+	FindFirstElement(type);
+
+	Visit();
 }
 
 void Dump::Visit(Referral& type) {
 	//get first element
-	currentDepth = 0;
+	FindFirstElement(type);
+
+	Visit();
+}
+
+void Dump::Visit() {
+	m_currentDepth = 0;
+
+	//loop through everything and print it
+	ReadCurrentPath(*m_root);
+
 }
 
 void Dump::PrintCurrentElement(std::ostream& out, std::string const filename) {
-	for (int i = 0; i < currentDepth; i++) {
+	for (int i = 0; i < m_currentDepth; i++) {
 		out << " ";
 	}
 	out << filename;
@@ -34,34 +47,44 @@ void Dump::PrintCurrentElement(std::ostream& out, std::string const filename) {
 
 void Dump::FindFirstElement(Type& const type) {
 	bool isRoot = false;
+	Type* currentType = &type;
+	//loop until find root
 	while (isRoot) {
+		currentType = currentType->GetPrev();
 
+		//check if root
+		if (currentType == nullptr) {
+			isRoot = true;
+			m_root = &type;
+		}
 	}
 }
 
 void Dump::ReadCurrentPath(Type& type) {
 	//check for filetype
-	if (type.GetType() == eType::REFERRAL) {
-		PrintCurrentElement(outputType, type.GetName());
-		//ReadCurrentPath(*(*(type.GetBegin())));
-	}
-	else if (type.GetType() == eType::FOLDER) {
-		PrintCurrentElement(outputType, type.GetName());
+	if (type.GetType() == eType::FOLDER) {
+		PrintCurrentElement(m_outputType, type.GetName());
 
 		//loop through folder
 		Type::cIterItems currentItem = type.GetBegin();
 		while (currentItem != type.GetEnd()) {
+			//check if current item is folder
 			if ((*currentItem)->GetType() == eType::FOLDER) {
-				currentDepth++;
+				//increase structur depth
+				m_currentDepth++;
+				//call this method again with new folder-path
 				ReadCurrentPath(*(*currentItem));
-				currentDepth--;
+				//decrease structur depth
+				m_currentDepth--;
 			}
+			//call if folder, referall or other
 			else {
 				ReadCurrentPath(*(*currentItem));
 			}
 		}
 	}
+	//print file and referral
 	else {
-		PrintCurrentElement(outputType, type.GetName());
+		PrintCurrentElement(m_outputType, type.GetName());
 	}
 }

@@ -23,9 +23,11 @@ public:
 	void Visit(Referral& type) override;
 
 private:
-	int currentDepth = 0;
-	std::ostream& outputType = std::cout;
+	int m_currentDepth = 0;
+	std::ostream& m_outputType = std::cout;
+	Type* m_root = nullptr;
 
+	void Visit();
 	void PrintCurrentElement(std::ostream& out, std::string const filename);
 	void FindFirstElement(Type& const type);
 	void ReadCurrentPath(Type& const type);

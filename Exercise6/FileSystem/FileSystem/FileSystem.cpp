@@ -53,6 +53,7 @@ void FileSystem::Add(std::string const& path, std::shared_ptr<Type> what) {
 				pos1 = std::find(++pos1, path.cend(), '/');
 			}
 		}
+
 		//Add Item at specific location
 		spType->AddItem(what);
 	}

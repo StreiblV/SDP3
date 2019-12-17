@@ -10,7 +10,7 @@
 
 Referral::Referral(std::shared_ptr<Type> const& to, std::string const& name) {
 	m_name = name;
-	//set_to;
+	m_ref = to;
 }
 
 void Referral::Accept(IVisitor& v) {

@@ -34,7 +34,7 @@ eType Folder::GetType() const {
 void Folder::AddItem(std::shared_ptr<Type> const& item) {
 	if (item != nullptr){
 		m_items.emplace_back(item);
-		//item->SetPrev(*this));
+		item->SetPrev(this);
 	}
 	else {
 		std::cerr << "Error while Adding Item" << std::endl;

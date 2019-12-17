@@ -23,10 +23,8 @@ public:
 	virtual void Accept(IVisitor& v) override;
 
 
-
+	size_t GetSize() const;
 	virtual eType GetType() const override;
-
-	//Adds Item
 
 
 	//Writes the number of bytes to the file if there is enough space
@@ -36,6 +34,7 @@ public:
 	virtual cIterItems GetBegin() const override;
 	virtual cIterItems GetEnd() const override;
 	virtual void AddItem(std::shared_ptr<Type> const& item) override;
+
 private:
 	size_t m_size;
 	size_t m_blockSize;

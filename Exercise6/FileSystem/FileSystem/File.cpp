@@ -21,11 +21,17 @@ Type::cIterItems File::GetEnd() const {
 	return Type::cIterItems();
 }
 
+size_t File::GetSize() const {
+	return m_size;
+}
+
 eType File::GetType() const {
 	return eType::FILE;
 }
 
-void File::AddItem(std::shared_ptr<Type> const& item) {}
+void File::AddItem(std::shared_ptr<Type> const& item) {
+	std::cerr << "You Cannot Add a Object to a File!" << std::endl;
+}
 
 void File::Write(size_t const bytes) {
 	if (bytes > (m_blockSize * m_numberOfBlocks) - m_size) {

@@ -11,17 +11,17 @@
 #define FILESYSTEM_H
 
 #include "Type.h"
+#include "Object.h"
 
 #include <string>
 #include <memory>
 
 
 
-class FileSystem {
+class FileSystem : public Object{
 public:
 	FileSystem(std::shared_ptr<Type> root) : m_root{ root } {}
 	void Add(std::string const& path, std::shared_ptr<Type> what);
-
 
 private:
 	std::shared_ptr<Type> m_root;

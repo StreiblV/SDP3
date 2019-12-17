@@ -11,6 +11,7 @@
 #define TYPE_H
 
 #include "IVisitor.h"
+#include "Object.h"
 
 #include <string>
 #include <memory>
@@ -22,7 +23,7 @@ enum class eType {
 	REFERRAL
 };
 
-class Type{
+class Type : public Object {
 public:
 	typedef std::shared_ptr<Type> pType;
 	typedef std::list<std::shared_ptr<Type>>::const_iterator cIterItems;
@@ -33,8 +34,8 @@ public:
 	virtual cIterItems GetBegin() const = 0;
 	virtual cIterItems GetEnd() const = 0;
 
-	void SetPrev(std::weak_ptr<Type> const& to);
-	std::weak_ptr<Type> GetPrev() const;
+	void SetPrev(Type* const& to);
+	Type* GetPrev() const;
 
 	virtual void AddItem(std::shared_ptr<Type> const& item) = 0;
 
@@ -42,7 +43,7 @@ public:
 
 protected:
 	std::shared_ptr<IVisitor> m_pVisitor;
-	std::weak_ptr<Type> m_prev;
+	Type* m_prev;
 	std::string m_name;
 };
 #endif//!TYPE_H

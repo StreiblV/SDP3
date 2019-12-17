@@ -169,6 +169,7 @@
     <ClInclude Include="FilterFiles.h" />
     <ClInclude Include="Folder.h" />
     <ClInclude Include="IVisitor.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Referral.h" />
     <ClInclude Include="Type.h" />
   </ItemGroup>

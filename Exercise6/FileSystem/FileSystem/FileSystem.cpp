@@ -19,14 +19,11 @@ bool operator== (std::shared_ptr<Type> const& lhs, std::string const& rhs) {
 void FileSystem::Add(std::string const& path, std::shared_ptr<Type> what) {
 	try {
 		std::string::const_iterator pos1{ std::find(path.cbegin(), path.cend(), '/') };
-
 		std::string::const_iterator pos = path.cbegin();
 		std::string partOfPath;
 
 		Type::cIterItems cItem;
 		Type::pType spType = m_root;
-
-		pos;
 
 		//check if path starts with a slash
 		if (pos1++ != path.cbegin()) {
@@ -53,6 +50,7 @@ void FileSystem::Add(std::string const& path, std::shared_ptr<Type> what) {
 				pos1 = std::find(++pos1, path.cend(), '/');
 			}
 		}
+
 		//Add Item at specific location
 		spType->AddItem(what);
 	}

@@ -28,6 +28,8 @@ public:
 	typedef std::shared_ptr<Type> pType;
 	typedef std::list<std::shared_ptr<Type>>::const_iterator cIterItems;
 
+	Type() : m_prev{ nullptr } {}
+
 	virtual void Accept(IVisitor& v) = 0;
 	std::string GetName() const;
 

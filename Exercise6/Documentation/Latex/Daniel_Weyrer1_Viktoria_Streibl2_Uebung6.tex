@@ -68,11 +68,11 @@ Viktoria Streibl - S1810306013\\
 \subsubsection {Daniel Weyrer}
 \begin{itemize}
 	\item estimated: 12 ph 
-	\item actually: 8 ph
+	\item actually: 10 ph
 \end{itemize}
 
 \section{Requirenment Definition(System Specification)}
-The two Companies Epos and Nortel Networks should get access to a new encryption tool via two independent interfaces (which are already given in the information sheet). As the algorithms should be changeable while running the program, we came up with the idea of two adaptors and one base class.
+The Filesystem should work like a Linux-Based Filesystem. It can contain Files, Folders and Referrals. The Referrals can refer to a File or a Folder.
 
 \section{System Design}
 \newpage
@@ -80,38 +80,18 @@ The two Companies Epos and Nortel Networks should get access to a new encryption
 \includegraphics[scale=1, angle=90]{../ClassDiagram.pdf}
 
 \subsection{Design Decisions}
-\subsubsection{Reading File into String}
-The encryption is limited to 7-Bit ASCII-Values, which limits the encryption to plain text files. txt-files in the Megabyte-range are rare and the encryption method is not designed to deal with such many characters (+ it`s not safe, as we use a small key (RSA) and encrypt character by character).
-\subsubsection{ASCII-Characters over 127}
-\begin{itemize}
-	\item Caesar-Encryption:	Characters with an ASCII-value over 127 cannot be encrypted due to the modulo division by 127, the Caesar-algorithm uses.	
-	
-	\subitem Encrypting: Characters are written unencrypted into the .Caesar with a warning written 
-	\subitem in the command-line. 
-	\subitem Decrypting: ASCII-values over 127 in a decrypted file (.caesar) are getting copied over to the decrypted.txt without any decryption. 
-			A warning is being delivered to the command-line
+\subsubsection{Using a Folder as Root}
+As we wanted to make a Filesystem comparable to the Linux-FS, we chose a Folder as the root of the whole System! 
 
-	\item RSA-Encryption
-	\subitem Encrypting: Characters are being ignored and a warning is being delivered to the cmd, because we found no solution 
-		to handle values over 127 when decrypting a message. 
-	\subitem Decrypting: All values are getting decrypted. If a decrypted-value is over 127 a warning is being delivered to 
-		the command-line and the decrypted-value is stored in the decrypted.txt
+\subsubsection{Empty Implementations}
+As we used pointers of type "Type" we had to make some Functions pure virtual to call them by the pointer. As a File has no list of pointers as Member, we had to keep the Methods empty
 
-\end{itemize}
+\subsubsection{Add-Function}
+We chose to Add Objects by using a path (std::string) as location-giving variable, which comes as close as possible to a "real" linux-filesystem
 
-\subsubsection{Exception-Handling}
-\begin{itemize}
-	\item badalloc (thrown by e.g. string::reserve())
-	\item std::exception (thrown by systemfunctions and user)
-	\item unhandled exceptions
-\end{itemize}
-All Exceptions are thrown in the base-class (protected, non-public functions) and captured in the derived classes!
 
-\subsubsection{Clients}
- To make the testing easier and avoid code duplication, we decided to not test in the Client-Files this time. We created all tests in the Testdriver and used the client object for testing.
-	
 \section{Component Design}
-\subsection{Client Epos}
+\subsection{Filesystem}
 This class is the for the company Epos and uses the interface IEpos.
 \begin{itemize}
 \item void EncryptRSA(fileName)

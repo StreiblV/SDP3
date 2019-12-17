@@ -13,18 +13,18 @@ Referral::Referral(std::string const& name) {
 }
 
 void Referral::Accept(IVisitor& v) {
-	//v.Visit(*this);
+	v.Visit(*this);
 }
 
 Type::cIterItems Referral::GetBegin() const {
-	return Type::cIterItems();
+	return m_ref->GetBegin();
 }
 
 Type::cIterItems Referral::GetEnd() const {
-	return cIterItems();
+	return m_ref->GetEnd();
 }
 
-void Referral::AddItem(std::shared_ptr<Type> item) {}
+void Referral::AddItem(std::shared_ptr<Type> const& item) {}
 
 eType Referral::GetType() const {
 	return eType::REFERRAL;

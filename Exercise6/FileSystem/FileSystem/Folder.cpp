@@ -14,7 +14,7 @@ Folder::Folder(std::string const& name) {
 }
 
 void Folder::Accept(IVisitor& v) {
-	//v.Visit(*this);
+	v.Visit(*this);
 }
 
 Type::cIterItems Folder::GetBegin() const {
@@ -29,9 +29,10 @@ eType Folder::GetType() const {
 	return eType::FOLDER;
 }
 
-void Folder::AddItem(std::shared_ptr<Type> item) {
-	if (item != nullptr) {
+void Folder::AddItem(std::shared_ptr<Type> const& item) {
+	if (item != nullptr){
 		m_items.emplace_back(item);
+		m_prev = std::make_shared<Folder>(*this);
 	}
 	else {
 		std::cerr << "Error while Adding Item" << std::endl;

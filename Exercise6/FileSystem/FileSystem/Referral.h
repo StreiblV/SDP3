@@ -19,9 +19,11 @@ public:
 	Referral(std::string const& name);
 
 	virtual void Accept(IVisitor& v) override;
-	virtual Type::cIterItems GetBegin() const override;
+
+	virtual cIterItems GetBegin() const override;
 	virtual cIterItems GetEnd() const override;
-	virtual void AddItem(std::shared_ptr<Type> item) override;
+
+	virtual void AddItem(std::shared_ptr<Type> const& item) override;
 	virtual eType GetType() const override;
 
 

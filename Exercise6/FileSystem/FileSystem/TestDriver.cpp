@@ -23,7 +23,5 @@ int main() {
 	FS.Add("/y/", std::make_shared<Folder>("z"));
 	FS.Add("/y/z/", std::make_shared<File>(1, 1, "file"));
 	FS.Add("/y/", std::make_shared <File>(1, 1, "file1"));
-	//FS.Add("/y/", std::make_shared<Referral>());
-	
-
+	FS.Add("/y/", std::make_shared<Referral>(std::make_shared<Folder>("sh"), "Hello"));
 }

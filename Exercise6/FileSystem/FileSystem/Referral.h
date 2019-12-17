@@ -15,16 +15,18 @@
 
 class Referral : public Type {
 public:
-
 	Referral(std::shared_ptr<Type> const& to, std::string const& name);
 
+	//visitorfunc
 	virtual void Accept(IVisitor& v) override;
 
+	//Getters
 	virtual cIterItems GetBegin() const override;
 	virtual cIterItems GetEnd() const override;
-
-	virtual void AddItem(std::shared_ptr<Type> const& item) override;
 	virtual eType GetType() const override;
+
+	//Adds Item to Folder the referral is pointing to
+	virtual void AddItem(std::shared_ptr<Type> const& item) override;
 
 
 private:

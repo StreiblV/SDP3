@@ -50,8 +50,7 @@ void Dump::FindFirstElement(Type& const type) {
 
 	//loop until find root
 	while (isRoot) {
-		//TODO - fix GetPrev()
-		//currentType = currentType.GetPrev();
+		currentType = currentType->GetPrev();
 
 		//check if root
 		if (currentType == nullptr) {

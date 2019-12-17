@@ -11,12 +11,12 @@
 #define FILE_H
 
 #include "Type.h"
-
+#include <iostream>
 
 class File : public Type {
 public:
 	File(size_t const blockSize, size_t const numberOfBlocks, std::string const& name) : 
-		m_size{ blockSize * numberOfBlocks },
+		m_size{ 0 },
 		m_blockSize{ blockSize }, 
 		m_numberOfBlocks(numberOfBlocks) { m_name = name; }
 
@@ -26,8 +26,9 @@ public:
 	virtual cIterItems GetEnd() const override;
 
 	virtual eType GetType() const override;
-	virtual void AddItem(std::shared_ptr<Type> item) override;
+	virtual void AddItem(std::shared_ptr<Type> const& item) override;
 
+	void Write(size_t const bytes);
 
 
 private:

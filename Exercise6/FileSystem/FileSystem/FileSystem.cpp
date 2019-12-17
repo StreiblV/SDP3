@@ -26,28 +26,34 @@ void FileSystem::Add(std::string const& path, std::shared_ptr<Type> what) {
 		Type::cIterItems cItem;
 		Type::pType spType = m_root;
 
-		++pos;
+		pos;
 
+		//check if path starts with a slash
 		if (pos1++ != path.cbegin()) {
 			throw std::exception("Path needs to begin with a '/'!");
 		}
-
-		while (pos1 != path.cend()) {
-			partOfPath.assign(pos, ++pos1);
-			pos = pos1;
-			cItem = std::find(spType->GetBegin(), spType->GetEnd(), partOfPath);
-
-			if (cItem == spType->GetEnd()||(*cItem)->GetType() != eType::FOLDER) {
-				throw std::exception("Invalid Path!");
-			}
-
-			partOfPath.clear();
-			spType = *cItem;
-
-			
+		//stay in root when there`s just a slash
+		if (path.size() != 1) {
+			//get name of the given directory
 			pos1 = std::find(pos1, path.cend(), '/');
-		}
 
+			//loop through path and stop at the end of path string
+			while (pos1 != path.cend()) {
+				partOfPath.assign(++pos, pos1);
+				pos = pos1;
+				cItem = std::find(spType->GetBegin(), spType->GetEnd(), partOfPath);
+
+				if (cItem == spType->GetEnd() || (*cItem)->GetType() != eType::FOLDER) {
+					throw std::exception("Invalid Path!");
+				}
+
+				partOfPath.clear();
+				spType = *cItem;
+
+				pos1 = std::find(++pos1, path.cend(), '/');
+			}
+		}
+		//Add Item at specific location
 		spType->AddItem(what);
 	}
 

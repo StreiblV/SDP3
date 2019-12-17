@@ -28,7 +28,7 @@ public:
 	virtual eType GetType() const override;
 
 
-	virtual void AddItem(std::shared_ptr<Type> item) override;
+	virtual void AddItem(std::shared_ptr<Type> const& item) override;
 	
 private:
 	std::list<std::shared_ptr<Type>> m_items;

@@ -10,7 +10,7 @@
 #include "File.h"
 
 void File::Accept(IVisitor& v) {
-//	v.Visit(*this);
+	v.Visit(*this);
 }
 
 Type::cIterItems File::GetBegin() const {
@@ -25,4 +25,13 @@ eType File::GetType() const {
 	return eType::FILE;
 }
 
-void File::AddItem(std::shared_ptr<Type> item) {}
+void File::AddItem(std::shared_ptr<Type> const& item) {}
+
+void File::Write(size_t const bytes) {
+	if (bytes > (m_blockSize * m_numberOfBlocks) - m_size) {
+		std::cerr << "Write not possible - File is not big enough!" << std::endl;
+	}
+	else {
+		m_size += bytes;
+	}
+}

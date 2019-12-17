@@ -48,9 +48,11 @@ void Dump::PrintCurrentElement(std::ostream& out, std::string const filename) {
 void Dump::FindFirstElement(Type& const type) {
 	bool isRoot = false;
 	Type* currentType = &type;
+
 	//loop until find root
 	while (isRoot) {
-		currentType = currentType->GetPrev();
+		//TODO - fix GetPrev()
+		//currentType = currentType.GetPrev();
 
 		//check if root
 		if (currentType == nullptr) {

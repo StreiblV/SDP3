@@ -23,7 +23,12 @@ public:
 	void Visit(Referral& type) override;
 
 private:
+	int currentDepth = 0;
+	std::ostream& outputType = std::cout;
+
+	void PrintCurrentElement(std::ostream& out, std::string const filename);
+	void FindFirstElement(Type& const type);
+	void ReadCurrentPath(Type& const type);
 };
 
 #endif //!DUMP_H
-

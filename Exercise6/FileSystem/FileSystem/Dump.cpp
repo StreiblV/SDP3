@@ -42,7 +42,8 @@ void Dump::FindFirstElement(Type& const type) {
 void Dump::ReadCurrentPath(Type& type) {
 	//check for filetype
 	if (type.GetType() == eType::REFERRAL) {
-		ReadCurrentPath(*(*(type.GetBegin())));
+		PrintCurrentElement(outputType, type.GetName());
+		//ReadCurrentPath(*(*(type.GetBegin())));
 	}
 	else if (type.GetType() == eType::FOLDER) {
 		PrintCurrentElement(outputType, type.GetName());

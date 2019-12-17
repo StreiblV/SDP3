@@ -25,6 +25,8 @@ Type::cIterItems Folder::GetEnd() const {
 	return m_items.cend();
 }
 
+
+
 eType Folder::GetType() const {
 	return eType::FOLDER;
 }
@@ -32,7 +34,7 @@ eType Folder::GetType() const {
 void Folder::AddItem(std::shared_ptr<Type> const& item) {
 	if (item != nullptr){
 		m_items.emplace_back(item);
-		m_prev = std::make_shared<Folder>(*this);
+		//item->SetPrev(*this));
 	}
 	else {
 		std::cerr << "Error while Adding Item" << std::endl;

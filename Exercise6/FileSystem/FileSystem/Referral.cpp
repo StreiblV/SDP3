@@ -8,8 +8,9 @@
 | _______________________________________________________________________ */
 #include "Referral.h"
 
-Referral::Referral(std::string const& name) {
-		m_name = name;
+Referral::Referral(std::shared_ptr<Type> const& to, std::string const& name) {
+	m_name = name;
+	//set_to;
 }
 
 void Referral::Accept(IVisitor& v) {
@@ -24,7 +25,9 @@ Type::cIterItems Referral::GetEnd() const {
 	return m_ref->GetEnd();
 }
 
-void Referral::AddItem(std::shared_ptr<Type> const& item) {}
+void Referral::AddItem(std::shared_ptr<Type> const& item) {
+	item->AddItem(item);
+}
 
 eType Referral::GetType() const {
 	return eType::REFERRAL;

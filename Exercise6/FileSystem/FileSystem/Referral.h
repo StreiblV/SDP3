@@ -16,7 +16,7 @@
 class Referral : public Type {
 public:
 
-	Referral(std::string const& name);
+	Referral(std::shared_ptr<Type> const& to, std::string const& name);
 
 	virtual void Accept(IVisitor& v) override;
 

@@ -9,11 +9,6 @@
 
 #include "Type.h"
 
-std::shared_ptr<Type> Type::getptr() {
-	return shared_from_this();
-
-}
-
 std::string Type::GetName() const {
 	return m_name;
 }

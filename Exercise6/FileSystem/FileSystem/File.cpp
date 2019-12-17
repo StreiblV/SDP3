@@ -21,6 +21,10 @@ Type::cIterItems File::GetEnd() const {
 	return Type::cIterItems();
 }
 
+size_t File::GetSize() const {
+	return m_size;
+}
+
 eType File::GetType() const {
 	return eType::FILE;
 }

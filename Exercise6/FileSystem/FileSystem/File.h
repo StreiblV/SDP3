@@ -13,7 +13,7 @@
 #include "Type.h"
 #include <iostream>
 
-class File : public Type {
+class File : public Type, public Object {
 public:
 	File(size_t const blockSize, size_t const numberOfBlocks, std::string const& name) : 
 		m_size{ 0 },

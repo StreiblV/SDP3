@@ -11,6 +11,7 @@
 #define TYPE_H
 
 #include "IVisitor.h"
+#include "Object.h"
 
 #include <string>
 #include <memory>
@@ -22,14 +23,12 @@ enum class eType {
 	REFERRAL
 };
 
-class Type : std::enable_shared_from_this<Type> {
+class Type : public Object, std::enable_shared_from_this<Type>  {
 public:
 	typedef std::shared_ptr<Type> pType;
 	typedef std::list<std::shared_ptr<Type>>::const_iterator cIterItems;
 
-	std::shared_ptr<Type> getptr() {
-		return shared_from_this();
-	}
+	std::shared_ptr<Type> getptr();
 
 	virtual void Accept(IVisitor& v) = 0;
 	std::string GetName() const;

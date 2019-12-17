@@ -23,6 +23,7 @@ public:
 	FileSystem(std::shared_ptr<Type> root) : m_root{ root } {}
 	void Add(std::string const& path, std::shared_ptr<Type> what);
 
+	Type::pType GoToPath(std::string const& path) const;
 private:
 	std::shared_ptr<Type> m_root;
 };

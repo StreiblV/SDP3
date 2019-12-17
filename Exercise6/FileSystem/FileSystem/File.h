@@ -20,9 +20,10 @@ public:
 		m_blockSize{ blockSize }, 
 		m_numberOfBlocks(numberOfBlocks) { m_name = name; }
 
+	//Visitor_func
 	virtual void Accept(IVisitor& v) override;
 
-
+	//Getters
 	size_t GetSize() const;
 	virtual eType GetType() const override;
 

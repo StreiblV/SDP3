@@ -32,9 +32,17 @@ eType Folder::GetType() const {
 }
 
 void Folder::AddItem(std::shared_ptr<Type> const& item) {
+	//Add Item if it`s not a nullptr
 	if (item != nullptr){
-		m_items.emplace_back(item);
-		item->SetPrev(this);
+
+		if (std::find(m_items.cbegin(), m_items.cend(), item) == m_items.cend()) {
+
+			m_items.emplace_back(item);
+			item->SetPrev(this);
+		}
+		else {
+			std::cerr << "Error: Duplicate!" << std::endl;
+		}
 	}
 	else {
 		std::cerr << "Error while Adding Item" << std::endl;

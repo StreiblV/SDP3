@@ -17,11 +17,15 @@ void Folder::Accept(IVisitor& v) {
 	v.Visit(*this);
 }
 
-Type::cIterItems Folder::GetBegin() const {
+Type::IterItems Folder::GetBegin() {
+	return m_items.begin();
+}
+
+Type::cIterItems Folder::GetcBegin() const {
 	return (m_items.cbegin());
 }
 
-Type::cIterItems Folder::GetEnd() const {
+Type::cIterItems Folder::GetcEnd() const {
 	return m_items.cend();
 }
 

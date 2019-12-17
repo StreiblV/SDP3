@@ -31,6 +31,10 @@ void FileSystem::Add(std::string const& path, std::shared_ptr<Type> what) {
 	}
 }
 
+void FileSystem::VisitAll(IVisitor& v) {
+	VisitRecursive(v, m_root);
+}
+
 Type::pType FileSystem::GoToPath(std::string const& path) const {
 	std::string::const_iterator pos1{ std::find(path.cbegin(), path.cend(), '/') };
 	std::string::const_iterator pos = path.cbegin();
@@ -52,9 +56,9 @@ Type::pType FileSystem::GoToPath(std::string const& path) const {
 		while (pos1 != path.cend()) {
 			partOfPath.assign(++pos, pos1);
 			pos = pos1;
-			cItem = std::find(spType->GetBegin(), spType->GetEnd(), partOfPath);
+			cItem = std::find(spType->GetcBegin(), spType->GetcEnd(), partOfPath);
 
-			if (cItem == spType->GetEnd() || (*cItem)->GetType() != eType::FOLDER) {
+			if (cItem == spType->GetcEnd() || (*cItem)->GetType() != eType::FOLDER) {
 				throw std::exception("Invalid Path!");
 			}
 
@@ -65,4 +69,20 @@ Type::pType FileSystem::GoToPath(std::string const& path) const {
 		}
 	}
 	return spType;
+}
+
+void FileSystem::VisitRecursive(IVisitor& v, std::shared_ptr<Type>& f) {
+	Type::cIterItems iter = f->GetcBegin();
+	size_t max = std::distance(iter, f->GetcEnd());
+	Type::IterItems pos = f->GetBegin();
+
+	for (size_t i = 0; i < max; i++) {
+		if ((*pos)->GetType() == eType::FILE) {
+			(*pos)->Accept(v);
+		}
+		if ((*pos)->GetType() == eType::FOLDER) {
+			VisitRecursive(v, (*pos));
+		}
+		advance(pos, 1);
+	}
 }

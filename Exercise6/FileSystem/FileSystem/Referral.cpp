@@ -17,12 +17,16 @@ void Referral::Accept(IVisitor& v) {
 	v.Visit(*this);
 }
 
-Type::cIterItems Referral::GetBegin() const {
+Type::IterItems Referral::GetBegin() {
 	return m_ref->GetBegin();
 }
 
-Type::cIterItems Referral::GetEnd() const {
-	return m_ref->GetEnd();
+Type::cIterItems Referral::GetcBegin() const {
+	return m_ref->GetBegin();
+}
+
+Type::cIterItems Referral::GetcEnd() const {
+	return m_ref->GetcEnd();
 }
 
 void Referral::AddItem(std::shared_ptr<Type> const& item) {

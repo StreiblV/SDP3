@@ -13,11 +13,15 @@ void File::Accept(IVisitor& v) {
 	v.Visit(*this);
 }
 
-Type::cIterItems File::GetBegin() const {
+Type::IterItems File::GetBegin() {
+	return IterItems();
+}
+
+Type::cIterItems File::GetcBegin() const {
 	return Type::cIterItems();
 }
 
-Type::cIterItems File::GetEnd() const {
+Type::cIterItems File::GetcEnd() const {
 	return Type::cIterItems();
 }
 

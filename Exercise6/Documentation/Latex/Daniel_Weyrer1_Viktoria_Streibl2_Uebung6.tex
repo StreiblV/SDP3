@@ -62,13 +62,13 @@ Viktoria Streibl - S1810306013\\
 \subsubsection {Viktoria Streibl}
 \begin{itemize}
 	\item estimated: 12 ph 
-	\item actually: 6 ph
+	\item actually: 7 ph
 \end{itemize}
 
 \subsubsection {Daniel Weyrer}
 \begin{itemize}
 	\item estimated: 12 ph 
-	\item actually: 10 ph
+	\item actually: 7 ph
 \end{itemize}
 
 \section{Requirenment Definition(System Specification)}
@@ -90,130 +90,10 @@ As we used pointers of type "Type" we had to make some Functions pure virtual to
 We chose to Add Objects by using a path (std::string) as location-giving variable, which comes as close as possible to a "real" linux-filesystem
 
 
-\section{Component Design}
-\subsection{Filesystem}
-This class is the for the company Epos and uses the interface IEpos.
-\begin{itemize}
-\item void EncryptRSA(fileName)
-\subitem It calls the method EncryptRSA of the interface.
-\item void DecryptRSA(fileName)
-\subitem It calls the method DecryptRSA of the interface.
-\end{itemize}
-
-\subsection{Client Nortel Networks}
-This class is the for the company Epos and uses the interface INortelNetworks, it contains following functions:
-\begin{itemize}
-\item void Encipher(type, fileName)
-\subitem It calls the method Encipher of the interface.
-\item void Decipher(type, fileName)
-\subitem It calls the method Decipher of the interface.
-\end{itemize}
-
-\subsection{Interface IEpos}
-This interface holds the following functions:
-\begin{itemize}
-\item virtual  void EncryptRSA(fileName)
-\subitem Defines a function for encrypting a file via RSA.
-\item virtual void DecryptRSA(fileName)
-\subitem Defines a function for decrypting a file via RSA.
-\end{itemize}
-
-\subsection{Interface INortelNetworks}
-This interface holds the following functions:
-\begin{itemize}
-\item virtual  void Encipher(type, fileName)
-\subitem Defines a function for encrypting a file with the algorithm of the specific type.
-\item virtual void Decipher(type, fileName)
-\subitem Defines a function for decrypting a file with the algorithm of the specific type.
-\end{itemize}
-
-\subsection{Adaptor AEpos}
-This class is an adapter for the Interface IEpos. It contains following methods:
-\begin{itemize}
-\item void EncryptRSA(fileName)
-\subitem Implements the function of the Interface. It calls the RSA encrypting algorithmn and encrypts the file.
-\item void DecryptRSA(fileName)
-\subitem Implements the function of the Interface. It calls the RSA decrypting algorithmn and decrypts the file.
-\end{itemize}
-
-\subsection{ANortelNetworks}
-This class is an adapter for the Interface INortelNetworks. It contains following methods:
-\begin{itemize}
-\item void Encipher(type, fileName)
-\subitem Implements the function of the Interface. It checks which kind of encoding type it should use and calls
-the respective algorithmn of encrypting.
-\item void Decipher(type, fileName)
-\subitem Implements the function of the Interface. It checks which kind of encoding type it should use and calls
-the respective algorithmn of decrypting.
-\end{itemize}
-
-\subsection{Class Encryptor}
-Base Class, contains base-functionality such as:
-\begin{itemize}
-\item void GenFile(fileName, content)
-\subitem Creates new File with the given Filename and writes the content into the file
-
-\item string ReadFile(fileName)
-\subitem Reads of the file with the given File-name into a string and returns the string.
-
-\item string NewFileEnding(oldFileName, oldFileEnding, newFileEnding (, appendix)
-\subitem Checks for correct file-ending of the file and creates a new one with the new file-extension and optional with an appendix (to create "filename decrypted.txt"). Throws an exception if the file has the wrong file-extension, returns string with new Filename (and extension) otherwise.
-\end{itemize}
-
-\subsection{Class Caesar}
-Derived class, responsible for the Caesar-Encryption
-\begin{itemize}
-	\item Caesar()
-	\subitem Sets default encryption-key
-	
-	\item Encrypt(fileName)
-	\subitem Main Encryptionfunction, responsible for the whole encryption process:
-	\subsubitem Check file for correct ending
-	\subsubitem Read file to a String
-	\subsubitem create a encrypted string (character by character)
-	\subsubitem create a file with the new file extension ".caesar" 
-	\subsubitem Write encrypted string to the newly created file
-	
-	\item Decrypt(fileName)
-	\subitem Main Decryptionfunction, responsible for the whole decryption process:
-	\subsubitem Check for correct file extension
-	\subsubitem Read File to a string
-	\subsubitem create a decrypted string
-	\subsubitem create a new file with "-decrypted.txt" ending and extension
-	\subsubitem write the decrypted string to the newly created file
-\end{itemize}
-\subsection{Class RSA}
-Derived class, responsible for the RSA-Encryption
-\begin{itemize}
-	\item Caesar()
-	\subitem Sets default encryption-keys
-	
-	\item Encrypt(fileName)
-	\subitem Main Encryptionfunction, responsible for the whole encryption process:
-	\subsubitem Check file for correct ending
-	\subsubitem Read file to a String
-	\subsubitem create a encrypted string (character by character)
-	\subsubitem create a file with the new file extension ".RSA" 
-	\subsubitem Write encrypted string to the newly created file
-	
-	\item Decrypt(fileName)
-	\subitem Main Decryptionfunction, responsible for the whole decryption process:
-	\subsubitem Check for correct file extension
-	\subsubitem Read File to a string
-	\subsubitem create a decrypted string
-	\subsubitem create a new file with "-decrypted.txt" ending and extension
-	\subsubitem write the decrypted string to the newly created file
-	
-	\item CalcPowMod(c, pow, mod)
-	\subitem Based on the RSA Algorithm, it is needed to calculate \(c^{pow} \bmod mod\). This function splits the calculation into pieces to avoid high numbers.
-\end{itemize}
-
 \subsection{TestDriver}
-
+\sourceCode{../../FileSystem/FileSystem/TestDriver.cpp}
 \newpage
-\section{Test Protocol}
 
-\newpage
 \section{Source Code}
 
 \subsection{FileSystem}
@@ -280,8 +160,6 @@ Derived class, responsible for the RSA-Encryption
 \subsubsection{TestDriver.cpp}
 \sourceCode{../../FileSystem/FileSystem/TestDriver.cpp}
 \newpage
-
-
 
 
 \end{document}

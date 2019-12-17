@@ -49,7 +49,7 @@ void Dump::FindFirstElement(Type& const type) {
 	Type* currentType = &type;
 
 	//loop until find root
-	while (isRoot) {
+	while (!isRoot) {
 		currentType = currentType->GetPrev();
 
 		//check if root
@@ -66,8 +66,8 @@ void Dump::ReadCurrentPath(Type& type) {
 		PrintCurrentElement(m_outputType, type.GetName());
 
 		//loop through folder
-		Type::cIterItems currentItem = type.GetBegin();
-		while (currentItem != type.GetEnd()) {
+		Type::cIterItems currentItem = type.GetcBegin();
+		while (currentItem != type.GetcEnd()) {
 			//check if current item is folder
 			if ((*currentItem)->GetType() == eType::FOLDER) {
 				//increase structur depth

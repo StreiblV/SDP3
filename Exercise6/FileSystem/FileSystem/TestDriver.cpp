@@ -13,6 +13,10 @@
 #include "File.h"
 #include "Folder.h"
 #include "Referral.h"
+#include "IVisitor.h"
+#include "Dump.h"
+#include "FilterFiles.h"
+
 #include "vld.h"
 
 #include <iostream>
@@ -24,4 +28,9 @@ int main() {
 	FS.Add("/y/z/", std::make_shared<File>(1, 1, "file"));
 	FS.Add("/y/", std::make_shared <File>(1, 1, "file1"));
 	FS.Add("/y/", std::make_shared<Referral>(std::make_shared<Folder>("sh"), "Hello"));
+	Dump d;
+	FilterFiles ff;
+	FS.VisitAll(ff);
+	FS.VisitAll(d);
+	
 }

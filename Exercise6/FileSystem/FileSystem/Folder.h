@@ -22,8 +22,9 @@ public:
 
 	virtual void Accept(IVisitor& v) override;
 
-	virtual cIterItems GetBegin() const override;
-	virtual cIterItems GetEnd() const override;
+	virtual IterItems GetBegin() override;
+	virtual cIterItems GetcBegin() const override;
+	virtual cIterItems GetcEnd() const override;
 
 	virtual eType GetType() const override;
 

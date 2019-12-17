@@ -23,9 +23,13 @@ public:
 	FileSystem(std::shared_ptr<Type> root) : m_root{ root } {}
 	void Add(std::string const& path, std::shared_ptr<Type> what);
 
+	void VisitAll(IVisitor& v);
+
 	Type::pType GoToPath(std::string const& path) const;
 private:
 	std::shared_ptr<Type> m_root;
+
+	void VisitRecursive(IVisitor& v, std::shared_ptr<Type>& t);
 };
 
 #endif //!FILESYSTEM_H

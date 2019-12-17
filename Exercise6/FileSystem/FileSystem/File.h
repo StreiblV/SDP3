@@ -32,8 +32,9 @@ public:
 	void Write(size_t const bytes);
 
 	//UNUSED FOR FILES!!!
-	virtual cIterItems GetBegin() const override;
-	virtual cIterItems GetEnd() const override;
+	virtual IterItems GetBegin() override;
+	virtual cIterItems GetcBegin() const override;
+	virtual cIterItems GetcEnd() const override;
 	virtual void AddItem(std::shared_ptr<Type> const& item) override;
 
 private:

@@ -43,7 +43,7 @@ std::string FilterFiles::GetPath(Type& const type) {
 	std::string path = "";
 
 	//loop until find root
-	while (isRoot) {
+	while (!isRoot) {
 		currentType = currentType->GetPrev();
 
 		if (currentType == nullptr) {
@@ -61,7 +61,7 @@ void FilterFiles::FindFirstElement(Type& const type) {
 	Type* currentType = &type;
 
 	//loop until find root
-	while (isRoot) {
+	while (!isRoot) {
 		currentType = currentType->GetPrev();
 
 		//check if root
@@ -76,7 +76,7 @@ void FilterFiles::FilterBySize(Type& const type) {
 	if (type.GetType() == eType::FOLDER) {
 		//loop through folder
 		Type::cIterItems currentItem = type.GetBegin();
-		while (currentItem != type.GetEnd()) {
+		while (currentItem != type.GetcEnd()) {
 			FilterBySize(*(*currentItem));
 			currentItem++;
 		}
@@ -100,7 +100,7 @@ void FilterFiles::FilterByReferral(Type& const type) {
 	if (type.GetType() == eType::FOLDER) {
 		//loop through folder
 		Type::cIterItems currentItem = type.GetBegin();
-		while (currentItem != type.GetEnd()) {
+		while (currentItem != type.GetcEnd()) {
 			FilterBySize(*(*currentItem));
 			currentItem++;
 		}

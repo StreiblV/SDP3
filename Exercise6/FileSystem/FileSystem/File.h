@@ -22,15 +22,20 @@ public:
 
 	virtual void Accept(IVisitor& v) override;
 
-	virtual cIterItems GetBegin() const override;
-	virtual cIterItems GetEnd() const override;
+
 
 	virtual eType GetType() const override;
-	virtual void AddItem(std::shared_ptr<Type> const& item) override;
 
+	//Adds Item
+
+
+	//Writes the number of bytes to the file if there is enough space
 	void Write(size_t const bytes);
 
-
+	//UNUSED FOR FILES!!!
+	virtual cIterItems GetBegin() const override;
+	virtual cIterItems GetEnd() const override;
+	virtual void AddItem(std::shared_ptr<Type> const& item) override;
 private:
 	size_t m_size;
 	size_t m_blockSize;

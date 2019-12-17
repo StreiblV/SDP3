@@ -32,6 +32,10 @@ public:
 
 	virtual cIterItems GetBegin() const = 0;
 	virtual cIterItems GetEnd() const = 0;
+
+	void SetPrev(std::weak_ptr<Type> const& to);
+	std::weak_ptr<Type> GetPrev() const;
+
 	virtual void AddItem(std::shared_ptr<Type> const& item) = 0;
 
 	virtual eType GetType() const = 0;

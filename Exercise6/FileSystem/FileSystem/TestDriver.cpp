@@ -17,18 +17,12 @@
 #include <iostream>
 
 int main() {
-	Folder x{ "x" };
-	Folder y{ "y" };
-	Folder z{ "z" };
-	File f{ 1, 1, "file" };
-	File f1{ 1, 1, "file1" };
-
-	FileSystem FS{ std::make_shared<Folder>(x) };
-	FS.Add("/", std::make_shared<Folder>(y));
-	FS.Add("/y/", std::make_shared<Folder>(z));
-	FS.Add("/y/z/", std::make_shared<File>(f));
-	FS.Add("/y/", std::make_shared <File>(f1));
-
+	FileSystem FS{ std::make_shared<Folder>("x") };
+	FS.Add("/", std::make_shared<Folder>("y"));
+	FS.Add("/y/", std::make_shared<Folder>("z"));
+	FS.Add("/y/z/", std::make_shared<File>(1, 1, "file"));
+	FS.Add("/y/", std::make_shared <File>(1, 1, "file1"));
+	//FS.Add("/y/", std::make_shared<Referral>());
 	
 
 }

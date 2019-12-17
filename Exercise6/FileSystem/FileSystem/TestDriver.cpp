@@ -13,6 +13,7 @@
 #include "File.h"
 #include "Folder.h"
 #include "Referral.h"
+#include "vld.h"
 
 #include <iostream>
 

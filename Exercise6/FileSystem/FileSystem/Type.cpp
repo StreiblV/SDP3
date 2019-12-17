@@ -9,15 +9,20 @@
 
 #include "Type.h"
 
+std::shared_ptr<Type> Type::getptr() {
+	return shared_from_this();
+
+}
+
 std::string Type::GetName() const {
 	return m_name;
 }
 
-void Type::SetPrev(std::weak_ptr<Type> const& to) {
+void Type::SetPrev(Type* const& to) {
 	m_prev = to;
 }
 
-std::weak_ptr<Type> Type::GetPrev() const {
+Type* Type::GetPrev() const {
 	return m_prev;
 }
 

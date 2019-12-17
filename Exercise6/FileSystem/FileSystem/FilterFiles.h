@@ -37,7 +37,6 @@ private:
 	Type* m_root = nullptr;
 	int m_minSize = 1;
 	int m_maxSize = 5;
-	std::list<std::shared_ptr<Type>> m_filter;
 
 	void FindFirstElement(Type& const type);
 	std::string GetPath(Type& const type);

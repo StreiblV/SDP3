@@ -37,7 +37,6 @@ void Dump::Visit() {
 	ReadCurrentPath(*m_root);
 
 }
-
 void Dump::PrintCurrentElement(std::ostream& out, std::string const filename) {
 	for (int i = 0; i < m_currentDepth; i++) {
 		out << " ";
@@ -83,6 +82,7 @@ void Dump::ReadCurrentPath(Type& type) {
 			else {
 				ReadCurrentPath(*(*currentItem));
 			}
+			currentItem++;
 		}
 	}
 	//print file and referral

@@ -209,38 +209,9 @@ Derived class, responsible for the RSA-Encryption
 \end{itemize}
 
 \subsection{TestDriver}
-The Testdriver test alle functions of the clients. It tests the interface for the Epos-Company as well as the NortelNetwork-Company. It encrypt and decrypt several files. It contains also some functions:
-\begin{itemize}
-\item int main()
-\subitem It calls all tests.
-
-\item void CreateFullTest(subtitle, filename)
-\subitem This function calls the function to print the title of the tests. Then i tests the Epos functionality and the Nortel Network functionality.
-
-\item void testEPOS(fileName)
-\subitem It calls at first the encrypting method of the specific file and than the decrypting method.
-
-\item void testNN(type, fileName)
-\subitem It calls at first the encrypting method of the specific file tests all encoding types, than it decrypts the outcome.
-
-\item void PrintSubheader(subtitle)
-\subitem This function outputs the title of the following test.
-\end{itemize}
-Following tests are implemented:
-\begin{itemize}
-\item Test alphabet and numbers
-\item Test special characters
-\item Testing an email file
-\item Test if no file is there
-\item Test if file is empty
-\end{itemize}
-It ouputs a error message if there was no successful run.
 
 \newpage
 \section{Test Protocol}
-
-\subsection{Testfiles}
-\subsubsection{}
 
 \newpage
 \section{Source Code}
@@ -283,9 +254,6 @@ It ouputs a error message if there was no successful run.
 \subsection{IVisitor}
 \subsubsection{IVisitor.h}
 \sourceCode{../../FileSystem/FileSystem/IVisitor.h}
-\subsubsection{IVisitor.cpp}
-\sourceCode{../../FileSystem/FileSystem/IVisitor.cpp}
-\newpage
 
 \subsection{Dump}
 \subsubsection{Dump.h}

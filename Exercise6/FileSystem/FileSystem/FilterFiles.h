@@ -43,6 +43,7 @@ private:
 	std::string GetPath(Type& const type);
 	void FilterBySize(Type& const type);
 	void FilterByReferral(Type& const type);
+	void Print(Type& const type);
 };
 
 #endif //!FILTERFILES_H

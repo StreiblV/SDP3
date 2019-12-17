@@ -10,17 +10,26 @@
 
 void FilterFiles::Visit(File& type) {
 	FindFirstElement(type);
+	//Filter Data by size
+	m_filter.clear();
 	FilterBySize(*m_root);
 }
 
 void FilterFiles::Visit(Folder& type) {
 	FindFirstElement(type);
+	//Filter Data by size
+	m_filter.clear();
 	FilterBySize(*m_root);
+
+	//Filter Referral
+	m_filter.clear();
 	FilterByReferral(*m_root);
 }
 
 void FilterFiles::Visit(Referral& type) {
 	FindFirstElement(type);
+	//Filter Referral
+	m_filter.clear();
 	FilterByReferral(*m_root);
 }
 
@@ -87,6 +96,7 @@ void FilterFiles::FilterBySize(Type& const type) {
 		if (size >= m_minSize && size <= m_maxSize) {
 			//add to filter list
 			m_filter.push_back(std::make_shared<Type>(file));
+			Print(type);
 		}
 	}
 }
@@ -103,8 +113,13 @@ void FilterFiles::FilterByReferral(Type& const type) {
 	}
 	//print file and referral
 	else if (type.GetType() == eType::REFERRAL) {
-		Type* prevType = type.GetPrev();
-		std::string path = GetPath(*prevType);
-		std::cout << path << "/" << type.GetName();
+		m_filter.push_back(std::make_shared<Type>(type));
+		Print(type);
 	}
+}
+
+void FilterFiles::Print(Type& const type) {
+	Type* prevType = type.GetPrev();
+	std::string path = GetPath(*prevType);
+	std::cout << path << "/" << type.GetName();
 }

@@ -14,11 +14,9 @@
 #include <string>
 
 #include "Pricelist.h"
-#include "Coffee.h"
+#include "Coffeemachine.h"
 
-class BlackCoffee :	public Coffee {
-
-	std::string GetName() override;
+class BlackCoffee : public Coffeemachine{
 	std::string GetDescription() override;
 	double GetCost() override;
 };

@@ -11,14 +11,8 @@
 
 using namespace pricelist;
 
-std::string Espresso::GetName() {
-	return "Espresso";
-}
-
 std::string Espresso::GetDescription() {
-	std::string desc = "";
-
-	return desc;
+	return "Espresso";
 }
 
 double Espresso::GetCost() {

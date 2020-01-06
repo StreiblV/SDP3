@@ -17,7 +17,10 @@
 #include "Ingredient.h"
 
 class Cream : public Ingredient {
-	std::string GetName() override;
+
+	Cream(std::shared_ptr<Coffeemachine> const& currCoffee);
+
+	std::string GetDescription() override;
 	double GetCost() override;
 };
 

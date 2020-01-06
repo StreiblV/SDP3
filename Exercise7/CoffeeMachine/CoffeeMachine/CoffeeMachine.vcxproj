@@ -158,7 +158,6 @@
     <ClCompile Include="Cream.cpp" />
     <ClCompile Include="Decaffeinated.cpp" />
     <ClCompile Include="Espresso.cpp" />
-    <ClCompile Include="Ingredient.cpp" />
     <ClCompile Include="Milk.cpp" />
     <ClCompile Include="Mocca.cpp" />
     <ClCompile Include="SojaMilk.cpp" />

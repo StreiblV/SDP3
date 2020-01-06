@@ -8,12 +8,22 @@
 | _______________________________________________________________________ */
 
 #include "Sugar.h"
+#include <iostream>
 
 using namespace pricelist;
 
-std::string Sugar::GetName() {
-	return "Sugar";
+Sugar::Sugar(std::shared_ptr<Coffeemachine> const& currCoffee) {
+	try {
+		m_coffee = currCoffee;
+	}
+	catch (std::exception const& ex) {
+		std::cerr << "Exception while adding Cream!" << std::endl;
+	}
+}
+
+std::string Sugar::GetDescription() {
+	return this->m_coffee->GetDescription() + "Sugar";
 }
 double Sugar::GetCost() {
-	return ingredients::sugar;
+	return this->m_coffee->GetCost() + ingredients::sugar;
 }

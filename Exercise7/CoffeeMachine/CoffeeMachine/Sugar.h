@@ -12,12 +12,15 @@
 #define SUGAR_H
 
 #include <string>
+#include <memory>
 
 #include "Pricelist.h"
 #include "Ingredient.h"
 
 class Sugar : public Ingredient {
-	std::string GetName() override;
+
+	Sugar(std::shared_ptr<Coffeemachine> const& currCoffee);
+	std::string GetDescription() override;
 	double GetCost() override;
 };
 

@@ -11,14 +11,8 @@
 
 using namespace pricelist;
 
-std::string Mocca::GetName() {
-	return "Mocca";
-}
-
 std::string Mocca::GetDescription() {
-	std::string desc = "";
-
-	return desc;
+	return "Mocca";
 }
 
 double Mocca::GetCost() {

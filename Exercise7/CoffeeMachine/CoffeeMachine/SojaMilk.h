@@ -12,12 +12,15 @@
 #define SOJAMILK_H
 
 #include <string>
+#include <memory>
 
 #include "Pricelist.h"
 #include "Ingredient.h"
 
 class SojaMilk : public Ingredient {
-	std::string GetName() override;
+
+	SojaMilk(std::shared_ptr<Coffeemachine> const& currCoffee);
+	std::string GetDescription() override;
 	double GetCost() override;
 };
 

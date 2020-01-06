@@ -9,11 +9,22 @@
 
 #include "SojaMilk.h"
 
+#include <iostream>
+
 using namespace pricelist;
 
-std::string SojaMilk::GetName() {
-	return "Soja-Milk";
+SojaMilk::SojaMilk(std::shared_ptr<Coffeemachine> const& currCoffee) {
+	try {
+		m_coffee = currCoffee;
+	}
+	catch (std::exception const& ex) {
+		std::cerr << "Exception while adding Cream!" << ex.what() << std::endl;
+	}
+}
+
+std::string SojaMilk::GetDescription() {
+	return this->m_coffee->GetDescription() + "SojaMilk";
 }
 double SojaMilk::GetCost() {
-	return ingredients::sojaMilk;
+	return this->m_coffee->GetCost() + ingredients::sojaMilk;
 }

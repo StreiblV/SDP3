@@ -12,12 +12,14 @@
 #define MILK_H
 
 #include <string>
+#include <memory>
 
 #include "Pricelist.h"
 #include "Ingredient.h"
 
 class Milk : public Ingredient {
-	std::string GetName() override;
+	Milk(std::shared_ptr<Coffeemachine> const& currCoffee);
+	std::string GetDescription() override;
 	double GetCost() override;
 };
 

@@ -7,5 +7,22 @@
 | Revision : 0
 | _______________________________________________________________________ */
 
-
 #include "BlackCoffee.h"
+
+using namespace pricelist;
+
+std::string BlackCoffee::GetName() {
+	return "Black Coffee";
+}
+
+std::string BlackCoffee::GetDescription() {
+	std::string desc = "";
+
+	return desc;
+}
+
+double BlackCoffee::GetCost() {
+	double price = coffee::blackcoffee;
+
+	return price;
+}

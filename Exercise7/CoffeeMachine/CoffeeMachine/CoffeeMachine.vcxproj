@@ -177,6 +177,7 @@
     <ClInclude Include="Milk.h" />
     <ClInclude Include="Mocca.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Pricelist.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SojaMilk.h" />
     <ClInclude Include="Sugar.h" />

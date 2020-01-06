@@ -8,3 +8,21 @@
 | _______________________________________________________________________ */
 
 #include "Decaffeinated.h"
+
+using namespace pricelist;
+
+std::string Decaffeinated::GetName() {
+	return "Decaffeinated";
+}
+
+std::string Decaffeinated::GetDescription() {
+	std::string desc = "";
+
+	return desc;
+}
+
+double Decaffeinated::GetCost() {
+	double price = coffee::decaffeinated;
+
+	return price;
+}

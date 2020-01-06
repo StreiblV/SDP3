@@ -11,8 +11,16 @@
 #ifndef ESPRESSO_H
 #define ESPRESSO_H
 
+#include <string>
+
+#include "Pricelist.h"
 #include "Coffee.h"
+
 class Espresso : public Coffee {
+
+	std::string GetName() override;
+	std::string GetDescription() override;
+	double GetCost() override;
 };
 
 #endif //!ESPRESSO_H

@@ -7,7 +7,6 @@
 | Revision : 0
 | _______________________________________________________________________ */
 
-
 #ifndef COFFEEMACHINE_H
 #define COFFEEMACHINE_H
 

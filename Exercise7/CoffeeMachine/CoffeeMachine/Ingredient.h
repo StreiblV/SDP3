@@ -1,15 +1,19 @@
 /* ______________________________________________________________________
-| Workfile : Coffeemachine.cpp
-| Description : [ MAIN ]
+| Workfile : Ingredient.h
+| Description : [ HEADER ]
 | Name : Daniel Weyrer			PKZ : S1820306044
 | Date : 06.01.20
 | Remarks : -
 | Revision : 0
 | _______________________________________________________________________ */
-#include <iostream>
-#include "Coffeemachine.h"
 
-int main()
-{
-    std::cout << "Hello World!\n";
-}
+
+#ifndef INGREDIENT_H
+#define INGREDIENT_H
+
+#include "Coffeemachine.h"
+class Ingredient : public Coffeemachine {
+};
+
+#endif //!INGREDIENT_H
+

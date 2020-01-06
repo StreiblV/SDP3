@@ -1,6 +1,6 @@
 /* ______________________________________________________________________
 | Workfile : Coffeemachine.cpp
-| Description : [ MAIN ]
+| Description : [ SOURCE ]
 | Name : Daniel Weyrer			PKZ : S1820306044
 | Date : 06.01.20
 | Remarks : -
@@ -9,7 +9,15 @@
 #include <iostream>
 #include "Coffeemachine.h"
 
-int main()
-{
-    std::cout << "Hello World!\n";
+
+
+void Coffeemachine::GetDisplay() {
+}
+
+void Coffeemachine::SetName(std::string const& name) {
+	m_name = name;
+}
+
+std::string Coffeemachine::GetName() const {
+	return m_name;
 }

@@ -15,6 +15,13 @@
 
 
 class Coffeemachine : public Object{
+public:
+	void GetDisplay();
+	virtual std::string GetDescription() = 0;
+	virtual double GetCost() = 0;
+
+private: 
+	std::string m_name;
 
 };
 

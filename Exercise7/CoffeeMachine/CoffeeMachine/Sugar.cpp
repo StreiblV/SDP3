@@ -9,9 +9,11 @@
 
 #include "Sugar.h"
 
+using namespace pricelist;
+
 std::string Sugar::GetName() {
 	return "Sugar";
 }
 double Sugar::GetCost() {
-	return pricelist::sugar;
+	return ingredients::sugar;
 }

@@ -9,9 +9,11 @@
 
 #include "Milk.h"
 
+using namespace pricelist;
+
 std::string Milk::GetName() {
 	return "Milk";
 }
 double Milk::GetCost() {
-	return pricelist::milk;
+	return ingredients::milk;
 }

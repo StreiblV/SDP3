@@ -9,9 +9,11 @@
 
 #include "Cream.h"
 
+using namespace pricelist;
+
 std::string Cream::GetName() {
 	return "Cream";
 }
 double Cream::GetCost() {
-	return pricelist::cream;
+	return ingredients::cream;
 }

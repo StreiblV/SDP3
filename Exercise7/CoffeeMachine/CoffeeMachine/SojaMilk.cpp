@@ -9,9 +9,11 @@
 
 #include "SojaMilk.h"
 
+using namespace pricelist;
+
 std::string SojaMilk::GetName() {
 	return "Soja-Milk";
 }
 double SojaMilk::GetCost() {
-	return pricelist::sojaMilk;
+	return ingredients::sojaMilk;
 }

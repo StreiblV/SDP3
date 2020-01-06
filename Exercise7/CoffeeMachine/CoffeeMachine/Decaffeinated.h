@@ -11,9 +11,16 @@
 #ifndef DECAFFEINATED_H
 #define DECAFFEINATED_H
 
+#include <string>
 
+#include "Pricelist.h"
 #include "Coffee.h"
+
 class Decaffeinated : public Coffee {
+
+	std::string GetName() override;
+	std::string GetDescription() override;
+	double GetCost() override;
 };
 
 #endif //!DECAFFEINATED_H

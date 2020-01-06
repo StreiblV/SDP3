@@ -10,9 +10,17 @@
 
 #ifndef COFFEE_H
 #define COFFEE_H
+
+#include <string>
+
+#include "Pricelist.h"
 #include "Coffee.h"
 
 class Mocca : public Coffee {
+
+	std::string GetName() override;
+	std::string GetDescription() override;
+	double GetCost() override;
 };
 
 #endif //!COFFEE_H

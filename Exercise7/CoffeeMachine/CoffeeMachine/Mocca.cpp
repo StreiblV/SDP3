@@ -8,3 +8,21 @@
 | _______________________________________________________________________ */
 
 #include "Mocca.h"
+
+using namespace pricelist;
+
+std::string Mocca::GetName() {
+	return "Mocca";
+}
+
+std::string Mocca::GetDescription() {
+	std::string desc = "";
+
+	return desc;
+}
+
+double Mocca::GetCost() {
+	double price = coffee::mocca;
+
+	return price;
+}

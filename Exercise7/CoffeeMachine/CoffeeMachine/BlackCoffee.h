@@ -11,9 +11,16 @@
 #ifndef BLACKCOFFEE_H
 #define BLACKCOFFEE_H
 
+#include <string>
 
+#include "Pricelist.h"
 #include "Coffee.h"
+
 class BlackCoffee :	public Coffee {
+
+	std::string GetName() override;
+	std::string GetDescription() override;
+	double GetCost() override;
 };
 
 #endif //!BLACKCOFFEE_H

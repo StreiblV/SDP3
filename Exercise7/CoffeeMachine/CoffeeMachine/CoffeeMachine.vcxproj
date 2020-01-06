@@ -163,6 +163,7 @@
     <ClCompile Include="Mocca.cpp" />
     <ClCompile Include="SojaMilk.cpp" />
     <ClCompile Include="Sugar.cpp" />
+    <ClCompile Include="Testdriver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlackCoffee.h" />

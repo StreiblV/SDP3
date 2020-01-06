@@ -12,7 +12,7 @@
 #define COFFEEMACHINE_H
 
 #include "Object.h"
-
+#include <string>
 
 class Coffeemachine : public Object{
 public:
@@ -20,7 +20,7 @@ public:
 	virtual std::string GetDescription() = 0;
 	virtual double GetCost() = 0;
 
-private: 
+private:
 	std::string m_name;
 
 };

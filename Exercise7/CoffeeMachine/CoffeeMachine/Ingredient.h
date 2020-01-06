@@ -12,7 +12,22 @@
 #define INGREDIENT_H
 
 #include "Coffeemachine.h"
+
+#include <vector>
+#include <memory>
+#include <string>
+
+
 class Ingredient : public Coffeemachine {
+public:
+	virtual std::string GetDescription() = 0;
+	virtual double GetCost() = 0;
+
+protected:
+	std::shared_ptr<Coffeemachine> m_coffee;
+
+private:
+	double m_cost;
 };
 
 #endif //!INGREDIENT_H

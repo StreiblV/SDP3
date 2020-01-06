@@ -14,6 +14,8 @@
 #include "Coffeemachine.h"
 
 class Coffee : public Coffeemachine {
+	virtual std::string GetDescription() = 0;
+	virtual double GetCost() = 0;
 };
 
 

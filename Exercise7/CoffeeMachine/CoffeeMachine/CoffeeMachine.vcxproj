@@ -151,7 +151,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BlackCoffee.cpp" />
+    <ClCompile Include="Coffee.cpp" />
     <ClCompile Include="CoffeeMachine.cpp" />
+    <ClCompile Include="CoffeePreparation.cpp" />
+    <ClCompile Include="Cream.cpp" />
+    <ClCompile Include="Decaffeinated.cpp" />
+    <ClCompile Include="Espresso.cpp" />
+    <ClCompile Include="Ingredient.cpp" />
+    <ClCompile Include="Milk.cpp" />
+    <ClCompile Include="Mocca.cpp" />
+    <ClCompile Include="SojaMilk.cpp" />
+    <ClCompile Include="Sugar.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BlackCoffee.h" />
+    <ClInclude Include="Coffee.h" />
+    <ClInclude Include="Coffeemachine.h" />
+    <ClInclude Include="CoffeePreparation.h" />
+    <ClInclude Include="Cream.h" />
+    <ClInclude Include="Decaffeinated.h" />
+    <ClInclude Include="Espresso.h" />
+    <ClInclude Include="Ingredient.h" />
+    <ClInclude Include="Milk.h" />
+    <ClInclude Include="Mocca.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SojaMilk.h" />
+    <ClInclude Include="Sugar.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CoffeeMachine.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

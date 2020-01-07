@@ -12,7 +12,7 @@
 using namespace pricelist;
 
 std::string BlackCoffee::GetDescription() {
-	return "Black Coffee";
+	return "Black Coffee: ";
 }
 
 double BlackCoffee::GetCost() {

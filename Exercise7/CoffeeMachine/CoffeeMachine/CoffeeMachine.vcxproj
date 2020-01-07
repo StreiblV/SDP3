@@ -152,12 +152,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BlackCoffee.cpp" />
-    <ClCompile Include="Coffee.cpp" />
     <ClCompile Include="CoffeeMachine.cpp" />
     <ClCompile Include="CoffeePreparation.cpp" />
     <ClCompile Include="Cream.cpp" />
     <ClCompile Include="Decaffeinated.cpp" />
     <ClCompile Include="Espresso.cpp" />
+    <ClCompile Include="Ingredient.cpp" />
     <ClCompile Include="Milk.cpp" />
     <ClCompile Include="Mocca.cpp" />
     <ClCompile Include="SojaMilk.cpp" />

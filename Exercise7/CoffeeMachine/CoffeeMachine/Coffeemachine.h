@@ -11,13 +11,18 @@
 #define COFFEEMACHINE_H
 
 #include "Object.h"
+
 #include <string>
+#include <memory>
 
 class Coffeemachine : public Object{
 public:
+
 	void GetDisplay();
 	virtual std::string GetDescription() = 0;
 	virtual double GetCost() = 0;
+
+	using SPtr = std::shared_ptr<Coffeemachine>;
 
 private:
 	std::string m_name;

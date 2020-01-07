@@ -12,7 +12,7 @@
 using namespace pricelist;
 
 std::string Decaffeinated::GetDescription() {
-	return "Decaffeinated";
+	return "Decaffeinated: ";
 }
 
 double Decaffeinated::GetCost() {

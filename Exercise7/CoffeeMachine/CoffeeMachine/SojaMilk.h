@@ -19,7 +19,9 @@
 
 class SojaMilk : public Ingredient {
 
-	SojaMilk(std::shared_ptr<Coffeemachine> const& currCoffee);
+public:
+	SojaMilk(std::shared_ptr<Coffeemachine> const& currCoffee) : Ingredient{ currCoffee } {}
+
 	std::string GetDescription() override;
 	double GetCost() override;
 };

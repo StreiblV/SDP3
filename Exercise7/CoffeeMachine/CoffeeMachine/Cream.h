@@ -17,8 +17,8 @@
 #include "Ingredient.h"
 
 class Cream : public Ingredient {
-
-	Cream(std::shared_ptr<Coffeemachine> const& currCoffee);
+public:
+	Cream(std::shared_ptr<Coffeemachine> const& currCoffee) : Ingredient{ currCoffee } {}
 
 	std::string GetDescription() override;
 	double GetCost() override;

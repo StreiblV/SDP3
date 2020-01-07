@@ -20,15 +20,14 @@
 
 class Ingredient : public Coffeemachine {
 public:
-	virtual std::string GetDescription() = 0;
-	virtual double GetCost() = 0;
+	virtual std::string GetDescription();
+	virtual double GetCost();
 
 protected:
-	std::shared_ptr<Coffeemachine> m_coffee;
+	Ingredient(Coffeemachine::SPtr const& currCoffee);
 
 private:
-	double m_cost;
+	std::shared_ptr<Coffeemachine> m_coffee;
 };
 
 #endif //!INGREDIENT_H
-

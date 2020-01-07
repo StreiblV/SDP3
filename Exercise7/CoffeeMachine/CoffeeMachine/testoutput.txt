@@ -1,0 +1,4 @@
+Mocca:  SojaMilk  Cream  Sugar
+Espresso: Sugar  SojaMilk
+Espresso: Sugar  SojaMilk  = 1.4
+Mocca:  SojaMilk  Cream  Sugar  = 2.1

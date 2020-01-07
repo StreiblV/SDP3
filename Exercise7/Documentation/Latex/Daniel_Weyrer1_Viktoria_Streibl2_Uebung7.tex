@@ -69,14 +69,17 @@ Viktoria Streibl - S1810306013\\
 
 \section{Requirenment Definition(System Specification)}
 This Coffeemachine should work like a normal Coffeemachine. It is a simulation to order different sort of coffee and add several ingredients. Depending on the selection the price will be displayed.
+The Client is implemented as the PrepareCoffee - Class and uses the Coffeemachine to create those coffees (which basically means to calculate the price for the first item added with its added ingredients) and removes the printed coffee from the list.
 
 \section{System Design}
 \subsection{Classdiagram}
-\includegraphics[scale=0.40, angle=90]{../ClassDiagram.pdf}
+\includegraphics[scale=0.50, angle=90]{../ClassDiagram.pdf}
 
 \subsection{Design Decisions}
 \subsubsection{PriceList}
-We decided to use an extra file to manage the different prices. This makes it easier to add change the prices afterwards.
+We decided to use an extra file and seperate namespaces for coffees and ingredients to manage the different prices. This makes it easier to add change the prices afterwards.
+
+We did not use another base class for all coffees as it would have been completely empty (the main difference between ingredient and coffees are the GetCost and GetDescription Functions)
 
 \section{Component Design}
 \subsection{CoffeePreparation}
@@ -87,19 +90,22 @@ It contains following Methods:
 	\item Finished
 \end{itemize}
 
+Prepare adds a shared ptr to a coffee to a list. When "Finished" is being called, the last item in the (first one added) is being printed and deleted from the list straight afterwards.
+
+We used a list, as we`re adding items in the front of the container (which is not possible with e.g. a vector).
 
 \subsection{Coffeemachine}
 It contains following Methods:
 \begin{itemize}
 	\item GetDescription
 	\item GetCost
-	\item GetName
 \end{itemize}
 
 \subsection{Pricelist}
 It contains a namespace where the prices of the different ingredients are declared.
 
 \subsection{Ingredient}
+Just extends the base class by a shared pointer to the concrete component and its constructor! Base Class for all Ingredients.
 
 \subsection{Coffee Sorts}
 There are different kinds of coffee, the following are implemented:
@@ -124,6 +130,8 @@ They also have following methods:
 	\item GetDescription
 	\item GetCost
 \end{itemize}
+
+Both of the Methods are calling they`re predecessors and add their value (which they get from the constants in the namespace), before returning it!
 
 \newpage
 
@@ -213,6 +221,9 @@ They also have following methods:
 
 \subsection{TestDriver}
 \sourceCode{../../CoffeeMachine/CoffeeMachine/TestDriver.cpp}
+
+\subsection{Output}
+\sourceCode{../../CoffeeMachine/CoffeeMachine/testoutput.txt}
 \newpage
 
 \end{document}

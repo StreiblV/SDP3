@@ -1,0 +1,158 @@
+\include{Definition} %beinhaltet alle benötigten Packages etc.
+\begin{document}
+\graphicspath{{./}}
+
+\includepdf[pages=-]{../Angabe.pdf}
+
+\title{SDP - Exercise 08} % Übungsname und Nummer angeben
+\subtitle{winter semester 2019/20} % Semester angeben oder auskommentieren, falls nicht erwünscht
+\author{
+Viktoria Streibl - S1810306013\\
+  Daniel Weyrer - S1820306044
+} % Autorenname
+\date{\today} % Das heutige Datum automatisch einfügen
+
+\maketitle % Titelseite erstellen
+
+\newpage
+\tableofcontents % Inhaltsverzeichnis erstellen
+\newpage
+
+\ihead{Viktoria Streibl}
+\ohead{Daniel Weyrer}
+\chead{SDP3-UE Uebung 08}
+
+\section{Organizational}
+\subsection{Team}
+\begin{itemize}
+	\item Viktoria 	Streibl 		- 	S1810306013
+	\item Daniel 	Weyrer		-	S1820306044
+\end{itemize}
+
+\subsection{Roles and responsibilities}
+\subsubsection{Jointly}
+\begin{itemize}
+	\item Planning
+	\item Documentation
+	\item Systemdocumentation
+	\item Class Diagram
+	\item Class FileSystem
+	\item TestDriver
+\end{itemize}
+
+\subsubsection{Viktoria Streibl}
+\begin{itemize}
+	\item Visitors
+	\subitem Visitor Dump
+	\subitem Visitor FilterFiles			
+\end{itemize}
+
+\subsubsection{Daniel Weyrer}
+\begin{itemize}
+	\item Base Class Type
+	\item Derived Classes
+		\subitem Class File
+		\subitem Class Referral
+		\subitem Class Folder
+	\item Factory
+\end{itemize}
+
+\subsection{Effort}
+
+\subsubsection {Viktoria Streibl}
+\begin{itemize}
+	\item estimated: 12 ph 
+	\item actually: 7 ph
+\end{itemize}
+
+\subsubsection {Daniel Weyrer}
+\begin{itemize}
+	\item estimated: 12 ph 
+	\item actually: 7 ph
+\end{itemize}
+
+\section{Requirenment Definition(System Specification)}
+
+\section{System Design}
+\newpage
+\subsection{Classdiagram}
+\includegraphics[scale=1, angle=90]{../ClassDiagram.pdf}
+
+\subsection{Design Decisions}
+\subsubsection{}
+
+
+
+\subsection{TestDriver}
+\sourceCode{../../FileSystem/FileSystem/TestDriver.cpp}
+\newpage
+
+\section{Source Code}
+
+\subsection{FileSystem}
+\subsubsection{FileSystem.h}
+\sourceCode{../../FileSystem/FileSystem/FileSystem.h}
+\subsubsection{FileSystem.cpp}
+\sourceCode{../../FileSystem/FileSystem/FileSystem.cpp}
+\newpage
+
+\subsection{Type}
+\subsubsection{Type.h}
+\sourceCode{../../FileSystem/FileSystem/Type.h}
+\subsubsection{Type.cpp}
+\sourceCode{../../FileSystem/FileSystem/Type.cpp}
+\newpage
+
+\subsection{File}
+\subsubsection{File.h}
+\sourceCode{../../FileSystem/FileSystem/File.h}
+\subsubsection{File.cpp}
+\sourceCode{../../FileSystem/FileSystem/File.cpp}
+\newpage
+
+\subsection{Referral}
+\subsubsection{Referral.h}
+\sourceCode{../../FileSystem/FileSystem/Referral.h}
+\subsubsection{Referral.cpp}
+\sourceCode{../../FileSystem/FileSystem/Referral.cpp}
+\newpage
+
+\subsection{Folder}
+\subsubsection{Folder.h}
+\sourceCode{../../FileSystem/FileSystem/Folder.h}
+\subsubsection{Folder.cpp}
+\sourceCode{../../FileSystem/FileSystem/Folder.cpp}
+\newpage
+
+\subsection{IVisitor}
+\subsubsection{IVisitor.h}
+\sourceCode{../../FileSystem/FileSystem/IVisitor.h}
+
+\subsection{Dump}
+\subsubsection{Dump.h}
+\sourceCode{../../FileSystem/FileSystem/Dump.h}
+\subsubsection{Dump.cpp}
+\sourceCode{../../FileSystem/FileSystem/File.cpp}
+\newpage
+
+\subsection{FilterFiles}
+\subsubsection{FilterFiles.h}
+\sourceCode{../../FileSystem/FileSystem/FilterFiles.h}
+\subsubsection{FilterFiles.cpp}
+\sourceCode{../../FileSystem/FileSystem/FilterFiles.cpp}
+\newpage
+
+\subsection{Factory}
+\subsubsection{Factory.h}
+\sourceCode{../../FileSystem/FileSystem/Factory.h}
+\subsubsection{Factory.cpp}
+\sourceCode{../../FileSystem/FileSystem/Factory.cpp}
+\newpage
+
+\subsection{TestDriver}
+\subsubsection{TestDriver.cpp}
+\sourceCode{../../FileSystem/FileSystem/TestDriver.cpp}
+\newpage
+
+
+\end{document}

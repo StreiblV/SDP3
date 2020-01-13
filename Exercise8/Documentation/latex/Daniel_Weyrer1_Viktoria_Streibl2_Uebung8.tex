@@ -36,42 +36,52 @@ Viktoria Streibl - S1810306013\\
 	\item Documentation
 	\item Systemdocumentation
 	\item Class Diagram
-	\item Class FileSystem
-	\item TestDriver
 \end{itemize}
 
 \subsubsection{Viktoria Streibl}
 \begin{itemize}
-	\item Visitors
-	\subitem Visitor Dump
-	\subitem Visitor FilterFiles			
+	\item Client
+	\item Hexapod
+	\item IRobot
+	\item Object
+	\item Robot
+	\item Wheelbot
 \end{itemize}
 
 \subsubsection{Daniel Weyrer}
 \begin{itemize}
-	\item Base Class Type
-	\item Derived Classes
-		\subitem Class File
-		\subitem Class Referral
-		\subitem Class Folder
-	\item Factory
+	\item Control
+	\item Forward
+	\item ICommand
+	\item MacroMovement
+	\item TestDriver
+	\item TurnLeft
+	\item TurnRight
 \end{itemize}
 
 \subsection{Effort}
 
 \subsubsection {Viktoria Streibl}
 \begin{itemize}
-	\item estimated: 12 ph 
-	\item actually: 7 ph
+	\item estimated: 6 ph 
+	\item actually: 3 ph
 \end{itemize}
 
 \subsubsection {Daniel Weyrer}
 \begin{itemize}
-	\item estimated: 12 ph 
-	\item actually: 7 ph
+	\item estimated: 6 ph 
+	\item actually: 6 ph
 \end{itemize}
 
 \section{Requirenment Definition(System Specification)}
+This program should reflect robot control. Different robots should receive different commands and react accordingly.
+The following commands were requested:
+\begin{itemize}
+	\item Turn Left
+	\item Turn Right
+	\item Forward
+	\item MacroMovement - get multiple commands
+\end{itemize}
 
 \section{System Design}
 \newpage
@@ -82,12 +92,35 @@ Viktoria Streibl - S1810306013\\
 \subsubsection{Case-Statements in TurnLeft and TurnRight}
 To make the commands independent from each other (so there`s no need to implement a TurnRight when there is a TurnLeft and the other way round), both Commands have the complete Implementation for their Undo-Command!
 
-\section{Source Code}
+\section{Component Design}
+\subsection{Client}
 
+\subsection{Control}
+
+\subsection{Hexapod}
+
+\subsecction{Wheelbot}
+
+\subsection{ICommand}
+
+\subsection{IRobot}
+
+\subsection{Robot}
+
+\subsection{Forward}
+
+\subsection{TurnLeft}
+
+\subsection{TurnRight}
+
+\subsection{MacroMovement}
+
+
+\section{Source Code}
 \subsection{Client}
 \subsubsection{Client.h}
 \sourceCode{../../Robot/Robot/Client.h}
-\subsubsection{Client.cpp}
+\subsubsection{Client.cpp} 
 \sourceCode{../../Robot/Robot/Client.cpp}
 \newpage
 
@@ -98,18 +131,18 @@ To make the commands independent from each other (so there`s no need to implemen
 \sourceCode{../../Robot/Robot/Control.cpp}
 \newpage
 
-\subsection{Forward}
-\subsubsection{Forward.h}
-\sourceCode{../../Robot/Robot/Forward.h}
-\subsubsection{Forward.cpp}
-\sourceCode{../../Robot/Robot/Forward.cpp}
-\newpage
-
 \subsection{Hexapod}
 \subsubsection{Hexapod.h}
 \sourceCode{../../Robot/Robot/Hexapod.h}
 \subsubsection{Hexapod.cpp}
 \sourceCode{../../Robot/Robot/Hexapod.cpp}
+\newpage
+
+\subsection{Wheelbot}
+\subsubsection{Wheelbot.h}
+\sourceCode{../../Robot/Robot/Wheelbot.h}
+\subsubsection{Wheelbot.cpp}
+\sourceCode{../../Robot/Robot/Wheelbot.cpp}
 \newpage
 
 \subsection{ICommand}
@@ -126,18 +159,18 @@ To make the commands independent from each other (so there`s no need to implemen
 \sourceCode{../../Robot/Robot/IRobot.cpp}
 \newpage
 
-\subsection{MacroMovement}
-\subsubsection{MacroMovement.h}
-\sourceCode{../../Robot/Robot/MacroMovement.h}
-\subsubsection{MacroMovement.cpp}
-\sourceCode{../../Robot/Robot/MacroMovement.cpp}
-\newpage
-
 \subsection{Robot}
 \subsubsection{Robot.h}
 \sourceCode{../../Robot/Robot/Robot.h}
 \subsubsection{Robot.cpp}
 \sourceCode{../../Robot/Robot/Robot.cpp}
+\newpage
+
+\subsection{Forward}
+\subsubsection{Forward.h}
+\sourceCode{../../Robot/Robot/Forward.h}
+\subsubsection{Forward.cpp}
+\sourceCode{../../Robot/Robot/Forward.cpp}
 \newpage
 
 \subsection{TurnLeft}
@@ -154,11 +187,11 @@ To make the commands independent from each other (so there`s no need to implemen
 \sourceCode{../../Robot/Robot/TurnRight.cpp}
 \newpage
 
-\subsection{Wheelbot}
-\subsubsection{Wheelbot.h}
-\sourceCode{../../Robot/Robot/Wheelbot.h}
-\subsubsection{Wheelbot.cpp}
-\sourceCode{../../Robot/Robot/Wheelbot.cpp}
+\subsection{MacroMovement}
+\subsubsection{MacroMovement.h}
+\sourceCode{../../Robot/Robot/MacroMovement.h}
+\subsubsection{MacroMovement.cpp}
+\sourceCode{../../Robot/Robot/MacroMovement.cpp}
 \newpage
 
 \subsection{Object}

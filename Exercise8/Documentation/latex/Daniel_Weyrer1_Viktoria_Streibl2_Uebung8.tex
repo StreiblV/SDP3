@@ -76,84 +76,99 @@ Viktoria Streibl - S1810306013\\
 \section{System Design}
 \newpage
 \subsection{Classdiagram}
-\includegraphics[scale=1, angle=90]{../ClassDiagram.pdf}
+\includegraphics[scale=0.35, angle=90]{../ClassDiagram.pdf}
 
 \subsection{Design Decisions}
 \subsubsection{Case-Statements in TurnLeft and TurnRight}
 To make the commands independent from each other (so there`s no need to implement a TurnRight when there is a TurnLeft and the other way round), both Commands have the complete Implementation for their Undo-Command!
 
-
-
-
-\subsection{TestDriver}
-\sourceCode{../../FileSystem/FileSystem/TestDriver.cpp}
-\newpage
-
 \section{Source Code}
 
-\subsection{FileSystem}
-\subsubsection{FileSystem.h}
-\sourceCode{../../FileSystem/FileSystem/FileSystem.h}
-\subsubsection{FileSystem.cpp}
-\sourceCode{../../FileSystem/FileSystem/FileSystem.cpp}
+\subsection{Client}
+\subsubsection{Client.h}
+\sourceCode{../../Robot/Robot/Client.h}
+\subsubsection{Client.cpp}
+\sourceCode{../../Robot/Robot/Client.cpp}
 \newpage
 
-\subsection{Type}
-\subsubsection{Type.h}
-\sourceCode{../../FileSystem/FileSystem/Type.h}
-\subsubsection{Type.cpp}
-\sourceCode{../../FileSystem/FileSystem/Type.cpp}
+\subsection{Control}
+\subsubsection{Control.h}
+\sourceCode{../../Robot/Robot/Control.h}
+\subsubsection{Control.cpp}
+\sourceCode{../../Robot/Robot/Control.cpp}
 \newpage
 
-\subsection{File}
-\subsubsection{File.h}
-\sourceCode{../../FileSystem/FileSystem/File.h}
-\subsubsection{File.cpp}
-\sourceCode{../../FileSystem/FileSystem/File.cpp}
+\subsection{Forward}
+\subsubsection{Forward.h}
+\sourceCode{../../Robot/Robot/Forward.h}
+\subsubsection{Forward.cpp}
+\sourceCode{../../Robot/Robot/Forward.cpp}
 \newpage
 
-\subsection{Referral}
-\subsubsection{Referral.h}
-\sourceCode{../../FileSystem/FileSystem/Referral.h}
-\subsubsection{Referral.cpp}
-\sourceCode{../../FileSystem/FileSystem/Referral.cpp}
+\subsection{Hexapod}
+\subsubsection{Hexapod.h}
+\sourceCode{../../Robot/Robot/Hexapod.h}
+\subsubsection{Hexapod.cpp}
+\sourceCode{../../Robot/Robot/Hexapod.cpp}
 \newpage
 
-\subsection{Folder}
-\subsubsection{Folder.h}
-\sourceCode{../../FileSystem/FileSystem/Folder.h}
-\subsubsection{Folder.cpp}
-\sourceCode{../../FileSystem/FileSystem/Folder.cpp}
+\subsection{ICommand}
+\subsubsection{ICommand.h}
+\sourceCode{../../Robot/Robot/ICommand.h}
+\subsubsection{ICommand.cpp}
+\sourceCode{../../Robot/Robot/ICommand.cpp}
 \newpage
 
-\subsection{IVisitor}
-\subsubsection{IVisitor.h}
-\sourceCode{../../FileSystem/FileSystem/IVisitor.h}
-
-\subsection{Dump}
-\subsubsection{Dump.h}
-\sourceCode{../../FileSystem/FileSystem/Dump.h}
-\subsubsection{Dump.cpp}
-\sourceCode{../../FileSystem/FileSystem/File.cpp}
+\subsection{IRobot}
+\subsubsection{IRobot.h}
+\sourceCode{../../Robot/Robot/IRobot.h}
+\subsubsection{IRobot.cpp}
+\sourceCode{../../Robot/Robot/IRobot.cpp}
 \newpage
 
-\subsection{FilterFiles}
-\subsubsection{FilterFiles.h}
-\sourceCode{../../FileSystem/FileSystem/FilterFiles.h}
-\subsubsection{FilterFiles.cpp}
-\sourceCode{../../FileSystem/FileSystem/FilterFiles.cpp}
+\subsection{MacroMovement}
+\subsubsection{MacroMovement.h}
+\sourceCode{../../Robot/Robot/MacroMovement.h}
+\subsubsection{MacroMovement.cpp}
+\sourceCode{../../Robot/Robot/MacroMovement.cpp}
 \newpage
 
-\subsection{Factory}
-\subsubsection{Factory.h}
-\sourceCode{../../FileSystem/FileSystem/Factory.h}
-\subsubsection{Factory.cpp}
-\sourceCode{../../FileSystem/FileSystem/Factory.cpp}
+\subsection{Robot}
+\subsubsection{Robot.h}
+\sourceCode{../../Robot/Robot/Robot.h}
+\subsubsection{Robot.cpp}
+\sourceCode{../../Robot/Robot/Robot.cpp}
+\newpage
+
+\subsection{TurnLeft}
+\subsubsection{TurnLeft.h}
+\sourceCode{../../Robot/Robot/TurnLeft.h}
+\subsubsection{TurnLeft.cpp}
+\sourceCode{../../Robot/Robot/TurnLeft.cpp}
+\newpage
+
+\subsection{TurnRight}
+\subsubsection{TurnRight.h}
+\sourceCode{../../Robot/Robot/TurnRight.h}
+\subsubsection{TurnRight.cpp}
+\sourceCode{../../Robot/Robot/TurnRight.cpp}
+\newpage
+
+\subsection{Wheelbot}
+\subsubsection{Wheelbot.h}
+\sourceCode{../../Robot/Robot/Wheelbot.h}
+\subsubsection{Wheelbot.cpp}
+\sourceCode{../../Robot/Robot/Wheelbot.cpp}
+\newpage
+
+\subsection{Object}
+\subsubsection{Object.h}
+\sourceCode{../../Robot/Robot/Object.h}
 \newpage
 
 \subsection{TestDriver}
 \subsubsection{TestDriver.cpp}
-\sourceCode{../../FileSystem/FileSystem/TestDriver.cpp}
+\sourceCode{../../Robot/Robot/TestDriver.cpp}
 \newpage
 
 

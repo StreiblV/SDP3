@@ -11,7 +11,15 @@
 #define CLIENT_H
 
 #include "Object.h"
+#include "Control.h"
+#include "IRobot.h"
+
 class Client : public Object {
+
+public:
+
+
+private:
 };
 
 #endif // !CLIENT_H

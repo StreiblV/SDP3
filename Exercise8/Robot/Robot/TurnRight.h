@@ -14,6 +14,7 @@
 #include "Robot.h"
 
 class TurnRight : public ICommand {
+public:
 	TurnRight(std::shared_ptr<Robot> robot) : ICommand{ robot } {}
 	virtual void Execute() override;
 	virtual void Unexecute() override;

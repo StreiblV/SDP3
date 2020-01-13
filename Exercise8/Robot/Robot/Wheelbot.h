@@ -17,6 +17,7 @@
 
 class Wheelbot : public Robot {
 public:
+	Wheelbot(std::string const& name) : Robot(name) {}
 	virtual void Info(std::ostream& ost) override;
 };
 

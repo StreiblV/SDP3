@@ -40,7 +40,7 @@ void Control::Start() {
 
 void Control::Undo(size_t const count) {
 	try {
-		for (auto i = --m_undoList.cend(); i != (--m_undoList.cend() - count); i--) {
+		for (auto i = --m_undoList.cend(); i != (m_undoList.cend() - count); i--) {
 			(*i)->Unexecute();
 			m_undoList.erase(i);
 		}

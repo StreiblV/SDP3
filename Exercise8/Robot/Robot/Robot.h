@@ -41,6 +41,8 @@ public:
 	void SetName(std::string const& name);
 	std::string GetName();
 
+	using SPter = std::shared_ptr<Robot>;
+
 private:
 	std::string m_name;
 

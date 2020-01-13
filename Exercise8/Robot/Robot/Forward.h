@@ -15,7 +15,8 @@
 #include "Robot.h"
 
 class Forward :	public ICommand {
-	Forward(std::shared_ptr<Robot> robot);
+public:
+	Forward(std::shared_ptr<Robot> robot, int const distance) : ICommand{ robot }, m_distance{ distance } {}
 	virtual void Execute() override;
 	virtual void Unexecute() override;
 

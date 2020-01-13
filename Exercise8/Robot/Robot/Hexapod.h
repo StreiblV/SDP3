@@ -15,6 +15,8 @@
 #include "Robot.h"
 class Hexapod : public Robot {
 public:
+	Hexapod(std::string const& name) : Robot(name) {}
+
 	virtual void Info(std::ostream& ost) override;
 };
 

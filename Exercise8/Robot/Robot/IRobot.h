@@ -16,6 +16,7 @@ class IRobot {
 public:
 	// Prints current Robotinformation
 	virtual void Info(std::ostream& ost) = 0;
+	virtual ~IRobot();
 };
 
 #endif // !IROBOT_H

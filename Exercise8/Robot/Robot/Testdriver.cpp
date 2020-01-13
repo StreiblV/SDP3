@@ -20,14 +20,19 @@ int main() {
 	Robot::SPter Harry{ make_shared<Wheelbot>("Harry") };
 	Control ctrl;
 	
-	
-	
-	TurnLeft Left(Harry);
+	Control::TcmdList cmd;
+	cmd.emplace_back(make_shared<Forward>(Harry, -300));
+	cmd.emplace_back(make_shared<TurnLeft>(Harry));
+	cmd.emplace_back(make_shared<Forward>(Harry, 500));
+
 
 	ctrl.AddCommand(make_shared<Forward>(Harry, 300));
 	ctrl.AddCommand(make_shared<TurnLeft>(Harry));
 	ctrl.AddCommand(make_shared<TurnRight>(Robert));
 	ctrl.AddCommand(make_shared<Forward>(Robert, 400));
+	ctrl.AddCommand(make_shared<MacroMovement>(Harry, cmd));
+	
+	
 	ctrl.Start();
 
 	Robert->Info(cout);

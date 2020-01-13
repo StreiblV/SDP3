@@ -12,7 +12,10 @@
 
 #include "Object.h"
 #include "ICommand.h"
-#include "vector"
+#include <vector>
+#include <deque>
+
+#include <algorithm>
 #include <memory>
 
 class Control : public Object {

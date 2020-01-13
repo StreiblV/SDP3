@@ -17,7 +17,10 @@
 
 class Wheelbot : public Robot {
 public:
+	//cTor
 	Wheelbot(std::string const& name) : Robot(name) {}
+	
+	//Prints all Information if valid ost is given
 	virtual void Info(std::ostream& ost) override;
 };
 

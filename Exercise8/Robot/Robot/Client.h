@@ -10,16 +10,27 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include "Object.h"
+#include "vld.h"
+
 #include "Control.h"
-#include "IRobot.h"
+#include "Forward.h"
+#include "TurnLeft.h"
+#include "TurnRight.h"
+#include "MacroMovement.h"
+
+
+#include "Robot.h"
+#include "Wheelbot.h"
+#include "Hexapod.h"
+
+#include <iostream>
+#include <memory>
+
+
 
 class Client : public Object {
-
 public:
-
-
-private:
+	void Test();
 };
 
 #endif // !CLIENT_H

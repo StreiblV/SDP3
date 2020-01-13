@@ -16,7 +16,12 @@ class IRobot {
 public:
 	// Prints current Robotinformation
 	virtual void Info(std::ostream& ost) = 0;
+
+	//dTor needed - Memory Leaks otherwise!
 	virtual ~IRobot();
+
+	//SharedPointer to IRobot for using Info()
+	using SPter = std::shared_ptr<IRobot>;
 };
 
 #endif // !IROBOT_H

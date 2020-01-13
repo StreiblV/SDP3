@@ -15,8 +15,10 @@
 #include "Robot.h"
 class Hexapod : public Robot {
 public:
+	//cTor
 	Hexapod(std::string const& name) : Robot(name) {}
 
+	//Prints all Information if valid ost is given
 	virtual void Info(std::ostream& ost) override;
 };
 

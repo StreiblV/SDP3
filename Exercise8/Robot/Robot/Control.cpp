@@ -4,7 +4,7 @@
 void Control::AddCommand(TcmdPtr cmd) {
 	try {
 		if (cmd == nullptr) {
-			throw("Given Command is nullptr!");
+			throw std::exception("Given Command is nullptr!");
 		}
 		m_commands.emplace_back(cmd);
 	}
@@ -21,6 +21,7 @@ void Control::AddCommand(TcmdPtr cmd) {
 
 void Control::Start() {
 	try {
+		//iterate through vector and call Execute() on all elements, copy to undolist after execution
 		for (auto elem : m_commands) {
 			elem->Execute();
 			m_undoList.emplace_back(elem);
@@ -30,7 +31,7 @@ void Control::Start() {
 		std::cerr << "Memory allocation: " << ex.what() << std::endl;
 	}
 	catch (std::exception const& ex) {
-		std::cerr << "Exception: " << ex.what() << std::endl;
+		std::cerr << "Exception during Execution: " << ex.what() << std::endl;
 	}
 	catch (...) {
 		std::cerr << "Unhandled exception in Start()!" << std::endl;

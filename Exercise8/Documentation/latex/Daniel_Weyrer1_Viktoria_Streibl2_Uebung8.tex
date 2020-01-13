@@ -84,39 +84,83 @@ The following commands were requested:
 \end{itemize}
 
 \section{System Design}
-\newpage
-\subsection{Classdiagram}
-\includegraphics[scale=0.35, angle=90]{../ClassDiagram.pdf}
-
 \subsection{Design Decisions}
 \subsubsection{Case-Statements in TurnLeft and TurnRight}
 To make the commands independent from each other (so there`s no need to implement a TurnRight when there is a TurnLeft and the other way round), both Commands have the complete Implementation for their Undo-Command!
 
+\newpage
+\subsection{Classdiagram}
+\includegraphics[scale=0.35, angle=90]{../ClassDiagram.pdf}
+
 \section{Component Design}
 \subsection{Client}
+The client class has only one function which tests the robot control system. It creates two different robots, a hexapod and a wheelbot and sends them commands.
+Then calls the robots and check there position and data.
 
 \subsection{Control}
+The modul control has to lists. The command-list, it collects all commands and the the undo-list to undo all already received commands.
+It has also following functions:
+\begin{itemize}
+	\item Add Comment
+	\subitem This function gets a command and add it to the command list
+	\item Start
+	\subitem This functions execute all of the commands ins the commandlist
+	\item Undo
+	\subitem This funtion adds a command to the undo-list
+	\item Reset
+	\subitem This function removes all added commands from the lists
+\end{itemize}
 
 \subsection{Hexapod}
+This modul is a robot type and inherit  from the class Robot. It has an constructor which has the name of the robot as parameter and set it.
+It also has a function Info, which prints all the informations of this robot.
 
-\subsecction{Wheelbot}
+\subsection{Wheelbot}
+This modul is a robot type and inherit  from the class Robot. It has an constructor which has the name of the robot as parameter and set it.
+It also has a function Info, which prints all the informations of this robot.
 
 \subsection{ICommand}
+This is an Interface and stores the robot, which is given via the constructor.
+It declerates the functions Execute and Unexecute.
 
 \subsection{IRobot}
+IRobot is an interface. It declerates the method Info with and ostream parameter.
 
 \subsection{Robot}
+This modul has an enum class DIR, it contains the directions north, south, east and west.
+The class Robot inherite from the Interface IRobot. It stores the name, the x-position, the y-position and the direction.
+It also has following methods:
+\begin{itemize}
+	\item Set/Get-Direction
+	\subitem The setter gets a direction and saves it. The getter returns the stored direction of the robot.
+	\item Set/Get-PosX
+	\subitem The setter gets the x-position and saves it. The getter returns the stored direction of the robot.
+	\item Set/Get-PosY
+	\subitem The setter gets the y-position and saves it. The getter returns the stored direction of the robot.
+	\item Set/Get-Name
+	\subitem The setter gets the name of the robot and saves it. The getter returns the stored direction of the robot.
+\end{itemize}
 
 \subsection{Forward}
+This class inherite from ICommand.
+It overrides the functions Execute and Unexecute.  These functions increase or decrease the position x,y depending on the direction.
 
 \subsection{TurnLeft}
+This class inherite from ICommand.
+It overrides the functions Execute and Unexecute.  These functions change the direction by 1 clockwise.
 
 \subsection{TurnRight}
+This class inherite from ICommand.
+It overrides the functions Execute and Unexecute.  These functions change the direction by 1 counterclockwise.
 
 \subsection{MacroMovement}
-
+This class inherite from ICommand.
+It overrides the functions Execute and Unexecute. 
+The Execute function execute all stored commands.
+The Unexecute function undo the commands.
 
 \section{Source Code}
+
 \subsection{Client}
 \subsubsection{Client.h}
 \sourceCode{../../Robot/Robot/Client.h}

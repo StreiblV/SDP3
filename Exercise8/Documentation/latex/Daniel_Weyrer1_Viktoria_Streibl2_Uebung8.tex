@@ -46,6 +46,7 @@ Viktoria Streibl - S1810306013\\
 	\item Object
 	\item Robot
 	\item Wheelbot
+	\item TestDriver
 \end{itemize}
 
 \subsubsection{Daniel Weyrer}
@@ -90,46 +91,48 @@ To make the commands independent from each other (so there`s no need to implemen
 
 \newpage
 \subsection{Classdiagram}
-\includegraphics[scale=0.35, angle=90]{../ClassDiagram.pdf}
+\includegraphics[scale=0.4, angle=90]{../ClassDiagram.pdf}
 
 \section{Component Design}
 \subsection{Client}
-The client class has only one function which tests the robot control system. It creates two different robots, a hexapod and a wheelbot and sends them commands.
-Then calls the robots and check there position and data.
+The client class has only one function which tests the robot control system. It creates two different robots, a hexapod and a wheelbot and sends them commands. It also checks for problems with nullptr as parameter for various calls.
 
 \subsection{Control}
-The modul control has to lists. The command-list, it collects all commands and the the undo-list to undo all already received commands.
+The Control class manages the Robots by saving all Commands to be applied on them in a vector. To undo all Commands, they are being saved in the undoList after they have been executed.
 It has also following functions:
 \begin{itemize}
 	\item Add Comment
-	\subitem This function gets a command and add it to the command list
+		\subitem This function gets a command and add it to the command list
 	\item Start
-	\subitem This functions execute all of the commands ins the commandlist
+		\subitem This functions execute all of the commands ins the command list
 	\item Undo
-	\subitem This funtion adds a command to the undo-list
+		\subitem This function adds a command to the undo-list
 	\item Reset
-	\subitem This function removes all added commands from the lists
+		\subitem This function removes all added commands from the command list. The commands in the Undo-List are kept to reset the Robot if needed.
 \end{itemize}
 
 \subsection{Hexapod}
-This modul is a robot type and inherit  from the class Robot. It has an constructor which has the name of the robot as parameter and set it.
+This module is a robot type and inherits from the class Robot. It has an constructor which has the name of the robot as parameter and sets it via cTor-Call from Robot.
 It also has a function Info, which prints all the informations of this robot.
 
 \subsection{Wheelbot}
-This modul is a robot type and inherit  from the class Robot. It has an constructor which has the name of the robot as parameter and set it.
+This module is a robot type and inherits from the class Robot. It has an constructor which has the name of the robot as parameter and sets it and sets it via cTor-Call from Robot.
 It also has a function Info, which prints all the informations of this robot.
 
 \subsection{ICommand}
 This is an Interface and stores the robot, which is given via the constructor.
-It declerates the functions Execute and Unexecute.
+It declares the functions Execute() and Unexecute(). 
+Used to create Pointers of this Type and Call both functions (Unexecute() reverts the Actions Execute() did)
+
+It helds a shared pointer to the Robot the Command is meant for - to avoid code-duplication, the Constructor has been moved to this interface!
 
 \subsection{IRobot}
-IRobot is an interface. It declerates the method Info with and ostream parameter.
+IRobot is an interface. It declares the method Info with and ostream parameter to print current Location and the direction of the Robot.
 
 \subsection{Robot}
 This modul has an enum class DIR, it contains the directions north, south, east and west.
-The class Robot inherite from the Interface IRobot. It stores the name, the x-position, the y-position and the direction.
-It also has following methods:
+The class Robot inherits from the Interface IRobot. It stores the name, direction, x-, and y-position.
+It also implements the following Get-/Setmethods:
 \begin{itemize}
 	\item Set/Get-Direction
 	\subitem The setter gets a direction and saves it. The getter returns the stored direction of the robot.
@@ -142,22 +145,16 @@ It also has following methods:
 \end{itemize}
 
 \subsection{Forward}
-This class inherite from ICommand.
 It overrides the functions Execute and Unexecute.  These functions increase or decrease the position x,y depending on the direction.
 
 \subsection{TurnLeft}
-This class inherite from ICommand.
-It overrides the functions Execute and Unexecute.  These functions change the direction by 1 clockwise.
+Changes the direction of the Robot by 90 degrees clockwise.
 
 \subsection{TurnRight}
-This class inherite from ICommand.
-It overrides the functions Execute and Unexecute.  These functions change the direction by 1 counterclockwise.
+Changes the direction of the Robot by 90 degrees counter-clockwise.
 
 \subsection{MacroMovement}
-This class inherite from ICommand.
-It overrides the functions Execute and Unexecute. 
-The Execute function execute all stored commands.
-The Unexecute function undo the commands.
+Takes a vector of shared pointers of commands. When calling the function Execute(), all Commands in the vector are being Execute one by one and stored in the undo-list, to revert all the changes it did.
 
 \section{Source Code}
 
@@ -246,6 +243,10 @@ The Unexecute function undo the commands.
 \subsection{TestDriver}
 \subsubsection{TestDriver.cpp}
 \sourceCode{../../Robot/Robot/TestDriver.cpp}
+
+\subsection{output}
+\sourceCode{../../Robot/Robot/test.txt}
+
 \newpage
 
 

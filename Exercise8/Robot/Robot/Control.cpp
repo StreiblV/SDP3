@@ -21,9 +21,9 @@ void Control::AddCommand(TcmdPtr cmd) {
 
 void Control::Start() {
 	try {
-		for (auto i = m_commands.cbegin(); i != --m_commands.cend(); i++) {
-			(*i)->Execute();
-			std::move(i, i, back_inserter(m_undoList));
+		for (auto elem : m_commands) {
+			elem->Execute();
+			m_undoList.emplace_back(elem);
 		}
 	}
 	catch (std::bad_alloc const& ex) {
@@ -40,9 +40,10 @@ void Control::Start() {
 
 void Control::Undo(size_t const count) {
 	try {
-		for (auto i = --m_undoList.cend(); i != (m_undoList.cend() - count); i--) {
-			(*i)->Unexecute();
-			m_undoList.erase(i);
+		size_t i = 0;
+		while(i < count && m_undoList.size() > 0 ) {
+			m_undoList.back()->Unexecute();
+			m_undoList.pop_back();
 		}
 	}
 	catch (std::bad_alloc const& ex) {

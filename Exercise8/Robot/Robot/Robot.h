@@ -9,6 +9,7 @@
 
 #ifndef ROBOT_H
 #define ROBOT_H
+#include <ostream>
 
 enum class DIR {
 	NORTH,
@@ -16,12 +17,15 @@ enum class DIR {
 	EAST,
 	WEST
 };
+std::ostream& operator<<(std::ostream& ost, DIR const dir);
+
+
 
 #include "IRobot.h"
 class Robot : public IRobot {
 public:
 	Robot() : m_posX{ 0 }, m_posY{ 0 }, m_direction{ DIR::NORTH }, m_name{ "" } {}
-	Robot(std::string const& name) : m_name{ name } {}
+	Robot(std::string const& name) : m_posX{ 0 }, m_posY{ 0 }, m_direction{ DIR::NORTH }, m_name{ name } {}
 
 	virtual void Info(std::ostream& ost) override;
 
@@ -31,8 +35,8 @@ public:
 	void SetPosX(int const pos);
 	int GetPosX();
 
-	void SetPosX(int const pos);
-	int GetPosX();
+	void SetPosY(int const pos);
+	int GetPosY();
 
 	void SetName(std::string const& name);
 	std::string GetName();

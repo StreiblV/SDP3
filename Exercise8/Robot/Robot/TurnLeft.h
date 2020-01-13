@@ -16,7 +16,7 @@
 
 class TurnLeft : public ICommand {
 public:
-	TurnLeft(std::shared_ptr<Robot> robot);
+	TurnLeft(std::shared_ptr<Robot> robot) : ICommand{ robot } {}
 
 	virtual void Execute() override;
 	virtual void Unexecute() override;

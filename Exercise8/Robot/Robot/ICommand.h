@@ -24,7 +24,7 @@ public:
 
 	using SPtr = std::shared_ptr<ICommand>;
 
-private:
+protected:
 	std::shared_ptr<Robot> m_robot;
 };
 

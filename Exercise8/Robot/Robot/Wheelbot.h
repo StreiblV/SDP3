@@ -13,6 +13,8 @@
 
 #include "Robot.h"
 
+#include <ostream>;
+class Robot;
 
 class Wheelbot : public Robot {
 public:

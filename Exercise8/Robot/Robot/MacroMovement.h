@@ -10,14 +10,19 @@
 #ifndef MACROMOVEMENT_H
 #define MACROMOVEMENT_H
 
-
+#include "Control.h"
 #include "ICommand.h"
 #include "Robot.h"
 
 class MacroMovement : public ICommand {
-	MacroMovement(std::shared_ptr<Robot> robot);
+public:
+	MacroMovement(std::shared_ptr<Robot> robot, Control::TcmdList const& movement) : ICommand{ robot }, m_movement{ movement }{}
 	virtual void Execute() override;
 	virtual void Unexecute() override;
+
+private:
+	Control::TcmdList m_movement;
+	Control::TcmdList m_undoMovement;
 };
 
 #endif // !MACROMOVEMENT_H

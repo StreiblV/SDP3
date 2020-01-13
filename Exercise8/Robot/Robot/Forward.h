@@ -18,6 +18,9 @@ class Forward :	public ICommand {
 	Forward(std::shared_ptr<Robot> robot);
 	virtual void Execute() override;
 	virtual void Unexecute() override;
+
+private:
+	int m_distance;
 };
 
 #endif // !FORWARD_H

@@ -8,18 +8,17 @@
 | _______________________________________________________________________ */
 
 
-#ifndef ROBOT_H
-#define ROBOT_H
+#ifndef WHEELBOT_H
+#define WHEELBOT_H
 
 #include "Robot.h"
 
-#include <ostream>;
-class Robot;
+#include <ostream>
 
 class Wheelbot : public Robot {
 public:
 	virtual void Info(std::ostream& ost) override;
 };
 
-#endif//!ROBOT_H
+#endif//!WHEELBOT_H
 

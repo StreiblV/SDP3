@@ -3,7 +3,7 @@
 void MacroMovement::Execute() {
 	for (auto i = m_movement.cbegin(); i != --m_movement.cend(); i++) {
 		(*i)->Execute();
-		std::move(i, i, m_undoMovement.back());
+		std::move(i, i, back_inserter(m_undoMovement));
 	}
 }
 

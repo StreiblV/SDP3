@@ -159,6 +159,7 @@
     <ClCompile Include="IRobot.cpp" />
     <ClCompile Include="MacroMovement.cpp" />
     <ClCompile Include="Robot.cpp" />
+    <ClCompile Include="Testdriver.cpp" />
     <ClCompile Include="TurnLeft.cpp" />
     <ClCompile Include="TurnRight.cpp" />
     <ClCompile Include="Wheelbot.cpp" />

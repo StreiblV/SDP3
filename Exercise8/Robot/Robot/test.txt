@@ -1,0 +1,10 @@
+Visual Leak Detector read settings from: C:\Program Files (x86)\Visual Leak Detector\vld.ini
+Visual Leak Detector Version 2.5.1 installed.
+Exception in AddCommand: Given Command is nullptr!
+Exception during Execution: Nullptr in given commandlist of MacroMovement!
+Hexapod: Robert, Pos(400,0), Direction(EAST)
+Wheelbot: Harry, Pos(300,-200), Direction(SOUTH)
+Hexapod: Robert, Pos(0,0), Direction(NORTH)
+Wheelbot: Harry, Pos(600,-200), Direction(WEST)
+No memory leaks detected.
+Visual Leak Detector is now exiting.

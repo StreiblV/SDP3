@@ -20,6 +20,7 @@
 
 class Control : public Object {
 public:
+	//typedefs
 	typedef std::shared_ptr<ICommand> TcmdPtr;
 	typedef std::vector<TcmdPtr> TcmdList;
 

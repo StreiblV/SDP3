@@ -2,6 +2,9 @@
 
 void MacroMovement::Execute() {
 	for (auto elem : m_movement) {
+		if (elem == nullptr) {
+			throw std::exception("Nullptr in given commandlist of MacroMovement!");
+		}
 		elem->Execute();
 		m_undoMovement.emplace_back(elem);
 	}

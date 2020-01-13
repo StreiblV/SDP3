@@ -1,15 +1,16 @@
 #include "MacroMovement.h"
 
 void MacroMovement::Execute() {
-	for (auto i = m_movement.cbegin(); i != --m_movement.cend(); i++) {
-		(*i)->Execute();
-		std::move(i, i, back_inserter(m_undoMovement));
+	for (auto elem : m_movement) {
+		elem->Execute();
+		m_undoMovement.emplace_back(elem);
 	}
 }
 
 void MacroMovement::Unexecute() {
-	for (auto i = --m_undoMovement.cend(); i != --m_undoMovement.cend(); i--) {
-		(*i)->Unexecute();
-		m_undoMovement.erase(i);
+	size_t i = 0;
+	while (i < m_undoMovement.size() && m_undoMovement.size() > 0) {
+		m_undoMovement.back()->Unexecute();
+		m_undoMovement.pop_back();
 	}
 }

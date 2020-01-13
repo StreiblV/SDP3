@@ -151,7 +151,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Control.cpp" />
+    <ClCompile Include="Forward.cpp" />
+    <ClCompile Include="Hexapod.cpp" />
+    <ClCompile Include="ICommand.cpp" />
+    <ClCompile Include="IRobot.cpp" />
+    <ClCompile Include="MacroMovement.cpp" />
     <ClCompile Include="Robot.cpp" />
+    <ClCompile Include="TurnLeft.cpp" />
+    <ClCompile Include="TurnRight.cpp" />
+    <ClCompile Include="Wheelbot.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="Control.h" />
+    <ClInclude Include="Forward.h" />
+    <ClInclude Include="Hexapod.h" />
+    <ClInclude Include="ICommand.h" />
+    <ClInclude Include="IRobot.h" />
+    <ClInclude Include="MacroMovement.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Robot.h" />
+    <ClInclude Include="TurnLeft.h" />
+    <ClInclude Include="TurnRight.h" />
+    <ClInclude Include="Wheelbot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
